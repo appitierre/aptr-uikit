@@ -1,6 +1,6 @@
 # UI Elements
 
-###### Getting Starter
+## Getting Started
 
 ```javascript
 $ npm install
