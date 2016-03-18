@@ -4,6 +4,10 @@ var Button = require('./buttons/button.jsx');
 
 var Container = React.createClass({
 
+    onClick: function() {
+        console.log('clicked')
+    },
+    
     render: function() {
         return (
             <div>
@@ -11,11 +15,11 @@ var Container = React.createClass({
                     title="Button"
                     description="Some description about the button">
 
-                    <Button icon="star" text="Primary Button" className="primary"/>
-                    <Button text="Secondary Button" className="secondary"/>
-                    <Button text="Alert Button" className="alert"/>
-                    <Button disabled={true} text="Disabled Button"/>
-                    <Button text="Large Primary Button" className="primary large"/>
+                    <Button icon="star" text="Primary Button" className="primary" onClick={this.onClick}/>
+                    <Button text="Secondary Button" className="secondary" onClick={this.onClick}/>
+                    <Button text="Alert Button" className="alert" onClick={this.onClick}/>
+                    <Button disabled={true} text="Disabled Button" onClick={this.onClick}/>
+                    <Button text="Large Primary Button" className="primary large" onClick={this.onClick}/>
 
                 </Section>
 
