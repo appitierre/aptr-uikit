@@ -2,7 +2,7 @@ var React = require('react');
 
 var Button = React.createClass({
 
-    getClassName: function() {
+    getButtonClassName: function() {
         var className = 'button';
         if (this.props.className) {
             className += " " + this.props.className;
@@ -10,10 +10,14 @@ var Button = React.createClass({
         return className;
     },
 
+    getIconClassName: function() {
+        return 'icon icon-' + this.props.icon;
+    }, 
+
     render: function() {
         return (
-            <button disabled={this.props.disabled} className={this.getClassName()}>
-                <i className="icon icon-star"></i>
+            <button disabled={this.props.disabled} className={this.getButtonClassName()} onClick={this.props.onClick}>
+                <i className={this.getIconClassName()} ></i>
                 {this.props.text}
             </button>
         );
