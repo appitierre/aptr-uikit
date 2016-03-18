@@ -1,6 +1,7 @@
 var React = require('react');
 
 /*
+PROPS
 {
     title: String,
     description: String,
