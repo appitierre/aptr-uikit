@@ -12,7 +12,7 @@ var Card = React.createClass({
 				<div>
 					{this.props.title}
 				</div>
-					{this.props.body}
+					{this.props.body}	
 			</div>
 		);
 	}

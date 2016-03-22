@@ -3,7 +3,8 @@ var Section = require('./section.jsx');
 var Button = require('./buttons/button.jsx');
 var FlatButton = require('./buttons/flatButton.jsx');
 var ActionButton = require('./buttons/actionButton.jsx');
-var Card = require('./cards/card.jsx')
+var Card = require('./cards/card.jsx');
+var RadioButton = require('./switches/radioButton.jsx')
 
 var Container = React.createClass({
 
@@ -48,6 +49,7 @@ var Container = React.createClass({
                     title="Switches"
                     description="Some description about the button">
 
+                    <RadioButton icon="check" onClick={this.onClick} className="radio-button"/>
                 </Section>
 
                 <Section 

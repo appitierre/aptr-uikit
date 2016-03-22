@@ -45,8 +45,10 @@ button {
     font-size:13px;
 }
 
+// Added these primary and alert class as it was needed for Button Actions
+
 .primary {
-    color: @button-primary-color;      // Added these primary and alert class as it was needed for Button Actions
+    color: @button-primary-color;      
 }
 
 .alert {
@@ -71,6 +73,27 @@ button {
     border: 1px solid #e0e0e8;
     background: repeating-linear-gradient(45deg, #f2f6f7, #f2f6f7 20px, #fafdff 20px, #fafdff 40px);
 }
+
+.radio-button {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: auto;                                              
+}
+
+.selected {
+    background-color: #3bafda;
+    border: 1px solid #3bafda;
+    color: #fff;
+} & .icon {
+    line-height: 25px;
+}
+
+//up to here.
+
 
 .button {
     background:none;
