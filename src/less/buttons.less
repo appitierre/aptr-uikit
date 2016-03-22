@@ -45,6 +45,33 @@ button {
     font-size:13px;
 }
 
+.primary {
+    color: @button-primary-color;      // Added these primary and alert class as it was needed for Button Actions
+}
+
+.alert {
+    color: @button-alert-color;
+}
+
+.asset { 
+    width: 200px;
+    height: 250px;
+    float: left;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #e0e0e8;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    font-size: 13px;
+    padding: 10px;
+}
+
+.asset-display-inner {
+    border: 1px solid #e0e0e8;
+    background: repeating-linear-gradient(45deg, #f2f6f7, #f2f6f7 20px, #fafdff 20px, #fafdff 40px);
+}
+
 .button {
     background:none;
     border:@button-border;
@@ -112,5 +139,7 @@ button {
             background-color:darken(@button-color, 20%);
         }
     }
-
 }
+
+
+
