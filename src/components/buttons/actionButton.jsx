@@ -3,7 +3,7 @@ var React = require('react');
 var ActionButton = React.createClass({
 
 	getIconClassName: function() {
-		return ' icon icon-' + this.props.icon;
+		return 'icon icon-' + this.props.icon;
 	},
 
 	getIcon: function() {
