@@ -17,8 +17,26 @@ var Tab = require('./dropDown/tab.jsx');
 
 var Container = React.createClass({
 
+    getInitialState: function() {
+        return ({
+            tabSelected: false
+        })
+    },
+
     onClick: function() {
         console.log('clicked')
+    },
+
+    onTabClick: function() {
+        if (this.state.tabSelected === false) {
+            this.setState ({
+                tabSelected: true
+            }) 
+        } else {
+            this.setState ({
+                tabSelected: false
+            })
+        }
     },
     
     render: function() {
@@ -129,7 +147,7 @@ var Container = React.createClass({
                     title="Tabs"
                     description="Some description about the button">
 
-                    <Tab title="Item 1" className="forms-list-item" tabSelected={true} onClick={this.onClick}/>
+                    <Tab title="Item 1" className="forms-list-item" tabSelected={this.state.tabSelected} onClick={this.onTabClick}/>
                 </Section> 
 
 
