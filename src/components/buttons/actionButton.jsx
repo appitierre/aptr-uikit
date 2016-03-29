@@ -1,5 +1,12 @@
 var React = require('react');
 
+/* 
+PROPS:
+ClassName: String
+Icon: String
+onClick: Function 
+*/
+
 var ActionButton = React.createClass({
 
 	getIconClassName: function() {

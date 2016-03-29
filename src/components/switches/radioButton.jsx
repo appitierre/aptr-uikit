@@ -1,5 +1,12 @@
 var React = require('react');
 
+/* 
+PROPS:
+Icon: String
+OnClick: Function
+ClassName: String
+*/
+
 var RadioButton = React.createClass({
 
 	getInitialState: function() {
@@ -26,9 +33,18 @@ var RadioButton = React.createClass({
 	getClassName: function() {
 		
 		if (this.state.isClicked === true) {
-			return this.props.className + ' selected'
+			return this.props.className + ' selected' 
 		} else {
 			return this.props.className
+		}
+	},
+
+	getItemClassName: function() {
+
+		if (this.state.isClicked === true) {
+			return 'settings-image selected' + ' selected' 
+		} else {
+			return 'settings-image'
 		}
 	},
 	
@@ -44,8 +60,13 @@ var RadioButton = React.createClass({
 	render: function() {
 	console.log(this.state)	
 		return (
-			<div className={this.getClassName()} onClick={this.handleClick}>
-				{this.getIcon()}
+			<div>
+				<div className={this.getItemClassName()}>
+					<img src="css/images/emu.jpg"/>
+				</div>
+				<div className={this.getClassName()} onClick={this.handleClick}>
+					{this.getIcon()}
+				</div>
 			</div>
 		);
 	}

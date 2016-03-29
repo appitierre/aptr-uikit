@@ -1,5 +1,14 @@
 var React = require('react');
 
+/* 
+PROPS:
+Title: String
+Body: String
+className: String 
+onClick: Function
+Image: String 
+*/
+
 var Card = React.createClass({
 
 	render: function() {

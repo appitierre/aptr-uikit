@@ -1,6 +1,15 @@
 var React = require('react');
 
-
+/* 
+PROPS:
+Title: String
+Body: String 
+OnClick: Function 
+IconLeft: String 
+IconRight: String
+ClassName: String 
+FirstItem: Booleane
+*/
 
 var List = React.createClass({
 

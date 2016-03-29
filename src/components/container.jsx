@@ -17,9 +17,12 @@ var Tab = require('./dropDown/tab.jsx');
 
 var Container = React.createClass({
 
+ //Just an example to show functionality of components is there.   
     getInitialState: function() {
+        var isSelected = this.props.navIsSelected;    
+        
         return ({
-            tabSelected: false
+            tabSelected: false,
         })
     },
 
@@ -38,15 +41,25 @@ var Container = React.createClass({
             })
         }
     },
+
+    onNavClick: function() {
+        
+        this.setState ({
+            isSelected: true
+        })
+    },
+
+//State should not be here, should be in a seperate controller view.
     
     render: function() {
+        console.log(this.state.isSelected)
         return (
             <div>
                 <Section 
                     title="Button"
-                    description="A standard Button element usally only has an onClick event, along with some text and an icon. Here are all of buttons in Evolve!">
+                    description="A Button clearly indicates a possible user interaction. A standard Button element in Evolve would usally consists of an onClick event, along with some text and an icon. Here are all of buttons in Evolve!">
 
-                    <Button icon="star" text="Primary Button" className="primary" onClick={this.onClick}/>
+                    <Button icon="trash" text="Primary Button" className="primary" onClick={this.onClick}/>
                     <Button icon="star" iconPosition="right" text="Secondary Button" className="secondary" onClick={this.onClick}/>
                     <Button icon="trash" text="Alert Button" className="alert" onClick={this.onClick}/>
                     <Button disabled={true} text="Disabled Button" onClick={this.onClick}/>
@@ -75,7 +88,7 @@ var Container = React.createClass({
 
                 <Section 
                     title="Breadcrumbs"
-                    description="A breadcrumb can be use to show heirachy between different sets of content.">
+                    description="A breadcrumb can be use to show heirachy between different sets of content. This could also be helpful to a user if they wanted to identify their current location within Evolve.">
 
                 <div className="breadcrumbs-container">
                     <HorizontalNavigation text="course" onClick={this.onClick} icon="chevron-right-circle"/>
@@ -104,25 +117,25 @@ var Container = React.createClass({
                     title="Form"
                     description="A form displays a set of related user input fields in a structured way">
 
-                    <Form title="Item title" />
+                    <Form title="Component body"/>
                 </Section>
 
                 <Section 
                     title="List"
                     description="A form displays a set of related user input fields in a structured way">
 
-                    <List title="Title" body="This is the body of the text oh yes, yes it certainly is" onClick={this.onClick} iconLeft="book2" iconRight="chevron-right-circle" className="dashboard-item-list-item" firstItem={true} onClick={this.onClick}/>
-                    <List title="Example course" body="This is the body of the text oh yes, yes it certainly is" onClick={this.onClick} iconLeft="book2" iconRight="chevron-right-circle" className="dashboard-item-list-item" firstItem={false} onClick={this.onClick}/>
+                    <List title="Title" body="This is the body of the text oh yes, yes it certainly is" onClick={this.onClick} iconLeft="book2" iconRight="chevron-right-circle" className="dashboard-item-list-item" firstItem={true}/>
+                    <List title="Example course" body="This is the body of the text oh yes, yes it certainly is" onClick={this.onClick} iconLeft="book2" iconRight="chevron-right-circle" className="dashboard-item-list-item" firstItem={false}/>
 
                 </Section>
 
                 <Section    
-                    title="Navigation Toolbar"
-                    description="Some description about the button">
+                    title="Menus"
+                    description="To put it simply, a menu displays a group of navigation actions. This allows the user to navigate through the tool with ease. ">
 
                 <div className="navigation">
-                    <NavigationToolbar item="Dashboard" className="navigation-item" isSelected={false} onClick={this.onClick}/>
-                    <NavigationToolbar item="Course" className="navigation-item" isSelected={true} onClick={this.onClick}/>
+                    <NavigationToolbar item="Dashboard" className="navigation-item" isSelected={true} onClick={this.onClick}/>
+                    <NavigationToolbar item="Course" className="navigation-item" isSelected={false} onClick={this.onClick}/>
                     <NavigationToolbar item="Assets" className="navigation-item" isSelected={false} onClick={this.onClick}/>
                 </div>
                 
@@ -130,7 +143,8 @@ var Container = React.createClass({
 
                 <Section 
                     title="Switches"
-                    description="Some description about the button">
+                    description="Switches are used to toggle the states and values of your selected item. Radio button are generally used to allow users to select one item at a time. A Radio button would simply only need an icon and an onClick event to change the state.
+                    Simalarly a toggle component allows the user to change a setting between two states.">
 
                     <RadioButton icon="check" onClick={this.onClick} className="radio-button"/>
                 </Section>
@@ -145,7 +159,7 @@ var Container = React.createClass({
                 
                 <Section 
                     title="Tabs"
-                    description="Some description about the button">
+                    description="At default the content of the tab is hidden. With the onClick event the hidden value is then toggled, revealing what is underneath.">
 
                     <Tab title="Item 1" className="forms-list-item" tabSelected={this.state.tabSelected} onClick={this.onTabClick}/>
                 </Section> 

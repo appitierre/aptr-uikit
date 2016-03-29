@@ -1,5 +1,13 @@
 var React = require('react');
 
+/* 
+PROPS:
+FirstValue:
+FirstOption: 
+SecondValue:
+SecondOption: 
+*/
+
 var DropDown = React.createClass({
 
 	render: function() {

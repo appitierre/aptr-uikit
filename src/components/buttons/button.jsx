@@ -1,5 +1,15 @@
 var React = require('react');
 
+/* 
+PROPS:
+- Icon: String
+- Text: String
+- ClassName: String
+- On Click: Function
+- Icon Position: String 
+- Disabled: Booleane
+*/
+
 var Button = React.createClass({
 
     getButtonClassName: function() {

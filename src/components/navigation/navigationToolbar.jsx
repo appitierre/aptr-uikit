@@ -1,5 +1,13 @@
 var React = require('react');
 
+/* 
+PROPS:
+Item: Sting 
+ClassName: String  
+isSelected: Boolean 
+OnClick: Fucntion  
+*/
+
 var NavigationToolbar = React.createClass({
 
 	getSelectedClass: function() {

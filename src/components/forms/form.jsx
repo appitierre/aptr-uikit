@@ -1,5 +1,10 @@
 var React = require('react');
 
+/* 
+PROPS:
+Title: String
+*/
+
 var Form = React.createClass({
 
 	render: function() {	
@@ -9,6 +14,9 @@ var Form = React.createClass({
 					<label>
 						{this.props.title}
 					</label>
+					<div className="forms-field-help">
+						{this.props.description}
+					</div>
 					<div className="form-field-area" contentEditable="true">
 					</div>
 				</div>

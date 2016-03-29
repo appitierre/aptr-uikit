@@ -84,6 +84,14 @@ button {
     margin: auto;                                              
 }
 
+.settings-image {
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: inline-block;
+}
+
 .selected {
     background-color: #3bafda;
     border: 1px solid #3bafda;
@@ -95,7 +103,16 @@ button {
 .breadcrumb {
     display: flex;
     padding: 4px;
+    cursor: pointer;
+
 }
+
+.crumb {    
+    &:hover {
+        color: #3bafda;
+    }
+} 
+
 
 .form-field-area {
     font-family: 'Titillium Web', sans-serif;
@@ -105,23 +122,34 @@ button {
     color: #434a54;
     border-radius: 2px;
     margin-bottom: 36px;
-    margin-top: 20px;
     transition: color 0.3s, background-color 0.3s;
     font-size: 13px;
     background-color: #fff;
+    min-height: 120px;
 }
 
 .form-field-inner {
-    margin-bottom: 4px;
+    margin-top: 20px;
+    margin-bottom: 36px;
     font-weight: 600;
+}
+
+.forms-field-help {
+    margin-top: 4px;
 }
 
 .breadcrumbs-container {
     display: flex;
 }
 
+.icon-chevron-right-circle {
+    vertical-align: middle;
+    margin-left: 3px;
+    font-size: 13px;
+}
+
 .action-bar-tag {
-    background: #fea500;
+     background: #fea500;
   color: #fff;
   font-size: 18px;
   font-size: 1.8rem;
@@ -242,6 +270,7 @@ li {
 }
 
 .forms-list-item-header-inner {
+    cursor: pointer;
     padding: 18px;
 }
 
@@ -249,6 +278,10 @@ li {
     padding: 0px 18px;
     width: auto;
     float: none;
+}
+
+.forms-list-item-delete {
+    float: right;
 }
 
 //up to here.

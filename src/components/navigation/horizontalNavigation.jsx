@@ -1,5 +1,12 @@
 var React = require('react');
 
+/* 
+PROPS:
+Text: String
+Icon: String
+onClick: Function 
+*/
+
 var HorizontalNavigation = React.createClass({
 
 	getIconClassName: function() {
@@ -15,12 +22,12 @@ var HorizontalNavigation = React.createClass({
 	render: function() {
 		return (
 			<div className="breadcrumb">
-				<div classnName="crumb">
+				<div className="crumb">
 					<a href={this.props.href}>
 						{this.props.text}
+						{this.getIcon()}
 					</a>
 				</div>
-				{this.getIcon()}
 			</div>
 		);
 	}
