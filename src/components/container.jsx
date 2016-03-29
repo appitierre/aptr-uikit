@@ -12,7 +12,8 @@ var Toggle = require('./switches/toggle.jsx');
 var ActionBarTag = require('./tags/actionBarTag.jsx');
 var ItemTag = require('./tags/itemTag.jsx');
 var NavigationToolbar = require('./navigation/navigationToolbar.jsx');
-var List = require('./lists/list.jsx')
+var List = require('./lists/list.jsx');
+var Tab = require('./dropDown/tab.jsx');
 
 var Container = React.createClass({
 
@@ -92,8 +93,8 @@ var Container = React.createClass({
                     title="List"
                     description="A form displays a set of related user input fields in a structured way">
 
-                    <List title="Title" body="This is the body of the text oh yes, yes it certainly is" onClick={this.onClick} iconLeft="book2" iconRight="chevron-right-circle" className="dashboard-item-list-item"/>
-                    <List title="Title" body="This is the body of the text oh yes, yes it certainly is" onClick={this.onClick} iconLeft="book2" iconRight="chevron-right-circle" className="dashboard-item-list-item"/>
+                    <List title="Title" body="This is the body of the text oh yes, yes it certainly is" onClick={this.onClick} iconLeft="book2" iconRight="chevron-right-circle" className="dashboard-item-list-item" firstItem={true} onClick={this.onClick}/>
+                    <List title="Example course" body="This is the body of the text oh yes, yes it certainly is" onClick={this.onClick} iconLeft="book2" iconRight="chevron-right-circle" className="dashboard-item-list-item" firstItem={false} onClick={this.onClick}/>
 
                 </Section>
 
@@ -116,13 +117,20 @@ var Container = React.createClass({
                     <RadioButton icon="check" onClick={this.onClick} className="radio-button"/>
                 </Section>
 
-                <Section 
+                { /* <Section 
                     title="Tags"
                     description="Some description about the button">
 
                     <ActionBarTag text="Tag" color="red" onClick={this.onClick} itemCount="0"/>
-                    <ItemTag text="Item" color="grey" isSelected={true} onClick={this.onClick} />
-                </Section>
+                    <ItemTag text="Item" color="grey" isSelected={true} onClick={this.onClick}/>
+                </Section> */ }
+                
+                <Section 
+                    title="Tabs"
+                    description="Some description about the button">
+
+                    <Tab title="Item 1" className="forms-list-item" tabSelected={true} onClick={this.onClick}/>
+                </Section> 
 
 
             </div>

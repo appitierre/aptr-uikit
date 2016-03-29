@@ -1,5 +1,7 @@
 var React = require('react');
 
+
+
 var List = React.createClass({
 
 	getLinkClass: function() {
@@ -24,12 +26,20 @@ var List = React.createClass({
 
 	getRightIcon: function() {
 		return 'icon icon-' + this.props.iconRight + ' ' + this.props.className + '-view-icon' 
-	},	
+	},
+
+	getStyle: function() {
+		if (this.props.firstItem === true) {
+			return {
+				borderBottom: 'none'
+			}
+		}
+	},  	
 
 	render: function() {
 	console.log('List has been rendered')	
 		return (
-			<li className={this.props.className}>
+			<li className={this.props.className} style={this.getStyle()} onClick={this.props.onClick}>
 				<a className={this.getLinkClass()}>
 					<i className={this.getLeftIcon()}></i>
 					<div className={this.getDetailClass()}>
