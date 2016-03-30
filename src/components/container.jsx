@@ -42,7 +42,7 @@ var Container = React.createClass({
         }
     },
 
-    onNavClick: function() {
+    onNavClicked: function() {
         
         this.setState ({
             isSelected: true
@@ -115,9 +115,16 @@ var Container = React.createClass({
                 
                 <Section 
                     title="Form"
+                    description="A form displays a set of related user input fields in a structured way.">
+
+                    <Tab title="Item 1" className="forms-list-item" tabSelected={this.state.tabSelected} onClick={this.onTabClick}/>
+                </Section> 
+                
+                <Section 
+                    title="Input"
                     description="A form displays a set of related user input fields in a structured way">
 
-                    <Form title="Component body"/>
+                    <Form title="Annotations"/>
                 </Section>
 
                 <Section 
@@ -134,9 +141,10 @@ var Container = React.createClass({
                     description="To put it simply, a menu displays a group of navigation actions. This allows the user to navigate through the tool with ease. ">
 
                 <div className="navigation">
-                    <NavigationToolbar item="Dashboard" className="navigation-item" isSelected={true} onClick={this.onClick}/>
-                    <NavigationToolbar item="Course" className="navigation-item" isSelected={false} onClick={this.onClick}/>
-                    <NavigationToolbar item="Assets" className="navigation-item" isSelected={false} onClick={this.onClick}/>
+                    <NavigationToolbar item="Dashboard" className="navigation-item" isSelected={true} onClick={this.onNavClicked}/>
+                    <NavigationToolbar item="Course" className="navigation-item" isSelected={false} onClick={this.onNavClicked}/>
+                    <NavigationToolbar item="Assets" className="navigation-item" isSelected={false} onClick={this.onNavClicked}/>
+
                 </div>
                 
                 </Section>
@@ -146,7 +154,7 @@ var Container = React.createClass({
                     description="Switches are used to toggle the states and values of your selected item. Radio button are generally used to allow users to select one item at a time. A Radio button would simply only need an icon and an onClick event to change the state.
                     Simalarly a toggle component allows the user to change a setting between two states.">
 
-                    <RadioButton icon="check" onClick={this.onClick} className="radio-button"/>
+                    <RadioButton icon="check" onClick={this.onClick} className="radio-button" isSelected={false}/> { /* STYLING FOR THIS IS NOT COMPLETE */ }
                 </Section>
 
                 { /* <Section 
@@ -157,12 +165,6 @@ var Container = React.createClass({
                     <ItemTag text="Item" color="grey" isSelected={true} onClick={this.onClick}/>
                 </Section> */ }
                 
-                <Section 
-                    title="Tabs"
-                    description="At default the content of the tab is hidden. With the onClick event the hidden value is then toggled, revealing what is underneath.">
-
-                    <Tab title="Item 1" className="forms-list-item" tabSelected={this.state.tabSelected} onClick={this.onTabClick}/>
-                </Section> 
 
 
             </div>

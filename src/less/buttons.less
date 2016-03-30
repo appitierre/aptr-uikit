@@ -75,21 +75,33 @@ button {
 }
 
 .radio-button {
+    position: absolute;
     width: 25px;
     height: 25px;
     line-height: 25px;
     border-radius: 50%;
     text-align: center;
     border: 1px solid #ccc;
-    margin: auto;                                              
+    margin-left: 60px;                                          
 }
 
 .settings-image {
     display: flex;
     background-color: #fff;
-    border: 1px solid #ccc;
     padding: 10px;
     display: inline-block;
+}
+
+.article-alternative-label {
+    display: inline-block;
+    position: relative;
+    top: -2px;
+
+    &:before {
+        right: 1px;
+        background-color: #f1f1f1;
+        border-radius: 30px;
+    }
 }
 
 .selected {
@@ -125,7 +137,6 @@ button {
     transition: color 0.3s, background-color 0.3s;
     font-size: 13px;
     background-color: #fff;
-    min-height: 120px;
 }
 
 .form-field-inner {
@@ -284,6 +295,7 @@ li {
     float: right;
 }
 
+
 //up to here.
 
 
@@ -342,7 +354,7 @@ li {
     }
 
     i {
-        margin-right:6px;
+        margin-left:6px;
         font-size: 14px;
         font-weight:bold;
     }

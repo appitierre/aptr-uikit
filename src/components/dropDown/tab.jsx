@@ -63,7 +63,7 @@ var tab = React.createClass({
 					</div>		
 				</div> 
 				<div className={this.getItemInnerClassName()} style={this.getItemStyle()}>
-				<Form title="Form 1 *" description="this is the item description"/>
+				<Form title="Form 1 *" description="this is the item description" />
 				</div>
 			</div>
 		);

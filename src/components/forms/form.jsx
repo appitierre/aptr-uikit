@@ -17,8 +17,8 @@ var Form = React.createClass({
 					<div className="forms-field-help">
 						{this.props.description}
 					</div>
-					<div className="form-field-area" contentEditable="true">
-					</div>
+					<input className="form-field-area"  placeholder="Type to add...">
+					</input>
 				</div>
 			</div>
 		);

@@ -1,0 +1,123 @@
+@import 'colors';
+
+.list-title {
+	background-color: @secondary-color;
+	&-inner {
+		padding:6px 30px;
+		color:#fff;
+	}
+}
+
+.list-items {
+    padding: 20px;
+}
+
+.list-item {
+	background-color:#fff;
+	opacity:0;
+	transition: opacity 0.3s;
+    margin-bottom: 10px;
+    position: relative;
+    border: 1px solid #e0e0e8;
+
+	&.animate-in {
+		opacity:1;
+	}
+
+    .list-content {
+        padding: 20px;
+    }
+
+	.list-avatar {
+        float: left;
+        margin-right: 20px;
+
+        img {
+            width: 64px;
+            height: 64px;
+            display: block;
+            border-radius: 50%;
+        }
+       
+	}
+
+    .list-avatar-icon {
+        font-size: 32px;
+        width: 64px;
+        height: 64px;
+        line-height: 64px;
+        text-align: center;
+        display: block;
+        background-color: #434A54;
+        color: #fff;
+        border-radius: 50%;
+    }
+
+	.list-information {
+		float: left;
+        width: 80%;
+	}
+
+    .list-information-title {
+        font-size: 18px;
+        color: #434a54;
+        font-weight: 700;
+        transition: color 0.3s;
+
+        &.link {
+            .no-touch &:hover {
+                color: darken(#3bafda, 10%);
+            }
+        }
+    }
+
+	.list-actions {
+        text-align: right;
+        background-color: #F0F0F8;
+        clear: both;
+        button {
+            margin-left: 4px;
+            padding: 4px 10px;
+        }
+	}
+
+    .list-actions-inner {
+        padding: 0 5px 0 20px;
+    }
+
+}
+
+// Global so style can be used anywhere
+.list-item-detail {
+    font-size: 12px;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px 0;
+    border: 1px solid #D6D6DC;
+    border-radius: 3px;
+    vertical-align: middle;
+
+    i {
+        vertical-align: inherit;
+        margin-right: 5px;
+    }
+
+    span {
+        vertical-align: inherit;
+    }
+
+    a {
+        vertical-align: inherit;
+        color: #3bafda;
+        transition: color 0.3s;
+
+        .no-touch &:hover {
+            color: darken(#3bafda, 10%);
+        }
+    }
+}
+
+.list-items-no-items, .list-items-no-search-items {
+	padding:30px;
+	text-align: center;
+}
