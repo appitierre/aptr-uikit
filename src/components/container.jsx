@@ -17,10 +17,10 @@ var Tab = require('./dropDown/tab.jsx');
 
 var Container = React.createClass({
 
- //Just an example to show functionality of components is there.   
+ //Just an example to show functionality of components is there.
     getInitialState: function() {
-        var isSelected = this.props.navIsSelected;    
-        
+        var isSelected = this.props.navIsSelected;
+
         return ({
             tabSelected: false,
         })
@@ -34,7 +34,7 @@ var Container = React.createClass({
         if (this.state.tabSelected === false) {
             this.setState ({
                 tabSelected: true
-            }) 
+            })
         } else {
             this.setState ({
                 tabSelected: false
@@ -43,21 +43,21 @@ var Container = React.createClass({
     },
 
     onNavClicked: function() {
-        
+
         this.setState ({
             isSelected: true
         })
     },
 
 //State should not be here, should be in a seperate controller view.
-    
+
     render: function() {
         console.log(this.state.isSelected)
         return (
             <div>
-                <Section 
+                <Section
                     title="Button"
-                    description="A Button clearly indicates a possible user interaction. A standard Button element in Evolve would usally consists of an onClick event, along with some text and an icon. Here are all of buttons in Evolve!">
+                    description="A Button indicates a possible interaction. A standard Button element in Evolve usally consists of an onClick event along with some text and an icon.">
 
                     <Button icon="trash" text="Primary Button" className="primary" onClick={this.onClick}/>
                     <Button icon="star" iconPosition="right" text="Secondary Button" className="secondary" onClick={this.onClick}/>
@@ -67,28 +67,28 @@ var Container = React.createClass({
 
                 </Section>
 
-                <Section 
+                <Section
                     title="Button Action"
-                    description="A Button Action is usually displayed for frequentley used actions. Generally a Button Action has no text, only an icon.">
+                    description="A Button Action is displayed for frequently used actions. Generally a Button Action has no text, only an icon.">
 
-                <div className="primary-flat-buttons">    
+                <div className="primary-flat-buttons">
                     <FlatButton className="primary article-item-buttons-edit-article " icon="pencil4" onClick={this.onClick}/>
                     <FlatButton className="primary article-item-buttons-move-article-down " icon="exit-down2" onClick={this.onClick}/>
                     <FlatButton className="primary article-item-buttons-add-article-divider " icon="picture2" onClick={this.onClick}/>
                     <FlatButton className="primary article-item-buttons-paste-article " icon="paste" onClick={this.onClick}/>
                 </div>
 
-                <div className="floating-action-buttons">    
+                <div className="floating-action-buttons">
                     <ActionButton className="action help-button" icon="bubble-question" onClick={this.onClick}/>
                     <ActionButton className="action profile-avatar" icon="profile" onClick={this.onClick}/>
                 </div>
 
-                  <FlatButton className="alert" icon="trash" onClick={this.onClick}/>                 
+                  <FlatButton className="alert" icon="trash" onClick={this.onClick}/>
                 </Section>
 
-                <Section 
+                <Section
                     title="Breadcrumbs"
-                    description="A breadcrumb can be use to show heirachy between different sets of content. This could also be helpful to a user if they wanted to identify their current location within Evolve.">
+                    description="Breadcrumbs indicate a navigation trail and provide users with their current location.">
 
                 <div className="breadcrumbs-container">
                     <HorizontalNavigation text="course" onClick={this.onClick} icon="chevron-right-circle"/>
@@ -97,37 +97,37 @@ var Container = React.createClass({
                     <HorizontalNavigation text="block" onClick={this.onClick} icon="chevron-right-circle"/>
                 </div>
 
-                </Section>                
-                
-                <Section 
+                </Section>
+
+                <Section
                     title="Card"
-                    description="Simalar to a playing card, a card displays different types of content usually containing a main image and certian types of text.">
+                    description="A card displays different types of related content. They usually contain a main image and text.">
 
                     <Card title="Title" body="" className="asset" onClick={this.onClick} image="css/images/emu.jpg"/>
                 </Section>
 
-                <Section 
+                <Section
                     title="Drop Down"
-                    description="This component allows users to select different options and values from the drop down.">
+                    description="Provides a list of selectable options as a drop down.">
 
                     <DropDown firstValue="" firstOption="ascending" secondValue="" secondOption="descending"/>
-                </Section>                
-                
-                <Section 
+                </Section>
+
+                <Section
                     title="Form"
                     description="A form displays a set of related user input fields in a structured way.">
 
                     <Tab title="Item 1" className="forms-list-item" tabSelected={this.state.tabSelected} onClick={this.onTabClick}/>
-                </Section> 
-                
-                <Section 
+                </Section>
+
+                <Section
                     title="Input"
-                    description="A form displays a set of related user input fields in a structured way">
+                    description="Receives user input. May be part of a form.">
 
                     <Form title="Annotations"/>
                 </Section>
 
-                <Section 
+                <Section
                     title="List"
                     description="A form displays a set of related user input fields in a structured way">
 
@@ -136,9 +136,9 @@ var Container = React.createClass({
 
                 </Section>
 
-                <Section    
+                <Section
                     title="Menus"
-                    description="To put it simply, a menu displays a group of navigation actions. This allows the user to navigate through the tool with ease. ">
+                    description="A menu displays a group of navigation destinations.">
 
                 <div className="navigation">
                     <NavigationToolbar item="Dashboard" className="navigation-item" isSelected={true} onClick={this.onNavClicked}/>
@@ -146,25 +146,25 @@ var Container = React.createClass({
                     <NavigationToolbar item="Assets" className="navigation-item" isSelected={false} onClick={this.onNavClicked}/>
 
                 </div>
-                
+
                 </Section>
 
-                <Section 
+                <Section
                     title="Switches"
-                    description="Switches are used to toggle the states and values of your selected item. Radio button are generally used to allow users to select one item at a time. A Radio button would simply only need an icon and an onClick event to change the state.
+                    description="Switches toggle states and values of your selected item. Radio button are used to allow users to select one item at a time. A Radio button needs an icon and an onClick event to change the state.
                     Simalarly a toggle component allows the user to change a setting between two states.">
 
                     <RadioButton icon="check" onClick={this.onClick} className="radio-button" isSelected={false}/> { /* STYLING FOR THIS IS NOT COMPLETE */ }
                 </Section>
 
-                { /* <Section 
+                { /* <Section
                     title="Tags"
                     description="Some description about the button">
 
                     <ActionBarTag text="Tag" color="red" onClick={this.onClick} itemCount="0"/>
                     <ItemTag text="Item" color="grey" isSelected={true} onClick={this.onClick}/>
                 </Section> */ }
-                
+
 
 
             </div>
