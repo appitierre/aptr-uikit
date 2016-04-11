@@ -22,7 +22,7 @@ var ActionBarTag = React.createClass({
 		}
 	},	
 
-	getItem: function() {
+	getItem: function(index) {
 		return (	
 			<button className="action-bar-tag-button" style={this.getStyle()} onClick={this.onItemClicked}>
 				{this.props.item.text}

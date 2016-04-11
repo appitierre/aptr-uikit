@@ -13,7 +13,6 @@ var TagIcon = React.createClass({
 	},
 
 	render: function() {
-	console.log('yes')	
 		return (
 			//Class Name can change 
 			<div className="tag-bar-title"> 

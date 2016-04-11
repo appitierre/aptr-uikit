@@ -7,17 +7,17 @@ var Tags = require('../app.jsx');
 
 var Tags =  [
 	{
-		text: 'tab',
+		text: 'tag',
 		color: 'grey',
 		itemCount: 0
 	},
 	{
-		text: 'tab',
+		text: 'tag',
 		color: 'grey',
 		itemCount: 1
 	},
 	{
-		text: 'tab',
+		text: 'tag',
 		color: 'grey',
 		itemCount: 2
 	}
@@ -25,46 +25,44 @@ var Tags =  [
 	
 var TagBar = React.createClass({
 
+	getInitialState: function() {
+		return {
+			_tags: Tags
+		}
+	},
+
 	getTags: function() { 	
-		return _.map(Tags, function(item, index) {
+		return _.map(this.state._tags, function(item, index) {
 			return (
 				<ActionBarTag item={item} key={index} onItemClicked={this.onItemClicked}/>
 			)
-		}, this)
+		}, this);
 	},
 
-	onItemClicked: function(item) {	
-		if (item._isOpen === false) {
-			item._isOpen = true;
-		} else {
-			item._isOpen = true;
-		}
-
-		this.forceUpdate();
-	},
-
-	onCreateClicked: function() {
+	onCreateClicked: function(item, index) {
 		var newTag = {
 			text: 'tab',
 			color: 'grey',
-			itemCount: 4 // Don't know how too increment count
+			itemCount: 8 // Don't know how too increment count
 		}
 		
-		Tags.push(newTag)
+		this.state._tags.push(newTag)
+
+		this.setState({
+			_tags: this.state._tags
+		})
+	},
+
+	onClearClicked: function(item) {		
+		if (item._isOpen === true) {
+			item._isOpen = false;
+		}
 
 		this.forceUpdate();
 	},
 
-	onClearClicked: function() {		
-		var Tags = [];
-
-		this.forceUpdate();
-
-		console.log(Tags)
-	},
-
-	render: function() {
-	console.log('rendered')		
+	render: function() {	
+	console.log(this.state._tags)
 		return (
 			<div className="tag-bar-container">
 				<div className="tag-bar-tags">

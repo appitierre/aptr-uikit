@@ -9,8 +9,6 @@ var HorizontalNavigation = require('./navigation/horizontalNavigation.jsx');
 var Form = require('./forms/form.jsx');
 var DropDown = require('./dropDown/dropDown.jsx');
 var Toggle = require('./switches/toggle.jsx');
-// var ActionBarTag = require('./tags/actionBarTag.jsx');
-// var ItemTag = require('./tags/itemTag.jsx');
 var NavigationToolbar = require('./navigation/navigationToolbar.jsx');
 var List = require('./lists/list.jsx');
 var Tab = require('./dropDown/tab.jsx');
@@ -141,8 +139,8 @@ var Container = React.createClass({
                     description="A menu displays a group of navigation destinations.">
 
                 <div className="navigation">
-                    <NavigationToolbar item="Dashboard" className="navigation-item" isSelected={true} onClick={this.onNavClicked}/>
-                    <NavigationToolbar item="Course" className="navigation-item" isSelected={false} onClick={this.onNavClicked}/>
+                    <NavigationToolbar item="Dashboard" className="navigation-item" isSelected={false} onClick={this.onNavClicked}/>
+                    <NavigationToolbar item="Course" className="navigation-item" isSelected={true} onClick={this.onNavClicked}/>
                     <NavigationToolbar item="Assets" className="navigation-item" isSelected={false} onClick={this.onNavClicked}/>
 
                 </div>
@@ -154,7 +152,7 @@ var Container = React.createClass({
                     description="Switches toggle states and values of your selected item. Radio button are used to allow users to select one item at a time. A Radio button needs an icon and an onClick event to change the state.
                     Simalarly a toggle component allows the user to change a setting between two states.">
 
-                    <RadioButton icon="check" onClick={this.onClick} className="radio-button" isSelected={false}/> { /* STYLING FOR THIS IS NOT COMPLETE */ }
+                    <RadioButton icon="check" onClick={this.onClick} className="radio-button" isSelected={true}/> { /* STYLING FOR THIS IS NOT COMPLETE */ }
                 </Section>
 
                 { /* <Section
@@ -164,8 +162,6 @@ var Container = React.createClass({
                     <ActionBarTag text="Tag" color="red" onClick={this.onClick} itemCount="0"/>
                     <ItemTag text="Item" color="grey" isSelected={true} onClick={this.onClick}/>
                 </Section> */ }
-
-
 
             </div>
         );
