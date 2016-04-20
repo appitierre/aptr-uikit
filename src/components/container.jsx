@@ -128,6 +128,7 @@ var Container = React.createClass({
                     description="Receives user input. May be part of a form.">
 
                     <Input title="Input field"/>
+                    <SearchInput onClick={this.onClick}/>
                 </Section>
 
                 <Section
