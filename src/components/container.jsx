@@ -12,7 +12,8 @@ var Toggle = require('./switches/toggle.jsx');
 var NavigationToolbar = require('./navigations/navigationToolbar.jsx');
 var List = require('./lists/list.jsx');
 var Tab = require('./dropDown/tab.jsx');
-var InteractionButtonToggle = require('./interactions/interactionButtonToggle.jsx')
+var InteractionButtonToggle = require('./interactions/interactionButtonToggle.jsx');
+var SearchInput = require('./inputs/searchInput.jsx');
 
 var Container = React.createClass({
 
@@ -126,7 +127,7 @@ var Container = React.createClass({
                     title="Input"
                     description="Receives user input. May be part of a form.">
 
-                    <Input title="Annotations"/>
+                    <Input title="Input field"/>
                 </Section>
 
                 <Section
