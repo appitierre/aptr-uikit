@@ -5,13 +5,14 @@ var FlatButton = require('./buttons/flatButton.jsx');
 var ActionButton = require('./buttons/actionButton.jsx');
 var Card = require('./cards/card.jsx');
 var RadioButton = require('./switches/radioButton.jsx');
-var HorizontalNavigation = require('./navigation/horizontalNavigation.jsx');
-var Form = require('./forms/form.jsx');
+var Breadcrumb = require('./navigations/breadcrumb.jsx');
+var Input = require('./inputs/input.jsx');
 var DropDown = require('./dropDown/dropDown.jsx');
 var Toggle = require('./switches/toggle.jsx');
-var NavigationToolbar = require('./navigation/navigationToolbar.jsx');
+var NavigationToolbar = require('./navigations/navigationToolbar.jsx');
 var List = require('./lists/list.jsx');
 var Tab = require('./dropDown/tab.jsx');
+var InteractionButtonToggle = require('./interactions/interactionButtonToggle.jsx')
 
 var Container = React.createClass({
 
@@ -26,6 +27,10 @@ var Container = React.createClass({
 
     onClick: function() {
         console.log('clicked')
+    },
+
+    onInteractionClicked: function() {
+        console.log('interaction clickedd')
     },
 
     onTabClick: function() {
@@ -50,7 +55,6 @@ var Container = React.createClass({
 //State should not be here, should be in a seperate controller view.
 
     render: function() {
-        console.log(this.state.isSelected)
         return (
             <div>
                 <Section
@@ -89,10 +93,10 @@ var Container = React.createClass({
                     description="Breadcrumbs indicate a navigation trail and provide users with their current location.">
 
                 <div className="breadcrumbs-container">
-                    <HorizontalNavigation text="course" onClick={this.onClick} icon="chevron-right-circle"/>
-                    <HorizontalNavigation text="page" onClick={this.onClick} icon="chevron-right-circle"/>
-                    <HorizontalNavigation text="article" onClick={this.onClick} icon="chevron-right-circle"/>
-                    <HorizontalNavigation text="block" onClick={this.onClick} icon="chevron-right-circle"/>
+                    <Breadcrumb text="course" onClick={this.onClick} icon="chevron-right-circle"/>
+                    <Breadcrumb text="page" onClick={this.onClick} icon="chevron-right-circle"/>
+                    <Breadcrumb text="article" onClick={this.onClick} icon="chevron-right-circle"/>
+                    <Breadcrumb text="block" onClick={this.onClick} icon="chevron-right-circle"/>
                 </div>
 
                 </Section>
@@ -122,9 +126,17 @@ var Container = React.createClass({
                     title="Input"
                     description="Receives user input. May be part of a form.">
 
-                    <Form title="Annotations"/>
+                    <Input title="Annotations"/>
                 </Section>
 
+                <Section
+                    title="Interaction button toggle"
+                    description="A Button indicates a possible interaction. A standard Button element in Evolve usally consists of an onClick event along with some text and an icon.">
+
+                    <InteractionButtonToggle icon="star" altIcon="trash" iconPosition="right" text="This is the text" altText="thiss is the alt text" className="interaction-button-toggle"/>
+
+                </Section>
+                
                 <Section
                     title="List"
                     description="A form displays a set of related user input fields in a structured way">
@@ -135,7 +147,7 @@ var Container = React.createClass({
                 </Section>
 
                 <Section
-                    title="Menus"
+                    title="Navigation Toolbar"
                     description="A menu displays a group of navigation destinations.">
 
                 <div className="navigation">
@@ -154,14 +166,6 @@ var Container = React.createClass({
 
                     <RadioButton icon="check" onClick={this.onClick} className="radio-button" isSelected={true}/> { /* STYLING FOR THIS IS NOT COMPLETE */ }
                 </Section>
-
-                { /* <Section
-                    title="Tags"
-                    description="Some description about the button">
-
-                    <ActionBarTag text="Tag" color="red" onClick={this.onClick} itemCount="0"/>
-                    <ItemTag text="Item" color="grey" isSelected={true} onClick={this.onClick}/>
-                </Section> */ }
 
             </div>
         );

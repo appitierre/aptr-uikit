@@ -7,7 +7,7 @@ PROPS:
 - ClassName: String
 - On Click: Function
 - Icon Position: String 
-- Disabled: Booleane
+- Disabled: Boolean
 */
 
 var Button = React.createClass({

@@ -1,5 +1,5 @@
 var React = require('react');
-var Form = require('./../forms/form.jsx');
+var Form = require('./../inputs/input.jsx');
 
 /* 
 PROPS:
