@@ -3,6 +3,7 @@ var Section = require('./section.jsx');
 var Button = require('./buttons/button.jsx');
 var FlatButton = require('./buttons/flatButton.jsx');
 var ActionButton = require('./buttons/actionButton.jsx');
+var PlainButton = require('./buttons/plainButton.jsx');
 var Card = require('./cards/card.jsx');
 var RadioButton = require('./switches/radioButton.jsx');
 var Breadcrumb = require('./navigations/breadcrumb.jsx');
@@ -15,6 +16,7 @@ var Tab = require('./dropDown/tab.jsx');
 var InteractionButtonToggle = require('./interactions/interactionButtonToggle.jsx');
 var SearchInput = require('./inputs/searchInput.jsx');
 var PasswordInput = require('./inputs/PasswordInput.jsx');
+var CheckboxInput = require('./inputs/CheckboxInput.jsx');
 
 var Container = React.createClass({
 
@@ -24,12 +26,19 @@ var Container = React.createClass({
 
         return ({
             tabSelected: false,
+            isSelected: null
         })
     },
 
     onClick: function() {
         console.log('clicked')
     },
+
+    onRadioClicked: function() {
+        this.setState({
+            isSelected: false
+        })
+    },  
 
     onInteractionClicked: function() {
         console.log('interaction clickedd')
@@ -88,6 +97,9 @@ var Container = React.createClass({
                 </div>
 
                   <FlatButton className="alert" icon="trash" onClick={this.onClick}/>
+
+                  <PlainButton iconClassName='icon icon-arrow-left'/>
+                  <PlainButton iconClassName='icon icon-arrow-right'/>
                 </Section>
 
                 <Section
@@ -131,7 +143,8 @@ var Container = React.createClass({
                     <Input title="Input field"/>
                     <SearchInput onClick={this.onClick}/>
                     <PasswordInput />
-                    <RadioButton icon="check" onClick={this.onClick} className="radio-button" isSelected={true}/>
+                    <RadioButton icon="check" onClick={this.onRadioClicked} className="radio-button" isSelected={true}/>
+                    <CheckboxInput text="this is the text"/>
                 </Section>
 
                 <Section
