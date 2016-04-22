@@ -14,6 +14,7 @@ var List = require('./lists/list.jsx');
 var Tab = require('./dropDown/tab.jsx');
 var InteractionButtonToggle = require('./interactions/interactionButtonToggle.jsx');
 var SearchInput = require('./inputs/searchInput.jsx');
+var PasswordInput = require('./inputs/PasswordInput.jsx');
 
 var Container = React.createClass({
 
@@ -129,6 +130,8 @@ var Container = React.createClass({
 
                     <Input title="Input field"/>
                     <SearchInput onClick={this.onClick}/>
+                    <PasswordInput />
+                    <RadioButton icon="check" onClick={this.onClick} className="radio-button" isSelected={true}/>
                 </Section>
 
                 <Section
@@ -166,7 +169,6 @@ var Container = React.createClass({
                     description="Switches toggle states and values of your selected item. Radio button are used to allow users to select one item at a time. A Radio button needs an icon and an onClick event to change the state.
                     Simalarly a toggle component allows the user to change a setting between two states.">
 
-                    <RadioButton icon="check" onClick={this.onClick} className="radio-button" isSelected={true}/> { /* STYLING FOR THIS IS NOT COMPLETE */ }
                 </Section>
 
             </div>

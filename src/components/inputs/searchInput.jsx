@@ -1,9 +1,14 @@
 var React = require('react');
+/* 
+
+PROPS:
+	OnClick: function
+	searchButton: button prop
+*/
 
 var SearchInput = React.createClass({
 
-	render: function() {
-	console.log('search input rendered')	
+	render: function() {	
 		return (
 			<div className="search-input">
 				<input className="search-input-inner"/>
