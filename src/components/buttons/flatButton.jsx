@@ -1,10 +1,12 @@
 var React = require('react');
 
 /* 
+
 PROPS:
 ClassName: String
 Icon: String
 onClick: Function 
+
 */
 
 var FlatButton = React.createClass({

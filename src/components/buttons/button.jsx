@@ -1,13 +1,15 @@
 var React = require('react');
 
 /* 
-PROPS:
-- Icon: String
-- Text: String
-- ClassName: String
-- On Click: Function
-- Icon Position: String 
-- Disabled: Boolean
+
+@props:
+    icon: String
+    text: String
+    className: String - primary, secondary and alert
+    onClick: Function, Required
+    iconPosition: String 
+    disabled: Boolean
+
 */
 
 var Button = React.createClass({

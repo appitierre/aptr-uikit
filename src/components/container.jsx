@@ -2,24 +2,24 @@ var React = require('react');
 var Section = require('./section.jsx');
 var Button = require('./buttons/button.jsx');
 var FlatButton = require('./buttons/flatButton.jsx');
-var ActionButton = require('./buttons/actionButton.jsx');
-var PlainButton = require('./buttons/plainButton.jsx');
-var Card = require('./cards/card.jsx');
-var RadioButton = require('./switches/radioButton.jsx');
-var Breadcrumb = require('./navigations/breadcrumb.jsx');
-var Input = require('./inputs/input.jsx');
-var DropDown = require('./dropDown/dropDown.jsx');
-var Toggle = require('./switches/toggle.jsx');
-var NavigationToolbar = require('./navigations/navigationToolbar.jsx');
-var List = require('./lists/list.jsx');
-var Tab = require('./dropDown/tab.jsx');
-var InteractionButtonToggle = require('./interactions/interactionButtonToggle.jsx');
-var SearchInput = require('./inputs/searchInput.jsx');
-var PasswordInput = require('./inputs/passwordInput.jsx');
-var CheckboxInput = require('./inputs/checkboxInput.jsx');
 var CollectionItem = require('./collection/collectionItem.jsx');
 var CollectionItemContent = require('./collection/collectionItemContent_example.jsx'); //Example views for collection item content
 var CollectionItemAction = require('./collection/collectionItemAction_example.jsx'); //Example views for item actions
+// var ActionButton = require('./buttons/actionButton.jsx');
+// var PlainButton = require('./buttons/plainButton.jsx');
+// var Card = require('./cards/card.jsx');
+// var RadioButton = require('./switches/radioButton.jsx');
+// var Breadcrumb = require('./navigations/breadcrumb.jsx');
+// var Input = require('./inputs/input.jsx');
+// var DropDown = require('./dropDown/dropDown.jsx');
+// var Toggle = require('./switches/toggle.jsx');
+// var NavigationToolbar = require('./navigations/navigationToolbar.jsx');
+// var List = require('./lists/list.jsx');
+// var Tab = require('./dropDown/tab.jsx');
+// var InteractionButtonToggle = require('./interactions/interactionButtonToggle.jsx');
+// var SearchInput = require('./inputs/searchInput.jsx');
+// var PasswordInput = require('./inputs/passwordInput.jsx');
+// var CheckboxInput = require('./inputs/checkboxInput.jsx');
 
 var Container = React.createClass({
 
@@ -86,7 +86,7 @@ var Container = React.createClass({
                 </Section>
 
                 <Section
-                    className="ui-elements-button-action"
+                    className="ui-elements-flat-button"
                     title="Flat Button"
                     description="A Button Action is displayed for frequently used actions. Generally a Button Action has no text, only an icon.">
 
@@ -101,11 +101,17 @@ var Container = React.createClass({
                 </Section>
 
                 <Section
-                    title="Collection"
+                    title="Collection Item"
                     description="A collection item Simalarly too a list item takes in a range of different elements. A Collection element usually consist of a contnent item and an action item underneath">
 
                     <CollectionItem className="course-collection-item" contentComponent={<CollectionItemContent title='The Title' body='this body this body this body this body'/>} actionsComponent={<CollectionItemAction />} />
 
+                </Section>
+
+                <Section
+                    title=""
+                    description="">
+                    
                 </Section>
 
                 {/*<Section
