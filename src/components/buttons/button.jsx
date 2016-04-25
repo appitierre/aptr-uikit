@@ -21,36 +21,42 @@ var Button = React.createClass({
     },
 
     getIconPositionClassName: function(position) {
-        return position + ' icon icon-' + this.props.icon;
+        return 'button-icon-position-' + position + ' ' + this.getIconClassName()
     },
 
     getIconClassName: function() {
-        return ' icon icon-' + this.props.icon;
+        return 'icon icon-' + this.props.icon;
     },
 
-    getIcon: function(position) {
-        if (this.props.icon && this.props.iconPosition === position) {
-            return (
-                <i className={this.getIconPositionClassName(position)}> </i>
-            );
-        } 
-    },
-
-    getIconDefault: function() {
-        if (!this.props.iconPosition) {
-            return (
-                <i className={this.getIconClassName()}> </i> 
-            )
+    getLeftIcon: function() {
+        if (this.props.icon) {
+            if (this.props.iconPosition === 'left' || !this.props.iconPosition) {
+                if (!this.props.text) {
+                    return (
+                        <i className={this.getIconClassName()}> </i>
+                    );
+                }
+                return (
+                    <i className={this.getIconPositionClassName('left')}> </i>
+                );
+            }
         }
     },
+
+    getRightIcon: function() {
+        if (this.props.icon && this.props.iconPosition === 'right') {
+            return (
+                <i className={this.getIconPositionClassName(this.props.iconPosition)}> </i>
+            );
+        }
+    },    
 
     render: function() {
         return (
             <button disabled={this.props.disabled} className={this.getButtonClassName()} onClick={this.props.onClick}>
-                {this.getIcon('left')}
-                {this.getIconDefault()}
+                {this.getLeftIcon()}
                 {this.props.text}
-                {this.getIcon('right')}
+                {this.getRightIcon()}
             </button>
         );
     }

@@ -45,321 +45,8 @@ button {
     font-size:13px;
 }
 
-// Added these primary and alert class as it was needed for Button Actions
-
-.primary {
-    color: @button-primary-color;      
-}
-
-.alert {
-    color: @button-alert-color;
-}
-
-.asset { 
-    width: 200px;
-    height: 250px;
-    float: left;
-    border-radius: 3px;
-    cursor: pointer;
-    background-color: #fff;
-    border: 1px solid #e0e0e8;
-    margin: 0 10px 10px 0;
-    text-align: center;
-    font-size: 13px;
-    padding: 10px;
-}
-
-.asset-display-inner {
-    border: 1px solid #e0e0e8;
-    background: repeating-linear-gradient(45deg, #f2f6f7, #f2f6f7 20px, #fafdff 20px, #fafdff 40px);
-}
-
-.radio-button {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    border-radius: 50%;
-    text-align: center;
-    border: 1px solid #ccc;
-    margin-left: 200px;                                          
-}
-
-.settings-image {
-    display: flex;
-    background-color: #fff;
-    padding: 10px;
-    display: inline-block;
-}
-
-.article-alternative-label {
-    display: inline-block;
-    position: relative;
-    top: -2px;
-
-    &:before {
-        right: 1px;
-        background-color: #f1f1f1;
-        border-radius: 30px;
-    }
-}
-
-.selected {
-    background-color: #3bafda;
-    border: 1px solid #3bafda;
-    color: #fff;
-} & .icon {
-    line-height: 25px;
-}
-
-.breadcrumb {
-    display: flex;
-    padding: 4px;
-    cursor: pointer;
-
-}
-
-.crumb {    
-    &:hover {
-        color: #3bafda;
-    }
-} 
-
-
-.input-field-area {
-    font-family: 'Titillium Web', sans-serif;
-    width: 95%;
-    padding: 12px 2%;
-    border: 1px solid #8b95a5;
-    color: #434a54;
-    border-radius: 2px;
-    margin-bottom: 36px;
-    transition: color 0.3s, background-color 0.3s;
-    font-size: 13px;
-    background-color: #fff;
-}
-
-.input-field-inner {
-    margin-top: 20px;
-    margin-bottom: 36px;
-    font-weight: 600;
-}
-
-.input-field-help {
-    margin-top: 4px;
-}
-
-.breadcrumbs-container {
-    display: flex;
-}
-
-.icon-chevron-right-circle {
-    vertical-align: middle;
-    margin-left: 3px;
-    font-size: 13px;
-}
-
-
-.item-tag {
-    color: #fff;
-    font-size: 18px;
-    font-size: 1.8rem;
-    text-decoration: none;
-    -webkit-border-top-left-radius: 6px;
-    -webkit-border-bottom-left-radius: 6px;
-    -moz-border-radius-topleft: 6px;
-    -moz-border-radius-bottomleft: 6px;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-    padding: 18px 20px;
-}
-
-.action {
-    width: 28px;
-    height: 28px;
-    background-color: #f0f0f8;
-    border-radius: 50%;
-    text-align: center;
-}
-
-.floating-action-buttons {
-    margin-top: 6px;
-    margin-bottom: 6px;
-}
-
-.navigation {
-    display: flex;
-    background-color: #34495e;
-    height: 40px;
-
-    a.selected {
-        color: #fff;
-        border: none;
-        border-bottom: 3px solid #3bafda;
-        background-color: transparent;
-        padding: 6px;
-        height: 40px;
-    } 
-}
-
-.navigation-item {
-    padding: 10px;
-    color: #ddd;
-    cursor: pointer;
-}
-
-li {
-    list-style-type: none;
-}
-
-.dashboard-item-list-item {
-    position: relative;
-    background-color: #fff;
-    border-bottom: 1px solid #e0e0e8;
-    border-top: 1px solid #e0e0e8;
-}
-
-.dashboard-item-list-item-icon {
-    position: absolute;
-    font-size: 18px;
-    width: 18px;
-    height: 18px;
-    top: 50%;
-    margin-top: -9px;
-    left: 16px;
-    color: #454545;
-}
-
-.dashboard-item-list-item-detail {
-    padding: 10px 50px;
-    display: inline-block;
-}
-
-.dashboard-item-list-item-title {
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 120%;
-}
-
-.dashboard-item-list-item-body {
-    display: block;
-    font-size: 12px;
-    color: #929292;
-}
-
-.dashboard-item-list-item-view-icon {
-    position: absolute;
-    font-size: 18px;
-    width: 18px;
-    height: 18px;
-    top: 50%;
-    margin-top: -9px;
-    right: 16px;
-    color: #3bafda;
-}
-
-.forms-list-item {
-    margin-bottom: 10px;
-    background-color: #f0f0f8;
-    border: 1px solid #8b95a5;
-    border-radius: 2px;
-}
-
-.forms-list-item-header-inner {
-    cursor: pointer;
-    padding: 18px;
-}
-
-.forms-list-item-inner {
-    padding: 0px 18px;
-    width: auto;
-    float: none;
-}
-
-.forms-list-item-delete {
-    float: right;
-}
-
-
 //up to here.
 
-//Tags less
-
-.action-bar-tag {
-    margin-left: 60px;  
-}
-
-.action-bar-tag-button {
-    background: grey;
-  color: #fff;
-  font-size: 18px;
-  font-size: 1.8rem;
-  text-decoration: none;
-  -webkit-border-top-left-radius: 6px;
-  -webkit-border-bottom-left-radius: 6px;
-  -moz-border-radius-topleft: 6px;
-  -moz-border-radius-bottomleft: 6px;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-  padding: 18px 20px;
-  float: left;
-}
-
-.tag-bar-title {
-    position: absolute;
-    line-height: 82px;
-    background-color: #3bafda;
-    font-size: 18px;
-}
-
-.action-bar-tag-clear {
-    line-height: 82px;
-}
-
-img {
-    display: block;
-    margin: 0 auto;
-}
-
-//Up to here
-
-//Article Nav less
-
-.article-navigation-item {
-    width: 7.67px;
-    height: 7.67px;
-    display: inline-block;
-    background-color: #fff;
-    border: 1px solid #2c3e50;
-    border-radius: 50%;
-    margin: 24px;
-    display: flex;  
-    &:hover {
-        background-color: #2c3e50;
-    }
-}
-
-.article-navigation-item-text {
-    height: 35px;
-    position:relative;  
-    border: 1px solid #2c3e50;
-    border-right: none; 
-    width: 100px;
-     
-     &:after {
-        content: "";
-        position: absolute;
-        top: -1px;
-        right: -18px;
-        width: 0;
-        height: 0;
-        border-color: white white white 2c3e50;
-        border-style: solid;
-        border-width: 19px 0 18px 18px;
-        }
-}
-
-//Up to here
 
 .button {
     background:none;
@@ -416,9 +103,118 @@ img {
     }
 
     i {
-        margin-left:6px;
+        display:inline-block;
         font-size: 14px;
         font-weight:bold;
+    }
+
+    .button-icon-position-left {
+        margin-right: 8px;
+    }
+
+    .button-icon-position-right {
+        margin-left: 8px;
+    }
+
+    &:disabled {
+        cursor:auto;
+        background-color:darken(@button-color, 20%);
+        &:hover {
+            background-color:darken(@button-color, 20%);
+        }
+    }
+}
+
+.button-action {
+    &:hover, &:active, &:focus {
+        color:@button-hover-color;
+        outline:none;
+    }
+    &.primary {
+        color:@button-primary-color;
+        &:hover, &:active, &:focus {
+            background-color:@button-primary-hover-color;
+            color:@button-primary-text-hover-color;
+        }
+    }
+    &.warning {
+        background-color:@button-warning-color;
+        color:@button-warning-text-color;
+        &:hover, &:active, &:focus {
+            background-color:@button-warning-hover-color;
+            color:@button-warning-text-hover-color;
+        }
+    }
+    &.alert {
+        background-color:@button-alert-color;
+        color:@button-alert-text-color;
+        &:hover, &:active, &:focus {
+            background-color:@button-alert-hover-color;
+            color:@button-alert-text-hover-color;
+        }
+    }
+    &.secondary {
+        color:@button-secondary-color;
+        &:hover, &:active, &:focus {
+            background-color:@button-secondary-hover-color;
+            color:@button-secondary-text-hover-color;
+        }
+    }
+
+    .button-icon-position-left {
+        margin-right: 8px;
+    }
+
+    .button-icon-position-right {
+        margin-left: 8px;
+    }
+
+    &:disabled {
+        cursor:auto;
+        background-color:darken(@button-color, 20%);
+        &:hover {
+            background-color:darken(@button-color, 20%);
+        }
+    }
+}
+
+.button-flat {
+    &:hover, &:active, &:focus {
+        color:@button-text-hover-color;
+        outline:none;
+    }
+    &.primary {
+        color:@button-primary-color;
+        &:hover, &:active, &:focus {
+            color:@button-primary-hover-color;
+        }
+    }
+    &.warning {
+        color:@button-warning-color;
+        &:hover, &:active, &:focus {
+            background-color:@button-warning-hover-color;
+            color:@button-warning-text-hover-color;
+        }
+    }
+    &.alert {
+        color:@button-alert-color;
+        &:hover, &:active, &:focus {
+            color:@button-alert-hover-color;
+        }
+    }
+    &.secondary {
+        color:@button-secondary-color;
+        &:hover, &:active, &:focus {
+            color:@button-secondary-hover-color;
+        }
+    }
+
+    .button-icon-position-left {
+        margin-right: 8px;
+    }
+
+    .button-icon-position-right {
+        margin-left: 8px;
     }
 
     &:disabled {

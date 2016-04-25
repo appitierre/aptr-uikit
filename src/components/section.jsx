@@ -13,7 +13,7 @@ var Section = React.createClass({
 
     render: function() {
         return (
-            <section className="clearfix">
+            <section className={this.props.className + " clearfix"}>
                 <div className="col-1-1">
                     <h2>{this.props.title}</h2>
                     <div>{this.props.description}</div>
