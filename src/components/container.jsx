@@ -102,7 +102,7 @@ var Container = React.createClass({
 
                 <Section
                     title="Collection"
-                    description="A Button Action is displayed for frequently used actions. Generally a Button Action has no text, only an icon.">
+                    description="A collection item Simalarly too a list item takes in a range of different elements. A Collection element usually consist of a contnent item and an action item underneath">
 
                     <CollectionItem className="course-collection-item" contentComponent={<CollectionItemContent title='The Title' body='this body this body this body this body'/>} actionsComponent={<CollectionItemAction />} />
 
