@@ -9,6 +9,10 @@ onClick: Function
 
 var FlatButton = React.createClass({
 
+	getButtonClassName: function() {
+		return 'button-flat ' + this.props.className;
+	},
+
 	getIconClassName: function() {
 		return ' icon icon-' + this.props.icon;
 	},
@@ -21,7 +25,7 @@ var FlatButton = React.createClass({
 
 	render: function() {
 		return (
-			<button className={this.props.className} onClick={this.props.onClick}>
+			<button className={this.getButtonClassName()} onClick={this.props.onClick}>
 				{this.getIcon()}
 			</button>
 		);

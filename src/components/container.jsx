@@ -15,8 +15,11 @@ var List = require('./lists/list.jsx');
 var Tab = require('./dropDown/tab.jsx');
 var InteractionButtonToggle = require('./interactions/interactionButtonToggle.jsx');
 var SearchInput = require('./inputs/searchInput.jsx');
-var PasswordInput = require('./inputs/PasswordInput.jsx');
-var CheckboxInput = require('./inputs/CheckboxInput.jsx');
+var PasswordInput = require('./inputs/passwordInput.jsx');
+var CheckboxInput = require('./inputs/checkboxInput.jsx');
+var CollectionItem = require('./collection/collectionItem.jsx');
+var CollectionItemContent = require('./collection/collectionItemContent_example.jsx'); //Example views for collection item content
+var CollectionItemAction = require('./collection/collectionItemAction_example.jsx'); //Example views for item actions
 
 var Container = React.createClass({
 
@@ -69,40 +72,43 @@ var Container = React.createClass({
         return (
             <div>
                 <Section
+                    className="ui-elements-button"
                     title="Button"
                     description="A Button indicates a possible interaction. A standard Button element in Evolve usally consists of an onClick event along with some text and an icon.">
 
                     <Button icon="trash" text="Primary Button" className="primary" onClick={this.onClick}/>
                     <Button icon="star" iconPosition="right" text="Secondary Button" className="secondary" onClick={this.onClick}/>
                     <Button icon="trash" text="Alert Button" className="alert" onClick={this.onClick}/>
-                    <Button disabled={true} text="Disabled Button" onClick={this.onClick}/>
+                    <Button disabled={true} className="primary" text="Disabled Button" onClick={this.onClick}/>
                     <Button text="Large Primary Button" className="primary large" onClick={this.onClick}/>
-
+                    <Button icon="arrow-left" onClick={this.onClick}/>
+ 
                 </Section>
 
                 <Section
-                    title="Button Action"
+                    className="ui-elements-button-action"
+                    title="Flat Button"
                     description="A Button Action is displayed for frequently used actions. Generally a Button Action has no text, only an icon.">
 
                 <div className="primary-flat-buttons">
                     <FlatButton className="primary article-item-buttons-edit-article " icon="pencil4" onClick={this.onClick}/>
-                    <FlatButton className="primary article-item-buttons-move-article-down " icon="exit-down2" onClick={this.onClick}/>
-                    <FlatButton className="primary article-item-buttons-add-article-divider " icon="picture2" onClick={this.onClick}/>
+                    <FlatButton className="secondary article-item-buttons-move-article-down " icon="exit-down2" onClick={this.onClick}/>
+                    <FlatButton className="alert article-item-buttons-add-article-divider " icon="picture2" onClick={this.onClick}/>
                     <FlatButton className="primary article-item-buttons-paste-article " icon="paste" onClick={this.onClick}/>
+                    <FlatButton className="alert" icon="trash" onClick={this.onClick}/>
                 </div>
-
-                <div className="floating-action-buttons">
-                    <ActionButton className="action help-button" icon="bubble-question" onClick={this.onClick}/>
-                    <ActionButton className="action profile-avatar" icon="profile" onClick={this.onClick}/>
-                </div>
-
-                  <FlatButton className="alert" icon="trash" onClick={this.onClick}/>
-
-                  <PlainButton iconClassName='icon icon-arrow-left'/>
-                  <PlainButton iconClassName='icon icon-arrow-right'/>
+                
                 </Section>
 
                 <Section
+                    title="Collection"
+                    description="A Button Action is displayed for frequently used actions. Generally a Button Action has no text, only an icon.">
+
+                    <CollectionItem className="course-collection-item" contentComponent={<CollectionItemContent title='The Title' body='this body this body this body this body'/>} actionsComponent={<CollectionItemAction />} />
+
+                </Section>
+
+                {/*<Section
                     title="Breadcrumbs"
                     description="Breadcrumbs indicate a navigation trail and provide users with their current location.">
 
@@ -182,7 +188,7 @@ var Container = React.createClass({
                     description="Switches toggle states and values of your selected item. Radio button are used to allow users to select one item at a time. A Radio button needs an icon and an onClick event to change the state.
                     Simalarly a toggle component allows the user to change a setting between two states.">
 
-                </Section>
+                </Section>*/}
 
             </div>
         );
