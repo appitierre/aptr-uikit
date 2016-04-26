@@ -81,7 +81,7 @@ function lessBuild(isProduction, callback) {
 }
 
 function documentationBuild(callback) {
-    var buildProcess = ChildProcess.exec("docco frontend/* frontend/**/* frontend/**/**/* frontend/**/**/**/*", {cwd: global.root}, function(error, stdout, stderr) {
+    var buildProcess = ChildProcess.exec("docco src/* src/**/* src/**/**/* src/**/**/**/*", {cwd: global.root}, function(error, stdout, stderr) {
         if (error) {
             console.log(error.stack);
             console.log('Error code: '+error.code);
