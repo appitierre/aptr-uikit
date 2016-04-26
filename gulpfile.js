@@ -52,6 +52,10 @@ gulp.task('less:build', function(callback) {
 
 });
 
+gulp.task('docs', function(callback) {
+    documentationBuild(callback);
+});
+
 function webpackBuild(callback) {
     
     webpack(webpackConfig, function(err, stats) {
@@ -74,4 +78,18 @@ function lessBuild(isProduction, callback) {
     
     callback();
             
+}
+
+function documentationBuild(callback) {
+    var buildProcess = ChildProcess.exec("docco frontend/* frontend/**/* frontend/**/**/* frontend/**/**/**/*", {cwd: global.root}, function(error, stdout, stderr) {
+        if (error) {
+            console.log(error.stack);
+            console.log('Error code: '+error.code);
+            console.log('Signal received: '+error.signal);
+        }
+        console.log('stdout: ' + stdout);
+        console.log('stderr: ' + stderr);
+        buildProcess.kill();
+        callback();
+    });
 }
