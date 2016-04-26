@@ -5,6 +5,7 @@ var FlatButton = require('./buttons/flatButton.jsx');
 var CollectionItem = require('./collection/collectionItem.jsx');
 var CollectionItemContent = require('./collection/collectionItemContent_example.jsx'); //Example views for collection item content
 var CollectionItemAction = require('./collection/collectionItemAction_example.jsx'); //Example views for item actions
+var Login = require('./login/login.jsx');
 // var ActionButton = require('./buttons/actionButton.jsx');
 // var PlainButton = require('./buttons/plainButton.jsx');
 // var Card = require('./cards/card.jsx');
@@ -109,8 +110,10 @@ var Container = React.createClass({
                 </Section>
 
                 <Section
-                    title=""
+                    title="Login"
                     description="">
+
+                    <Login />
                     
                 </Section>
 
