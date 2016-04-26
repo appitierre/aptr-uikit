@@ -8,6 +8,7 @@ var cssmin = require('gulp-cssmin');
 var sourcemaps = require('gulp-sourcemaps');
 var rename = require('gulp-rename');
 var webserver = require('gulp-webserver');
+var ChildProcess = require('child_process');
 
 gulp.task('server', function() {
   gulp.src('dist')
