@@ -88,7 +88,7 @@ var Container = React.createClass({
                 <Section
                     className="ui-elements-flat-button"
                     title="Flat Button"
-                    description="A Button Action is displayed for frequently used actions. Generally a Button Action has no text, only an icon.">
+                    description="A Flat button is displayed for frequently used actions. Generally a Button Action has no text, no background, only an icon.">
 
                 <div className="primary-flat-buttons">
                     <FlatButton className="primary article-item-buttons-edit-article " icon="pencil4" onClick={this.onClick}/>
