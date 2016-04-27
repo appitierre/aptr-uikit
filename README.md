@@ -1,10 +1,18 @@
-# UI Elements
+# aptr-uikit
 
 ## Getting Started
 
 ```javascript
-$ npm install
-$ gulp
-// New tab
-$ gulp server
+$ npm install aptr-uikit --save
+```
+
+## For Developers
+
+
+```
+$ npm start
+```
+
+```
+$ gulp docs
 ```
