@@ -83,6 +83,8 @@ var Container = React.createClass({
                     <Button disabled={true} className="primary" text="Disabled Button" onClick={this.onClick}/>
                     <Button text="Large Primary Button" className="primary large" onClick={this.onClick}/>
                     <Button icon="arrow-left" onClick={this.onClick}/>
+                    <Button icon="star" text="full width button" onClick={this.onClick} className="alert full-width"/>
+
  
                 </Section>
 
@@ -116,88 +118,6 @@ var Container = React.createClass({
                     <Login />
                     
                 </Section>
-
-                {/*<Section
-                    title="Breadcrumbs"
-                    description="Breadcrumbs indicate a navigation trail and provide users with their current location.">
-
-                <div className="breadcrumbs-container">
-                    <Breadcrumb text="course" onClick={this.onClick} icon="chevron-right-circle"/>
-                    <Breadcrumb text="page" onClick={this.onClick} icon="chevron-right-circle"/>
-                    <Breadcrumb text="article" onClick={this.onClick} icon="chevron-right-circle"/>
-                    <Breadcrumb text="block" onClick={this.onClick} icon="chevron-right-circle"/>
-                </div>
-
-                </Section>
-
-                <Section
-                    title="Card"
-                    description="A card displays different types of related content. They usually contain a main image and text.">
-
-                    <Card title="Title" body="" className="asset" onClick={this.onClick} image="css/images/emu.jpg"/>
-                </Section>
-
-                <Section
-                    title="Drop Down"
-                    description="Provides a list of selectable options as a drop down.">
-
-                    <DropDown firstValue="" firstOption="ascending" secondValue="" secondOption="descending"/>
-                </Section>
-
-                <Section
-                    title="Form"
-                    description="A form displays a set of related user input fields in a structured way.">
-
-                    <Tab title="Item 1" className="forms-list-item" tabSelected={this.state.tabSelected} onClick={this.onTabClick}/>
-                </Section>
-
-                <Section
-                    title="Input"
-                    description="Receives user input. May be part of a form.">
-
-                    <Input title="Input field"/>
-                    <SearchInput onClick={this.onClick}/>
-                    <PasswordInput />
-                    <RadioButton icon="check" onClick={this.onRadioClicked} className="radio-button" isSelected={true}/>
-                    <CheckboxInput text="this is the text"/>
-                </Section>
-
-                <Section
-                    title="Interaction button toggle"
-                    description="A Button indicates a possible interaction. A standard Button element in Evolve usally consists of an onClick event along with some text and an icon.">
-
-                    <InteractionButtonToggle icon="star" altIcon="trash" iconPosition="right" text="This is the text" altText="thiss is the alt text" className="interaction-button-toggle"/>
-
-                </Section>
-                
-                <Section
-                    title="List"
-                    description="A form displays a set of related user input fields in a structured way">
-
-                    <List title="Title" body="This is the body of the text oh yes, yes it certainly is" onClick={this.onClick} iconLeft="book2" iconRight="chevron-right-circle" className="dashboard-item-list-item" firstItem={true}/>
-                    <List title="Example course" body="This is the body of the text oh yes, yes it certainly is" onClick={this.onClick} iconLeft="book2" iconRight="chevron-right-circle" className="dashboard-item-list-item" firstItem={false}/>
-
-                </Section>
-
-                <Section
-                    title="Navigation Toolbar"
-                    description="A menu displays a group of navigation destinations.">
-
-                <div className="navigation">
-                    <NavigationToolbar item="Dashboard" className="navigation-item" isSelected={false} onClick={this.onNavClicked}/>
-                    <NavigationToolbar item="Course" className="navigation-item" isSelected={true} onClick={this.onNavClicked}/>
-                    <NavigationToolbar item="Assets" className="navigation-item" isSelected={false} onClick={this.onNavClicked}/>
-
-                </div>
-
-                </Section>
-
-                <Section
-                    title="Switches"
-                    description="Switches toggle states and values of your selected item. Radio button are used to allow users to select one item at a time. A Radio button needs an icon and an onClick event to change the state.
-                    Simalarly a toggle component allows the user to change a setting between two states.">
-
-                </Section>*/}
 
             </div>
         );
