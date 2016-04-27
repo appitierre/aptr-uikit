@@ -14,8 +14,7 @@ var Container = React.createClass({
         console.log('This component has been clicked')
     },
 
-
-    //State should not be here, should be in a seperate controller view.
+    //This renders all the components and here you can pass in all the neccasary props.
     render: function() {
         return (
             <div>
@@ -32,8 +31,9 @@ var Container = React.createClass({
                     <Button icon="arrow-left" onClick={this.onClick}/>
                     <Button icon="star" text="full width button" onClick={this.onClick} className="alert full-width"/>
 
- 
+            
                 </Section>
+
 
                 <Section
                     className="ui-elements-flat-button"
