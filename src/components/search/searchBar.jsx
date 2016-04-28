@@ -15,7 +15,7 @@ var SearchBar = React.createClass({
 			)
 		} else {
 			return (
-				this.props.otherButton
+				this.props.alternativeButton
 			)
 		}
 	},

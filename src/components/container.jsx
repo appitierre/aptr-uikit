@@ -6,7 +6,8 @@ var CollectionItem = require('./collection/collectionItem.jsx');
 var CollectionItemContent = require('./collection/collectionItemContent_example.jsx'); //Example views for collection item content
 var CollectionItemAction = require('./collection/collectionItemAction_example.jsx'); //Example views for item actions
 var Login = require('./login/login.jsx');
-var SearchBar = require('./search/searchBar.jsx')
+var SearchBar = require('./search/searchBar.jsx');
+var SelectOption = require('./select/selectOption.jsx');
 
 var Container = React.createClass({
 
@@ -77,7 +78,15 @@ var Container = React.createClass({
                     title="Search bar"
                     description="">
 
-                    <SearchBar deafultButton={<Button icon='magnifier' className='search-bar-button'/>} otherButton={<Button icon='cross-circle' className='primary search-bar-button'/>} onClick={this.onClick} onChange={this.onChange}/>
+                    <SearchBar deafultButton={<Button icon='magnifier' className='search-bar-button'/>} alternativeButton={<Button icon='cross-circle' className='primary search-bar-button'/>} onClick={this.onClick} onChange={this.onChange}/>
+                    
+                </Section>
+
+                <Section
+                    title="Search option"
+                    description="">
+
+                    <SelectOption valueOne='this is the first value' valueTwo='this is the second' className='' onChange={this.onChange}/>
                     
                 </Section>
 
