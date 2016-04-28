@@ -1,19 +1,19 @@
 var React = require('react');
 
-/* 
-
-@props:
-    icon: String
-    text: String
-    className: String - primary, secondary and alert
-    onClick: Function, Required
-    iconPosition: String 
-    disabled: Boolean
-
-*/
+// @props:
+// {
+//     icon: String
+//     text: String
+//     className: String - primary, secondary and alert
+//     onClick: Function, Required
+//     iconPosition: String 
+//     disabled: Boolean
+//}
 
 var Button = React.createClass({
 
+    //The button component has a set className of button and what ever className has been passed
+    //in will be added on too the end.
     getButtonClassName: function() {
         var className = 'button';
         if (this.props.className) {
@@ -26,6 +26,8 @@ var Button = React.createClass({
         return 'button-icon-position-' + position + ' ' + this.getIconClassName()
     },
 
+    //Similar to the button className function, this takes in an icon prop. Make sure that the icon you pass in is
+    //part of the linear icon pack.
     getIconClassName: function() {
         return 'icon icon-' + this.props.icon;
     },
@@ -45,6 +47,8 @@ var Button = React.createClass({
         }
     },
 
+    //IconPosition should only be string with right or left, without it the position of the icon
+    //will default to left. 
     getRightIcon: function() {
         if (this.props.icon && this.props.iconPosition === 'right') {
             return (

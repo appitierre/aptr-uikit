@@ -1,13 +1,13 @@
 var React = require('react');
 
-/*
-PROPS
-{
-    title: String,
-    description: String,
-    children: React Components
-}
-*/
+
+// @PROPS
+// {
+//     title: String,
+//     description: String,
+//     children: React Components
+// }
+
 
 var Section = React.createClass({
 

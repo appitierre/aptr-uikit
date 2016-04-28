@@ -6,18 +6,26 @@ var CollectionItem = require('./collection/collectionItem.jsx');
 var CollectionItemContent = require('./collection/collectionItemContent_example.jsx'); //Example views for collection item content
 var CollectionItemAction = require('./collection/collectionItemAction_example.jsx'); //Example views for item actions
 var Login = require('./login/login.jsx');
+var SearchBar = require('./search/searchBar.jsx')
 
 var Container = React.createClass({
 
-    //Just an example to show functionality of components is there.
+    //This function is an example too show how it would be used on certain components.
     onClick: function() {
         console.log('This component has been clicked')
     },
 
-    //This renders all the components and here you can pass in all the neccasary props.
+    //Simalar to the function above, this is an example to show the onChange event might work.
+    onChange: function(event) {
+        event.target.value;
+        
+        console.log('This component has been changed')
+    },
+
+    //This renders all the components and allows you too pass in all the neccasary props.
     render: function() {
-        return (
-            <div>
+        return (         
+            <div>                
                 <Section
                     className="ui-elements-button"
                     title="Button"
@@ -30,8 +38,7 @@ var Container = React.createClass({
                     <Button text="Large Primary Button" className="primary large" onClick={this.onClick}/>
                     <Button icon="arrow-left" onClick={this.onClick}/>
                     <Button icon="star" text="full width button" onClick={this.onClick} className="alert full-width"/>
-
-            
+                     
                 </Section>
 
 
@@ -63,6 +70,14 @@ var Container = React.createClass({
                     description="">
 
                     <Login />
+                    
+                </Section>
+
+                <Section
+                    title="Search bar"
+                    description="">
+
+                    <SearchBar deafultButton={<Button icon='magnifier' className='search-bar-button'/>} otherButton={<Button icon='cross-circle' className='primary search-bar-button'/>} onClick={this.onClick} onChange={this.onChange}/>
                     
                 </Section>
 
