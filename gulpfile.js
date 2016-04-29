@@ -88,7 +88,7 @@ function lessBuild(isProduction, callback) {
 }
 
 function lessDist(isProduction, callback) {
-    gulp.src(['src/uiElements/less/main.less'])
+    gulp.src(['src/uiElements/less/index.less'])
         .pipe(sourcemaps.init())
         .pipe(less())
         .pipe(rename("aptr-uikit.less"))
