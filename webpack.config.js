@@ -22,8 +22,7 @@ module.exports = {
     resolve: {
         root: './src',
         alias: {
-            react: path.resolve('./node_modules/react'),
-            bloom: 'bloom'
+            react: path.resolve('./node_modules/react')
         },
         extensions: ['', '.js', '.jsx']
     }

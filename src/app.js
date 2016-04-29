@@ -3,6 +3,5 @@ var ReactDOM = require('react-dom');
 var Container = require('./components/container.js');
 
 $(function() {
-    ReactDOM.render(React.createElement(Container), $('.ui-elements')[0]);
-    
+    ReactDOM.render(React.createElement(Container), $('.ui-elements')[0]); 
 })
