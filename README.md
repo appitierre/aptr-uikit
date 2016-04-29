@@ -1,22 +1,23 @@
 # aptr-uikit
 
 ## Introduction
-The appitierre uikit built upon React, consists of a range of different components, to help make developing powerful apps easier than ever. 
+
+Appitierre's UI kit, built using React, consists of a range of different components to help make developing powerful apps easier than ever. 
 
 ## Getting Started
-Assuming you have installed node, first of all run this command to save the uikit to your system.
+Assuming you have Node JS installed run the following commands to save UI kit to your system.
 
 ```javascript
 $ npm install aptr-uikit --save
 ```
 
 ## For Developers
-Will compile your files and open up a server.  
+Compiles your files and starts a local server.  
 ```
 $ npm start
 ```
 ##Documentation
-Take a look too see how we build out our components.
+Compile and read documentation locally inside ```docs/```
 ```
 $ gulp docs
 ```
