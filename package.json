@@ -1,6 +1,7 @@
 {
   "name": "aptr-uikit",
-  "version": "0.0.2",
+  "description": "Appitierres React powered uiKit", 
+  "version": "0.0.3",
   "main": "src/app.js",
   "author": "Appitierre",
   "scripts": {
