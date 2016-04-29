@@ -2,6 +2,7 @@
   "name": "aptr-ui-kit",
   "version": "0.0.1",
   "main": "src/app.js",
+  "author": "Appitierre",
   "scripts": {
     "build"  : "gulp",
     "server"  : "gulp server",
