@@ -1,6 +1,5 @@
-dist/css/app.css
-dist/css/maps
-dist/js/
+build/js/
+build/css/
 node_modules
 docs
 npm-debug.log

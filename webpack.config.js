@@ -4,34 +4,27 @@ var path = require('path');
 module.exports = {
     devtool: 'source-map',
     entry: {
-        flight: './src/app.js'
+        build: './src/app.js'
     },
     output: {
-        path: './',
-        filename: "/dist/js/app.js"
+        path: './src/',
+        filename: "../build/[name].js"
     },
     module: {
         loaders: [{
-            //tell webpack to use jsx-loader for all *.jsx files
-            test: /\.jsx$/,
-            loader: 'jsx-loader?insertPragma=React.DOM&harmony'
+            exclude: /node_modules/,
+            loader: 'babel'
         }]
     },
     resolveLoader: {                                                                                
         root: path.join(__dirname, 'node_modules')                                                  
     }, 
     resolve: {
-        root: './',
+        root: './src',
         alias: {
+            react: path.resolve('./node_modules/react'),
+            bloom: 'bloom'
         },
         extensions: ['', '.js', '.jsx']
-    },
-    plugins: [ 
-        new webpack.IgnorePlugin(/^\.\/locale$/, [/moment$/]),
-        new webpack.ProvidePlugin({
-                $: 'jquery',
-                jQuery: 'jquery',
-                _: 'underscore'
-        }) 
-    ]
+    }
 };

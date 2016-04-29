@@ -11,7 +11,7 @@ var webserver = require('gulp-webserver');
 var ChildProcess = require('child_process');
 
 gulp.task('server', function() {
-  gulp.src('dist')
+  gulp.src('build')
     .pipe(webserver({
       livereload: true,
       directoryListing: false,
