@@ -1,6 +1,6 @@
 {
   "name": "aptr-uikit",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "dist/index.js",
   "author": "Appitierre",
   "description": "Appitierres React powered uikit",
