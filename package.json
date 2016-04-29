@@ -3,6 +3,7 @@
   "version": "0.0.4",
   "main": "dist/index.js",
   "author": "Appitierre",
+  "description": "Appitierres React powered uikit",
   "scripts": {
     "build": "babel src/uiElements --out-dir dist && gulp less:dist",
     "dev": "gulp",
