@@ -53,6 +53,12 @@ gulp.task('less:build', function(callback) {
 
 });
 
+gulp.task('less:dist', function(callback) {
+
+    lessDist(false, callback);
+
+});
+
 gulp.task('docs', function(callback) {
     documentationBuild(callback);
 });
@@ -73,12 +79,23 @@ function lessBuild(isProduction, callback) {
     gulp.src(['src/less/main.less'])
         .pipe(sourcemaps.init())
         .pipe(less())
-        .pipe(rename("app.css"))
+        .pipe(rename("aptr-uikit.css"))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest('./build/css'));
+    
+    callback();
+            
+}
+
+function lessDist(isProduction, callback) {
+    gulp.src(['src/uiElements/less/main.less'])
+        .pipe(sourcemaps.init())
+        .pipe(less())
+        .pipe(rename("aptr-uikit.css"))
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest('./dist/css'));
     
     callback();
-            
 }
 
 function documentationBuild(callback) {

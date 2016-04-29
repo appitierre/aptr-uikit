@@ -1,13 +1,14 @@
 {
   "name": "aptr-uikit",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "main": "dist/index.js",
   "author": "Appitierre",
   "scripts": {
-    "build": "babel src --out-dir dist",
+    "build": "babel src/uiElements --out-dir dist && gulp less:dist",
     "dev": "gulp",
     "server": "gulp server",
-    "start": "npm run dev & npm run server"
+    "start": "npm run dev && npm run server",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "babel": "^6.5.2",
