@@ -79,7 +79,7 @@ function lessBuild(isProduction, callback) {
     gulp.src(['src/less/main.less'])
         .pipe(sourcemaps.init())
         .pipe(less())
-        .pipe(rename("aptr-uikit.css"))
+        .pipe(rename("aptr-uikit.less"))
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest('./build/css'));
     
