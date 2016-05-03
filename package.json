@@ -1,8 +1,10 @@
 {
   "name": "aptr-uikit",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "dist/index.js",
-  "author": "Appitierre",
+  "author": {
+    "name": "Appitierre"
+  },
   "description": "Appitierres React powered uikit",
   "scripts": {
     "build": "babel src/uiElements --out-dir dist && gulp less:dist",
@@ -31,5 +33,11 @@
   },
   "devDependencies": {
     "babel-preset-stage-1": "^6.5.0"
-  }
+  },
+  "readme": "# aptr-uikit\n\n## Introduction\n\nAppitierre's UI kit, built using React, consists of a range of different components to help make developing powerful apps easier than ever. \n\n## Getting Started\nAssuming you have Node JS installed run the following commands to save UI kit to your system.\n\n```javascript\n$ npm install aptr-uikit --save\n```\n\n## For Developers\nCompiles your files and starts a local server.  \n```\n$ npm start\n```\n##Documentation\nCompile and read documentation locally inside ```docs/```\n```\n$ gulp docs\n```",
+  "readmeFilename": "README.md",
+  "gitHead": "bec62e303e0f132db612fcee721c4a7a987c235f",
+  "_id": "aptr-uikit@0.0.8",
+  "_shasum": "87a79a13d63f37e1819e4558b2172502c92755db",
+  "_from": "aptr-uikit@*"
 }

@@ -37,7 +37,7 @@ var CollectionItem = React.createClass({
 				<div className='collection-item-content'>
 					{this.props.contentComponent}
 				</div>
-					{this.getActions()}
+				{this.getActions()}
 			</div>
 		);
 	}

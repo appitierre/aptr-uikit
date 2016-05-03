@@ -23,7 +23,10 @@ var DropDown = React.createClass({
     },
 
     onDropDownClicked: function(event) {
-        event.preventDefault();
+        if (event) {
+            event.preventDefault();
+        }
+        
         this.setState({
             _isOpen: !this.state._isOpen
         })
