@@ -16,8 +16,10 @@ var Button = React.createClass({
     //in will be added on too the end.
     getButtonClassName: function() {
         var className = 'button';
-        if (this.props.className) {
-            className += " " + this.props.className;
+        if (this.props.type) {
+            className += " " + this.props.type;
+        } else if (this.props.type && this.props.className) {
+            className += " " + this.props.type + this.props.className;
         }
         return className;
     },

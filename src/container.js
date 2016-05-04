@@ -32,13 +32,13 @@ var Container = React.createClass({
                     title="Button"
                     description="A Button indicates a possible interaction. A standard Button element in Evolve usally consists of an onClick event along with some text and an icon.">
 
-                    <Button icon="trash" text="Primary Button" className="primary" onClick={this.onClick}/>
-                    <Button icon="star" iconPosition="right" text="Secondary Button" className="secondary" onClick={this.onClick}/>
-                    <Button icon="trash" text="Alert Button" className="alert" onClick={this.onClick}/>
-                    <Button disabled={true} className="primary" text="Disabled Button" onClick={this.onClick}/>
-                    <Button text="Large Primary Button" className="primary large" onClick={this.onClick}/>
+                    <Button icon="trash" text="Primary Button" type="primary" onClick={this.onClick}/>
+                    <Button icon="star" iconPosition="right" text="Secondary Button" type="secondary" onClick={this.onClick}/>
+                    <Button icon="trash" text="Alert Button" type="alert" onClick={this.onClick}/>
+                    <Button disabled={true} type="primary" text="Disabled Button" onClick={this.onClick}/>
+                    <Button text="Large Primary Button" type="primary large" onClick={this.onClick}/>
                     <Button icon="arrow-left" onClick={this.onClick}/>
-                    <Button icon="star" text="full width button" onClick={this.onClick} className="alert full-width"/>
+                    <Button icon="star" text="full width button" onClick={this.onClick} type="alert full-width"/>
                      
                 </Section>
 
@@ -49,11 +49,11 @@ var Container = React.createClass({
                     description="A Flat button is displayed for frequently used actions. Generally a Button Action has no text, no background, only an icon.">
 
                 <div className="primary-flat-buttons">
-                    <FlatButton className="primary article-item-buttons-edit-article " icon="pencil4" onClick={this.onClick}/>
-                    <FlatButton className="secondary article-item-buttons-move-article-down " icon="exit-down2" onClick={this.onClick}/>
-                    <FlatButton className="alert article-item-buttons-add-article-divider " icon="picture2" onClick={this.onClick}/>
-                    <FlatButton className="primary article-item-buttons-paste-article " icon="paste" onClick={this.onClick}/>
-                    <FlatButton className="alert" icon="trash" onClick={this.onClick}/>
+                    <FlatButton type="primary article-item-buttons-edit-article " icon="pencil4" onClick={this.onClick}/>
+                    <FlatButton type="secondary article-item-buttons-move-article-down " icon="exit-down2" onClick={this.onClick}/>
+                    <FlatButton type="alert article-item-buttons-add-article-divider " icon="picture2" onClick={this.onClick}/>
+                    <FlatButton type="primary article-item-buttons-paste-article " icon="paste" onClick={this.onClick}/>
+                    <FlatButton type="alert" icon="trash" onClick={this.onClick}/>
                 </div>
                 
                 </Section>
