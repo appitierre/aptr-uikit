@@ -230,7 +230,8 @@ button {
   border-radius: 3px;
 }
 .search-bar-input {
-  padding: 5px 2%;
+  padding: 3px 30px 3px 5px;
+  width: 120px;
   border: 1px solid #8b95a5;
   color: #434a54;
   border-radius: 2px;
@@ -247,8 +248,66 @@ button {
   border-bottom: 1px solid #e0e0e8;
   background-color: #f0f0f8;
 }
+.action-bar button {
+  padding: 4px 8px;
+}
 .action-bar-inner {
-  padding: 4px 20px;
+  padding: 0px 12px;
+}
+.loading-inner {
+  padding: 20px 0px;
+  text-align: center;
+}
+.loading-text {
+  display: inline-block;
+  margin-left: 8px;
+}
+.loading-icon {
+  display: block;
+  position: relative;
+  height: 16px;
+  width: 16px;
+  margin: 8px auto;
+}
+.loading-icon-spinner {
+  transition: all 3.3s;
+  margin-top: -10px;
+  margin-left: -10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spinner {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+.loading-icon-spinner:before {
+  content: 'Loading…';
+  width: 16px;
+  height: 16px;
+  position: absolute;
+}
+.loading-icon-spinner:not(:required):before {
+  content: '';
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #3bafda;
+  border-bottom-color: #3bafda;
+  animation: spinner .8s ease infinite;
+  -webkit-animation: spinner .8s ease infinite;
+}
+.loading-content {
+  padding: 20px;
+  text-align: center;
+}
+.loading-content .loading-text {
+  color: #454545;
 }
 /*
     CSS just for UI elements

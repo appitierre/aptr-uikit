@@ -1,14 +1,13 @@
-'use strict';
+"use strict";
 
 var React = require('react');
 
 var Login = React.createClass({
-	displayName: 'Login',
+	displayName: "Login",
 
 
 	render: function render() {
-		console.log('login woo');
-		return React.createElement('div', { className: 'login' });
+		return React.createElement("div", { className: "login" });
 	}
 
 });
