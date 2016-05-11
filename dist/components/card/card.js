@@ -2,13 +2,13 @@
 
 var React = require('react');
 
-var ActionBar = React.createClass({
-	displayName: 'ActionBar',
+var Card = React.createClass({
+	displayName: 'Card',
 
 
 	getClassName: function getClassName() {
 
-		var className = 'action-bar';
+		var className = 'card';
 
 		if (this.props.className) {
 			className += ' ' + this.props.className;
@@ -23,16 +23,12 @@ var ActionBar = React.createClass({
 			{ className: this.getClassName() },
 			React.createElement(
 				'div',
-				{ className: 'action-bar-inner' },
-				React.createElement(
-					'div',
-					{ className: 'action-bar-actions' },
-					this.props.children
-				)
+				{ className: 'card-inner' },
+				this.props.children
 			)
 		);
 	}
 
 });
 
-module.exports = ActionBar;
+module.exports = Card;
