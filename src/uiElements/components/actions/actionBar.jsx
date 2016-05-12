@@ -3,15 +3,7 @@ var React = require('react');
 var ActionBar = React.createClass({
 
 	getClassName: function() {
-		
-		var className = 'action-bar';
-
-		if (this.props.className) {
-			className += ' ' + this.props.className;	
-		}
-
-		return className;
-
+		return 'action-bar' + ' ' + this.props.className;
 	},
 
 	render: function() {
@@ -19,7 +11,8 @@ var ActionBar = React.createClass({
 			<div className={this.getClassName()}>
 				<div className='action-bar-inner'>
 					<div className='action-bar-actions'>
-						{this.props.children}
+						{this.props.button}
+						{this.props.search}
 					</div>
 				</div>
 			</div>

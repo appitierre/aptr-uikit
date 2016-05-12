@@ -33,8 +33,6 @@ var SearchBar = React.createClass({
 		this.setState({
 			value: value
 		})
-
-		console.log(this.state.value)
 	},
 
 	render: function() {
