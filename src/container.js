@@ -1,13 +1,12 @@
 var React = require('react');
 var Section = require('./section.js');
-var Button = require('./buttons/button.js');
-var FlatButton = require('./buttons/flatButton.js');
-var CollectionItem = require('./collection/collectionItem.js');
-var CollectionItemContent = require('./collection/collectionItemContent_example.js'); //Example views for collection item content
-var CollectionItemAction = require('./collection/collectionItemAction_example.js'); //Example views for item actions
-var Login = require('./login/login.js');
-var SearchBar = require('./search/searchBar.js');
-var SelectOption = require('./select/selectOption.js');
+var Button = require('./uiElements/components/buttons/button.js');
+var FlatButton = require('./uiElements/components/buttons/flatButton.js');
+var CollectionItem = require('./uiElements/components/collections/collectionItem.js');
+var CollectionItemContent = require('./uiElements/components/collections/collectionItemContent_example.js'); //Example views for collection item content
+var CollectionItemAction = require('./uiElements/components/collections/collectionItemAction_example.js'); //Example views for item actions
+var SearchBar = require('./uiElements/components/search/searchBar.js');
+var SelectOption = require('./uiElements/components/select/selectOption.js');
 
 var Container = React.createClass({
 
@@ -64,14 +63,6 @@ var Container = React.createClass({
 
                     <CollectionItem className="course-collection-item" contentComponent={<CollectionItemContent title='The Title' body='this body this body this body this body'/>} actionsComponent={<CollectionItemAction />} />
 
-                </Section>
-
-                <Section
-                    title="Login"
-                    description="">
-
-                    <Login />
-                    
                 </Section>
 
                 <Section

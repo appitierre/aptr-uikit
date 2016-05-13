@@ -8,6 +8,7 @@ var cssmin = require('gulp-cssmin');
 var sourcemaps = require('gulp-sourcemaps');
 var rename = require('gulp-rename');
 var webserver = require('gulp-webserver');
+var copy = require('gulp-contrib-copy');
 var ChildProcess = require('child_process');
 
 gulp.task('server', function() {
@@ -34,10 +35,18 @@ gulp.task('default', function(callback) {
             'src/**/*.jsx'
         ], ["wepback:build"]);
         gulp.watch([
-            'src/less/**/*.less'
+            'src/**/*.less'
         ], ["less:build"]);
         callback();
     });
+
+    gulp.src('src/index.html')
+        .pipe(copy())
+        .pipe(gulp.dest('build'))
+
+    gulp.src('src/fonts/*')
+        .pipe(copy())
+        .pipe(gulp.dest('build/fonts'))
 
 });
 
@@ -76,12 +85,12 @@ function webpackBuild(callback) {
 }
 
 function lessBuild(isProduction, callback) {
-    gulp.src(['src/less/main.less'])
+    gulp.src(['src/index.less'])
         .pipe(sourcemaps.init())
         .pipe(less())
         .pipe(rename("aptr-uikit.css"))
         .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest('./build/css'));
+        .pipe(gulp.dest('./build'));
     
     callback();
             
