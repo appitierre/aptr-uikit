@@ -7,14 +7,7 @@ var ActionBar = React.createClass({
 
 
 	getClassName: function getClassName() {
-
-		var className = 'action-bar';
-
-		if (this.props.className) {
-			className += ' ' + this.props.className;
-		}
-
-		return className;
+		return 'action-bar' + ' ' + this.props.className;
 	},
 
 	render: function render() {
@@ -27,7 +20,8 @@ var ActionBar = React.createClass({
 				React.createElement(
 					'div',
 					{ className: 'action-bar-actions' },
-					this.props.children
+					this.props.button,
+					this.props.search
 				)
 			)
 		);

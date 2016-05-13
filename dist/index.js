@@ -9,6 +9,7 @@ var SearchBar = require('./components/search/searchBar');
 var Loading = require('./components/loading/loading');
 var Card = require('./components/card/card');
 var Alert = require('./components/alert/alert');
+var Tag = require('./components/tag/tag');
 
 module.exports = {
     Button: Button,
@@ -19,5 +20,6 @@ module.exports = {
     SearchBar: SearchBar,
     Loading: Loading,
     Card: Card,
-    Alert: Alert
+    Alert: Alert,
+    Tag: Tag
 };
