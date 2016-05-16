@@ -1,4 +1,5 @@
 var React = require('react');
+var Button = require('../buttons/button'); 
 
 var SearchBar = React.createClass({
 
@@ -11,20 +12,25 @@ var SearchBar = React.createClass({
 	getButton: function() {
 		if (this.state.value.length === 0) {
 			return (
-				this.props.deafultButton
+				<Button icon='magnifier' className='search-bar-button'/>
 			)
 		} else {
 			return (
-				this.props.alternativeButton
+				<Button icon='cross-circle' className='primary search-bar-button' onClick={this.onButtonClicked}/>
 			)
 		}
 	},
 
-	onkeydown: function(event) {
-		if (event.keyCode === 13) {
-			this.props.onClick();
-		}
-	},
+	// onkeydown: function(event) {
+	// 	if (event.keyCode === 13) {
+	// 	console.log('13')
+	// 		this.props.onClick();
+	// 	} else {
+	// 		console.log('no')
+	// 	}
+
+	// 	console.log('r')
+	// },
 
 	onChange: function(event) {
 		this.props.onChange(event);
@@ -39,7 +45,7 @@ var SearchBar = React.createClass({
 
 		return (
 			<div className='search-bar'>
-				<input className='search-bar-input' onChange={this.onChange} onKeyDown={this.onkeydown}/>
+				<input className='search-bar-input' onChange={this.onChange} />
 				{this.getButton()}
 			</div>								
 		);

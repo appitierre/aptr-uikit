@@ -36,6 +36,7 @@ var Container = React.createClass({
         
     },
 
+
     //This renders all the components and allows you too pass in all the neccasary props.
     render: function() {
         return (         
@@ -192,7 +193,7 @@ var Container = React.createClass({
                     title="Search bar"
                     description="">
 
-                    <SearchBar deafultButton={<Button icon='magnifier' className='search-bar-button'/>} alternativeButton={<Button icon='cross-circle' className='primary search-bar-button'/>} onClick={this.onClick} onChange={this.onChange}/>
+                    <SearchBar onClick={this.onClick} onChange={this.onChange} />
                     
                 </Section>
 
