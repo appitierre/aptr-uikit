@@ -3,7 +3,6 @@ var React = require('react');
 var Loading = React.createClass({
 
 	render: function() {
-	console.log('rendered')
 		return (
 			<div className="loading">
 				<div className="loading-inner">
