@@ -24,9 +24,13 @@ var Container = React.createClass({
 
     //Simalar to the function above, this is an example to show the onChange event might work.
     onChange: function(event) {
-        event.target.value;
+        var value = event;
+        if (event.target) {
+            value = event.target.value;
+        }
+
+        console.log('This component has been changed', value);
         
-        console.log('This component has been changed')
     },
 
     //This renders all the components and allows you too pass in all the neccasary props.
@@ -59,7 +63,18 @@ var Container = React.createClass({
                     title="ButtonGroup"
                     description="">
 
-                    <ButtonGroup />
+                    <ButtonGroup onChange={this.onChange} buttonType="primary" value="menu" buttons={[
+                        {
+                            _icon: "menu",
+                            _value: "menu"
+                        }, {
+                            _icon: "trash",
+                            _value: "trash"
+                        }, {
+                            _icon: "check",
+                            _value: "check"
+                        }
+                    ]} />
                     
                 </Section>
 
@@ -103,13 +118,6 @@ var Container = React.createClass({
                 
                 </Section>
 
-                <Section
-                    title="Pagination"
-                    description="">
-
-                    <Pagination currentPage={1} totalPages={9} buttonType="secondary"/>
-                    
-                </Section>
 
                 <Section
                     title="Loading"
@@ -120,18 +128,30 @@ var Container = React.createClass({
                 </Section>
                 
                 <Section
-                    title="Search bar"
+                    title="Pagination"
                     description="">
 
-                    <SearchBar deafultButton={<Button icon='magnifier' className='search-bar-button'/>} alternativeButton={<Button icon='cross-circle' className='primary search-bar-button'/>} onClick={this.onClick} onChange={this.onChange}/>
+                    <Pagination currentPage={1} totalPages={9} buttonType="secondary"/>
                     
                 </Section>
                 
                 <Section
-                    title="Search option"
+                    title="Range Slider"
+                    description="">
+                    <RangeSlider
+                        onChange={(value) => console.log('range slider value:', value)}
+                        step={1}
+                        min={1}
+                        max={100}
+                        defaultValue={30}
+                    />
+                </Section>
+                
+                <Section
+                    title="Search bar"
                     description="">
 
-                    <SelectOption valueOne='ascending' valueTwo='descending' className='' onChange={this.onChange}/>
+                    <SearchBar deafultButton={<Button icon='magnifier' className='search-bar-button'/>} alternativeButton={<Button icon='cross-circle' className='primary search-bar-button'/>} onClick={this.onClick} onChange={this.onChange}/>
                     
                 </Section>
 
@@ -145,17 +165,6 @@ var Container = React.createClass({
                     
                 </Section>
 
-                <Section
-                    title="Range Slider"
-                    description="">
-                    <RangeSlider
-                        onChange={(value) => console.log('range slider value:', value)}
-                        step={1}
-                        min={1}
-                        max={100}
-                        defaultValue={30}
-                    />
-                </Section>
             </div>
         );
     }
