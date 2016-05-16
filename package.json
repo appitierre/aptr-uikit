@@ -1,6 +1,6 @@
 {
   "name": "aptr-uikit",
-  "version": "0.0.14",
+  "version": "0.1.0",
   "main": "dist/index.js",
   "author": {
     "name": "Appitierre"
