@@ -17,12 +17,7 @@ var ActionBar = React.createClass({
 			React.createElement(
 				'div',
 				{ className: 'action-bar-inner' },
-				React.createElement(
-					'div',
-					{ className: 'action-bar-actions' },
-					this.props.button,
-					this.props.search
-				)
+				this.props.children
 			)
 		);
 	}

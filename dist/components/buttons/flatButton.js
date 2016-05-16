@@ -29,7 +29,25 @@ var FlatButton = React.createClass({
 	//Similar to the button className function, this takes in an icon prop. Make sure that the icon you pass in is
 	//part of the linear icon pack.
 	getIcon: function getIcon() {
-		return React.createElement('i', { className: ' icon icon-' + this.props.icon });
+		return React.createElement('i', { className: ' icon icon-' + this.props.icon, style: this.getStyle() });
+	},
+
+	getText: function getText() {
+		if (this.props.text) {
+			return React.createElement(
+				'span',
+				null,
+				this.props.text
+			);
+		}
+	},
+
+	getStyle: function getStyle() {
+		if (this.props.text && this.props.icon) {
+			return {
+				marginRight: 5
+			};
+		}
 	},
 
 	//Renders the entire flat button.
@@ -37,7 +55,8 @@ var FlatButton = React.createClass({
 		return React.createElement(
 			'button',
 			{ className: this.getButtonClassName(), onClick: this.props.onClick },
-			this.getIcon()
+			this.getIcon(),
+			this.getText()
 		);
 	}
 
