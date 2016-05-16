@@ -11,6 +11,7 @@ var Card = require('./components/card/card');
 var Alert = require('./components/alert/alert');
 var Tag = require('./components/tag/tag');
 var RangeSlider = require('./components/rangeSlider/rangeSlider');
+var Pagination = require('./components/pagination/pagination');
 
 module.exports = {
     Button: Button,
@@ -23,5 +24,6 @@ module.exports = {
     Card: Card,
     Alert: Alert,
     Tag: Tag,
-    RangeSlider: RangeSlider
+    RangeSlider: RangeSlider,
+    Pagination: Pagination
 };
