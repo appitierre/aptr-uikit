@@ -7,6 +7,7 @@ var CollectionItemContent = require('./uiElements/components/collections/collect
 var CollectionItemAction = require('./uiElements/components/collections/collectionItemAction_example.js'); //Example views for item actions
 var SearchBar = require('./uiElements/components/search/searchBar.js');
 var SelectOption = require('./uiElements/components/select/selectOption.js');
+var RangeSlider = require('./uiElements/components/rangeSlider/rangeSlider');
 var Card = require('./uiElements/components/card/card.js');
 var Loading = require('./uiElements/components/loading/loading.jsx');
 var Tag = require('./uiElements/components/tag/tag.jsx');
@@ -127,6 +128,17 @@ var Container = React.createClass({
                     
                 </Section>
 
+                <Section
+                    title="Range Slider"
+                    description="">
+                    <RangeSlider
+                        onChange={(value) => console.log('range slider value:', value)}
+                        step={1}
+                        min={1}
+                        max={100}
+                        defaultValue={30}
+                    />
+                </Section>
             </div>
         );
     }
