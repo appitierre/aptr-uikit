@@ -10,6 +10,9 @@ var SelectOption = require('./uiElements/components/select/selectOption.js');
 var Card = require('./uiElements/components/card/card.js');
 var Loading = require('./uiElements/components/loading/loading.jsx');
 var Tag = require('./uiElements/components/tag/tag.jsx');
+var Pagination = require('./uiElements/components/pagination/pagination.jsx');
+var ButtonGroup = require('./uiElements/components/buttonGroup/buttonGroup.jsx');
+
 
 var Container = React.createClass({
 
@@ -51,7 +54,13 @@ var Container = React.createClass({
                      
                 </Section>
 
+                <Section
+                    title="ButtonGroup"
+                    description="">
 
+                    <ButtonGroup />
+                    
+                </Section>
 
                 <Section
                     title="Collection Item"
@@ -91,6 +100,14 @@ var Container = React.createClass({
                     <FlatButton className="alert" icon="trash" onClick={this.onClick}/>
                 </div>
                 
+                </Section>
+
+                <Section
+                    title="Pagination"
+                    description="">
+
+                    <Pagination currentPage={1} totalPages={9} buttonType="secondary"/>
+                    
                 </Section>
 
                 <Section
