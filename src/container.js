@@ -13,6 +13,9 @@ var Loading = require('./uiElements/components/loading/loading.jsx');
 var Tag = require('./uiElements/components/tag/tag.jsx');
 var Pagination = require('./uiElements/components/pagination/pagination.jsx');
 var ButtonGroup = require('./uiElements/components/buttonGroup/buttonGroup.jsx');
+var Folder = require('./uiElements/components/folder/folder.jsx');
+var ActionBar = require('./uiElements/components/actions/actionBar.jsx')
+
 
 
 var Container = React.createClass({
@@ -36,7 +39,18 @@ var Container = React.createClass({
     //This renders all the components and allows you too pass in all the neccasary props.
     render: function() {
         return (         
-            <div>                
+            <div>
+
+                <Section
+                    title="ActionBar"
+                    description="">
+
+                    <ActionBar>
+                        <Button text="primary" type="primary" icon="star"/>
+                    </ActionBar>
+                    
+                </Section>
+
                 <Section
                     className="ui-elements-button"
                     title="Button"
@@ -114,8 +128,35 @@ var Container = React.createClass({
                     <FlatButton className="alert article-item-buttons-add-article-divider " icon="picture2" onClick={this.onClick}/>
                     <FlatButton className="primary article-item-buttons-paste-article " icon="paste" onClick={this.onClick}/>
                     <FlatButton className="alert" icon="trash" onClick={this.onClick}/>
+
+                    <FlatButton className="secondary" icon="star" text="secondary flat" onClick={this.onClick}/>
+                    <FlatButton className="primary" icon="star" text="primary flat" onClick={this.onClick}/>
+
+
                 </div>
+
+
                 
+                </Section>
+                
+                <Section
+                    title="Folder"
+                    description="">
+
+                    <Folder  
+                        onClick={this.onClick}  
+                        text="Maths"
+                        color="red"
+                        className="courses-folder" 
+                        icon="tag"/>
+
+                    <Folder  
+                        onClick={this.onClick}  
+                        text="English"
+                        color="Blue"
+                        className="courses-folder" 
+                        icon="tag"/>
+                    
                 </Section>
 
 
