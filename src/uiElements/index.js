@@ -10,6 +10,7 @@ var Alert = require('./components/alert/alert');
 var Tag = require('./components/tag/tag');
 var RangeSlider = require('./components/rangeSlider/rangeSlider');
 var Pagination = require('./components/pagination/pagination');
+var ButtonGroup = require('./components/buttonGroup/buttonGroup');
 
 
 module.exports = {
@@ -24,6 +25,7 @@ module.exports = {
     Alert: Alert,
     Tag: Tag,
     RangeSlider: RangeSlider,
-    Pagination: Pagination
+    Pagination: Pagination,
+    ButtonGroup: ButtonGroup
 };
 
