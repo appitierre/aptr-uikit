@@ -32,9 +32,17 @@ var SearchBar = React.createClass({
 	// 	console.log('r')
 	// },
 
+	onButtonClicked: function(event) {
+		event.preventDefault();
+		this.setState({
+			value: ''
+		})
+		this.props.onChange('');
+	},
+
 	onChange: function(event) {
-		this.props.onChange(event);
 		var value = event.target.value;
+		this.props.onChange(value);
 
 		this.setState({
 			value: value
@@ -42,10 +50,9 @@ var SearchBar = React.createClass({
 	},
 
 	render: function() {
-
 		return (
 			<div className='search-bar'>
-				<input className='search-bar-input' onChange={this.onChange} />
+				<input className='search-bar-input' value={this.state.value} onChange={this.onChange} />
 				{this.getButton()}
 			</div>								
 		);
