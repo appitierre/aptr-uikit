@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var Button = require('../buttons/button');
 
 var SearchBar = React.createClass({
 	displayName: 'SearchBar',
@@ -14,17 +15,22 @@ var SearchBar = React.createClass({
 
 	getButton: function getButton() {
 		if (this.state.value.length === 0) {
-			return this.props.deafultButton;
+			return React.createElement(Button, { icon: 'magnifier', className: 'search-bar-button' });
 		} else {
-			return this.props.alternativeButton;
+			return React.createElement(Button, { icon: 'cross-circle', className: 'primary search-bar-button', onClick: this.onButtonClicked });
 		}
 	},
 
-	onkeydown: function onkeydown(event) {
-		if (event.keyCode === 13) {
-			this.props.onClick();
-		}
-	},
+	// onkeydown: function(event) {
+	// 	if (event.keyCode === 13) {
+	// 	console.log('13')
+	// 		this.props.onClick();
+	// 	} else {
+	// 		console.log('no')
+	// 	}
+
+	// 	console.log('r')
+	// },
 
 	onChange: function onChange(event) {
 		this.props.onChange(event);
@@ -40,7 +46,7 @@ var SearchBar = React.createClass({
 		return React.createElement(
 			'div',
 			{ className: 'search-bar' },
-			React.createElement('input', { className: 'search-bar-input', onChange: this.onChange, onKeyDown: this.onkeydown }),
+			React.createElement('input', { className: 'search-bar-input', onChange: this.onChange }),
 			this.getButton()
 		);
 	}
