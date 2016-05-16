@@ -10,6 +10,7 @@ var Loading = require('./components/loading/loading');
 var Card = require('./components/card/card');
 var Alert = require('./components/alert/alert');
 var Tag = require('./components/tag/tag');
+var RangeSlider = require('./components/rangeSlider/rangeSlider');
 
 module.exports = {
     Button: Button,
@@ -21,5 +22,6 @@ module.exports = {
     Loading: Loading,
     Card: Card,
     Alert: Alert,
-    Tag: Tag
+    Tag: Tag,
+    RangeSlider: RangeSlider
 };
