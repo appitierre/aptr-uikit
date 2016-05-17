@@ -37,7 +37,6 @@ var ButtonGroup = React.createClass({
 
 	getButtons: function() {
 		return _.map(this.props.buttons, function(item, index) {
-
 			var className = '';
 			// Adds buttonType class to selected button item
 			if (item._value === this.state._value) {
@@ -53,8 +52,39 @@ var ButtonGroup = React.createClass({
 					className={className} 
 					icon={item._icon}
 				/>
-			)
+			)		
 		}, this)
+	},
+
+	getButtonToggle: function() {
+		var className = this.props.buttonType;
+		// Adds buttonType class to selected button item
+		var item;
+		_.each(this.props.buttons, function(button) {
+			if (button._value != this.state._value) {
+				item = button;
+			}
+		}, this);
+
+		return (
+			<Button 
+				onClick={_.bind(function() {
+					var nextItem = _.findWhere(this.props.buttons, {_value: item._value});
+					this.onButtonItemClicked(nextItem._value);
+
+				}, this)} 
+				className={className} 
+				icon={item._icon}
+			/>
+		)
+	},
+
+	getButtonItems: function() {
+		if (this.props.buttons.length === 2 && this.props.shouldUseToggle) {
+			return this.getButtonToggle();
+		} else {
+			return this.getButtons();
+		}
 	},
 
 	onButtonItemClicked: function(value) {
@@ -70,7 +100,7 @@ var ButtonGroup = React.createClass({
 	render: function() {
 		return (
 			<div className={this.getClassName()}>
-				{this.getButtons()}
+				{this.getButtonItems()}
 			</div>
 		);
 	}

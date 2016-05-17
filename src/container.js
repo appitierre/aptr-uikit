@@ -90,6 +90,36 @@ var Container = React.createClass({
                             _value: "check"
                         }
                     ]} />
+
+                    <ButtonGroup 
+                        onChange={this.onChange} 
+                        buttonType="primary" 
+                        value="menu" 
+                        shouldUseToggle={false}
+                        buttons={[
+                        {
+                            _icon: "menu",
+                            _value: "menu"
+                        }, {
+                            _icon: "trash",
+                            _value: "trash"
+                        }
+                    ]} />
+
+                    <ButtonGroup 
+                        onChange={this.onChange} 
+                        buttonType="primary" 
+                        value="menu" 
+                        shouldUseToggle={true}
+                        buttons={[
+                        {
+                            _icon: "menu",
+                            _value: "menu"
+                        }, {
+                            _icon: "trash",
+                            _value: "trash"
+                        }
+                    ]} />
                     
                 </Section>
 
