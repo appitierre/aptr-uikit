@@ -7,7 +7,13 @@ var ActionBar = React.createClass({
 
 
 	getClassName: function getClassName() {
-		return 'action-bar' + ' ' + this.props.className;
+		var className = 'action-bar';
+
+		if (this.props.className) {
+			className += ' ' + this.props.className;
+		}
+
+		return className;
 	},
 
 	render: function render() {
@@ -16,7 +22,7 @@ var ActionBar = React.createClass({
 			{ className: this.getClassName() },
 			React.createElement(
 				'div',
-				{ className: 'action-bar-inner' },
+				{ className: 'action-bar-inner clearfix' },
 				this.props.children
 			)
 		);
