@@ -14,7 +14,10 @@ var Tag = require('./uiElements/components/tag/tag.jsx');
 var Pagination = require('./uiElements/components/pagination/pagination.jsx');
 var ButtonGroup = require('./uiElements/components/buttonGroup/buttonGroup.jsx');
 var Folder = require('./uiElements/components/folder/folder.jsx');
-var ActionBar = require('./uiElements/components/actions/actionBar.jsx')
+var ActionBar = require('./uiElements/components/actions/actionBar.jsx');
+var ListItem = require('./uiElements/components/list/listItem.jsx');
+var PlayButton = require('./uiElements/components/buttons/playButton.jsx')
+
 
 
 
@@ -71,6 +74,8 @@ var Container = React.createClass({
                     <Button text="Large Primary Button" className="primary large" onClick={this.onClick}/>
                     <Button icon="arrow-left" onClick={this.onClick}/>
                     <Button icon="star" text="full width button" onClick={this.onClick} className="alert full-width"/>
+
+                    <PlayButton type="primary" onClick={this.onClick}/>
                      
                 </Section>
 
@@ -190,7 +195,7 @@ var Container = React.createClass({
                     
                 </Section>
 
-
+               
                 <Section
                     title="Loading"
                     description="">

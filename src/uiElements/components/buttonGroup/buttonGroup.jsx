@@ -59,10 +59,9 @@ var ButtonGroup = React.createClass({
 	getButtonToggle: function() {
 		var className = this.props.buttonType;
 		// Adds buttonType class to selected button item
-		var item;
-		_.each(this.props.buttons, function(button) {
+		var item = _.find(this.props.buttons, function(button) {
 			if (button._value != this.state._value) {
-				item = button;
+				return button;
 			}
 		}, this);
 
@@ -71,7 +70,6 @@ var ButtonGroup = React.createClass({
 				onClick={_.bind(function() {
 					var nextItem = _.findWhere(this.props.buttons, {_value: item._value});
 					this.onButtonItemClicked(nextItem._value);
-
 				}, this)} 
 				className={className} 
 				icon={item._icon}
