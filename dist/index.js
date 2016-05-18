@@ -13,7 +13,7 @@ var Tag = require('./components/tag/tag');
 var RangeSlider = require('./components/rangeSlider/rangeSlider');
 var Pagination = require('./components/pagination/pagination');
 var ButtonGroup = require('./components/buttonGroup/buttonGroup');
-var PlayButton = require('./components/buttons/playButton.jsx');
+var PlayButton = require('./components/buttons/playButton');
 
 module.exports = {
     Button: Button,
