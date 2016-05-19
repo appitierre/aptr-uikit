@@ -16,10 +16,21 @@ var ButtonGroup = require('./uiElements/components/buttonGroup/buttonGroup.jsx')
 var Folder = require('./uiElements/components/folder/folder.jsx');
 var ActionBar = require('./uiElements/components/actions/actionBar.jsx');
 var ListItem = require('./uiElements/components/list/listItem.jsx');
+var DropDownOptions = require('./uiElements/components/dropDown/dropDownOptions.jsx');
 
+//Array is just an example of how the Folder component returns the data.
+var Folders = [
+        {
+            text: 'Maths',
+            _color: 'red'
+        },
+        {
+            text: 'English',
+            _color: 'blue'
+        }
+    ];
 
 var Container = React.createClass({
-
     //This function is an example too show how it would be used on certain components.
     onClick: function() {
         console.log('This component has been clicked')
@@ -35,6 +46,19 @@ var Container = React.createClass({
         console.log('This component has been changed', value);
         
     },
+
+    getFolders: function() {
+        return _.map(Folders, function(tag, index) {
+            return (
+                <Folder 
+                    folder={tag}
+                    key={index}
+                    icon='tag'
+                />
+            )
+        }, this);
+    },  
+
 
 
     //This renders all the components and allows you too pass in all the neccasary props.
@@ -145,6 +169,29 @@ var Container = React.createClass({
                 </Section>
 
                 <Section
+                    title="DropDown"
+                    description="">
+
+                    <DropDownOptions 
+                        options={[
+                            {
+                                text: 'Ascending'
+                            },
+                            {
+                                text: 'Descending'
+                            },
+                            {
+                                text: 'Recent'
+                            },
+                            {
+                                text: 'Oldest'
+                            }
+                        ]}
+                    />
+                    
+                </Section>
+
+                <Section
                     className="ui-elements-flat-button"
                     title="Flat Button"
                     description="A Flat button is displayed for frequently used actions. Generally a Button Action has no text, no background, only an icon."
@@ -175,20 +222,8 @@ var Container = React.createClass({
                 <Section
                     title="Folder"
                     description="">
-
-                    <Folder  
-                        onClick={this.onClick}  
-                        text="Maths"
-                        color="red"
-                        className="courses-folder" 
-                        icon="tag"/>
-
-                    <Folder  
-                        onClick={this.onClick}  
-                        text="English"
-                        color="Blue"
-                        className="courses-folder" 
-                        icon="tag"/>
+                
+                    {this.getFolders()}
                     
                 </Section>
 

@@ -12,6 +12,7 @@ var RangeSlider = require('./components/rangeSlider/rangeSlider');
 var Pagination = require('./components/pagination/pagination');
 var ButtonGroup = require('./components/buttonGroup/buttonGroup');
 var Folder = require('./components/folder/folder');
+var DropDownOptions = require('./components/dropDown/dropDownOptions');
 
 
 
@@ -29,6 +30,7 @@ module.exports = {
     RangeSlider: RangeSlider,
     Pagination: Pagination,
     ButtonGroup: ButtonGroup,
-    Folder: Folder
+    Folder: Folder,
+    DropDownOptions: DropDownOptions
 };
 
