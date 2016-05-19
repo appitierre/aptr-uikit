@@ -19,9 +19,9 @@ var Folder = React.createClass({
         return (
             <button className={this.getClassName()} onClick={this.onFolderClicked}>
                 <div className="folder-icon">
-                    <i className={"icon icon-" + this.props.icon} style={{color: this.props.color}}></i>
+                    <i className={"icon icon-" + this.props.icon} style={{color: this.props.folder._color}}></i>
                 </div>
-                <div className="folder-text">{this.props.text}</div>
+                <div className="folder-text">{this.props.folder.text}</div>
             </button>
         );
     }
