@@ -162,6 +162,8 @@ var Container = React.createClass({
 
                     <FlatButton className="secondary" icon="star" text="secondary flat" onClick={this.onClick}/>
                     <FlatButton className="primary" icon="star" text="primary flat" onClick={this.onClick}/>
+                    <FlatButton icon="star" text="plain flat" onClick={this.onClick}/>
+
 
 
                 </div>
