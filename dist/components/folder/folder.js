@@ -26,12 +26,12 @@ var Folder = React.createClass({
             React.createElement(
                 'div',
                 { className: 'folder-icon' },
-                React.createElement('i', { className: "icon icon-" + this.props.icon, style: { color: this.props.color } })
+                React.createElement('i', { className: "icon icon-" + this.props.icon, style: { color: this.props.folder._color } })
             ),
             React.createElement(
                 'div',
                 { className: 'folder-text' },
-                this.props.text
+                this.props.folder.text
             )
         );
     }
