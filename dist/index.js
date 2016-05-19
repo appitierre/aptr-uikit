@@ -13,6 +13,7 @@ var Tag = require('./components/tag/tag');
 var RangeSlider = require('./components/rangeSlider/rangeSlider');
 var Pagination = require('./components/pagination/pagination');
 var ButtonGroup = require('./components/buttonGroup/buttonGroup');
+var Folder = require('./components/folder/folder');
 
 module.exports = {
     Button: Button,
@@ -27,5 +28,6 @@ module.exports = {
     Tag: Tag,
     RangeSlider: RangeSlider,
     Pagination: Pagination,
-    ButtonGroup: ButtonGroup
+    ButtonGroup: ButtonGroup,
+    Folder: Folder
 };
