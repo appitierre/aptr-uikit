@@ -55,6 +55,11 @@ var FlatButton = React.createClass({
 		return React.createElement(
 			'button',
 			{ className: this.getButtonClassName(), onClick: this.props.onClick },
+			React.createElement(
+				'div',
+				{ className: 'tool-tip' },
+				this.props.toolTip
+			),
 			this.getIcon(),
 			this.getText()
 		);

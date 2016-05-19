@@ -152,6 +152,9 @@ button {
 .button-action:disabled:hover {
   background-color: #586272;
 }
+.button-flat {
+  position: relative;
+}
 .button-flat:hover,
 .button-flat:active,
 .button-flat:focus {
@@ -203,6 +206,16 @@ button {
 }
 .button-flat:disabled:hover {
   background-color: #586272;
+}
+.button-flat .tool-tip {
+  display: none;
+}
+.button-flat:hover .tool-tip {
+  position: absolute;
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  background-color: #f0f0f8;
 }
 .button-play {
   z-index: 10;
