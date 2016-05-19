@@ -13,7 +13,6 @@ var Tag = require('./components/tag/tag');
 var RangeSlider = require('./components/rangeSlider/rangeSlider');
 var Pagination = require('./components/pagination/pagination');
 var ButtonGroup = require('./components/buttonGroup/buttonGroup');
-var PlayButton = require('./uiElements/components/buttons/playButton.jsx');
 
 module.exports = {
     Button: Button,
@@ -28,6 +27,5 @@ module.exports = {
     Tag: Tag,
     RangeSlider: RangeSlider,
     Pagination: Pagination,
-    ButtonGroup: ButtonGroup,
-    PlayButton: PlayButton
+    ButtonGroup: ButtonGroup
 };
