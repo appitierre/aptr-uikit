@@ -50,18 +50,39 @@ var FlatButton = React.createClass({
 		}
 	},
 
+	getTopToolTip: function getTopToolTip() {
+		if (this.props.toolTip) {
+			if (this.props.toolTipPosition === 'top' || !this.props.toolTipPosition) {
+				return React.createElement(
+					'div',
+					{ className: 'tool-tip-top' },
+					this.props.toolTip
+				);
+			}
+		}
+	},
+
+	getBottomToolTip: function getBottomToolTip() {
+		if (this.props.toolTip) {
+			if (this.props.toolTipPosition === 'bottom') {
+				return React.createElement(
+					'div',
+					{ className: 'tool-tip-bottom' },
+					this.props.toolTip
+				);
+			}
+		}
+	},
+
 	//Renders the entire flat button.
 	render: function render() {
 		return React.createElement(
 			'button',
 			{ className: this.getButtonClassName(), onClick: this.props.onClick },
-			React.createElement(
-				'div',
-				{ className: 'tool-tip' },
-				this.props.toolTip
-			),
+			this.getTopToolTip(),
 			this.getIcon(),
-			this.getText()
+			this.getText(),
+			this.getBottomToolTip()
 		);
 	}
 

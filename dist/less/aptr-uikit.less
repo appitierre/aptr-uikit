@@ -207,15 +207,36 @@ button {
 .button-flat:disabled:hover {
   background-color: #586272;
 }
-.button-flat .tool-tip {
+.button-flat .tool-tip-bottom {
   display: none;
 }
-.button-flat:hover .tool-tip {
+.button-flat:hover .tool-tip-bottom {
   position: absolute;
   display: block;
   border: 1px solid #ddd;
   border-radius: 2px;
   background-color: #f0f0f8;
+  width: 100px;
+}
+.button-flat .tool-tip-top {
+  display: none;
+}
+.button-flat:hover .tool-tip-top {
+  position: absolute;
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  background-color: #f0f0f8;
+  width: 100px;
+  bottom: 25px;
+}
+.button-flat:hover .tool-tip-top:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid black;
 }
 .button-play {
   z-index: 10;
@@ -293,7 +314,7 @@ button {
   border: 1px solid #8b95a5;
   color: #434a54;
   border-radius: 2px;
-  margin-bottom: 1px;
+  margin-bottom: 0px;
   transition: color 0.3s, background-color 0.3s;
   font-size: 13px;
   background-color: #fff;
@@ -312,7 +333,7 @@ button {
   margin-bottom: 0px;
 }
 .action-bar-inner {
-  padding: 4px 12px;
+  padding: 4px 20px;
 }
 .loading-inner {
   padding: 20px 0px;
@@ -440,10 +461,10 @@ button {
 }
 .pagination .page-count {
   float: left;
-  padding: 3px 18px;
+  padding: 2px 18px 3px;
   background-color: #fff;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #8b95a5;
+  border-bottom: 1px solid #8b95a5;
 }
 .rangeslider {
   display: block;
@@ -506,7 +527,8 @@ button {
   background: #fff;
 }
 .button-group-toggle .button {
-  border: 1px solid #e0e0e8;
+  border: none;
+  border-radius: 0px;
 }
 .folder {
   float: left;
