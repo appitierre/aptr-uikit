@@ -230,17 +230,43 @@ button {
         }
     }
 
-    .tool-tip {
+    .tool-tip-bottom {
         display: none;
     }
 
     &:hover {
-        .tool-tip {
+        .tool-tip-bottom {
             position: absolute;
             display: block;
             border: 1px solid #ddd;
             border-radius: 2px;
             background-color: #f0f0f8;
+            width: 100px;
+        }
+    }
+
+    .tool-tip-top {
+        display: none;
+    }
+
+    &:hover {
+        .tool-tip-top {
+            position: absolute;
+            display: block;
+            border: 1px solid #ddd;
+            border-radius: 2px;
+            background-color: #f0f0f8;
+            width: 100px;
+            bottom: 25px;
+            
+            &:after {
+                content: '';
+                width: 0; 
+                height: 0; 
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-top: 20px solid black;
+            }
         }
     }
 }

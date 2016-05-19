@@ -110,7 +110,7 @@ var Container = React.createClass({
                         onChange={this.onChange} 
                         buttonType="primary" 
                         value="menu" 
-                        shouldUseToggle={true}
+                        shouldUseToggle={true} 
                         buttons={[
                         {
                             _icon: "menu",
@@ -154,11 +154,11 @@ var Container = React.createClass({
                         onClick: FUNCTION, ">
 
                 <div className="primary-flat-buttons">
-                    <FlatButton className="primary article-item-buttons-edit-article " icon="pencil4" onClick={this.onClick}/>
-                    <FlatButton className="secondary article-item-buttons-move-article-down " icon="exit-down2" onClick={this.onClick}/>
-                    <FlatButton className="alert article-item-buttons-add-article-divider " icon="picture2" onClick={this.onClick}/>
-                    <FlatButton className="primary article-item-buttons-paste-article " icon="paste" onClick={this.onClick}/>
-                    <FlatButton className="alert" icon="trash" onClick={this.onClick} toolTip="delete here"/>
+                    <FlatButton className="article-item-buttons-edit-article " type="primary" icon="pencil4" toolTip="edit button" toolTipPosition="top" onClick={this.onClick}/>
+                    <FlatButton className="article-item-buttons-move-article-down " type="secondary" icon="exit-down2" onClick={this.onClick}/>
+                    <FlatButton className="alert article-item-buttons-add-article-divider " toolTip="add here" icon="picture2" toolTipPosition="bottom" onClick={this.onClick}/>
+                    <FlatButton className="primary article-item-buttons-paste-article " toolTip="paste here" icon="paste" onClick={this.onClick}/>
+                    <FlatButton className="alert" icon="trash" onClick={this.onClick} toolTip="delete here" toolTipPosition="bottom"/>
 
                     <FlatButton className="secondary" icon="star" text="secondary flat" onClick={this.onClick}/>
                     <FlatButton className="primary" icon="star" text="primary flat" onClick={this.onClick}/>
