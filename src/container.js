@@ -16,9 +16,6 @@ var ButtonGroup = require('./uiElements/components/buttonGroup/buttonGroup.jsx')
 var Folder = require('./uiElements/components/folder/folder.jsx');
 var ActionBar = require('./uiElements/components/actions/actionBar.jsx');
 var ListItem = require('./uiElements/components/list/listItem.jsx');
-var PlayButton = require('./uiElements/components/buttons/playButton.jsx')
-
-
 
 
 var Container = React.createClass({
@@ -75,8 +72,6 @@ var Container = React.createClass({
                     <Button icon="arrow-left" onClick={this.onClick}/>
                     <Button icon="star" text="full width button" onClick={this.onClick} className="alert full-width"/>
 
-                    <PlayButton type="primary" onClick={this.onClick}/>
-                     
                 </Section>
 
                 <Section
@@ -163,7 +158,7 @@ var Container = React.createClass({
                     <FlatButton className="secondary article-item-buttons-move-article-down " icon="exit-down2" onClick={this.onClick}/>
                     <FlatButton className="alert article-item-buttons-add-article-divider " icon="picture2" onClick={this.onClick}/>
                     <FlatButton className="primary article-item-buttons-paste-article " icon="paste" onClick={this.onClick}/>
-                    <FlatButton className="alert" icon="trash" onClick={this.onClick}/>
+                    <FlatButton className="alert" icon="trash" onClick={this.onClick} toolTip="delete here"/>
 
                     <FlatButton className="secondary" icon="star" text="secondary flat" onClick={this.onClick}/>
                     <FlatButton className="primary" icon="star" text="primary flat" onClick={this.onClick}/>

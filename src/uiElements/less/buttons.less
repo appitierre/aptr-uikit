@@ -183,6 +183,7 @@ button {
 }
 
 .button-flat {
+    position: relative;
     &:hover, &:active, &:focus {
         color:@button-text-hover-color;
         outline:none;
@@ -226,6 +227,20 @@ button {
         background-color:darken(@button-color, 20%);
         &:hover {
             background-color:darken(@button-color, 20%);
+        }
+    }
+
+    .tool-tip {
+        display: none;
+    }
+
+    &:hover {
+        .tool-tip {
+            position: absolute;
+            display: block;
+            border: 1px solid #ddd;
+            border-radius: 2px;
+            background-color: #f0f0f8;
         }
     }
 }
