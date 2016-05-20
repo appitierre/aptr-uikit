@@ -66,7 +66,7 @@ var FlatButton = React.createClass({
 		if (this.props.toolTip) {
 			if (this.props.toolTipPosition === 'bottom') {
 				return React.createElement(
-					'div',
+					'span',
 					{ className: 'tool-tip-bottom' },
 					this.props.toolTip
 				);

@@ -70,13 +70,39 @@ var Button = React.createClass({
         }
     },
 
+    getTopToolTip: function getTopToolTip() {
+        if (this.props.toolTip) {
+            if (this.props.toolTipPosition === 'top' || !this.props.toolTipPosition) {
+                return React.createElement(
+                    'div',
+                    { className: 'tool-tip-top' },
+                    this.props.toolTip
+                );
+            }
+        }
+    },
+
+    getBottomToolTip: function getBottomToolTip() {
+        if (this.props.toolTip) {
+            if (this.props.toolTipPosition === 'bottom') {
+                return React.createElement(
+                    'span',
+                    { className: 'tool-tip-bottom' },
+                    this.props.toolTip
+                );
+            }
+        }
+    },
+
     render: function render() {
         return React.createElement(
             'button',
             { disabled: this.props.disabled, className: this.getButtonClassName(), onClick: this.props.onClick },
+            this.getTopToolTip(),
             this.getLeftIcon(),
             this.props.text,
-            this.getRightIcon()
+            this.getRightIcon(),
+            this.getBottomToolTip()
         );
     }
 

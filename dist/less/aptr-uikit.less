@@ -7,6 +7,7 @@ button {
   font-size: 13px;
 }
 .button {
+  position: relative;
   background: none;
   border: 0px solid #37bc98;
   background-color: #8b95a5;
@@ -95,6 +96,64 @@ button {
 .button:disabled:hover {
   background-color: #586272;
 }
+.button .tool-tip-bottom {
+  display: none;
+}
+.button:hover .tool-tip-bottom {
+  position: absolute;
+  border-radius: 2px;
+  background-color: #454545;
+  width: 100px;
+  bottom: -40px;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-left: -52px;
+  left: 50%;
+  color: #fff;
+  padding: 2px;
+  z-index: 100;
+}
+.button:hover .tool-tip-bottom:after {
+  position: absolute;
+  top: -33%;
+  margin-left: -8px;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #454545;
+}
+.button .tool-tip-top {
+  display: none;
+}
+.button:hover .tool-tip-top {
+  position: absolute;
+  border-radius: 2px;
+  background-color: #454545;
+  width: 100px;
+  bottom: 30px;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-left: -52px;
+  left: 50%;
+  color: #fff;
+  padding: 2px;
+  z-index: 100;
+}
+.button:hover .tool-tip-top:after {
+  position: absolute;
+  top: 100%;
+  margin-left: -8px;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #454545;
+}
 .button-action:hover,
 .button-action:active,
 .button-action:focus {
@@ -151,6 +210,64 @@ button {
 }
 .button-action:disabled:hover {
   background-color: #586272;
+}
+.button-action .tool-tip-bottom {
+  display: none;
+}
+.button-action:hover .tool-tip-bottom {
+  position: absolute;
+  border-radius: 2px;
+  background-color: #454545;
+  width: 100px;
+  bottom: -40px;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-left: -52px;
+  left: 50%;
+  color: #fff;
+  padding: 2px;
+  z-index: 100;
+}
+.button-action:hover .tool-tip-bottom:after {
+  position: absolute;
+  top: -33%;
+  margin-left: -8px;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #454545;
+}
+.button-action .tool-tip-top {
+  display: none;
+}
+.button-action:hover .tool-tip-top {
+  position: absolute;
+  border-radius: 2px;
+  background-color: #454545;
+  width: 100px;
+  bottom: 30px;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-left: -52px;
+  left: 50%;
+  color: #fff;
+  padding: 2px;
+  z-index: 100;
+}
+.button-action:hover .tool-tip-top:after {
+  position: absolute;
+  top: 100%;
+  margin-left: -8px;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #454545;
 }
 .button-flat {
   position: relative;
@@ -216,11 +333,29 @@ button {
 }
 .button-flat:hover .tool-tip-bottom {
   position: absolute;
-  display: block;
-  border: 1px solid #ddd;
   border-radius: 2px;
-  background-color: #f0f0f8;
+  background-color: #454545;
   width: 100px;
+  bottom: -40px;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-left: -52px;
+  left: 50%;
+  color: #fff;
+  padding: 2px;
+  z-index: 100;
+}
+.button-flat:hover .tool-tip-bottom:after {
+  position: absolute;
+  top: -33%;
+  margin-left: -8px;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #454545;
 }
 .button-flat .tool-tip-top {
   display: none;
@@ -230,13 +365,14 @@ button {
   border-radius: 2px;
   background-color: #454545;
   width: 100px;
-  bottom: 25px;
+  bottom: 30px;
   margin-bottom: 10px;
   display: inline-block;
   margin-left: -52px;
   left: 50%;
   color: #fff;
   padding: 2px;
+  z-index: 100;
 }
 .button-flat:hover .tool-tip-top:after {
   position: absolute;
@@ -397,16 +533,16 @@ button {
   position: absolute;
   font-size: 25px;
 }
-.drop-down button {
+.drop-down .drop-down-selector .button {
   margin: 0px;
-  background-color: #2c3e50;
 }
-.drop-down .button:hover,
-.drop-down .button:active,
-.drop-down .button:focus {
-  background-color: #2c3e50;
-  color: #fff;
-  outline: none;
+.drop-down .drop-down-item-container {
+  border: 1px solid #ddd;
+  width: 140px;
+}
+.drop-down .drop-down-item-container .drop-down-item {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
 }
 .tag-item {
   background-color: #eee;
