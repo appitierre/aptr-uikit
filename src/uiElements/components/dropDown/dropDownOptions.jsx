@@ -12,7 +12,7 @@ var DropDownOptions = React.createClass({
 	
 	getItems: function() {
 		if (this.state.isDisplayingList === true) {	
-			return _.map(this.props.options, function(item, index){
+			return _.map(this.props.options, function(item, key){
 				return (
 					<div className="drop-down-item">
 						{item.text}
@@ -22,10 +22,18 @@ var DropDownOptions = React.createClass({
 		}
 	},
 
+	getButtonIcon: function() {
+		if (this.state.isDisplayingList === false) {
+			return 'chevron-down'
+		} else {
+			return 'chevron-up'
+		}
+	},
+
 	getSelector: function() {
 		return (
 			<div className="drop-down-selector">
-				<Button type="primary" text="select" onClick={this.onSelectorClicked}/>
+				<Button type="secondary" text="select" onClick={this.onSelectorClicked} icon={this.getButtonIcon()} iconPosition='right' />
 			</div> 
 		)
 	},

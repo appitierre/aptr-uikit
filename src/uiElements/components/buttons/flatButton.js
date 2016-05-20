@@ -64,9 +64,9 @@ var FlatButton = React.createClass({
 		if (this.props.toolTip) {
 			if (this.props.toolTipPosition === 'bottom') {
 				return (
-					<div className="tool-tip-bottom">
+					<span className="tool-tip-bottom">
 						{this.props.toolTip}
-					</div>
+					</span>
 				)
 			}
 		}

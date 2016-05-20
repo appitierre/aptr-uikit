@@ -58,14 +58,40 @@ var Button = React.createClass({
                 <i className={this.getIconPositionClassName(this.props.iconPosition)}> </i>
             );
         }
+    },
+
+    getTopToolTip: function() {
+        if (this.props.toolTip) {
+            if (this.props.toolTipPosition === 'top' || !this.props.toolTipPosition) {
+                return (
+                    <div className="tool-tip-top">
+                        {this.props.toolTip}
+                    </div>
+                )
+            }
+        }
+    },
+
+    getBottomToolTip: function() {
+        if (this.props.toolTip) {
+            if (this.props.toolTipPosition === 'bottom') {
+                return (
+                    <span className="tool-tip-bottom">
+                        {this.props.toolTip}
+                    </span>
+                )
+            }
+        }
     },    
 
     render: function() {
         return (
             <button disabled={this.props.disabled} className={this.getButtonClassName()} onClick={this.props.onClick}>
+                    {this.getTopToolTip()}
                 {this.getLeftIcon()}
                 {this.props.text}
                 {this.getRightIcon()}
+                    {this.getBottomToolTip()}
             </button>
         );
     }

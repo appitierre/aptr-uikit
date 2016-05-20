@@ -88,12 +88,12 @@ var Container = React.createClass({
                         iconPosition: STRING 
                         disabled: BOOLEAN" >
 
-                    <Button icon="trash" text="Primary Button" className="primary" onClick={this.onClick}/>
+                    <Button icon="trash" text="Primary Button" className="primary" onClick={this.onClick} toolTip="oh yes primary" toolTipPosition="bottom"/>
                     <Button icon="star" iconPosition="right" text="Secondary Button" className="secondary" onClick={this.onClick}/>
                     <Button icon="trash" text="Alert Button" className="alert" onClick={this.onClick}/>
                     <Button disabled={true} className="primary" text="Disabled Button" onClick={this.onClick}/>
                     <Button text="Large Primary Button" className="primary large" onClick={this.onClick}/>
-                    <Button icon="arrow-left" onClick={this.onClick}/>
+                    <Button icon="arrow-left" onClick={this.onClick} toolTip="oh yes primary"/>
                     <Button icon="star" text="full width button" onClick={this.onClick} className="alert full-width"/>
 
                 </Section>

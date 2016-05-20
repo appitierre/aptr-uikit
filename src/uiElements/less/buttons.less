@@ -46,6 +46,7 @@ button {
 }
 
 .button {
+    position: relative;
     background:none;
     border:@button-border;
     background-color:@button-color;
@@ -127,6 +128,74 @@ button {
             background-color:darken(@button-color, 20%);
         }
     }
+
+    .tool-tip-bottom {
+        display: none;
+    }
+
+    &:hover {
+        .tool-tip-bottom {
+            position: absolute;
+            border-radius: 2px;
+            background-color: #454545;
+            width: 100px;
+            bottom: -40px;
+            margin-bottom: 10px;
+            display: inline-block;
+            margin-left: -52px;
+            left: 50%;
+            color: #fff;
+            padding: 2px;
+            z-index: 100;
+
+             &:after {
+                position: absolute;
+                top: -33%;
+                margin-left: -8px;
+                left: 50%;
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-bottom: 8px solid #454545;
+            }
+        }
+    }
+
+    .tool-tip-top {
+        display: none;
+    }
+
+    &:hover {
+        .tool-tip-top {
+            position: absolute;
+            border-radius: 2px;
+            background-color: #454545;
+            width: 100px;
+            bottom: 25px;
+            margin-bottom: 10px;
+            display: inline-block;
+            margin-left: -52px;
+            left: 50%;
+            color: #fff;
+            padding: 2px;
+            z-index: 100;
+            
+            &:after {
+                position:absolute;
+                top:100%;
+                margin-left:-8px;
+                left:50%;
+                content: '';
+                width: 0; 
+                height: 0; 
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-top: 8px solid #454545;
+            }
+        }
+    }
 }
 
 .button-action {
@@ -178,6 +247,74 @@ button {
         background-color:darken(@button-color, 20%);
         &:hover {
             background-color:darken(@button-color, 20%);
+        }
+    }
+
+    .tool-tip-bottom {
+        display: none;
+    }
+
+    &:hover {
+        .tool-tip-bottom {
+            position: absolute;
+            border-radius: 2px;
+            background-color: #454545;
+            width: 100px;
+            bottom: -40px;
+            margin-bottom: 10px;
+            display: inline-block;
+            margin-left: -52px;
+            left: 50%;
+            color: #fff;
+            padding: 2px;
+            z-index: 100;
+
+             &:after {
+                position: absolute;
+                top: -33%;
+                margin-left: -8px;
+                left: 50%;
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-bottom: 8px solid #454545;
+            }
+        }
+    }
+
+    .tool-tip-top {
+        display: none;
+    }
+
+    &:hover {
+        .tool-tip-top {
+            position: absolute;
+            border-radius: 2px;
+            background-color: #454545;
+            width: 100px;
+            bottom: 25px;
+            margin-bottom: 10px;
+            display: inline-block;
+            margin-left: -52px;
+            left: 50%;
+            color: #fff;
+            padding: 2px;
+            z-index: 100;
+            
+            &:after {
+                position:absolute;
+                top:100%;
+                margin-left:-8px;
+                left:50%;
+                content: '';
+                width: 0; 
+                height: 0; 
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-top: 8px solid #454545;
+            }
         }
     }
 }
@@ -252,6 +389,7 @@ button {
             left: 50%;
             color: #fff;
             padding: 2px;
+            z-index: 100;
 
              &:after {
                 position: absolute;
@@ -285,6 +423,7 @@ button {
             left: 50%;
             color: #fff;
             padding: 2px;
+            z-index: 100;
             
             &:after {
                 position:absolute;
