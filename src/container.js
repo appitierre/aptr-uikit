@@ -111,7 +111,8 @@ var Container = React.createClass({
                             _value: "trash"
                         }, {
                             _icon: "check",
-                            _value: "check"
+                            _value: "check",
+                            toolTip: "hey there"
                         }
                     ]} />
 
@@ -141,7 +142,9 @@ var Container = React.createClass({
                             _value: "menu"
                         }, {
                             _icon: "trash",
-                            _value: "trash"
+                            _value: "trash",
+                            toolTip: "hey there",
+                            toolTipPosition: "bottom"
                         }
                     ]} />
                     

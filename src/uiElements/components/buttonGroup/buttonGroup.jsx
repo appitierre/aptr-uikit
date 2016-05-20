@@ -51,6 +51,8 @@ var ButtonGroup = React.createClass({
 					key={index} 
 					className={className} 
 					icon={item._icon}
+					toolTip={item.toolTip}
+					toolTipPosition={item.toolTipPosition}
 				/>
 			)		
 		}, this)
@@ -73,7 +75,9 @@ var ButtonGroup = React.createClass({
 				}, this)} 
 				className={className} 
 				icon={item._icon}
-			/>
+				toolTip={item.toolTip}
+				toolTipPosition={item.toolTipPosition}
+			/> 
 		)
 	},
 
