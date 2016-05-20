@@ -17,7 +17,7 @@ var Folder = require('./uiElements/components/folder/folder.jsx');
 var ActionBar = require('./uiElements/components/actions/actionBar.jsx');
 var ListItem = require('./uiElements/components/list/listItem.jsx');
 var DropDownOptions = require('./uiElements/components/dropDown/dropDownOptions.jsx');
-
+var _ = require('underscore');
 //Array is just an example of how the Folder component returns the data.
 var Folders = [
         {
