@@ -1,30 +1,83 @@
 var React = require('react');
+var Button = require('../buttons/button'); 
+var _ = require('underscore');
 
-var SelectOption = React.createClass({
+var DropDownOptions = React.createClass({
 
-	getClassName: function() {
-		if (this.props.className) {
-			return 'select-option ' + this.props.className
-		} else {
-			return 'select-option'
+
+	getInitialState: function() {
+		return {
+			isDisplayingList: false,
+			value: this.props.value
 		}
+	},
+	
+	getItems: function() {
+		if (this.state.isDisplayingList === true) {	
+			return _.map(this.props.options, function(item, key){
+				return (
+					<div className="select-option-item" 
+						key={item.index} 
+						onClick={_.bind(function() {
+							this.onButtonItemClicked(item._value);
+						}, this)}>
+						{item.text}
+					</div>
+				)
+			}, this)
+		}
+	},
+
+	getButtonIcon: function() {
+		if (this.state.isDisplayingList === false) {
+			return 'chevron-down'
+		} else {
+			return 'chevron-up'
+		}
+	},
+
+	getSelector: function() {
+		return (
+			<div className="select-option-selector">
+				<Button type="secondary" text={this.state.value} onClick={this.onSelectorClicked} icon={this.getButtonIcon()} iconPosition='right' />
+			</div> 
+		)
+	},
+
+	renderClassName: function() {
+		if (this.props.className) {
+			return "select-option " + this.props.className;
+		} else {
+			return "select-option"
+		}
+ 	},
+
+ 	onButtonItemClicked: function(value) {
+ 		this.setState({
+ 			isDisplayingList: false,
+			value: value
+		});
+ 	},
+
+	onSelectorClicked: function() {
+		 var isDisplayingList = !this.state.isDisplayingList;
+        
+        this.setState({
+            isDisplayingList: isDisplayingList
+        });
 	},
 
 	render: function() {
 		return (
-			<div className={this.getClassName()} onChange={this.props.onChange}>
-				<select>
-					<option value={this.props.valueOne}>
-						{this.props.valueOne}
-					</option>
-					<option value={this.props.valueTwo}>
-						{this.props.valueTwo}
-					</option>
-				</select>
+			<div className={this.renderClassName()}>
+				{this.getSelector()}
+				<div className="select-option-item-container">	
+					{this.getItems()}				
+				</div>
 			</div>
 		);
 	}
 
 });
 
-module.exports = SelectOption;
+module.exports = DropDownOptions;

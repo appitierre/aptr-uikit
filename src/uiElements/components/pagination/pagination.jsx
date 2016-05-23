@@ -22,6 +22,30 @@ var Pagination = React.createClass({
 
 	},
 
+	renderToolTipLeft: function() {
+		if (this.props.toolTipLeftButton) {
+			return this.props.toolTipLeftButton
+		}
+	},
+
+	renderToolTipLeftPosition: function() {
+		if (this.props.toolTipLeftButtonPosition) {
+			return this.props.toolTipLeftButtonPosition
+		}
+	},
+
+	renderToolTipRight: function() {
+		if (this.props.toolTipRightButton) {
+			return this.props.toolTipRightButton
+		}
+	},
+
+	renderToolTipRightPosition: function() {
+		if (this.props.toolTipRightButtonPosition) {
+			return this.props.toolTipRightButtonPosition
+		}
+	},
+
 	isPreviousDisabled: function() {
 		if (this.props.currentPage === 1) {
 			return true;
@@ -46,7 +70,10 @@ var Pagination = React.createClass({
 					type={this.props.buttonType}
 					icon="arrow-left" 
 					disabled={this.isPreviousDisabled()}
-					onClick={this.props.onPreviousPageClicked}/>
+					onClick={this.props.onPreviousPageClicked}
+					toolTip={this.renderToolTipLeft()}
+					toolTipPosition={this.renderToolTipLeftPosition()}
+				/>
 				<div className="page-count">
 					{this.getPageCount()}
 				</div> 
@@ -55,7 +82,11 @@ var Pagination = React.createClass({
 					type={this.props.buttonType} 
 					icon='arrow-right' 
 					disabled={this.isNextDisabled()}
-					onClick={this.props.onNextPageClicked}/>
+					onClick={this.props.onNextPageClicked}
+					toolTip={this.renderToolTipRight()}	
+					toolTipPosition={this.renderToolTipRightPosition()}		
+				/>
+
 			</div>
 		);
 	}

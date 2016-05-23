@@ -16,7 +16,6 @@ var ButtonGroup = require('./uiElements/components/buttonGroup/buttonGroup.jsx')
 var Folder = require('./uiElements/components/folder/folder.jsx');
 var ActionBar = require('./uiElements/components/actions/actionBar.jsx');
 var ListItem = require('./uiElements/components/list/listItem.jsx');
-var DropDownOptions = require('./uiElements/components/dropDown/dropDownOptions.jsx');
 var _ = require('underscore');
 //Array is just an example of how the Folder component returns the data.
 var Folders = [
@@ -172,22 +171,32 @@ var Container = React.createClass({
                 </Section>
 
                 <Section
-                    title="DropDown"
+                    title="Select Option"
                     description="">
 
-                    <DropDownOptions 
+                    <SelectOption
+                        className="options"
+                        value="Ascending" 
                         options={[
                             {
-                                text: 'Ascending'
+                                text: 'Ascending',
+                                _value: 'Ascending',
+                                index: 0
                             },
                             {
-                                text: 'Descending'
+                                text: 'Descending',
+                                _value: 'Descending',
+                                index: 1
                             },
                             {
-                                text: 'Recent'
+                                text: 'Recent',
+                                _value: 'Recent',
+                                index: 2
                             },
                             {
-                                text: 'Oldest'
+                                text: 'Oldest',
+                                _value: 'Oldest',
+                                index: 3
                             }
                         ]}
                     />
@@ -243,7 +252,7 @@ var Container = React.createClass({
                     title="Pagination"
                     description="">
 
-                    <Pagination currentPage={1} totalPages={9} buttonType="secondary"/>
+                    <Pagination currentPage={1} totalPages={9} buttonType="secondary" toolTipRightButton="right" toolTipRightButtonPosition="bottom" toolTipLeftButton="left" />
                     
                 </Section>
                 
@@ -252,7 +261,7 @@ var Container = React.createClass({
                     description="">
                     <RangeSlider
                         onChange={(value) => console.log('range slider value:', value)}
-                        step={1}
+                       step={1}
                         min={1}
                         max={100}
                         defaultValue={30}

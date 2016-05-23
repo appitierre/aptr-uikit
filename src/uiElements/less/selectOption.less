@@ -1,0 +1,37 @@
+.select-option {
+	display: inline-block;
+	position: relative;
+	z-index: 100;
+
+	.select-option-selector {	
+		.button {
+			margin: 0px;
+		}
+	}
+
+	.select-option-item-container {
+		border: 1px solid #ddd;
+		width: 140px;
+		position: absolute;
+		background-color: #fff;
+		z-index: 100;
+
+		&:empty {
+			border: none;
+		}
+    	
+    	.select-option-item {
+    		border-bottom: 1px solid #ddd;
+    		padding: 8px;
+    		cursor: pointer;
+
+    		&:last-child {
+    			border-bottom: none;
+    		}
+
+    		&:hover {
+    			background-color: #f0f0f8;
+    		}
+    	}
+	}
+}
