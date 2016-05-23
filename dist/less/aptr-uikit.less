@@ -104,14 +104,14 @@ button {
   border-radius: 2px;
   background-color: #454545;
   width: 100px;
-  bottom: -40px;
+  bottom: -45px;
   margin-bottom: 10px;
   display: inline-block;
   margin-left: -52px;
   left: 50%;
   color: #fff;
   padding: 2px;
-  z-index: 100;
+  z-index: 1000;
 }
 .button:hover .tool-tip-bottom:after {
   position: absolute;
@@ -133,14 +133,14 @@ button {
   border-radius: 2px;
   background-color: #454545;
   width: 100px;
-  bottom: 30px;
+  bottom: 35px;
   margin-bottom: 10px;
   display: inline-block;
   margin-left: -52px;
   left: 50%;
   color: #fff;
   padding: 2px;
-  z-index: 100;
+  z-index: 1000;
 }
 .button:hover .tool-tip-top:after {
   position: absolute;
@@ -226,7 +226,7 @@ button {
   left: 50%;
   color: #fff;
   padding: 2px;
-  z-index: 100;
+  z-index: 1000;
 }
 .button-action:hover .tool-tip-bottom:after {
   position: absolute;
@@ -255,7 +255,7 @@ button {
   left: 50%;
   color: #fff;
   padding: 2px;
-  z-index: 100;
+  z-index: 1000;
 }
 .button-action:hover .tool-tip-top:after {
   position: absolute;
@@ -336,18 +336,18 @@ button {
   border-radius: 2px;
   background-color: #454545;
   width: 100px;
-  bottom: -40px;
+  top: 35px;
   margin-bottom: 10px;
   display: inline-block;
   margin-left: -52px;
   left: 50%;
   color: #fff;
   padding: 2px;
-  z-index: 100;
+  z-index: 1000;
 }
 .button-flat:hover .tool-tip-bottom:after {
   position: absolute;
-  top: -33%;
+  top: -32%;
   margin-left: -8px;
   left: 50%;
   content: '';
@@ -365,14 +365,14 @@ button {
   border-radius: 2px;
   background-color: #454545;
   width: 100px;
-  bottom: 30px;
+  top: -40px;
   margin-bottom: 10px;
   display: inline-block;
   margin-left: -52px;
   left: 50%;
   color: #fff;
   padding: 2px;
-  z-index: 100;
+  z-index: 1000;
 }
 .button-flat:hover .tool-tip-top:after {
   position: absolute;
@@ -533,16 +533,34 @@ button {
   position: absolute;
   font-size: 25px;
 }
-.drop-down .drop-down-selector .button {
+.select-option {
+  display: inline-block;
+  position: relative;
+  z-index: 100;
+}
+.select-option .select-option-selector .button {
   margin: 0px;
 }
-.drop-down .drop-down-item-container {
+.select-option .select-option-item-container {
   border: 1px solid #ddd;
   width: 140px;
+  position: absolute;
+  background-color: #fff;
+  z-index: 100;
 }
-.drop-down .drop-down-item-container .drop-down-item {
+.select-option .select-option-item-container:empty {
+  border: none;
+}
+.select-option .select-option-item-container .select-option-item {
   border-bottom: 1px solid #ddd;
   padding: 8px;
+  cursor: pointer;
+}
+.select-option .select-option-item-container .select-option-item:last-child {
+  border-bottom: none;
+}
+.select-option .select-option-item-container .select-option-item:hover {
+  background-color: #f0f0f8;
 }
 .tag-item {
   background-color: #eee;

@@ -74,7 +74,7 @@ var Button = React.createClass({
         if (this.props.toolTip) {
             if (this.props.toolTipPosition === 'top' || !this.props.toolTipPosition) {
                 return React.createElement(
-                    'div',
+                    'span',
                     { className: 'tool-tip-top' },
                     this.props.toolTip
                 );
