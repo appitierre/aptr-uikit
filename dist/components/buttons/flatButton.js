@@ -19,6 +19,10 @@ var FlatButton = React.createClass({
 		};
 	},
 
+	componentWillMount: function componentWillMount() {
+		this.getToolTipPositioning();
+	},
+
 	//The flat button component has a set className of button and what ever className has been passed
 	//in will be added on too the end.
 	getButtonClassName: function getButtonClassName() {
@@ -80,13 +84,17 @@ var FlatButton = React.createClass({
 		}
 	},
 
-	onButtonMouseOver: function onButtonMouseOver() {
+	getToolTipPositioning: function getToolTipPositioning() {
 		if (this.refs['tool-tip']) {
 			var width = this.refs['tool-tip'].offsetWidth;
 			this.setState({
 				toolTipPosition: -Math.floor(width / 2) + 'px'
 			});
 		}
+	},
+
+	onButtonMouseOver: function onButtonMouseOver() {
+		this.getToolTipPositioning();
 	},
 
 	//Renders the entire flat button.
