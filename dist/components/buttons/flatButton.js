@@ -13,6 +13,12 @@ var FlatButton = React.createClass({
 	displayName: 'FlatButton',
 
 
+	getInitialState: function getInitialState() {
+		return {
+			toolTipPosition: 0
+		};
+	},
+
 	//The flat button component has a set className of button and what ever className has been passed
 	//in will be added on too the end.
 	getButtonClassName: function getButtonClassName() {
@@ -36,7 +42,7 @@ var FlatButton = React.createClass({
 		if (this.props.text) {
 			return React.createElement(
 				'span',
-				null,
+				{ className: 'flat-button-text' },
 				this.props.text
 			);
 		}
@@ -55,7 +61,7 @@ var FlatButton = React.createClass({
 			if (this.props.toolTipPosition === 'top' || !this.props.toolTipPosition) {
 				return React.createElement(
 					'span',
-					{ className: 'tool-tip-top' },
+					{ style: { marginLeft: this.state.toolTipPosition }, ref: 'tool-tip', className: 'tool-tip tool-tip-top' },
 					this.props.toolTip
 				);
 			}
@@ -67,10 +73,19 @@ var FlatButton = React.createClass({
 			if (this.props.toolTipPosition === 'bottom') {
 				return React.createElement(
 					'span',
-					{ className: 'tool-tip-bottom' },
+					{ style: { marginLeft: this.state.toolTipPosition }, ref: 'tool-tip', className: 'tool-tip tool-tip-bottom' },
 					this.props.toolTip
 				);
 			}
+		}
+	},
+
+	onButtonMouseOver: function onButtonMouseOver() {
+		if (this.refs['tool-tip']) {
+			var width = this.refs['tool-tip'].offsetWidth;
+			this.setState({
+				toolTipPosition: -Math.floor(width / 2) + 'px'
+			});
 		}
 	},
 
@@ -78,7 +93,7 @@ var FlatButton = React.createClass({
 	render: function render() {
 		return React.createElement(
 			'button',
-			{ className: this.getButtonClassName(), onClick: this.props.onClick },
+			{ onMouseOver: this.onButtonMouseOver, className: this.getButtonClassName(), onClick: this.props.onClick },
 			this.getTopToolTip(),
 			this.getIcon(),
 			this.getText(),

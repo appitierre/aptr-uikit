@@ -34,6 +34,11 @@ button {
   color: #fff;
   outline: none;
 }
+.button:hover .tool-tip,
+.button:active .tool-tip,
+.button:focus .tool-tip {
+  display: block;
+}
 .button.primary {
   background-color: #3bafda;
   color: #fff;
@@ -96,178 +101,42 @@ button {
 .button:disabled:hover {
   background-color: #586272;
 }
-.button .tool-tip-bottom {
+.button .tool-tip {
   display: none;
-}
-.button:hover .tool-tip-bottom {
+  white-space: nowrap;
   position: absolute;
+  padding: 2px 6px 2px;
+  z-index: 1000;
   border-radius: 2px;
   background-color: #454545;
-  width: 100px;
-  bottom: -45px;
-  margin-bottom: 10px;
-  display: inline-block;
-  margin-left: -52px;
   left: 50%;
   color: #fff;
-  padding: 2px;
-  z-index: 1000;
 }
-.button:hover .tool-tip-bottom:after {
+.button .tool-tip:after {
   position: absolute;
-  top: -33%;
-  margin-left: -8px;
+  margin-left: -6px;
   left: 50%;
   content: '';
   width: 0;
   height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid #454545;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
+.button .tool-tip-bottom {
+  top: 100%;
+  margin-top: 6px;
+}
+.button .tool-tip-bottom:after {
+  top: -6px;
+  border-bottom: 6px solid #454545;
 }
 .button .tool-tip-top {
-  display: none;
+  bottom: 100%;
+  margin-bottom: 6px;
 }
-.button:hover .tool-tip-top {
-  position: absolute;
-  border-radius: 2px;
-  background-color: #454545;
-  width: 100px;
-  bottom: 35px;
-  margin-bottom: 10px;
-  display: inline-block;
-  margin-left: -52px;
-  left: 50%;
-  color: #fff;
-  padding: 2px;
-  z-index: 1000;
-}
-.button:hover .tool-tip-top:after {
-  position: absolute;
-  top: 100%;
-  margin-left: -8px;
-  left: 50%;
-  content: '';
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 8px solid #454545;
-}
-.button-action:hover,
-.button-action:active,
-.button-action:focus {
-  color: #748093;
-  outline: none;
-}
-.button-action.primary {
-  color: #3bafda;
-}
-.button-action.primary:hover,
-.button-action.primary:active,
-.button-action.primary:focus {
-  background-color: #269bc7;
-  color: #fff;
-}
-.button-action.warning {
-  background-color: #ed5565;
-  color: #fff;
-}
-.button-action.warning:hover,
-.button-action.warning:active,
-.button-action.warning:focus {
-  background-color: #e93044;
-  color: #fff;
-}
-.button-action.alert {
-  background-color: #ed5565;
-  color: #fff;
-}
-.button-action.alert:hover,
-.button-action.alert:active,
-.button-action.alert:focus {
-  background-color: #e93044;
-  color: #fff;
-}
-.button-action.secondary {
-  color: #9978D8;
-}
-.button-action.secondary:hover,
-.button-action.secondary:active,
-.button-action.secondary:focus {
-  background-color: #8158cf;
-  color: #fff;
-}
-.button-action .button-icon-position-left {
-  margin-right: 8px;
-}
-.button-action .button-icon-position-right {
-  margin-left: 8px;
-}
-.button-action:disabled {
-  cursor: auto;
-  background-color: #586272;
-}
-.button-action:disabled:hover {
-  background-color: #586272;
-}
-.button-action .tool-tip-bottom {
-  display: none;
-}
-.button-action:hover .tool-tip-bottom {
-  position: absolute;
-  border-radius: 2px;
-  background-color: #454545;
-  width: 100px;
-  bottom: -40px;
-  margin-bottom: 10px;
-  display: inline-block;
-  margin-left: -52px;
-  left: 50%;
-  color: #fff;
-  padding: 2px;
-  z-index: 1000;
-}
-.button-action:hover .tool-tip-bottom:after {
-  position: absolute;
-  top: -33%;
-  margin-left: -8px;
-  left: 50%;
-  content: '';
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid #454545;
-}
-.button-action .tool-tip-top {
-  display: none;
-}
-.button-action:hover .tool-tip-top {
-  position: absolute;
-  border-radius: 2px;
-  background-color: #454545;
-  width: 100px;
-  bottom: 30px;
-  margin-bottom: 10px;
-  display: inline-block;
-  margin-left: -52px;
-  left: 50%;
-  color: #fff;
-  padding: 2px;
-  z-index: 1000;
-}
-.button-action:hover .tool-tip-top:after {
-  position: absolute;
-  top: 100%;
-  margin-left: -8px;
-  left: 50%;
-  content: '';
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 8px solid #454545;
+.button .tool-tip-top:after {
+  bottom: -6px;
+  border-top: 6px solid #454545;
 }
 .button-flat {
   position: relative;
@@ -277,6 +146,11 @@ button {
 .button-flat:active,
 .button-flat:focus {
   color: #222222;
+}
+.button-flat:hover .tool-tip,
+.button-flat:active .tool-tip,
+.button-flat:focus .tool-tip {
+  display: block;
 }
 .button-flat.primary {
   color: #3bafda;
@@ -324,67 +198,46 @@ button {
 .button-flat:disabled:hover {
   background-color: #586272;
 }
-.button-flat span {
+.button-flat .flat-button-text {
   position: relative;
   top: -2px;
 }
-.button-flat .tool-tip-bottom {
+.button-flat .tool-tip {
   display: none;
-}
-.button-flat:hover .tool-tip-bottom {
+  white-space: nowrap;
   position: absolute;
+  padding: 2px 6px 2px;
+  z-index: 1000;
   border-radius: 2px;
   background-color: #454545;
-  width: 100px;
-  top: 35px;
-  margin-bottom: 10px;
-  display: inline-block;
-  margin-left: -52px;
   left: 50%;
   color: #fff;
-  padding: 2px;
-  z-index: 1000;
 }
-.button-flat:hover .tool-tip-bottom:after {
+.button-flat .tool-tip:after {
   position: absolute;
-  top: -32%;
-  margin-left: -8px;
+  margin-left: -6px;
   left: 50%;
   content: '';
   width: 0;
   height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid #454545;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
+.button-flat .tool-tip-bottom {
+  top: 100%;
+  margin-top: 6px;
+}
+.button-flat .tool-tip-bottom:after {
+  top: -6px;
+  border-bottom: 6px solid #454545;
 }
 .button-flat .tool-tip-top {
-  display: none;
+  bottom: 100%;
+  margin-bottom: 6px;
 }
-.button-flat:hover .tool-tip-top {
-  position: absolute;
-  border-radius: 2px;
-  background-color: #454545;
-  width: 100px;
-  top: -40px;
-  margin-bottom: 10px;
-  display: inline-block;
-  margin-left: -52px;
-  left: 50%;
-  color: #fff;
-  padding: 2px;
-  z-index: 1000;
-}
-.button-flat:hover .tool-tip-top:after {
-  position: absolute;
-  top: 100%;
-  margin-left: -8px;
-  left: 50%;
-  content: '';
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 8px solid #454545;
+.button-flat .tool-tip-top:after {
+  bottom: -6px;
+  border-top: 6px solid #454545;
 }
 .collection-items {
   padding: 16px;
