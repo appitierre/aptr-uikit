@@ -12,6 +12,12 @@ var React = require('react');
 
 var Button = React.createClass({
 
+    getInitialState: function() {
+        return {
+            toolTipPosition: 0
+        }
+    },
+
     //The button component has a set className of button and what ever className has been passed
     //in will be added on too the end.
     getButtonClassName: function() {
@@ -64,7 +70,7 @@ var Button = React.createClass({
         if (this.props.toolTip) {
             if (this.props.toolTipPosition === 'top' || !this.props.toolTipPosition) {
                 return (
-                    <span className="tool-tip-top">
+                    <span style={{marginLeft: this.state.toolTipPosition}} ref="tool-tip" className="tool-tip tool-tip-top">
                         {this.props.toolTip}
                     </span>
                 )
@@ -76,22 +82,31 @@ var Button = React.createClass({
         if (this.props.toolTip) {
             if (this.props.toolTipPosition === 'bottom') {
                 return (
-                    <span className="tool-tip-bottom">
+                    <span style={{marginLeft: this.state.toolTipPosition}} ref="tool-tip" className="tool-tip tool-tip-bottom">
                         {this.props.toolTip}
                     </span>
                 )
             }
         }
-    },    
+    },  
+
+    onButtonMouseOver: function() {
+        if (this.refs['tool-tip']) {
+            var width = this.refs['tool-tip'].offsetWidth;
+            this.setState({
+                toolTipPosition: -Math.floor(width/2) + 'px'
+            })
+        }
+    },
 
     render: function() {
         return (
-            <button disabled={this.props.disabled} className={this.getButtonClassName()} onClick={this.props.onClick}>
-                    {this.getTopToolTip()}
+            <button onMouseOver={this.onButtonMouseOver} disabled={this.props.disabled} className={this.getButtonClassName()} onClick={this.props.onClick}>
+                {this.getTopToolTip()}
                 {this.getLeftIcon()}
                 {this.props.text}
                 {this.getRightIcon()}
-                    {this.getBottomToolTip()}
+                {this.getBottomToolTip()}
             </button>
         );
     }

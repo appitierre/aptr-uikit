@@ -69,6 +69,9 @@ button {
         background-color:@button-hover-color;
         color:@button-text-hover-color;
         outline:none;
+        .tool-tip {
+            display: block;
+        }
     }
     &.primary {
         background-color:@button-primary-color;
@@ -129,194 +132,47 @@ button {
         }
     }
 
-    .tool-tip-bottom {
-        display: none;
-    }
-
-    &:hover {
-        .tool-tip-bottom {
+    .tool-tip {
+        display:none;
+        white-space: nowrap;
+        position: absolute;
+        padding: 2px 6px 2px;
+        z-index: 1000;
+        
+        border-radius: 2px;
+        background-color: #454545;
+        left: 50%;
+        color: #fff;
+        &:after {
             position: absolute;
-            border-radius: 2px;
-            background-color: #454545;
-            width: 100px;
-            bottom: -45px;
-            margin-bottom: 10px;
-            display: inline-block;
-            margin-left: -52px;
+            margin-left: -6px;
             left: 50%;
-            color: #fff;
-            padding: 2px;
-            z-index: 1000;
-
-             &:after {
-                position: absolute;
-                top: -33%;
-                margin-left: -8px;
-                left: 50%;
-                content: '';
-                width: 0;
-                height: 0;
-                border-left: 8px solid transparent;
-                border-right: 8px solid transparent;
-                border-bottom: 8px solid #454545;
-            }
-        }
-    }
-
-    .tool-tip-top {
-        display: none;
-    }
-
-    &:hover {
-        .tool-tip-top {
-            position: absolute;
-            border-radius: 2px;
-            background-color: #454545;
-            width: 100px;
-            bottom: 35px;
-            margin-bottom: 10px;
-            display: inline-block;
-            margin-left: -52px;
-            left: 50%;
-            color: #fff;
-            padding: 2px;
-            z-index: 1000;
-            
-            &:after {
-                position:absolute;
-                top:100%;
-                margin-left:-8px;
-                left:50%;
-                content: '';
-                width: 0; 
-                height: 0; 
-                border-left: 8px solid transparent;
-                border-right: 8px solid transparent;
-                border-top: 8px solid #454545;
-            }
-        }
-    }
-}
-
-.button-action {
-    &:hover, &:active, &:focus {
-        color:@button-hover-color;
-        outline:none;
-    }
-    &.primary {
-        color:@button-primary-color;
-        &:hover, &:active, &:focus {
-            background-color:@button-primary-hover-color;
-            color:@button-primary-text-hover-color;
-        }
-    }
-    &.warning {
-        background-color:@button-warning-color;
-        color:@button-warning-text-color;
-        &:hover, &:active, &:focus {
-            background-color:@button-warning-hover-color;
-            color:@button-warning-text-hover-color;
-        }
-    }
-    &.alert {
-        background-color:@button-alert-color;
-        color:@button-alert-text-color;
-        &:hover, &:active, &:focus {
-            background-color:@button-alert-hover-color;
-            color:@button-alert-text-hover-color;
-        }
-    }
-    &.secondary {
-        color:@button-secondary-color;
-        &:hover, &:active, &:focus {
-            background-color:@button-secondary-hover-color;
-            color:@button-secondary-text-hover-color;
-        }
-    }
-
-    .button-icon-position-left {
-        margin-right: 8px;
-    }
-
-    .button-icon-position-right {
-        margin-left: 8px;
-    }
-
-    &:disabled {
-        cursor:auto;
-        background-color:darken(@button-color, 20%);
-        &:hover {
-            background-color:darken(@button-color, 20%);
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
         }
     }
 
     .tool-tip-bottom {
-        display: none;
-    }
-
-    &:hover {
-        .tool-tip-bottom {
-            position: absolute;
-            border-radius: 2px;
-            background-color: #454545;
-            width: 100px;
-            bottom: -40px;
-            margin-bottom: 10px;
-            display: inline-block;
-            margin-left: -52px;
-            left: 50%;
-            color: #fff;
-            padding: 2px;
-            z-index: 1000;
-
-             &:after {
-                position: absolute;
-                top: -33%;
-                margin-left: -8px;
-                left: 50%;
-                content: '';
-                width: 0;
-                height: 0;
-                border-left: 8px solid transparent;
-                border-right: 8px solid transparent;
-                border-bottom: 8px solid #454545;
-            }
+        top: 100%;
+        margin-top: 6px;
+        &:after {
+            top: -6px;
+            border-bottom: 6px solid #454545;
         }
     }
 
     .tool-tip-top {
-        display: none;
-    }
-
-    &:hover {
-        .tool-tip-top {
-            position: absolute;
-            border-radius: 2px;
-            background-color: #454545;
-            width: 100px;
-            bottom: 30px;
-            margin-bottom: 10px;
-            display: inline-block;
-            margin-left: -52px;
-            left: 50%;
-            color: #fff;
-            padding: 2px;
-            z-index: 1000;
-            
-            &:after {
-                position:absolute;
-                top:100%;
-                margin-left:-8px;
-                left:50%;
-                content: '';
-                width: 0; 
-                height: 0; 
-                border-left: 8px solid transparent;
-                border-right: 8px solid transparent;
-                border-top: 8px solid #454545;
-            }
+        bottom: 100%;
+        margin-bottom:6px;
+        &:after {
+            bottom: -6px;
+            border-top: 6px solid #454545;
         }
     }
+    
 }
 
 .button-flat {
@@ -324,6 +180,9 @@ button {
     color: #555;
     &:hover, &:active, &:focus {
         color:darken(#555, 20%);
+        .tool-tip {
+            display: block;
+        }
     }
     &.primary {
         color:@button-primary-color;
@@ -367,76 +226,49 @@ button {
         }
     }
 
-    span {
+    .flat-button-text {
         position: relative;
         top: -2px;
     }
 
-    .tool-tip-bottom {
-        display: none;
+    .tool-tip {
+        display:none;
+        white-space: nowrap;
+        position: absolute;
+        padding: 2px 6px 2px;
+        z-index: 1000;
+        
+        border-radius: 2px;
+        background-color: #454545;
+        left: 50%;
+        color: #fff;
+        &:after {
+            position: absolute;
+            margin-left: -6px;
+            left: 50%;
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+        }
     }
 
-    &:hover {
-        .tool-tip-bottom {
-            position: absolute;
-            border-radius: 2px;
-            background-color: #454545;
-            width: 100px;
-            top: 35px;
-            margin-bottom: 10px;
-            display: inline-block;
-            margin-left: -52px;
-            left: 50%;
-            color: #fff;
-            padding: 2px;
-            z-index: 1000;
-
-             &:after {
-                position: absolute;
-                top: -32%;
-                margin-left: -8px;
-                left: 50%;
-                content: '';
-                width: 0;
-                height: 0;
-                border-left: 8px solid transparent;
-                border-right: 8px solid transparent;
-                border-bottom: 8px solid #454545;
-            }
+    .tool-tip-bottom {
+        top: 100%;
+        margin-top: 6px;
+        &:after {
+            top: -6px;
+            border-bottom: 6px solid #454545;
         }
     }
 
     .tool-tip-top {
-        display: none;
-    }
-
-    &:hover {
-        .tool-tip-top {
-            position: absolute;
-            border-radius: 2px;
-            background-color: #454545;
-            width: 100px;
-            top: -40px;
-            margin-bottom: 10px;
-            display: inline-block;
-            margin-left: -52px;
-            left: 50%;
-            color: #fff;
-            padding: 2px;
-            z-index: 1000;
-            
-            &:after {
-                position:absolute;
-                top:100%;
-                margin-left:-8px;
-                left:50%;
-                content: '';
-                width: 0; 
-                height: 0; 
-                border-left: 8px solid transparent;
-                border-right: 8px solid transparent;
-                border-top: 8px solid #454545;
-            }
+        bottom: 100%;
+        margin-bottom:6px;
+        &:after {
+            bottom: -6px;
+            border-top: 6px solid #454545;
         }
     }
 }

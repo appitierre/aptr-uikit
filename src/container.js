@@ -181,22 +181,26 @@ var Container = React.createClass({
                             {
                                 text: 'Ascending',
                                 _value: 'Ascending',
-                                index: 0
+                                index: 0,
+                                onClick: this.onClick
                             },
                             {
                                 text: 'Descending',
                                 _value: 'Descending',
-                                index: 1
+                                index: 1,
+                                onClick: this.onClick
                             },
                             {
                                 text: 'Recent',
                                 _value: 'Recent',
-                                index: 2
+                                index: 2,
+                                onClick: this.onClick
                             },
                             {
                                 text: 'Oldest',
                                 _value: 'Oldest',
-                                index: 3
+                                index: 3,
+                                onClick: this.onClick
                             }
                         ]}
                     />
