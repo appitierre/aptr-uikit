@@ -275,7 +275,7 @@ var Container = React.createClass({
                     title="ProgressBar"
                     description="">
 
-                    <ProgressBar progress={100}/>
+                    <ProgressBar progress={100} backgroundColor="hotpink"/>
                     
                 </Section>
                 
