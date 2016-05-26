@@ -12,10 +12,9 @@ var DropDown = React.createClass({
     getContent: function() {
 
         if (this.state._isOpen) {
-            var Content = this.props.component;
             return (
                 <div className="drop-down-content">
-                    <Content onDropDownClicked={this.onDropDownClicked}/>
+                    {this.props.component}
                 </div>
             );
         }
@@ -23,13 +22,13 @@ var DropDown = React.createClass({
     },
 
     onDropDownClicked: function(event) {
+        
         if (event) {
             event.preventDefault();
         }
-        
-        this.setState({
-            _isOpen: !this.state._isOpen
-        })
+            this.setState({
+                _isOpen: !this.state._isOpen
+            })
     },
 
     render: function() {

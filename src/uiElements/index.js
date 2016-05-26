@@ -13,6 +13,8 @@ var Pagination = require('./components/pagination/pagination');
 var ButtonGroup = require('./components/buttonGroup/buttonGroup');
 var Folder = require('./components/folder/folder');
 var DropDownOptions = require('./components/dropDown/dropDownOptions');
+var ProgressBar = require('./components/progressBar/progressBar');
+
 
 
 
@@ -31,6 +33,7 @@ module.exports = {
     Pagination: Pagination,
     ButtonGroup: ButtonGroup,
     Folder: Folder,
-    DropDownOptions: DropDownOptions
+    DropDownOptions: DropDownOptions,
+    ProgressBar: ProgressBar
 };
 

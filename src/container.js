@@ -16,6 +16,9 @@ var ButtonGroup = require('./uiElements/components/buttonGroup/buttonGroup.jsx')
 var Folder = require('./uiElements/components/folder/folder.jsx');
 var ActionBar = require('./uiElements/components/actions/actionBar.jsx');
 var ListItem = require('./uiElements/components/list/listItem.jsx');
+var DropDown = require('./uiElements/components/dropDown/dropDown.js');
+var ProgressBar = require('./uiElements/components/progressBar/progressBar.jsx');
+
 var _ = require('underscore');
 //Array is just an example of how the Folder component returns the data.
 var Folders = [
@@ -163,6 +166,14 @@ var Container = React.createClass({
 
 
                 <Section
+                    title="DropDown"
+                    description="">
+
+                    <DropDown icon="menu" component={<div>hello</div>}/>
+                    
+                </Section>
+
+                <Section
                     title="Card"
                     description="">
 
@@ -256,7 +267,15 @@ var Container = React.createClass({
                     title="Pagination"
                     description="">
 
-                    <Pagination currentPage={1} totalPages={9} buttonType="secondary" toolTipRightButton="right" toolTipRightButtonPosition="bottom" toolTipLeftButton="left" />
+                    <Pagination currentPage={1} totalPages={0} buttonType="secondary" toolTipRightButton="right" toolTipRightButtonPosition="bottom" toolTipLeftButton="left" />
+                    
+                </Section>
+
+                <Section
+                    title="ProgressBar"
+                    description="">
+
+                    <ProgressBar progress={100}/>
                     
                 </Section>
                 
