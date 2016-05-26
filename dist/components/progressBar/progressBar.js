@@ -4,7 +4,7 @@ var React = require('react');
 
 /* 
 PROPS
-width: number
+progress: number
 backgroundColor: string
 */
 
@@ -13,8 +13,8 @@ var ProgressBar = React.createClass({
 
 
 	componentWillMount: function componentWillMount() {
-		if (!this.props.width) {
-			console.warn("You're currently width property");
+		if (!this.props.progress) {
+			console.warn("You're currently missing progress property");
 		}
 	},
 
@@ -32,9 +32,15 @@ var ProgressBar = React.createClass({
 		}
 	},
 
+	getProgress: function getProgress() {
+		if (this.props.progress) {
+			return this.props.progress + '%';
+		}
+	},
+
 	getStyle: function getStyle() {
 		return {
-			width: this.props.progress,
+			width: this.getProgress(),
 			backgroundColor: this.getBackgroundcolor()
 		};
 	},
