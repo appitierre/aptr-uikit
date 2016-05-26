@@ -3,7 +3,6 @@
 var React = require('react');
 var ReactSlider = require('react-slider');
 
-//TODO - properly format documentation and make it better
 /*
 props:
 value: Number, for a controlled RangeSlider component
@@ -13,6 +12,7 @@ max: Number,
 step: Number,
 disabled: Boolean
 */
+
 var RangeSlider = React.createClass({
     displayName: 'RangeSlider',
 
