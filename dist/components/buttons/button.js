@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var classNames = require('classnames');
 
 // @props:
 // {
@@ -29,24 +30,17 @@ var Button = React.createClass({
     //The button component has a set className of button and what ever className has been passed
     //in will be added on too the end.
     getButtonClassName: function getButtonClassName() {
-        var className = 'button';
-        if (this.props.type) {
-            className += " " + this.props.type;
-        }
-        if (this.props.className) {
-            className += " " + this.props.className;
-        }
-        return className;
+        return classNames('button', this.props.type, this.props.className);
     },
 
     getIconPositionClassName: function getIconPositionClassName(position) {
-        return 'button-icon-position-' + position + ' ' + this.getIconClassName();
+        return classNames('button-icon-position-' + position, this.getIconClassName());
     },
 
     //Similar to the button className function, this takes in an icon prop. Make sure that the icon you pass in is
     //part of the linear icon pack.
     getIconClassName: function getIconClassName() {
-        return 'icon icon-' + this.props.icon;
+        return classNames('icon', 'icon-' + this.props.icon);
     },
 
     getLeftIcon: function getLeftIcon() {
@@ -80,27 +74,17 @@ var Button = React.createClass({
         }
     },
 
-    getTopToolTip: function getTopToolTip() {
+    getToolTip: function getToolTip() {
         if (this.props.toolTip) {
-            if (this.props.toolTipPosition === 'top' || !this.props.toolTipPosition) {
-                return React.createElement(
-                    'span',
-                    { style: { marginLeft: this.state.toolTipPosition }, ref: 'tool-tip', className: 'tool-tip tool-tip-top' },
-                    this.props.toolTip
-                );
-            }
-        }
-    },
-
-    getBottomToolTip: function getBottomToolTip() {
-        if (this.props.toolTip) {
-            if (this.props.toolTipPosition === 'bottom') {
-                return React.createElement(
-                    'span',
-                    { style: { marginLeft: this.state.toolTipPosition }, ref: 'tool-tip', className: 'tool-tip tool-tip-bottom' },
-                    this.props.toolTip
-                );
-            }
+            var className = classNames('tool-tip', {
+                'tool-tip-top': this.props.toolTipPosition === 'top' || !this.props.toolTipPosition,
+                'tool-tip-bottom': this.props.toolTipPosition === 'bottom'
+            });
+            return React.createElement(
+                'span',
+                { style: { marginLeft: this.state.toolTipPosition }, ref: 'tool-tip', className: className },
+                this.props.toolTip
+            );
         }
     },
 
@@ -121,11 +105,11 @@ var Button = React.createClass({
         return React.createElement(
             'button',
             { onMouseOver: this.onButtonMouseOver, disabled: this.props.disabled, className: this.getButtonClassName(), onClick: this.props.onClick },
-            this.getTopToolTip(),
+            this.getToolTip(),
             this.getLeftIcon(),
             this.props.text,
             this.getRightIcon(),
-            this.getBottomToolTip()
+            this.getToolTip()
         );
     }
 

@@ -1,13 +1,14 @@
 'use strict';
 
 var React = require('react');
+var classNames = require('classnames');
 
 var Alert = React.createClass({
 	displayName: 'Alert',
 
 
 	getClassName: function getClassName() {
-		return 'alert' + ' ' + this.props.className + ' ' + this.props.type;
+		return classNames('alert' + ' ' + this.props.className + ' ' + this.props.type);
 	},
 
 	getIconClassName: function getIconClassName() {

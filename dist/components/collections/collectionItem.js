@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var classNames = require('classnames');
 
 // @PROPS:
 // 	className: String,
@@ -14,11 +15,7 @@ var CollectionItem = React.createClass({
 
 
 	getClassName: function getClassName() {
-		if (this.props.className) {
-			return 'collection-item ' + this.props.className;
-		} else {
-			return 'collection-item';
-		}
+		return classNames('collection-item', this.props.className);
 	},
 
 	getActions: function getActions() {

@@ -1,26 +1,31 @@
-"use strict";
+'use strict';
 
 var React = require('react');
+var classNames = require('classnames');
 
 var Loading = React.createClass({
-	displayName: "Loading",
+	displayName: 'Loading',
 
+
+	getClassName: function getClassName() {
+		return classNames('loading', this.props.className);
+	},
 
 	render: function render() {
 		return React.createElement(
-			"div",
-			{ className: "loading" },
+			'div',
+			{ className: this.getClassName() },
 			React.createElement(
-				"div",
-				{ className: "loading-inner" },
+				'div',
+				{ className: 'loading-inner' },
 				React.createElement(
-					"div",
-					{ className: "loading-icon" },
-					React.createElement("div", { className: "loading-icon-spinner" })
+					'div',
+					{ className: 'loading-icon' },
+					React.createElement('div', { className: 'loading-icon-spinner' })
 				),
 				React.createElement(
-					"div",
-					{ className: "loading-text" },
+					'div',
+					{ className: 'loading-text' },
 					this.props.text
 				)
 			)

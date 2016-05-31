@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var classNames = require('classnames');
 
 /* 
 PROPS
@@ -19,11 +20,7 @@ var ProgressBar = React.createClass({
 	},
 
 	renderClassName: function renderClassName() {
-		if (this.props.className) {
-			return 'progress-bar' + this.props.className;
-		} else {
-			return 'progress-bar';
-		}
+		return classNames('progress-bar', this.props.className);
 	},
 
 	getBackgroundcolor: function getBackgroundcolor() {

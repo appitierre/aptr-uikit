@@ -2,6 +2,7 @@
 
 var React = require('react');
 var Button = require('../buttons/button');
+var classNames = require('classnames');
 
 // @props:
 // {
@@ -21,6 +22,10 @@ var Pagination = React.createClass({
 		var totalPages = this.props.totalPages;
 
 		return currentPage + '/' + totalPages;
+	},
+
+	getClassName: function getClassName() {
+		return classNames('pagination', this.props.className);
 	},
 
 	renderToolTipLeft: function renderToolTipLeft() {
@@ -66,7 +71,7 @@ var Pagination = React.createClass({
 	render: function render() {
 		return React.createElement(
 			'div',
-			{ className: 'pagination' },
+			{ className: this.getClassName() },
 			React.createElement(Button, {
 				className: 'pagination-previous-page',
 				type: this.props.buttonType,

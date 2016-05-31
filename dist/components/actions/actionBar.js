@@ -1,19 +1,14 @@
 'use strict';
 
 var React = require('react');
+var classNames = require('classnames');
 
 var ActionBar = React.createClass({
 	displayName: 'ActionBar',
 
 
 	getClassName: function getClassName() {
-		var className = 'action-bar';
-
-		if (this.props.className) {
-			className += ' ' + this.props.className;
-		}
-
-		return className;
+		return classNames('action-bar', this.props.className);
 	},
 
 	render: function render() {

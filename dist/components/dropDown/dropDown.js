@@ -2,6 +2,7 @@
 
 var React = require('react');
 var Button = require('../buttons/button');
+var classNames = require('classnames');
 
 var DropDown = React.createClass({
     displayName: 'DropDown',
@@ -24,6 +25,10 @@ var DropDown = React.createClass({
         }
     },
 
+    getClassName: function getClassName() {
+        return classNames('drop-down', this.props.className);
+    },
+
     onDropDownClicked: function onDropDownClicked(event) {
 
         if (event) {
@@ -37,7 +42,7 @@ var DropDown = React.createClass({
     render: function render() {
         return React.createElement(
             'div',
-            { className: 'drop-down' },
+            { className: this.getClassName() },
             React.createElement(Button, { onClick: this.onDropDownClicked, icon: this.props.icon, text: this.props.text }),
             this.getContent()
         );

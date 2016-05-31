@@ -2,17 +2,14 @@
 
 var React = require('react');
 var _ = require('underscore');
+var classNames = require('classnames');
 
 var Folder = React.createClass({
     displayName: 'Folder',
 
 
     getClassName: function getClassName() {
-        var className = 'folder clearfix';
-        if (this.props.className) {
-            className += ' ' + this.props.className;
-        }
-        return className;
+        return classNames('folder clearfix', this.props.folder.className);
     },
 
     onFolderClicked: function onFolderClicked() {

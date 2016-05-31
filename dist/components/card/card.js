@@ -1,20 +1,14 @@
 'use strict';
 
 var React = require('react');
+var classNames = require('classnames');
 
 var Card = React.createClass({
 	displayName: 'Card',
 
 
 	getClassName: function getClassName() {
-
-		var className = 'card';
-
-		if (this.props.className) {
-			className += ' ' + this.props.className;
-		}
-
-		return className;
+		return classNames('card', this.props.className);
 	},
 
 	render: function render() {
