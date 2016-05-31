@@ -1,5 +1,6 @@
 var React = require('react');
-var Button = require('../buttons/button'); 
+var Button = require('../buttons/button');
+var classNames = require('classnames') 
 
 var SearchBar = React.createClass({
 
@@ -21,16 +22,9 @@ var SearchBar = React.createClass({
 		}
 	},
 
-	// onkeydown: function(event) {
-	// 	if (event.keyCode === 13) {
-	// 	console.log('13')
-	// 		this.props.onClick();
-	// 	} else {
-	// 		console.log('no')
-	// 	}
-
-	// 	console.log('r')
-	// },
+	getClassName: function() {
+		return classNames('search-bar', this.props.className);
+	},	
 
 	onButtonClicked: function(event) {
 		event.preventDefault();
@@ -51,7 +45,7 @@ var SearchBar = React.createClass({
 
 	render: function() {
 		return (
-			<div className='search-bar'>
+			<div className={this.getClassName()}>
 				<input className='search-bar-input' value={this.state.value} onChange={this.onChange} />
 				{this.getButton()}
 			</div>								

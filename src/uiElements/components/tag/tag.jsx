@@ -1,4 +1,5 @@
 var React = require('react');
+var classNames = require('classnames');
 
 var Tag = React.createClass({
 
@@ -20,6 +21,10 @@ var Tag = React.createClass({
 			)
 		}
 	},
+
+	getClassName: function() {
+		return classNames('tag-item', this.props.className);
+	},	
 
 	render: function() {
 		return (

@@ -1,17 +1,10 @@
 var React = require('react');
+var classNames = require('classnames')
 
 var Card = React.createClass({
 
 	getClassName: function() {
-		
-		var className = 'card';
-
-		if (this.props.className) {
-			className += ' ' + this.props.className;
-		}
-
-		return className;
-
+		return classNames('card', this.props.className)
 	},
 
 	render: function() {

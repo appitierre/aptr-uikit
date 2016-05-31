@@ -18,13 +18,16 @@ var ActionBar = require('./uiElements/components/actions/actionBar.jsx');
 var ListItem = require('./uiElements/components/list/listItem.jsx');
 var DropDown = require('./uiElements/components/dropDown/dropDown.js');
 var ProgressBar = require('./uiElements/components/progressBar/progressBar.jsx');
+var ProgressIndicator = require('./uiElements/components/progressIndicator/progressIndicator.jsx');
+
 
 var _ = require('underscore');
 //Array is just an example of how the Folder component returns the data.
 var Folders = [
         {
             text: 'Maths',
-            _color: 'red'
+            _color: 'red',
+            className: 'maths-folder'
         },
         {
             text: 'English',
@@ -73,9 +76,9 @@ var Container = React.createClass({
                     description="">
 
                     <ActionBar>
-                        <Button text="primary" type="primary" icon="star"/>
+                        <Button text="primary" type="primary" icon="star" />
                     </ActionBar>
-                    
+
                 </Section>
 
                 <Section
@@ -104,7 +107,7 @@ var Container = React.createClass({
                     title="ButtonGroup"
                     description="">
 
-                    <ButtonGroup onChange={this.onChange} buttonType="primary" value="menu" buttons={[
+                    <ButtonGroup onChange={this.onChange} buttonType="primary" value="menu" className="group-view" buttons={[
                         {
                             _icon: "menu",
                             _value: "menu"
@@ -169,7 +172,7 @@ var Container = React.createClass({
                     title="DropDown"
                     description="">
 
-                    <DropDown icon="menu" component={<div>hello</div>}/>
+                    <DropDown icon="menu" className="menu-item" component={<div>hello</div>}/>
                     
                 </Section>
 
@@ -177,7 +180,7 @@ var Container = React.createClass({
                     title="Card"
                     description="">
 
-                    <Card />
+                    <Card className="asset review"/>
                     
                 </Section>
 
@@ -259,7 +262,7 @@ var Container = React.createClass({
                     title="Loading"
                     description="">
 
-                    <Loading text="Loading"/>
+                    <Loading text="Loading" className="login"/>
                     
                 </Section>
                 
@@ -267,7 +270,7 @@ var Container = React.createClass({
                     title="Pagination"
                     description="">
 
-                    <Pagination currentPage={1} totalPages={0} buttonType="secondary" toolTipRightButton="right" toolTipRightButtonPosition="bottom" toolTipLeftButton="left" />
+                    <Pagination currentPage={1} totalPages={0} buttonType="secondary" className="course" toolTipRightButton="right" toolTipRightButtonPosition="bottom" toolTipLeftButton="left" />
                     
                 </Section>
 
@@ -276,6 +279,14 @@ var Container = React.createClass({
                     description="">
 
                     <ProgressBar progress={66} />
+                    
+                </Section>
+
+                <Section
+                    title="ProgressIndicator"
+                    description="">
+
+                    <ProgressIndicator />
                     
                 </Section>
                 

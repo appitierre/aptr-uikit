@@ -1,5 +1,6 @@
 var React = require('react');
-var Button = require('../buttons/button'); 
+var Button = require('../buttons/button');
+var classNames = require('classnames'); 
 var _ = require('underscore');
 
 var DropDownOptions = React.createClass({
@@ -45,11 +46,7 @@ var DropDownOptions = React.createClass({
 	},
 
 	renderClassName: function() {
-		if (this.props.className) {
-			return "select-option " + this.props.className;
-		} else {
-			return "select-option"
-		}
+		return classNames('select-option', this.props.className);
  	},
 
  	onButtonItemClicked: function(value) {

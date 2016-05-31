@@ -1,4 +1,5 @@
 var React = require('react');
+var classNames = require('classnames');
 
 //## Flat Button
 
@@ -22,14 +23,7 @@ var FlatButton = React.createClass({
 	//The flat button component has a set className of button and what ever className has been passed
     //in will be added on too the end.
 	getButtonClassName: function() {
-		var className = 'button-flat';
-        if (this.props.type) {
-            className += " " + this.props.type;
-        } 
-        if (this.props.className) {
-            className += " " + this.props.className;
-        }
-        return className;
+        return classNames('button-flat', this.props.type, this.props.className);
 	},
 
 	//Similar to the button className function, this takes in an icon prop. Make sure that the icon you pass in is

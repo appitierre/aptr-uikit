@@ -1,5 +1,5 @@
 var React = require('react');
-
+var classNames = require('classnames');
 
 
 // @PROPS:
@@ -14,11 +14,7 @@ var React = require('react');
 var CollectionItem = React.createClass({
 
 	getClassName: function() {
-		if (this.props.className) {
-			return 'collection-item ' + this.props.className;
-		} else {
-			return 'collection-item';
-		}
+		return classNames('collection-item', this.props.className)
 	},
 
 	getActions: function() {

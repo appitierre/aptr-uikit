@@ -1,5 +1,6 @@
 var React = require('react');
 var Button = require('../buttons/button');
+var classNames = require('classnames')
 
 var DropDown = React.createClass({
 
@@ -21,6 +22,10 @@ var DropDown = React.createClass({
 
     },
 
+    getClassName: function() {
+        return classNames('drop-down', this.props.className);
+    },
+
     onDropDownClicked: function(event) {
         
         if (event) {
@@ -33,7 +38,7 @@ var DropDown = React.createClass({
 
     render: function() {
         return (
-            <div className="drop-down">
+            <div className={this.getClassName()}>
                 <Button onClick={this.onDropDownClicked} icon={this.props.icon} text={this.props.text}/>
                 {this.getContent()}
             </div>

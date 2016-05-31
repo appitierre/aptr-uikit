@@ -1,5 +1,6 @@
 var React = require('react');
 var Button = require('../buttons/button');
+var ClassNames = require('classnames')
 var _ = require('underscore');
 
 var ButtonGroup = React.createClass({
@@ -25,14 +26,7 @@ var ButtonGroup = React.createClass({
 	},
 
 	getClassName: function() {
-		var className = 'button-group-toggle';
-
-		if (this.props.className) {
-			className += ' ' + this.props.className;
-		}
-
-		return className;
-
+		return ClassNames('button-group-toggle', this.props.className);
 	},
 
 	getButtons: function() {
