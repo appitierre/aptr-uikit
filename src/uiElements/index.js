@@ -14,6 +14,7 @@ var ButtonGroup = require('./components/buttonGroup/buttonGroup');
 var Folder = require('./components/folder/folder');
 var DropDownOptions = require('./components/dropDown/dropDownOptions');
 var ProgressBar = require('./components/progressBar/progressBar');
+var itemToggle = require('./components/toggle/itemToggle');
 
 
 
@@ -34,6 +35,7 @@ module.exports = {
     ButtonGroup: ButtonGroup,
     Folder: Folder,
     DropDownOptions: DropDownOptions,
-    ProgressBar: ProgressBar
+    ProgressBar: ProgressBar,
+    itemToggle: itemToggle
 };
 

@@ -17,7 +17,7 @@ Compiles your files and starts a local server.
 $ npm start
 ```
 ##Documentation
-Compile and read documentation locally inside ```docs/```
+Compile and read documentation locally inside ```docs/``` . Looking in the container.js file, will display an example of all the different components also giving you an idea of the correct props too pass in.
 ```
 $ gulp docs
 ```

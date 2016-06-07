@@ -1,0 +1,47 @@
+.forms-boolean-toggle {
+  position: absolute;
+  margin-left: -9999px;
+}
+.forms-boolean-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+input.forms-boolean-toggle + label {
+  width: 40px;
+  height: 20px;
+  background-color: #dddddd;
+  border-radius: 20px;
+}
+input.forms-boolean-toggle + label:before,
+input.forms-boolean-toggle + label:after {
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  content: "";
+}
+input.forms-boolean-toggle + label:before {
+  right: 1px;
+  background-color: #f1f1f1;
+  border-radius: 30px;
+  transition: background 0.4s;
+}
+input.forms-boolean-toggle + label:after {
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: margin 0.4s;
+}
+input.forms-boolean-toggle:checked + label:before {
+  background-color: #8ce196;
+}
+input.forms-boolean-toggle:checked + label:after {
+  margin-left: 20px;
+}

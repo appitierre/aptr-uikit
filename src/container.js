@@ -19,6 +19,7 @@ var ListItem = require('./uiElements/components/list/listItem.jsx');
 var DropDown = require('./uiElements/components/dropDown/dropDown.js');
 var ProgressBar = require('./uiElements/components/progressBar/progressBar.jsx');
 var ProgressIndicator = require('./uiElements/components/progressIndicator/progressIndicator.jsx');
+var ItemToggle = require('./uiElements/components/toggle/itemToggle.jsx');
 
 
 var _ = require('underscore');
@@ -85,7 +86,8 @@ var Container = React.createClass({
                     className="ui-elements-button"
                     title="Button"
                     description="A Button indicates a possible interaction. A standard Button element in Evolve usally consists of an onClick event along with some text and an icon."
-                    propDescription="@props: 
+                    propDescription="
+                        @props: 
                         icon: STRING
                         text: STRING
                         className: STRING - primary, secondary and alert
@@ -255,6 +257,14 @@ var Container = React.createClass({
                 
                     {this.getFolders()}
                     
+                </Section>
+
+                <Section 
+                    title="Item toggle"
+                    description="">
+
+                    <ItemToggle className="" onChange={}/>
+
                 </Section>
 
                
