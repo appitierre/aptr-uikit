@@ -1,3 +1,5 @@
+var SyntaxHighlighter = require('react-syntax-highlighter');
+var docco = require('react-syntax-highlighter/dist/styles');
 var React = require('react');
 var Section = require('./section.js');
 var Button = require('./uiElements/components/buttons/button.js');
@@ -20,8 +22,7 @@ var DropDown = require('./uiElements/components/dropDown/dropDown.js');
 var ProgressBar = require('./uiElements/components/progressBar/progressBar.jsx');
 var ProgressIndicator = require('./uiElements/components/progressIndicator/progressIndicator.jsx');
 var ItemToggle = require('./uiElements/components/toggle/itemToggle.jsx');
-
-
+var AccordionItem = require('./uiElements/components/accordion/accordionItem.jsx');
 var _ = require('underscore');
 //Array is just an example of how the Folder component returns the data.
 var Folders = [
@@ -74,11 +75,22 @@ var Container = React.createClass({
 
                 <Section
                     title="ActionBar"
-                    description="">
+                    description=""
+                    documentation={
+                        <SyntaxHighlighter language='javascript' style={docco}> {'q'} </SyntaxHighlighter>
+                    }>
 
                     <ActionBar>
                         <Button text="primary" type="primary" icon="star" />
                     </ActionBar>
+
+                </Section>
+
+                <Section 
+                    title="Accordion item"
+                    description="">
+
+                    <AccordionItem content={ <div>HELLO</div>} itemTitle="accordion 1"/>
 
                 </Section>
 
@@ -107,7 +119,9 @@ var Container = React.createClass({
 
                 <Section
                     title="ButtonGroup"
-                    description="">
+                    description=""
+
+                >
 
                     <ButtonGroup onChange={this.onChange} buttonType="primary" value="menu" className="group-view" buttons={[
                         {
@@ -263,7 +277,7 @@ var Container = React.createClass({
                     title="Item toggle"
                     description="">
 
-                    <ItemToggle className="" onChange={}/>
+                    <ItemToggle className="" />
 
                 </Section>
 
