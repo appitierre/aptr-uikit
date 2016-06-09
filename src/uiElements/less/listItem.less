@@ -1,0 +1,101 @@
+ul {
+	border: 1px solid #ccc;
+}
+
+.list-item-wrapper {
+	position: relative;
+    background: none;
+    padding: 6px 10px;
+    color: #fff;
+    border-radius: 2px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 13px;
+    text-decoration: none;
+    display: inline-block;
+    &.large {
+        padding:16px;
+    }
+    &.full-width {
+        width: 100%;
+    }
+    &:hover, &:active, &:focus {
+        .tool-tip {
+            display: block;
+        }
+    }
+    &.primary {
+        background-color:@button-primary-color;
+        color:@button-primary-text-color;
+        &:hover, &:active, &:focus {
+            background-color:@button-primary-hover-color;
+            color:@button-primary-text-hover-color;
+        }
+    }
+    &.warning {
+        background-color:@button-warning-color;
+        color:@button-warning-text-color;
+        &:hover, &:active, &:focus {
+            background-color:@button-warning-hover-color;
+            color:@button-warning-text-hover-color;
+        }
+    }
+    &.alert {
+        background-color:@button-alert-color;
+        color:@button-alert-text-color;
+        &:hover, &:active, &:focus {
+            background-color:@button-alert-hover-color;
+            color:@button-alert-text-hover-color;
+        }
+    }
+    &.secondary {
+        background-color:@button-secondary-color;
+        color:@button-secondary-text-color;
+        &:hover, &:active, &:focus {
+            background-color:@button-secondary-hover-color;
+            color:@button-secondary-text-hover-color;
+        }
+    }
+
+    i {
+        display:inline-block;
+        font-size: 14px;
+    }
+
+    .button-icon-position-left {
+        margin-right: 6px;
+        position: relative;
+        top: 1px;
+    }
+
+    .button-icon-position-right {
+        margin-left: 6px;
+        position: relative;
+        top: 1px;
+    }
+}
+
+.list-item-icon {
+	float: left;
+}
+
+.list-item-text {
+	float: left;
+	font-size: 16px;
+    font-weight: 600;
+    line-height: 120%;
+    padding: 0px 12px;
+}
+
+.list-item-buttons {
+	float: left;
+	i {
+		font-size: 16px;
+	}
+
+	button {
+		padding: 0px 4px;
+	}
+}
+

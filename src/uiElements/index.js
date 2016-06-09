@@ -15,6 +15,7 @@ var Folder = require('./components/folder/folder');
 var DropDownOptions = require('./components/dropDown/dropDownOptions');
 var ProgressBar = require('./components/progressBar/progressBar');
 var itemToggle = require('./components/toggle/itemToggle');
+var listItem = require('./components/list/listItem')
 
 
 
@@ -36,6 +37,7 @@ module.exports = {
     Folder: Folder,
     DropDownOptions: DropDownOptions,
     ProgressBar: ProgressBar,
-    itemToggle: itemToggle
+    itemToggle: itemToggle,
+    listItem: ListItem
 };
 
