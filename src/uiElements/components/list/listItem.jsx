@@ -6,11 +6,13 @@ var ListItem = React.createClass({
 
 	renderButtons: function() {
 		if (this.props.buttons) {
-			return _.map(this.props.buttons, function(button){
+			return _.map(this.props.buttons, function(button, key){
 				return (
 					<FlatButton 
 						type={button.type}
 						icon={button.icon}
+						onClick={button.onClick}
+						key={key}
 					/>
 				)
 			})
@@ -23,21 +25,36 @@ var ListItem = React.createClass({
 		};
 	},
 
+	renderListItemDetail: function() {
+		if (this.props.itemDetail) {
+			return (
+				<div className="list-item-detail">
+					{this.props.itemDetail}
+				</div>
+			)
+		}
+	},
+
 	render: function() {
 		return (
-			<div className="list-item">
+			<li className="list-item">
 				<ListItemWrapper {...this.props}>
 					<div className="list-item-icon">
 						{this.renderIcon()}
 					</div>
-					<div className="list-item-text">
-						{this.props.text}
+					<div className="list-item-content">
+						<div className="list-item-content-inner">
+							<div className="list-item-text">
+								{this.props.itemText}
+							</div>
+							{this.renderListItemDetail()}
+						</div>
 					</div>
 					<div className="list-item-buttons">
 						{this.renderButtons()}
 					</div>
 				</ListItemWrapper>	
-			</div>
+			</li>
 		);
 	}
 });

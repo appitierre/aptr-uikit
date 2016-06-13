@@ -1,101 +1,73 @@
-ul {
-	border: 1px solid #ccc;
+.list-item {
+    margin:0;
+    padding:0;
+    list-style: none;
+    background-color:#fff;
+    border:1px solid #ccc;
+    border-top:none;
+    &:first-child {
+        border-top:1px solid #ccc;
+    }
+}
+
+.list-item-clickable {
+    display:block;
+    width:100%;
+    text-align: left;
+    transition: background-color 0.3s;
+    &:hover {
+        background-color:#f0f0f8;
+    }
+}
+
+.list-item-inner {
+    position:relative;
+    padding:8px;
 }
 
 .list-item-wrapper {
-	position: relative;
-    background: none;
-    padding: 6px 10px;
-    color: #fff;
-    border-radius: 2px;
-    margin-top: 6px;
-    margin-bottom: 6px;
-    transition: background-color 0.3s, color 0.3s;
+    /*background: none;
+    padding: 6px 3px;
+    border-radius: 0px;
     font-size: 13px;
     text-decoration: none;
-    display: inline-block;
-    &.large {
-        padding:16px;
-    }
-    &.full-width {
-        width: 100%;
-    }
-    &:hover, &:active, &:focus {
-        .tool-tip {
-            display: block;
-        }
-    }
-    &.primary {
-        background-color:@button-primary-color;
-        color:@button-primary-text-color;
-        &:hover, &:active, &:focus {
-            background-color:@button-primary-hover-color;
-            color:@button-primary-text-hover-color;
-        }
-    }
-    &.warning {
-        background-color:@button-warning-color;
-        color:@button-warning-text-color;
-        &:hover, &:active, &:focus {
-            background-color:@button-warning-hover-color;
-            color:@button-warning-text-hover-color;
-        }
-    }
-    &.alert {
-        background-color:@button-alert-color;
-        color:@button-alert-text-color;
-        &:hover, &:active, &:focus {
-            background-color:@button-alert-hover-color;
-            color:@button-alert-text-hover-color;
-        }
-    }
-    &.secondary {
-        background-color:@button-secondary-color;
-        color:@button-secondary-text-color;
-        &:hover, &:active, &:focus {
-            background-color:@button-secondary-hover-color;
-            color:@button-secondary-text-hover-color;
-        }
-    }
-
-    i {
-        display:inline-block;
-        font-size: 14px;
-    }
-
-    .button-icon-position-left {
-        margin-right: 6px;
-        position: relative;
-        top: 1px;
-    }
-
-    .button-icon-position-right {
-        margin-left: 6px;
-        position: relative;
-        top: 1px;
-    }
+    display: inline-block;*/
 }
 
 .list-item-icon {
-	float: left;
+    position:absolute;
+    top:50%;
+    left: 12px;
+    width:16px;
+    height:16px;
+    margin-top:-8px;
+    font-size: 16px;
 }
 
-.list-item-text {
-	float: left;
-	font-size: 16px;
-    font-weight: 600;
-    line-height: 120%;
-    padding: 0px 12px;
+.list-item-content {
+    width:80%;
+    float:left;
+    &-inner {
+        padding-left: 32px;
+    }
+    .list-item-text {
+    	font-size: 16px;
+        font-weight: 600;
+        line-height: 120%;
+    }
+    .list-item-detail {
+        display: block;
+        font-size: 12px;
+        color: #929292;
+    }
 }
 
 .list-item-buttons {
-	float: left;
-	i {
-		font-size: 16px;
-	}
+    width:20%;
+    float:left;
 
-	button {
-		padding: 0px 4px;
-	}
+    button {
+        margin-left: 3px;
+    }
 }
 

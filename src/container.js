@@ -432,31 +432,68 @@ var Container = React.createClass({
                     <ul>
                         <ListItem 
                             onClick={this.onClick} 
-                            text="this is the text for the list item"
+                            itemText="this is the text for the list item"
+                            itemDetail="the item detail"
                             icon="book2"
                             buttons={
                                 [{
                                     type: "primary",
-                                    text: "lists",
-                                    icon: "pencil4"    
+                                    icon: "pencil4",
+                                    onClick: this.onClick    
                                 },
                                 {
                                     type: "secondary",
-                                    text: "users",
                                     icon: "screen"    
-                                }
-                            ]}
-                        />
-                        <ListItem  
-                            text="second list item has been rendered"
-                            icon="book2"
-                            buttons={
-                                [{
+                                },
+                                {
+                                    type: "alert",
+                                    icon: "trash"    
+                                },
+                                {
+                                    type: "primary",
+                                    text: "lists",
+                                    icon: "enter-down"    
+                                },
+                                {
+                                    type: "primary",
+                                    icon: "pencil4",
+                                    onClick: this.onClick    
+                                },
+                                {
+                                    type: "secondary",
+                                    icon: "screen"    
+                                },
+                                {
+                                    type: "alert",
+                                    icon: "trash"    
+                                },
+                                {
                                     type: "primary",
                                     text: "lists",
                                     icon: "enter-down"    
                                 }
                             ]}
+                        />
+                        <ListItem  
+                            itemText="second list item has been rendered"
+                            icon="book2"
+                            buttons={
+                                [{
+                                    type: "alert",
+                                    icon: "trash",
+                                    onClick: this.onClick    
+                                }
+                            ]}
+                        />
+                        <ListItem  
+                            itemText="second list item has been rendered"
+                            icon="book2"
+                            onClick={this.onClick}
+                        />
+                        <ListItem  
+                            itemText="second list item has been rendered"
+                            icon="book2"
+                            onClick={this.onClick}
                         />
                     </ul>
                     

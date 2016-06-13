@@ -5,13 +5,15 @@ var ListItemWrapper = React.createClass({
 	renderWrapper: function() {
 		if (this.props.onClick && !this.props.buttons) {
 			return (
-				<button className="list-item-wrapper full-width" onClick={this.props.onClick}>
+				<button className="list-item-clickable" onClick={this.props.onClick}>
+					<div className="list-item-inner clearfix">
 					{this.props.children}
+					</div>
 				</button>
 			)
 		} else {
 			return (
-				<div className="list-item-wrapper full-width">
+				<div className="list-item-inner clearfix">
 					{this.props.children}
 				</div>
 			)
@@ -19,11 +21,7 @@ var ListItemWrapper = React.createClass({
 	},
 
 	render: function() {
-		return (
-			<div>
-				{this.renderWrapper()}
-			</div>
-		);
+		return this.renderWrapper()
 	}
 });
 
