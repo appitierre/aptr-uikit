@@ -25,6 +25,7 @@ var ProgressIndicator = require('./uiElements/components/progressIndicator/progr
 var ItemToggle = require('./uiElements/components/toggle/itemToggle.jsx');
 var AccordionItem = require('./uiElements/components/accordion/accordionItem.jsx');
 var ListItem = require('./uiElements/components/list/listItem');
+var CheckboxItem = require('./uiElements/components/checkboxItem/checkboxItem');
 
 var _ = require('underscore');
 //Array is just an example of how the Folder component returns the data.
@@ -221,6 +222,13 @@ var Container = React.createClass({
                         }
                     ]} />
                     
+                </Section>
+
+                <Section
+                    title="Checkbox Item"
+                    description="">
+
+                    <CheckboxItem id="yes" itemText="checkbox component"/>    
                 </Section>
 
                 <Section
@@ -453,24 +461,6 @@ var Container = React.createClass({
                                     type: "primary",
                                     text: "lists",
                                     icon: "enter-down"    
-                                },
-                                {
-                                    type: "primary",
-                                    icon: "pencil4",
-                                    onClick: this.onClick    
-                                },
-                                {
-                                    type: "secondary",
-                                    icon: "screen"    
-                                },
-                                {
-                                    type: "alert",
-                                    icon: "trash"    
-                                },
-                                {
-                                    type: "primary",
-                                    text: "lists",
-                                    icon: "enter-down"    
                                 }
                             ]}
                         />
@@ -487,12 +477,21 @@ var Container = React.createClass({
                         />
                         <ListItem  
                             itemText="second list item has been rendered"
+                            itemDetail="this is detail section"
                             icon="book2"
                             onClick={this.onClick}
                         />
                         <ListItem  
                             itemText="second list item has been rendered"
                             icon="book2"
+                            onClick={this.onClick}
+                        />
+                        <ListItem
+                            component={
+                                <div>
+                                    The compoonent
+                                </div>
+                            }
                             onClick={this.onClick}
                         />
                     </ul>

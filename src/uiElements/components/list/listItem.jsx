@@ -35,27 +35,41 @@ var ListItem = React.createClass({
 		}
 	},
 
-	render: function() {
-		return (
-			<li className="list-item">
-				<ListItemWrapper {...this.props}>
-					<div className="list-item-icon">
-						{this.renderIcon()}
-					</div>
-					<div className="list-item-content">
-						<div className="list-item-content-inner">
-							<div className="list-item-text">
-								{this.props.itemText}
-							</div>
-							{this.renderListItemDetail()}
+	renderItems: function() {
+		if (!this.props.component) {
+			return (
+				<li className="list-item">
+					<ListItemWrapper {...this.props}>
+						<div className="list-item-icon">
+							{this.renderIcon()}
 						</div>
-					</div>
-					<div className="list-item-buttons">
-						{this.renderButtons()}
-					</div>
-				</ListItemWrapper>	
-			</li>
-		);
+						<div className="list-item-content">
+							<div className="list-item-content-inner">
+								<div className="list-item-text">
+									{this.props.itemText}
+								</div>
+								{this.renderListItemDetail()}
+							</div>
+						</div>
+						<div className="list-item-buttons">
+							{this.renderButtons()}
+						</div>
+					</ListItemWrapper>
+				</li>
+			)
+		} else {
+			return (
+				<li className="list-item">
+					<ListItemWrapper {...this.props}>
+						{this.props.component}
+					</ListItemWrapper>
+				</li>
+			)
+		}
+	},
+
+	render: function() {
+		return this.renderItems()
 	}
 });
 
