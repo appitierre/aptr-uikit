@@ -16,9 +16,9 @@ var ButtonGroup = require('./components/buttonGroup/buttonGroup');
 var Folder = require('./components/folder/folder');
 var DropDownOptions = require('./components/dropDown/dropDownOptions');
 var ProgressBar = require('./components/progressBar/progressBar');
-var itemToggle = require('./components/toggle/itemToggle');
-var listItem = require('./components/list/listItem');
-var checkbox = require('./components/checkboxItem/checkboxItem');
+var ItemToggle = require('./components/toggle/itemToggle');
+var ListItem = require('./components/list/listItem');
+var Checkbox = require('./components/checkboxItem/checkboxItem');
 
 module.exports = {
     Button: Button,
@@ -37,7 +37,7 @@ module.exports = {
     Folder: Folder,
     DropDownOptions: DropDownOptions,
     ProgressBar: ProgressBar,
-    itemToggle: itemToggle,
-    listItem: ListItem,
-    checkboxItem: checkboxItem
+    ItemToggle: ItemToggle,
+    ListItem: ListItem,
+    CheckboxItem: CheckboxItem
 };
