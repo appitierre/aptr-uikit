@@ -280,11 +280,13 @@ button {
 }
 .search-bar {
   position: relative;
+  display: inline-block;
 }
 .search-bar .button {
   position: absolute;
   margin-top: 0px;
   right: 0;
+  padding: 4px 10px;
 }
 .search-bar-input {
   padding: 0px 30px 2px 5px;
@@ -569,6 +571,164 @@ button {
 .progress-bar .progress-bar-inner {
   height: 6px;
   background-color: #9978D8;
+}
+.forms-boolean-toggle {
+  position: absolute;
+  margin-left: -9999px;
+}
+.forms-boolean-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+input.forms-boolean-toggle + label {
+  width: 40px;
+  height: 20px;
+  background-color: #dddddd;
+  border-radius: 20px;
+}
+input.forms-boolean-toggle + label:before,
+input.forms-boolean-toggle + label:after {
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  content: "";
+}
+input.forms-boolean-toggle + label:before {
+  right: 1px;
+  background-color: #f1f1f1;
+  border-radius: 30px;
+  transition: background 0.4s;
+}
+input.forms-boolean-toggle + label:after {
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: margin 0.4s;
+}
+input.forms-boolean-toggle:checked + label:before {
+  background-color: #8ce196;
+}
+input.forms-boolean-toggle:checked + label:after {
+  margin-left: 20px;
+}
+.accordion-item button {
+  margin-bottom: 0px;
+}
+.accordion-item .accordion-item-content {
+  background-color: #eee;
+  padding: 14px 10px;
+}
+.list-item {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.list-item:first-child {
+  border-top: 1px solid #ccc;
+}
+.list-item-clickable {
+  display: block;
+  width: 100%;
+  text-align: left;
+  transition: background-color 0.3s;
+}
+.list-item-clickable:hover {
+  background-color: #f0f0f8;
+}
+.list-item-inner {
+  position: relative;
+  padding: 8px;
+}
+.list-item-wrapper {
+  /*background: none;
+    padding: 6px 3px;
+    border-radius: 0px;
+    font-size: 13px;
+    text-decoration: none;
+    display: inline-block;*/
+}
+.list-item-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  font-size: 16px;
+}
+.list-item-content {
+  width: 80%;
+  float: left;
+}
+.list-item-content-inner {
+  padding-left: 32px;
+}
+.list-item-content .list-item-text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 120%;
+}
+.list-item-content .list-item-detail {
+  display: block;
+  font-size: 12px;
+  color: #929292;
+}
+.list-item-buttons {
+  width: 20%;
+  float: left;
+}
+.list-item-buttons button {
+  margin-left: 3px;
+}
+.checkbox-item label {
+  color: #fff;
+  display: block;
+  margin-bottom: 3px;
+  position: relative;
+  z-index: 1;
+  background-color: #9978d8;
+  cursor: pointer;
+  border: #9978d8;
+  border-radius: 2px;
+}
+.checkbox-item input {
+  display: none;
+}
+.checkbox-item .checkbox-item-clickable {
+  width: 100%;
+}
+.checkbox-item .checkbox-item-state {
+  background: 0 0;
+  position: absolute;
+  left: 10px;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  margin-top: -11.5px;
+  z-index: 0;
+  overflow: hidden;
+}
+.checkbox-item .checkbox-item-state-default {
+  color: #fff;
+  padding: 1px;
+}
+.checkbox-item .checkbox-item-state-default:before {
+  content: "\e99d";
+}
+.checkbox-item .checkbox-item-text {
+  display: inline-block;
+  padding: 14px 10px 14px 43px;
+  font-size: 15px;
 }
 /*
     CSS just for UI elements
