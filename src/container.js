@@ -458,11 +458,6 @@ var Container = React.createClass({
                                 {
                                     type: "alert",
                                     icon: "trash"    
-                                },
-                                {
-                                    type: "primary",
-                                    text: "lists",
-                                    icon: "enter-down"    
                                 }
                             ]}
                         />
