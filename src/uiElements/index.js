@@ -16,6 +16,7 @@ var DropDownOptions = require('./components/dropDown/dropDownOptions');
 var ProgressBar = require('./components/progressBar/progressBar');
 var itemToggle = require('./components/toggle/itemToggle');
 var listItem = require('./components/list/listItem');
+var listItems = require('./components/list/listItems');
 var checkbox = require('./components/checkboxItem/checkboxItem')
 
 
@@ -39,5 +40,6 @@ module.exports = {
     itemToggle: itemToggle,
     listItem: ListItem,
     checkboxItem: checkboxItem
+    ListItems: ListItems
 };
 

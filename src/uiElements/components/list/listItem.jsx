@@ -1,6 +1,6 @@
 var React = require('react');
 var FlatButton = require('../buttons/flatButton');
-var ListItemWrapper = require('../wrappers/listItemWrapper');
+var ListItemWrapper = require('./listItemWrapper');
 
 var ListItem = React.createClass({
 
@@ -9,9 +9,7 @@ var ListItem = React.createClass({
 			return _.map(this.props.buttons, function(button, key){
 				return (
 					<FlatButton 
-						type={button.type}
-						icon={button.icon}
-						onClick={button.onClick}
+						{...button}
 						key={key}
 					/>
 				)

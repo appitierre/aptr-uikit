@@ -9,6 +9,16 @@ Here you should always have a title and body.
 
 var CollectionItemContent = React.createClass({
 
+	getContentTag: function() {
+		if (this.props.tag) {
+			return (
+				<div className="collection-item-content-tag">
+					{this.props.tag}
+				</div>
+			)
+		}
+	},
+
 	render: function() {
 		return (
 			<div>
@@ -17,6 +27,7 @@ var CollectionItemContent = React.createClass({
 					{this.props.title}
 					</h2>
 				</div>
+					{this.getContentTag()}
 				<div className='collection-item-content-body'>
 					{this.props.body}
 				</div>

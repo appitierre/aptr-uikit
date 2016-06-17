@@ -26,6 +26,8 @@ var ItemToggle = require('./uiElements/components/toggle/itemToggle.jsx');
 var AccordionItem = require('./uiElements/components/accordion/accordionItem.jsx');
 var ListItem = require('./uiElements/components/list/listItem');
 var CheckboxItem = require('./uiElements/components/checkboxItem/checkboxItem');
+var ListItems = require('./uiElements/components/list/listItems');
+
 
 var _ = require('underscore');
 //Array is just an example of how the Folder component returns the data.
@@ -251,7 +253,7 @@ var Container = React.createClass({
                 >
                     
 
-                    <CollectionItem className="course-collection-item" contentComponent={<CollectionItemContent title='The Title' body='this body this body this body this body'/>} actionsComponent={<CollectionItemAction />} />
+                    <CollectionItem className="course-collection-item" contentComponent={<CollectionItemContent title='The Title' body='this body this body this body this body' tag={<Tag text="Chemistry" tagColor="red" hasCloseButton={true}/>}/>} actionsComponent={<CollectionItemAction />} />
 
                 </Section>
 
@@ -437,7 +439,7 @@ var Container = React.createClass({
                     title="List"
                     description="">
 
-                    <ul>
+                    <ListItems/>
                         <ListItem 
                             onClick={this.onClick} 
                             itemText="this is the text for the list item"
@@ -494,7 +496,8 @@ var Container = React.createClass({
                             }
                             onClick={this.onClick}
                         />
-                    </ul>
+                    <ListItems/>
+                    
                     
                 </Section>
                
