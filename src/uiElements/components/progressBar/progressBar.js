@@ -10,7 +10,7 @@ backgroundColor: string
 var ProgressBar = React.createClass({
 
 	componentWillMount: function() {
-		if (!this.props.progress) {
+		if (!this.props.progress && this.props.progress === !0) {
 			console.warn("You're currently missing progress property");
 		}
 	},
@@ -28,7 +28,7 @@ var ProgressBar = React.createClass({
 	getProgress: function() {
 		if (this.props.progress) {
 			return this.props.progress + '%'
-		}
+		}  
 	},	
 
 	getStyle: function() {
