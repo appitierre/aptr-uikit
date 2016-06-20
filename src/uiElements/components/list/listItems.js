@@ -1,15 +1,26 @@
 var React = require('react');
+var classNames = require('classnames');
 
-var listItemContainer = React.createClass({
+var ListItems = React.createClass({
+
+	getClassName: function() {
+		return classNames('list-items', this.shouldShowAlternativeColors(), this.props.className);
+	},
+
+	shouldShowAlternativeColors: function() {
+		if (this.props.shouldShowAlternativeColors === true) {
+			return " alternative-colors"; 
+		}
+	},
 
 	render: function() {
 		return (
-			<ul className="list-items">
-				{this.props.children}
+			<ul className={this.getClassName()}>
+				{this.props.items}
 			</ul>
 		);
 	}
 
 });
 
-module.exports = listItemContainer;
+module.exports = ListItems;
