@@ -42,7 +42,7 @@ var ListItem = React.createClass({
 							{this.renderIcon()}
 						</div>
 						<div className="list-item-content">
-							<div className="list-item-content-inner">
+							<div className="list-item-content-inner" style={this.getIconStyle()}>
 								<div className="list-item-text">
 									{this.props.itemText}
 								</div>
@@ -63,6 +63,14 @@ var ListItem = React.createClass({
 					</ListItemWrapper>
 				</li>
 			)
+		}
+	},
+
+	getIconStyle: function() {
+		if (!this.props.icon) {
+			return {
+				paddingLeft: 8
+			}
 		}
 	},
 

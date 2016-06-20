@@ -444,7 +444,6 @@ var Container = React.createClass({
                             onClick={this.onClick} 
                             itemText="this is the text for the list item"
                             itemDetail="the item detail"
-                            icon="book2"
                             buttons={
                                 [{
                                     type: "primary",
