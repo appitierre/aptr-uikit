@@ -3,14 +3,14 @@ var classNames = require('classnames');
 
 /* 
 PROPS
-progress: number
+value: number
 backgroundColor: string
 */
 
 var ProgressBar = React.createClass({
 
 	componentWillMount: function() {
-		if (!this.props.progress && this.props.progress === !0) {
+		if (!this.props.value && this.props.value === !0) {
 			console.warn("You're currently missing progress property");
 		}
 	},
@@ -26,8 +26,8 @@ var ProgressBar = React.createClass({
 	},
 
 	getProgress: function() {
-		if (this.props.progress) {
-			return this.props.progress + '%'
+		if (this.props.value) {
+			return this.props.value + '%'
 		}  
 	},	
 
