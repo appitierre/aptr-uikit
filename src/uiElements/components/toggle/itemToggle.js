@@ -15,6 +15,10 @@ var ItemToggle = React.createClass({
 
 	onClick: function(event) {
 		this.props.onChange(event);
+
+		this.setState({
+			value: !this.state.value
+		})
 	},
 
 	render: function() {
