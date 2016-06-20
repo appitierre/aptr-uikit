@@ -501,7 +501,9 @@ var Container = React.createClass({
                     title="Loading"
                     description="">
 
-                    <Loading text="Loading" className="login"/>
+                    <Loading text="Loading" className="login" hasDataLoaded={false}>
+                        DATA HAS LOADED
+                    </Loading>
                     
                 </Section>
                 

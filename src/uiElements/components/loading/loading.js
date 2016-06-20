@@ -7,20 +7,32 @@ var Loading = React.createClass({
         return classNames('loading', this.props.className);
     },
 
-	render: function() {
-		return (
-			<div className={this.getClassName()}>
-				<div className="loading-inner">
-					<div className="loading-icon">
-						<div className="loading-icon-spinner">
+    getComponent: function() {
+    	if (this.props.hasDataLoaded) {
+    		return ( 
+    			<div>	
+    				{this.props.children}
+    			</div>
+    		)
+    	} else {
+    		return (
+				<div className={this.getClassName()}>
+					<div className="loading-inner">
+						<div className="loading-icon">
+							<div className="loading-icon-spinner">
+							</div>
+						</div>
+						<div className="loading-text">
+							{this.props.text}
 						</div>
 					</div>
-					<div className="loading-text">
-						{this.props.text}
-					</div>
 				</div>
-			</div>
-		);
+			);
+    	}
+    },
+
+	render: function() {
+		return this.getComponent();
 	}
 
 });
