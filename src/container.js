@@ -428,7 +428,11 @@ var Container = React.createClass({
                     title="Item toggle"
                     description="">
 
-                    <ItemToggle className="" toggleId="toggle" initialValue={false} onChange={this.onChange}/>
+                    <ItemToggle 
+                        className="" 
+                        toggleId="toggle" 
+                        initialValue={false} 
+                        onChange={this.onChange}/>
 
                 </Section>
 
