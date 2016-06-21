@@ -9,11 +9,7 @@ var Loading = React.createClass({
 
     getComponent: function() {
     	if (this.props.hasDataLoaded) {
-    		return ( 
-    			<div>	
-    				{this.props.children}
-    			</div>
-    		)
+    		return this.props.children 		
     	} else {
     		return (
 				<div className={this.getClassName()}>
