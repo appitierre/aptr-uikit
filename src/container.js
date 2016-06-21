@@ -517,7 +517,7 @@ var Container = React.createClass({
                     title="ProgressBar"
                     description="">
 
-                    <ProgressBar value={50} />
+                    <ProgressBar value={23} />
                     
                 </Section>
 
