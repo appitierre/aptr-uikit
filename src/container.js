@@ -425,7 +425,24 @@ var Container = React.createClass({
 
                 <Section 
                     title="Item toggle"
-                    description="">
+                    description=""
+                    documentation={
+                        <SyntaxHighlighter 
+                            language="javascript"
+                            style={docco}
+                            children={
+                                jsxToString(
+                                    <ItemToggle 
+                                        className="" 
+                                        toggleId="toggle" 
+                                        initialValue={false} 
+                                        onChange={this.onChange}
+                                    />
+                                )
+                            }
+                        />
+                    }
+                >
 
                     <ItemToggle 
                         className="" 
@@ -444,9 +461,7 @@ var Container = React.createClass({
                             style={docco} 
                             children={
                                 jsxToString(
-                                /*
-                                HereShould be ListItems wrap around component passing in ListItem in items prop
-                                */
+                                /*TODO: Update documentation with ListItems wrap around*/
                                     <ListItem 
                                         onClick={this.onClick}
                                         itemText="this is the text for the list item"
@@ -537,7 +552,9 @@ var Container = React.createClass({
                
                 <Section
                     title="Loading"
-                    description="">
+                    description=""
+                    /*TODO: Documentation to be added*/
+                >
 
                     <Loading text="Loading" className="login"/>
                     
@@ -545,31 +562,81 @@ var Container = React.createClass({
                 
                 <Section
                     title="Pagination"
-                    description="">
+                    description=""
+                    documentation={
+                        <SyntaxHighlighter 
+                            language="javascript"
+                            style={docco}
+                            children={
+                                jsxToString(
+                                    <Pagination 
+                                        currentPage={1} 
+                                        totalPages={0} 
+                                        buttonType="secondary" 
+                                        className="course" 
+                                        toolTipRightButton="right" 
+                                        toolTipRightButtonPosition="bottom" 
+                                        toolTipLeftButton="left" 
+                                    />
+                                )
+                            }
+                        />
+                    }
+                >
 
-                    <Pagination currentPage={1} totalPages={0} buttonType="secondary" className="course" toolTipRightButton="right" toolTipRightButtonPosition="bottom" toolTipLeftButton="left" />
+                    <Pagination 
+                        currentPage={1} 
+                        totalPages={0} 
+                        buttonType="secondary" 
+                        className="course" 
+                        toolTipRightButton="right" 
+                        toolTipRightButtonPosition="bottom" 
+                        toolTipLeftButton="left" 
+                    />
                     
                 </Section>
 
                 <Section
                     title="ProgressBar"
-                    description="">
+                    description=""
+                    documentation={
+                        <SyntaxHighlighter 
+                            language="javascript"
+                            style={docco}
+                            children={
+                                jsxToString(
+                                    <ProgressBar progress={66} />
+                                )
+                            }
+                        />
+                    }
+                >
 
                     <ProgressBar progress={66} />
-                    
-                </Section>
-
-                <Section
-                    title="ProgressIndicator"
-                    description="">
-
-                    <ProgressIndicator />
                     
                 </Section>
                 
                 <Section
                     title="Range Slider"
-                    description="">
+                    description=""
+                    documentation={
+                        <SyntaxHighlighter 
+                            language="javascript"
+                            style={docco}
+                            children={
+                                jsxToString(
+                                     <RangeSlider
+                                        onChange={(value) => console.log('range slider value:', value)}
+                                        step={1}
+                                        min={1}
+                                        max={100}
+                                        defaultValue={30}
+                                    />
+                                )
+                            }
+                        />
+                    }
+                >
                     <RangeSlider
                         onChange={(value) => console.log('range slider value:', value)}
                        step={1}
@@ -581,7 +648,19 @@ var Container = React.createClass({
                 
                 <Section
                     title="Search bar"
-                    description="">
+                    description=""
+                    documentation={
+                        <SyntaxHighlighter 
+                            language="javascript"
+                            style={docco}
+                            children={
+                                jsxToString(
+                                    <SearchBar onClick={this.onClick} onChange={this.onChange} />
+                                )
+                            }
+                        />
+                    }
+                >
 
                     <SearchBar onClick={this.onClick} onChange={this.onChange} />
                     
@@ -589,7 +668,19 @@ var Container = React.createClass({
 
                 <Section
                     title="Tag"
-                    description="">
+                    description=""
+                    documentation={
+                        <SyntaxHighlighter 
+                            language="javascript"
+                            style={docco}
+                            children={
+                                jsxToString(
+                                    <Tag text="Chemistry" tagColor="red" hasCloseButton={true}/>
+                                )
+                            }
+                        />
+                    }
+                >
 
                     <Tag text="Chemistry" tagColor="red" hasCloseButton={true}/>
                     <Tag text="Biology" tagColor="violet"/>
