@@ -417,8 +417,7 @@ var Container = React.createClass({
                 
                 <Section
                     title="Folder"
-                    description=""
-                >
+                    description="">
                 
                     {this.getFolders()}
                     
@@ -434,7 +433,42 @@ var Container = React.createClass({
 
                 <Section
                     title="List"
-                    description="">
+                    description=""
+                    documentation={
+                        <SyntaxHighlighter 
+                            language='javascript' 
+                            style={docco} 
+                            children={
+                                jsxToString(
+                                /*
+                                HereShould be ListItems wrap around component passing in ListItem in items prop
+                                */
+                                    <ListItem 
+                                        onClick={this.onClick}
+                                        itemText="this is the text for the list item"
+                                        itemDetail="the item detail"
+                                        icon="book2"
+                                        buttons={[
+                                            {
+                                                type: "primary",
+                                                icon: "pencil4",
+                                                onClick: this.onClick
+                                            },
+                                            {
+                                                type: "secondary",
+                                                icon: "screen"    
+                                            },
+                                            {
+                                                type: "alert",
+                                                icon: "trash"    
+                                            },
+                                        ]}
+                                    />
+                                )
+                            }
+                        />
+                    }
+                >
 
                     <ul>
                         <ListItem 
