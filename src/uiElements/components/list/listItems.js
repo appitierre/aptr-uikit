@@ -9,7 +9,7 @@ var ListItems = React.createClass({
 
 	shouldShowAlternativeColors: function() {
 		if (this.props.shouldShowAlternativeColors === true) {
-			return " alternative-colors"; 
+			return " list-items-alternative-colors"; 
 		}
 	},
 
