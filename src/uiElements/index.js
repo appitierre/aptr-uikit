@@ -37,6 +37,6 @@ module.exports = {
     ProgressBar: ProgressBar,
     ItemToggle: ItemToggle,
     ListItem: ListItem,
-    CheckboxItem: CheckboxItem,
+    CheckboxItem: CheckboxItem
 };
 
