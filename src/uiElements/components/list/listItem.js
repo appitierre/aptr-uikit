@@ -1,6 +1,6 @@
 var React = require('react');
 var FlatButton = require('../buttons/flatButton');
-var ListItemWrapper = require('../wrappers/listItemWrapper');
+var ListItemWrapper = require('./listItemWrapper');
 
 var ListItem = React.createClass({
 
@@ -9,9 +9,7 @@ var ListItem = React.createClass({
 			return _.map(this.props.buttons, function(button, key){
 				return (
 					<FlatButton 
-						type={button.type}
-						icon={button.icon}
-						onClick={button.onClick}
+						{...button}
 						key={key}
 					/>
 				)
@@ -44,7 +42,7 @@ var ListItem = React.createClass({
 							{this.renderIcon()}
 						</div>
 						<div className="list-item-content">
-							<div className="list-item-content-inner">
+							<div className="list-item-content-inner" style={this.getIconStyle()}>
 								<div className="list-item-text">
 									{this.props.itemText}
 								</div>
@@ -65,6 +63,14 @@ var ListItem = React.createClass({
 					</ListItemWrapper>
 				</li>
 			)
+		}
+	},
+
+	getIconStyle: function() {
+		if (!this.props.icon) {
+			return {
+				paddingLeft: 8
+			}
 		}
 	},
 

@@ -23,8 +23,10 @@ var ProgressBar = require('./uiElements/components/progressBar/progressBar');
 var ProgressIndicator = require('./uiElements/components/progressIndicator/progressIndicator');
 var ItemToggle = require('./uiElements/components/toggle/itemToggle');
 var AccordionItem = require('./uiElements/components/accordion/accordionItem');
-var ListItem = require('./uiElements/components/list/listItem');
 var CheckboxItem = require('./uiElements/components/checkboxItem/checkboxItem');
+var ListItem = require('./uiElements/components/list/listItem.jsx');
+var ListItems = require('./uiElements/components/list/listItems.js');
+
 
 var _ = require('underscore');
 //Array is just an example of how the Folder component returns the data.
@@ -250,7 +252,7 @@ var Container = React.createClass({
                 >
                     
 
-                    <CollectionItem className="course-collection-item" contentComponent={<CollectionItemContent title='The Title' body='this body this body this body this body'/>} actionsComponent={<CollectionItemAction />} />
+                    <CollectionItem className="course-collection-item" contentComponent={<CollectionItemContent title='The Title' body='this body this body this body this body' tag={<Tag text="Chemistry" tagColor="red" hasCloseButton={true}/>}/>} actionsComponent={<CollectionItemAction />} />
 
                 </Section>
 
@@ -440,64 +442,81 @@ var Container = React.createClass({
                     title="List"
                     description="">
 
-                    <ul>
-                        <ListItem 
-                            onClick={this.onClick} 
-                            itemText="this is the text for the list item"
-                            itemDetail="the item detail"
-                            icon="book2"
-                            buttons={
-                                [{
-                                    type: "primary",
-                                    icon: "pencil4",
-                                    onClick: this.onClick    
-                                },
-                                {
-                                    type: "secondary",
-                                    icon: "screen"    
-                                },
-                                {
-                                    type: "alert",
-                                    icon: "trash"    
-                                },
-                                {
-                                    type: "primary",
-                                    text: "lists",
-                                    icon: "enter-down"    
+                    <ListItems
+                        shouldShowAlternativeColors={true}
+                        className="dashboard-items"
+                        items={[
+                            <ListItem 
+                                onClick={this.onClick} 
+                                itemText="this is the text for the list item"
+                                itemDetail="the item detail"
+                                key={1}
+                                buttons={
+                                    [{
+                                        type: "primary",
+                                        icon: "pencil4",
+                                        onClick: this.onClick    
+                                    },
+                                    {
+                                        type: "secondary",
+                                        icon: "screen"    
+                                    },
+                                    {
+                                        type: "alert",
+                                        icon: "trash"    
+                                    },
+                                    {
+                                        type: "secondary",
+                                        icon: "screen"    
+                                    },
+                                    {
+                                        type: "primary",
+                                        icon: "pencil4",
+                                        onClick: this.onClick    
+                                    },
+                                    {
+                                        type: "alert",
+                                        icon: "trash"    
+                                    }
+                                ]}
+                            />,
+                            <ListItem  
+                                itemText="second list item has been rendered"
+                                icon="book2"
+                                key={2}
+                                buttons={
+                                    [{
+                                        type: "alert",
+                                        icon: "trash",
+                                        onClick: this.onClick    
+                                    }
+                                ]}
+                            />,
+                            <ListItem  
+                                itemText="second list item has been rendered"
+                                itemDetail="this is detail section"
+                                key={3}
+                                icon="book2"
+                                onClick={this.onClick}
+                            />,
+                            <ListItem  
+                                itemText="second list item has been rendered"
+                                icon="book2"
+                                key={4}
+                                onClick={this.onClick}
+                            />,
+                            <ListItem
+                                key={5}
+                                component={
+                                    <div>
+                                        The compoonent
+                                    </div>
                                 }
-                            ]}
-                        />
-                        <ListItem  
-                            itemText="second list item has been rendered"
-                            icon="book2"
-                            buttons={
-                                [{
-                                    type: "alert",
-                                    icon: "trash",
-                                    onClick: this.onClick    
-                                }
-                            ]}
-                        />
-                        <ListItem  
-                            itemText="second list item has been rendered"
-                            itemDetail="this is detail section"
-                            icon="book2"
-                            onClick={this.onClick}
-                        />
-                        <ListItem  
-                            itemText="second list item has been rendered"
-                            icon="book2"
-                            onClick={this.onClick}
-                        />
-                        <ListItem
-                            component={
-                                <div>
-                                    The compoonent
-                                </div>
-                            }
-                            onClick={this.onClick}
-                        />
-                    </ul>
+                                onClick={this.onClick}
+                            />
+                        ]}
+                    />
+                    
                     
                 </Section>
                
