@@ -13,6 +13,16 @@ var CollectionItemContent = React.createClass({
 	displayName: 'CollectionItemContent',
 
 
+	getContentTag: function getContentTag() {
+		if (this.props.tag) {
+			return React.createElement(
+				'div',
+				{ className: 'collection-item-content-tag' },
+				this.props.tag
+			);
+		}
+	},
+
 	render: function render() {
 		return React.createElement(
 			'div',
@@ -26,6 +36,7 @@ var CollectionItemContent = React.createClass({
 					this.props.title
 				)
 			),
+			this.getContentTag(),
 			React.createElement(
 				'div',
 				{ className: 'collection-item-content-body' },

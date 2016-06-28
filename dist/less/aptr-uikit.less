@@ -270,13 +270,13 @@ button {
   background-color: #fff;
   box-shadow: 0px 0px 10px -4px #000;
   border-radius: 3px;
-  margin: 40px auto 40px;
-  border: 1px solid #ccc;
   width: 280px;
+  overflow: hidden;
 }
 .card .card-inner {
   padding: 16px;
   min-height: 240px;
+  border: 1px solid #ccc;
 }
 .search-bar {
   position: relative;
@@ -460,7 +460,7 @@ button {
 }
 .pagination .page-count {
   float: left;
-  padding: 2px 18px 3px;
+  padding: 2px 18px 4px;
   background-color: #fff;
   border-top: 1px solid #8b95a5;
   border-bottom: 1px solid #8b95a5;
@@ -569,6 +569,7 @@ button {
   overflow: hidden;
 }
 .progress-bar .progress-bar-inner {
+  width: 0%;
   height: 6px;
   background-color: #9978D8;
 }
@@ -624,6 +625,15 @@ input.forms-boolean-toggle:checked + label:after {
 .accordion-item .accordion-item-content {
   background-color: #eee;
   padding: 14px 10px;
+}
+.list-items.list-items-alternative-colors .list-item {
+  transition: opacity 0.3s;
+}
+.list-items.list-items-alternative-colors .list-item:nth-child(even) {
+  background-color: #ebecee;
+}
+.list-items.list-items-alternative-colors .list-item:nth-child(odd) {
+  background-color: #d6d7d8;
 }
 .list-item {
   margin: 0;
@@ -684,11 +694,12 @@ input.forms-boolean-toggle:checked + label:after {
   color: #929292;
 }
 .list-item-buttons {
+  text-align: right;
   width: 20%;
   float: left;
 }
 .list-item-buttons button {
-  margin-left: 3px;
+  margin-left: 8px;
 }
 .checkbox-item label {
   color: #fff;

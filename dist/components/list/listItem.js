@@ -1,8 +1,10 @@
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var React = require('react');
 var FlatButton = require('../buttons/flatButton');
-var ListItemWrapper = require('../wrappers/listItemWrapper');
+var ListItemWrapper = require('./listItemWrapper');
 
 var ListItem = React.createClass({
 	displayName: 'ListItem',
@@ -11,12 +13,9 @@ var ListItem = React.createClass({
 	renderButtons: function renderButtons() {
 		if (this.props.buttons) {
 			return _.map(this.props.buttons, function (button, key) {
-				return React.createElement(FlatButton, {
-					type: button.type,
-					icon: button.icon,
-					onClick: button.onClick,
+				return React.createElement(FlatButton, _extends({}, button, {
 					key: key
-				});
+				}));
 			});
 		}
 	},
@@ -55,7 +54,7 @@ var ListItem = React.createClass({
 						{ className: 'list-item-content' },
 						React.createElement(
 							'div',
-							{ className: 'list-item-content-inner' },
+							{ className: 'list-item-content-inner', style: this.getIconStyle() },
 							React.createElement(
 								'div',
 								{ className: 'list-item-text' },
@@ -81,6 +80,14 @@ var ListItem = React.createClass({
 					this.props.component
 				)
 			);
+		}
+	},
+
+	getIconStyle: function getIconStyle() {
+		if (!this.props.icon) {
+			return {
+				paddingLeft: 8
+			};
 		}
 	},
 

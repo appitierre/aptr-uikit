@@ -11,25 +11,33 @@ var Loading = React.createClass({
 		return classNames('loading', this.props.className);
 	},
 
-	render: function render() {
-		return React.createElement(
-			'div',
-			{ className: this.getClassName() },
-			React.createElement(
+	getComponent: function getComponent() {
+		if (this.props.hasDataLoaded) {
+			return this.props.children;
+		} else {
+			return React.createElement(
 				'div',
-				{ className: 'loading-inner' },
+				{ className: this.getClassName() },
 				React.createElement(
 					'div',
-					{ className: 'loading-icon' },
-					React.createElement('div', { className: 'loading-icon-spinner' })
-				),
-				React.createElement(
-					'div',
-					{ className: 'loading-text' },
-					this.props.text
+					{ className: 'loading-inner' },
+					React.createElement(
+						'div',
+						{ className: 'loading-icon' },
+						React.createElement('div', { className: 'loading-icon-spinner' })
+					),
+					React.createElement(
+						'div',
+						{ className: 'loading-text' },
+						this.props.text
+					)
 				)
-			)
-		);
+			);
+		}
+	},
+
+	render: function render() {
+		return this.getComponent();
 	}
 
 });
