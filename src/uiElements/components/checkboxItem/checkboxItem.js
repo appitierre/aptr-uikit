@@ -1,5 +1,5 @@
 var React = require('react');
-var CheckboxItemWrapper = require('./checkboxItemWrapper.jsx');
+var CheckboxItemWrapper = require('./checkboxItemWrapper');
 
 var Checkbox = React.createClass({
 	

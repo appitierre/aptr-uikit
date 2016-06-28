@@ -2,27 +2,27 @@ var React = require('react');
 var SyntaxHighlighter = require('react-syntax-highlighter').default;
 var jsxToString = require('jsx-to-string'); 
 var docco = require('react-syntax-highlighter/dist/styles').docco;
-var Section = require('./section.js');
-var Button = require('./uiElements/components/buttons/button.js');
-var FlatButton = require('./uiElements/components/buttons/flatButton.js');
-var CollectionItem = require('./uiElements/components/collections/collectionItem.js');
-var CollectionItemContent = require('./uiElements/components/collections/collectionItemContent_example.js'); //Example views for collection item content
-var CollectionItemAction = require('./uiElements/components/collections/collectionItemAction_example.js'); //Example views for item actions
-var SearchBar = require('./uiElements/components/search/searchBar.js');
-var SelectOption = require('./uiElements/components/select/selectOption.js');
+var Section = require('./section');
+var Button = require('./uiElements/components/buttons/button');
+var FlatButton = require('./uiElements/components/buttons/flatButton');
+var CollectionItem = require('./uiElements/components/collections/collectionItem');
+var CollectionItemContent = require('./uiElements/components/collections/collectionItemContent_example'); //Example views for collection item content
+var CollectionItemAction = require('./uiElements/components/collections/collectionItemAction_example'); //Example views for item actions
+var SearchBar = require('./uiElements/components/search/searchBar');
+var SelectOption = require('./uiElements/components/select/selectOption');
 var RangeSlider = require('./uiElements/components/rangeSlider/rangeSlider');
-var Card = require('./uiElements/components/card/card.js');
-var Loading = require('./uiElements/components/loading/loading.jsx');
-var Tag = require('./uiElements/components/tag/tag.jsx');
-var Pagination = require('./uiElements/components/pagination/pagination.jsx');
-var ButtonGroup = require('./uiElements/components/buttonGroup/buttonGroup.jsx');
-var Folder = require('./uiElements/components/folder/folder.jsx');
-var ActionBar = require('./uiElements/components/actions/actionBar.jsx');
-var DropDown = require('./uiElements/components/dropDown/dropDown.js');
-var ProgressBar = require('./uiElements/components/progressBar/progressBar.jsx');
-var ProgressIndicator = require('./uiElements/components/progressIndicator/progressIndicator.jsx');
-var ItemToggle = require('./uiElements/components/toggle/itemToggle.jsx');
-var AccordionItem = require('./uiElements/components/accordion/accordionItem.jsx');
+var Card = require('./uiElements/components/card/card');
+var Loading = require('./uiElements/components/loading/loading');
+var Tag = require('./uiElements/components/tag/tag');
+var Pagination = require('./uiElements/components/pagination/pagination');
+var ButtonGroup = require('./uiElements/components/buttonGroup/buttonGroup');
+var Folder = require('./uiElements/components/folder/folder');
+var ActionBar = require('./uiElements/components/actions/actionBar');
+var DropDown = require('./uiElements/components/dropDown/dropDown');
+var ProgressBar = require('./uiElements/components/progressBar/progressBar');
+var ProgressIndicator = require('./uiElements/components/progressIndicator/progressIndicator');
+var ItemToggle = require('./uiElements/components/toggle/itemToggle');
+var AccordionItem = require('./uiElements/components/accordion/accordionItem');
 var CheckboxItem = require('./uiElements/components/checkboxItem/checkboxItem');
 var ListItem = require('./uiElements/components/list/listItem.jsx');
 var ListItems = require('./uiElements/components/list/listItems.js');
@@ -430,7 +430,11 @@ var Container = React.createClass({
                     title="Item toggle"
                     description="">
 
-                    <ItemToggle className="" onChange={this.onChange}/>
+                    <ItemToggle 
+                        className="" 
+                        toggleId="toggle" 
+                        initialValue={false} 
+                        onChange={this.onChange}/>
 
                 </Section>
 
@@ -520,7 +524,11 @@ var Container = React.createClass({
                     title="Loading"
                     description="">
 
-                    <Loading text="Loading" className="login"/>
+                    <Loading text="Loading" className="login" hasDataLoaded={true}>
+                        <div>
+                            DATA HAS LOADED
+                        </div>
+                    </Loading>
                     
                 </Section>
                 

@@ -7,15 +7,16 @@ var ItemToggle = React.createClass({
 		return classNames('forms-boolean-toggle', this.props.className);
 	},
 
-	onClick: function(value) {
-		this.props.onChange(value)	
+	onChange: function(event) {
+		var checked = event.target.checked;
+		this.props.onChange(checked);
 	},
 
 	render: function() {
 		return (
 			<div>
-				<input type="checkbox" id="man" className="forms-boolean-toggle" onClick={this.onClick}/>
-				<label htmlFor="man" />
+				<input type="checkbox" id={this.props.toggleId} className="forms-boolean-toggle" defaultChecked={this.props.initialValue} onChange={this.onChange}/>
+				<label htmlFor={this.props.toggleId} />
 			</div>
 		);
 	}
