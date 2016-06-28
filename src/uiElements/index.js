@@ -18,7 +18,6 @@ var ItemToggle = require('./components/toggle/itemToggle');
 var ListItem = require('./components/list/listItem');
 var CheckboxItem = require('./components/checkboxItem/checkboxItem')
 
-
 module.exports = {
     Button: Button,
     FlatButton: FlatButton,
