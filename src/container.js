@@ -24,8 +24,10 @@ var ProgressIndicator = require('./uiElements/components/progressIndicator/progr
 var ItemToggle = require('./uiElements/components/toggle/itemToggle');
 var AccordionItem = require('./uiElements/components/accordion/accordionItem');
 var CheckboxItem = require('./uiElements/components/checkboxItem/checkboxItem');
-var ListItem = require('./uiElements/components/list/listItem.jsx');
-var ListItems = require('./uiElements/components/list/listItems.js');
+var ListItem = require('./uiElements/components/list/listItem');
+var ListItems = require('./uiElements/components/list/listItems');
+var Message = require('./uiElements/components/message/message');
+
 
 
 var _ = require('underscore');
@@ -530,6 +532,19 @@ var Container = React.createClass({
                         </div>
                     </Loading>
                     
+                </Section>
+
+                <Section
+                    title="Message"
+                    description="">
+
+                    <Message 
+                        title="Brandon Karunakaran" 
+                        body="Brandon recieved a message from the message/notification ui element"
+                        onClick={this.onClick}
+                        avatar="http://placehold.it/350x150"/>
+                
+
                 </Section>
                 
                 <Section
