@@ -24,8 +24,8 @@ var ProgressIndicator = require('./uiElements/components/progressIndicator/progr
 var ItemToggle = require('./uiElements/components/toggle/itemToggle');
 var AccordionItem = require('./uiElements/components/accordion/accordionItem');
 var CheckboxItem = require('./uiElements/components/checkboxItem/checkboxItem');
-var ListItem = require('./uiElements/components/list/listItem.jsx');
-var ListItems = require('./uiElements/components/list/listItems.js');
+var ListItem = require('./uiElements/components/list/listItem');
+var ListItems = require('./uiElements/components/list/listItems');
 
 
 var _ = require('underscore');
