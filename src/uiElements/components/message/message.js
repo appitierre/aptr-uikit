@@ -35,17 +35,23 @@ var Message = React.createClass({
 		return "message-item-icon icon icon-" + this.props.icon
 	},
 
+	getIconStyle: function() {
+		return {
+			color: this.props.iconColor 
+		}
+	},
+
 	getIcon: function() {
-		if (this.props.icon) {
+		if (this.props.icon && this.props.iconColor) {
+			return (
+				<i className={this.getIconClassName()} style={this.getIconStyle()} />
+			)
+		} else if (this.props.icon) {
 			return (
 				<i className={this.getIconClassName()} />
 			)
 		}
  	},
-
-	closeOnClick: function() {
-		this.props.onCloseButtonClicked
-	},
 
 	render: function() {
 		return (
@@ -53,7 +59,7 @@ var Message = React.createClass({
 				<FlatButton 
 					className="message-item-close"
 					icon="cross"
-					onClick={this.closeOnClick}/>
+					onClick={this.props.onCloseButtonClicked}/>
 				{this.getIcon()}
 				<div className="message-item-content clearfix" onClick={this.props.onClick}>	
 					<div className="message-item-content-left"> 	
