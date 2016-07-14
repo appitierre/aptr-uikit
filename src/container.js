@@ -50,6 +50,10 @@ var Container = React.createClass({
         console.log('This component has been clicked')
     },
 
+    onCloseButtonClicked: function() {
+        console.log("The close button has been clicked")
+    },
+
     //Simalar to the function above, this is an example to show the onChange event might work.
     onChange: function(event) {
         var value = event;
@@ -542,7 +546,9 @@ var Container = React.createClass({
                         title="Brandon Karunakaran" 
                         body="Brandon recieved a message from the message/notification ui element"
                         onClick={this.onClick}
-                        avatar="http://placehold.it/350x150"/>
+                        avatar="http://placehold.it/400x100"
+                        onCloseButtonClicked={this.onCloseButtonClicked}
+                        icon="star"/>
                 
 
                 </Section>

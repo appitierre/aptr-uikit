@@ -31,6 +31,22 @@ var Message = React.createClass({
 		}
 	},
 
+	getIconClassName: function() {
+		return "message-item-icon icon icon-" + this.props.icon
+	},
+
+	getIcon: function() {
+		if (this.props.icon) {
+			return (
+				<i className={this.getIconClassName()} />
+			)
+		}
+ 	},
+
+	closeOnClick: function() {
+		this.props.onCloseButtonClicked
+	},
+
 	render: function() {
 		return (
 			<div className="message-item clearfix">
@@ -38,10 +54,15 @@ var Message = React.createClass({
 					className="message-item-close"
 					icon="cross"
 					onClick={this.closeOnClick}/>
-				<div className="message-item-content" onClick={this.props.onClick}>	
-					{this.getImage()}
-					{this.getTitle()}
-					{this.getBody()}
+				{this.getIcon()}
+				<div className="message-item-content clearfix" onClick={this.props.onClick}>	
+					<div className="message-item-content-left"> 	
+						{this.getImage()}
+					</div>
+					<div className="message-item-content-right">
+						{this.getTitle()}
+						{this.getBody()}
+					</div>
 				</div>
 			</div>
 		);
