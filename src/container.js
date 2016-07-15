@@ -26,6 +26,8 @@ var AccordionItem = require('./uiElements/components/accordion/accordionItem');
 var CheckboxItem = require('./uiElements/components/checkboxItem/checkboxItem');
 var ListItem = require('./uiElements/components/list/listItem');
 var ListItems = require('./uiElements/components/list/listItems');
+var Message = require('./uiElements/components/message/message');
+
 
 
 var _ = require('underscore');
@@ -46,6 +48,10 @@ var Container = React.createClass({
     //This function is an example too show how it would be used on certain components.
     onClick: function() {
         console.log('This component has been clicked')
+    },
+
+    onCloseButtonClicked: function() {
+        console.log("The close button has been clicked")
     },
 
     //Simalar to the function above, this is an example to show the onChange event might work.
@@ -530,6 +536,22 @@ var Container = React.createClass({
                         </div>
                     </Loading>
                     
+                </Section>
+
+                <Section
+                    title="Message"
+                    description="">
+
+                    <Message 
+                        title="Brandon Karunakaran" 
+                        body="Brandon recieved a message from the message/notification ui element"
+                        onClick={this.onClick}
+                        avatar="http://placehold.it/400x100"
+                        onCloseButtonClicked={this.onCloseButtonClicked}
+                        icon="alarm"
+                        iconColor="red"/>
+                
+
                 </Section>
                 
                 <Section
