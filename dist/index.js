@@ -20,6 +20,7 @@ var ItemToggle = require('./components/toggle/itemToggle');
 var ListItems = require('./components/list/listItems');
 var ListItem = require('./components/list/listItem');
 var CheckboxItem = require('./components/checkboxItem/checkboxItem');
+var Message = require('./components/message/message');
 
 module.exports = {
     Button: Button,
@@ -41,5 +42,6 @@ module.exports = {
     ItemToggle: ItemToggle,
     ListItems: ListItems,
     ListItem: ListItem,
-    CheckboxItem: CheckboxItem
+    CheckboxItem: CheckboxItem,
+    Message: Message
 };
