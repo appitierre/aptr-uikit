@@ -26,6 +26,7 @@ var AccordionItem = require('./uiElements/components/accordion/accordionItem');
 var CheckboxItem = require('./uiElements/components/checkboxItem/checkboxItem');
 var ListItem = require('./uiElements/components/list/listItem');
 var ListItems = require('./uiElements/components/list/listItems');
+var EditorContainer = require('./uiElements/components/editor/container/editorContainer')
 
 
 var _ = require('underscore');
@@ -294,6 +295,15 @@ var Container = React.createClass({
 
                     <Card className="asset review"/>
                     
+                </Section>
+
+                <Section
+                    title="Editor"
+                    description="">
+
+                    <EditorContainer />                    
+                                        
+
                 </Section>
 
                 <Section
