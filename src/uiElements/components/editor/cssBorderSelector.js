@@ -4,23 +4,31 @@ var Button = require('../buttons/button');
 
 var CssBorderSelector = React.createClass({
 
-	getButtonType: function() {
+	getClassName: function() {
 		if (this.props.top && this.props.right && this.props.bottom && this.props.left) {
 			return {
-				top: '',
-				right: '',
-				bottom: '',
-				left: '',
-				center: 'primary'
+				top: 'button css-selector-top-button',
+				right: 'button css-selector-right-button',
+				bottom: 'button css-selector-bottom-button',
+				left: 'button css-selector-left-button',
+				centre: 'button css-selector-centre-button primary'
 			}
-		}
+		} 
 
 		return {
-			top: classnames({'primary': (this.props.top)}),
-			right: classnames({'primary': (this.props.right)}),
-			bottom: classnames({'primary': (this.props.bottom)}),
-			left: classnames({'primary': (this.props.left)}),
-			center: ''
+			top: classnames({'button css-selector-top-button primary': (this.props.top)}, 
+				{'button css-selector-top-button': (!this.props.top)}),
+			
+			right: classnames({'button css-selector-right-button primary': (this.props.right)},
+				{'button css-selector-right-button': !this.props.right}),
+			
+			bottom: classnames({'button css-selector-bottom-button primary': (this.props.bottom)},
+				{'button css-selector-bottom-button': !this.props.bottom}),
+			
+			left: classnames({'button css-selector-left-button primary': (this.props.left)},
+				{'button css-selector-left-button': !this.props.left}),
+			
+			centre: classnames({'button css-selector-centre-button': !this.props.centre}),
 		}
 	},
 
@@ -29,39 +37,34 @@ var CssBorderSelector = React.createClass({
 			<div className="css-selector">
 				<div className="css-selector-top">	
 					<button 
-						className="button css-selector-top-button"
-						type={this.getButtonType().top}
+						className={this.getClassName().top}
 						onClick={this.onTopButtonClicked}>
 						<span className="css-selector-top-icon"></span>
 					</button>
 				</div>
 				<div className="css-selector-middle">
-					<Button 
-						icon="square"
-						className="css-selector-left-button"
-						type={this.getButtonType().left}
-						onClick={this.onLeftButtonClicked}
-					/>
-					<Button 
-						icon="square"
-						className="css-selector-centre-button"
-						type={this.getButtonType().center}
-						onClick={this.onCentreButtonClicked}
-					/>
-					<Button 
-						icon="square"
-						className="css-selector-right-button"
-						type={this.getButtonType().right}
-						onClick={this.onRightButtonClicked}
-					/>
+					<button 
+						className={this.getClassName().left}
+						onClick={this.onLeftButtonClicked}>
+						<span className="css-selector-left-icon"></span>
+					</button>
+					<button 
+						className={this.getClassName().centre}
+						onClick={this.onCentreButtonClicked}>
+						<span className="css-selector-centre-icon"></span>
+					</button>
+					<button 
+						className={this.getClassName().right}
+						onClick={this.onRightButtonClicked}>
+						<span className="css-selector-right-icon"></span>
+					</button>
 				</div>
 				<div className="css-selector-bottom">
-					<Button 
-						icon="square"
-						className="css-selector-bottom-button"
-						type={this.getButtonType().bottom}
-						onClick={this.onBottomButtonClicked}
-					/>
+					<button 
+						className={this.getClassName().bottom}
+						onClick={this.onBottomButtonClicked}>
+						<span className="css-selector-bottom-icon"></span>
+					</button>
 				</div>
 			</div>
 		)
