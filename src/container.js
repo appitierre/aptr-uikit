@@ -19,6 +19,7 @@ var ButtonGroup = require('./uiElements/components/buttonGroup/buttonGroup');
 var Folder = require('./uiElements/components/folder/folder');
 var ActionBar = require('./uiElements/components/actions/actionBar');
 var DropDown = require('./uiElements/components/dropDown/dropDown');
+var DropDownItems = require('./uiElements/components/dropDown/dropDownItems_example');
 var ProgressBar = require('./uiElements/components/progressBar/progressBar');
 var ProgressIndicator = require('./uiElements/components/progressIndicator/progressIndicator');
 var ItemToggle = require('./uiElements/components/toggle/itemToggle');
@@ -26,7 +27,9 @@ var AccordionItem = require('./uiElements/components/accordion/accordionItem');
 var CheckboxItem = require('./uiElements/components/checkboxItem/checkboxItem');
 var ListItem = require('./uiElements/components/list/listItem');
 var ListItems = require('./uiElements/components/list/listItems');
+var EditorContainer = require('./uiElements/components/editor/container/editorContainer')
 var Message = require('./uiElements/components/message/message');
+
 
 
 
@@ -271,14 +274,14 @@ var Container = React.createClass({
                             language='javascript' 
                             style={docco} 
                             children={jsxToString(
-                                <DropDown icon="menu" className="menu-item" component={<div>hello</div>}/>
+                                <DropDown icon="menu" className="menu-item" component={<DropDownItems/>}/>
                                 )
                             }
                         />
                     }
                 >
 
-                    <DropDown icon="menu" className="menu-item" component={<div>hello</div>}/>
+                    <DropDown icon="menu" className="menu-item" component={<DropDownItems/>}/>
                     
                 </Section>
 
@@ -300,6 +303,15 @@ var Container = React.createClass({
 
                     <Card className="asset review"/>
                     
+                </Section>
+
+                <Section
+                    title="Editor"
+                    description="">
+
+                    <EditorContainer />                    
+                                        
+
                 </Section>
 
                 <Section
