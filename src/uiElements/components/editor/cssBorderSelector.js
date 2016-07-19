@@ -2,7 +2,7 @@ var React = require('react');
 var classnames = require('classnames');
 var Button = require('../buttons/button');
 
-var CssSelector = React.createClass({
+var CssBorderSelector = React.createClass({
 
 	getButtonType: function() {
 		if (this.props.top && this.props.right && this.props.bottom && this.props.left) {
@@ -28,28 +28,28 @@ var CssSelector = React.createClass({
 		return (
 			<div className="css-selector">
 				<div className="css-selector-top">	
-					<Button 
-						icon={this.props.topIcon}
-						className="css-selector-top-button"
+					<button 
+						className="button css-selector-top-button"
 						type={this.getButtonType().top}
-						onClick={this.onTopButtonClicked}
-					/>
+						onClick={this.onTopButtonClicked}>
+						<span className="css-selector-top-icon"></span>
+					</button>
 				</div>
 				<div className="css-selector-middle">
 					<Button 
-						icon={this.props.leftIcon}
+						icon="square"
 						className="css-selector-left-button"
 						type={this.getButtonType().left}
 						onClick={this.onLeftButtonClicked}
 					/>
 					<Button 
-						icon={this.props.centreIcon}
+						icon="square"
 						className="css-selector-centre-button"
 						type={this.getButtonType().center}
 						onClick={this.onCentreButtonClicked}
 					/>
 					<Button 
-						icon={this.props.rightIcon}
+						icon="square"
 						className="css-selector-right-button"
 						type={this.getButtonType().right}
 						onClick={this.onRightButtonClicked}
@@ -57,7 +57,7 @@ var CssSelector = React.createClass({
 				</div>
 				<div className="css-selector-bottom">
 					<Button 
-						icon={this.props.bottomIcon}
+						icon="square"
 						className="css-selector-bottom-button"
 						type={this.getButtonType().bottom}
 						onClick={this.onBottomButtonClicked}
@@ -123,4 +123,4 @@ var CssSelector = React.createClass({
 
 });
 
-module.exports = CssSelector;
+module.exports = CssBorderSelector;

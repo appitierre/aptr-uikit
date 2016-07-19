@@ -39,12 +39,60 @@
 
 	button { 
 		margin: 0;
+		padding: 8px;
 	}
 }
 
-.css-selector-top,
+.css-selector-top {
+	padding: 0px 40px; 
+	margin-bottom: 4px;
+}
 .css-selector-bottom {
-	padding: 0px 34px;
+	padding: 0px 40px;
+	margin-top: 4px;
+}
+
+.css-selector-left-button {
+	margin-right: 4px !important;
+	i {
+		&:before {
+			border-left: 2px solid black;
+		}
+	}
+}
+
+.css-selector-right-button {
+	margin-left: 4px !important;
+	i {
+		&:before {
+			border-right: 2px solid black;
+		}
+	}
+}
+
+.css-selector-top-icon {
+	display: block;
+    width: 18px;
+    height: 14px;
+    border: 0px solid #fff;
+    border-top: 3px solid;
+    background-color: rgba(255,255,255,0.3);
+}
+
+.css-selector-top-button {
+	i {
+		&:before {
+			border-top: 2px solid black;
+		}
+	}
+}
+
+.css-selector-bottom-button {
+	i {
+		&:before {
+			border-bottom: 2px solid black;
+		}
+	}
 }
 
 /* STYLES FOR BORDER RADIUS SELECTOR */

@@ -1,6 +1,6 @@
 var React = require('react');
 var CssValue = require('./cssValue');
-var CssSelector = require('./cssSelector');
+var CssBorderSelector = require('./CssBorderSelector');
 var CssBorderRadiusSelector = require('./CssBorderRadiusSelector')
 
 var Editor = React.createClass({
@@ -15,7 +15,7 @@ var Editor = React.createClass({
                     onIncrease={this.props.onWidthIncrease}
                     onDecrease={this.props.onWidthDecrease}
                 />
-                <CssSelector 
+                <CssBorderSelector 
                     top={this.props.top}
                     right={this.props.right}
                     bottom={this.props.bottom}
