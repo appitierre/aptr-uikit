@@ -20,7 +20,9 @@ var DropDown = React.createClass({
             return React.createElement(
                 'div',
                 { className: 'drop-down-content' },
-                this.props.component
+                React.cloneElement(this.props.component, {
+                    closeDropDown: this.closeDropDown
+                })
             );
         }
     },
@@ -30,12 +32,17 @@ var DropDown = React.createClass({
     },
 
     onDropDownClicked: function onDropDownClicked(event) {
-
         if (event) {
             event.preventDefault();
         }
         this.setState({
             _isOpen: !this.state._isOpen
+        });
+    },
+
+    closeDropDown: function closeDropDown() {
+        this.setState({
+            _isOpen: false
         });
     },
 
