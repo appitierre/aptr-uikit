@@ -3,33 +3,86 @@ var Button = require('../buttons/button');
 
 var CssValue = React.createClass({
 
+    getInitialState: function() {
+        return {
+            isShiftKeyDown: false
+        }
+    },
+
     onInputKeyDown: function(event) {
         var keyCode = event.keyCode;
+        
+        if (keyCode === 16) {
+            this.setState({
+                isShiftKeyDown: true
+            });
+        }
 
-        if (keyCode === 16 && keyCode === 38) {
-            console.log('both')
+        if (this.state.isShiftKeyDown && keyCode === 38) {
+            
+            this.props.onIncrease(10);
+
+        } else if (this.state.isShiftKeyDown && keyCode === 40) {
+            
+            this.props.onDecrease(10);
+
         } else if (keyCode === 38) {
-            this.props.onIncrease(event);
+            
+            this.props.onIncrease(1);
+
         } else if (keyCode === 40) {
-            this.props.onDecrease(event);
-        } 
+            
+            this.props.onDecrease(1);
+
+        }
+
+    },
+
+    onInputKeyUp: function(event) {
+        var keyCode = event.keyCode;
+
+        if (keyCode === 16) {
+            this.setState({
+                isShiftKeyDown: false
+            });
+        }
+
+    },
+
+    onChange: function(event) {
+        this.props.onChange(event.target.value);
+    },
+
+    onIncrease: function(event) {
+        event.preventDefault();
+        this.props.onIncrease(1);
+    },
+
+    onDecrease: function(event) {
+        event.preventDefault();
+        this.props.onDecrease(1);
     },
 
     render: function() {
         return (
             <div className="css-value clearfix">
-                <input className="css-value-input" value={this.props.value} onChange={this.props.onChange} onKeyDown={this.onInputKeyDown}/>
+                <input 
+                    className="css-value-input" 
+                    value={this.props.value} 
+                    onChange={this.onChange} 
+                    onKeyDown={this.onInputKeyDown}
+                    onKeyUp={this.onInputKeyUp}/>
                 <div className="css-value-unit">
                     {this.props.unit}
                 </div>
                 <div className="css-value-buttons">
                     <Button
-                        onClick={this.props.onIncrease}
+                        onClick={this.onIncrease}
                         icon="chevron-up"
                         type="primary"   
                     />
                     <Button
-                        onClick={this.props.onDecrease}
+                        onClick={this.onDecrease}
                         icon="chevron-down"
                         type="primary"
                     />

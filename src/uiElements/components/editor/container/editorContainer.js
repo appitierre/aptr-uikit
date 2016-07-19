@@ -6,45 +6,51 @@ var EditorContainer = React.createClass({
     getInitialState: function() {
         return {
             width: 100,
-            unit: "PX"
+            unit: "PX",
+            top: false,
+            right: false,
+            bottom: false,
+            left: false
         }
     },
 
     onWidthChanged: function(value) {
         this.setState({
             width: value
-        })
+        });
     },
 
-    onWidthIncrease: function() {  
-        if (isNaN(this.state.value)) {
-            if (this.state.value === "auto") {
-                this.onWidthChanged("auto")
-            } else {
-                this.onWidthChanged(0)
-            }
-        } else {
+    onWidthIncrease: function(increaseBy) {  
+
+        if (!_.isNumber(this.state.width)) {
+            
             this.setState({
-                width: this.state.width + 1
-            })
-        }       
+                width: 0
+            });
+
+            return;
+
+        }
+
+        this.setState({
+            width: this.state.width + (1 * increaseBy)
+        })
+      
     },
 
-    onMajorWidthIncrease: function() {
+    onWidthDecrease: function(decreaseBy) {
         this.setState({
-            width: this.state.width + 10
+            width: this.state.width - (1 * decreaseBy)
         })
     },
 
-    onWidthDecrease: function(scale) {
+    onSelectorChanged: function(top, right, bottom, left) {
+        console.log(arguments);
         this.setState({
-            width: this.state.width - 1
-        })
-    },
-
-    onMajorWidthDecrease: function() {
-        this.setState({
-            width: this.state.width - 10
+            top: top,
+            right: right,
+            bottom: bottom,
+            left: left
         })
     },
 
@@ -54,9 +60,8 @@ var EditorContainer = React.createClass({
                 {...this.state}
                 onWidthChanged={this.onWidthChanged}
                 onWidthIncrease={this.onWidthIncrease}
-                onMajorWidthIncrease={this.onMajorWidthIncrease}
                 onWidthDecrease={this.onWidthDecrease}
-                onMajorWidthDecrease={this.onMajorWidthDecrease}
+                onSelectorChanged={this.onSelectorChanged}
             />
         );
     }
