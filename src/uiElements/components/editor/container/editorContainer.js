@@ -10,7 +10,11 @@ var EditorContainer = React.createClass({
             top: false,
             right: false,
             bottom: false,
-            left: false
+            left: false,
+            topLeft: false,
+            topRight: false,
+            bottomRight: false,
+            bottomLeft: false
         }
     },
 
@@ -54,6 +58,16 @@ var EditorContainer = React.createClass({
         })
     },
 
+    onRadiusSelectorChanged: function(topLeft, topRight, bottomRight, bottomLeft) {
+        console.log(arguments)
+        this.setState({
+            topLeft: topLeft,
+            topRight: topRight,
+            bottomRight: bottomRight,
+            bottomLeft: bottomLeft
+        })
+    },
+
     render: function() {
         return (
             <Editor 
@@ -62,6 +76,7 @@ var EditorContainer = React.createClass({
                 onWidthIncrease={this.onWidthIncrease}
                 onWidthDecrease={this.onWidthDecrease}
                 onSelectorChanged={this.onSelectorChanged}
+                onRadiusSelectorChanged={this.onRadiusSelectorChanged}
             />
         );
     }
