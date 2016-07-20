@@ -19,6 +19,8 @@ var ListItems = require('./components/list/listItems');
 var ListItem = require('./components/list/listItem');
 var CheckboxItem = require('./components/checkboxItem/checkboxItem');
 var Message = require('./components/message/message');
+var CssValue = require('./components/cssValue/cssValue');
+var CssBorderSelector = require('./components/cssBorderSelector/cssBorderSelector');
 
 module.exports = {
     Button: Button,
@@ -41,6 +43,9 @@ module.exports = {
     ListItems: ListItems,
     ListItem: ListItem,
     CheckboxItem: CheckboxItem,
-    Message: Message
+    Message: Message,
+    CssValue: CssValue,
+    CssBorderSelector: CssBorderSelector,
+    CssBorderRadiusSelector: CssBorderRadiusSelector
 };
 

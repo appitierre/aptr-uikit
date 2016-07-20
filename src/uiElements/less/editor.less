@@ -34,71 +34,167 @@
 
 /* STYLES FOR BORDER SELECTOR COMPONENT */
 
-.css-selector {
-	display: inline-block;
+.css-border-selector {
+	display: inline-block;	
+}
 
-	button { 
-		margin: 0;
-		padding: 8px;
+.css-border-selector {
+	&-top {
+		padding: 0px 40px; 
+		margin-bottom: 4px;
+	}
+	&-bottom {
+		padding: 0px 40px;
+		margin-top: 4px;
 	}
 }
 
-.css-selector-top {
-	padding: 0px 40px; 
-	margin-bottom: 4px;
-}
-.css-selector-bottom {
-	padding: 0px 40px;
-	margin-top: 4px;
-}
-
-.css-selector-left-button {
-	margin-right: 4px !important;
-	i {
-		&:before {
-			border-left: 2px solid black;
-		}
+.css-border-selector-button {
+	margin: 0;
+	padding: 8px;
+	width: 36px;
+	height: 36px;
+	&-left {
+		margin-right: 4px;
+	}
+	&-right {
+		margin-left: 4px
 	}
 }
 
-.css-selector-right-button {
-	margin-left: 4px !important;
-	i {
-		&:before {
-			border-right: 2px solid black;
-		}
+.css-border-selector-button-icon {
+	&-top {
+		display: block;
+	    width: 20px;
+	    height: 14px;
+	    border: 0px solid #fff;
+	    border-top: 3px solid;
+	    background-color: rgba(255,255,255,0.3);
+	}
+	&-right {
+		display: block;
+	    width: 14px;
+	    height: 18px;
+	    border: 0px solid #fff;
+	    border-right: 3px solid;
+	    background-color: rgba(255,255,255,0.3);
+	}
+	&-bottom {
+		display: block;
+	    width: 20px;
+	    height: 14px;
+	    border: 0px solid #fff;
+	    border-bottom: 3px solid;
+	    background-color: rgba(255,255,255,0.3);
+	}
+	&-left {
+		display: block;
+	    width: 14px;
+	    height: 18px;
+	    border: 0px solid #fff;
+	    border-left: 3px solid;
+	    background-color: rgba(255,255,255,0.3);
+	}
+	&-center {
+		display: block;
+	    width: 14px;
+	    height: 12px;
+	    border: 3px solid #fff;
+	    background-color: rgba(255,255,255,0.3);
 	}
 }
 
-.css-selector-top-icon {
-	display: block;
-    width: 18px;
-    height: 14px;
-    border: 0px solid #fff;
-    border-top: 3px solid;
-    background-color: rgba(255,255,255,0.3);
-}
 
-.css-selector-top-button {
-	i {
-		&:before {
-			border-top: 2px solid black;
-		}
-	}
-}
+/* ----- */
 
-.css-selector-bottom-button {
-	i {
-		&:before {
-			border-bottom: 2px solid black;
-		}
-	}
-}
 
 /* STYLES FOR BORDER RADIUS SELECTOR */
 
 .css-border-radius-selector {
-	button {
-		margin: 0;
+	display: inline-block;
+	width: 110px;
+	height: 110px;
+	position: relative;
+}
+
+.css-border-radius-selector-button {
+	margin: 0;
+	position: absolute;
+	width: 36px;
+	height: 36px;
+	&-top-left {
+		top: 0;
+		left: 0;
+	}
+	&-top-right {
+		top: 0;
+		right: 0;
+	}
+	&-bottom-right {
+		bottom: 0;
+		right: 0;
+	}
+	&-bottom-left {
+		bottom: 0;
+		left: 0;
+	}
+	&-center {
+		top: 50%;
+		left: 50%;
+		margin-left: -18px;
+		margin-top: -18px;
 	}
 }
+
+.css-border-radius-selector-button-icon {
+	&-top-left {
+		display: block;
+	    width: 14px;
+	    height: 18px;
+	    border: 0px solid #fff;
+	    border-left: 3px solid;
+	    background-color: rgba(255,255,255,0.3);
+	    border-top-left-radius: 20px;
+	    border-top: 3px solid;
+	}
+	&-top-right {
+		display: block;
+	    width: 14px;
+	    height: 18px;
+	    border: 0px solid #fff;
+	    border-right: 3px solid;
+	    background-color: rgba(255,255,255,0.3);
+	    border-top-right-radius: 20px;
+	    border-top: 3px solid;
+	}
+	&-bottom-right {
+		display: block;
+	    width: 14px;
+	    height: 18px;
+	    border: 0px solid #fff;
+	    border-right: 3px solid;
+	    background-color: rgba(255,255,255,0.3);
+	    border-bottom-right-radius: 20px;
+	    border-bottom: 3px solid;
+	}
+	&-bottom-left {
+		display: block;
+	    width: 14px;
+	    height: 18px;
+	    border: 0px solid #fff;
+	    border-left: 3px solid;
+	    background-color: rgba(255,255,255,0.3);
+	    border-bottom-left-radius: 20px;
+	    border-bottom: 3px solid;
+	}
+	&-center {
+		display: block;
+	    width: 14px;
+	    height: 14px;
+	    border: 2px solid #fff;
+	    background-color: rgba(255,255,255,0.3);
+	    border-radius: 4px;
+	}
+}
+
+

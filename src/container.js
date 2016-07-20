@@ -27,11 +27,10 @@ var AccordionItem = require('./uiElements/components/accordion/accordionItem');
 var CheckboxItem = require('./uiElements/components/checkboxItem/checkboxItem');
 var ListItem = require('./uiElements/components/list/listItem');
 var ListItems = require('./uiElements/components/list/listItems');
-var EditorContainer = require('./uiElements/components/editor/container/editorContainer')
 var Message = require('./uiElements/components/message/message');
-
-
-
+var CssValue = require('./uiElements/components/cssValue/cssValue');
+var CssBorderSelector = require('./uiElements/components/cssBorderSelector/cssBorderSelector');
+var CssBorderRadiusSelector = require('./uiElements/components/cssBorderRadiusSelector/cssBorderRadiusSelector')
 
 var _ = require('underscore');
 //Array is just an example of how the Folder component returns the data.
@@ -48,7 +47,73 @@ var Folders = [
     ];
 
 var Container = React.createClass({
-    //This function is an example too show how it would be used on certain components.
+/* THE FUNCTIONS BELOW ARE MADE UP OF FAKE DATA TO SHOW THE WORKING FUNCTIONALLITY OF THE COMPONENTS */
+    
+     getInitialState: function() {
+        return {
+            width: 100,
+            unit: "PX",
+            top: false,
+            right: false,
+            bottom: false,
+            left: false,
+            topLeft: false,
+            topRight: false,
+            bottomRight: false,
+            bottomLeft: false
+        }
+    },
+
+    onWidthChanged: function(value) {
+        this.setState({
+            width: value
+        });
+    },
+
+    onWidthIncrease: function(increaseBy) {  
+
+        if (!_.isNumber(this.state.width)) {
+            
+            this.setState({
+                width: 0
+            });
+
+            return;
+
+        }
+
+        this.setState({
+            width: this.state.width + (1 * increaseBy)
+        })
+      
+    },
+
+    onWidthDecrease: function(decreaseBy) {
+        this.setState({
+            width: this.state.width - (1 * decreaseBy)
+        })
+    },
+
+    onSelectorChanged: function(top, right, bottom, left) {
+        console.log(arguments);
+        this.setState({
+            top: top,
+            right: right,
+            bottom: bottom,
+            left: left
+        })
+    },
+
+    onRadiusSelectorChanged: function(topLeft, topRight, bottomRight, bottomLeft) {
+        console.log(arguments)
+        this.setState({
+            topLeft: topLeft,
+            topRight: topRight,
+            bottomRight: bottomRight,
+            bottomLeft: bottomLeft
+        })
+    },
+
     onClick: function() {
         console.log('This component has been clicked')
     },
@@ -68,6 +133,8 @@ var Container = React.createClass({
         
     },
 
+
+
     getFolders: function() {
         return _.map(Folders, function(tag, index) {
             return (
@@ -81,6 +148,8 @@ var Container = React.createClass({
     },  
 
 
+/* ---------------------------------------------------------- */
+    
 
     //This renders all the components and allows you too pass in all the neccasary props.
     render: function() {
@@ -306,11 +375,42 @@ var Container = React.createClass({
                 </Section>
 
                 <Section
-                    title="Editor"
+                    title="Css Border Selector">
+
+                    <CssBorderSelector 
+                        top={this.state.top}
+                        right={this.state.right}
+                        bottom={this.state.bottom}
+                        left={this.state.left}
+                        onChange={this.onSelectorChanged}
+                    />
+                </Section>
+
+                <Section
+                    title="Css Border Radius Selector"
                     description="">
 
-                    <EditorContainer />                    
-                                        
+                    <CssBorderRadiusSelector 
+                        topLeft={this.state.topLeft}
+                        topRight={this.state.topRight}
+                        bottomRight={this.state.bottomRight}
+                        bottomLeft={this.state.bottomLeft}
+                        onChange={this.onRadiusSelectorChanged}
+                    />
+
+                </Section>
+
+                <Section
+                    title="Css Value"
+                    description="">
+
+                    <CssValue
+                        unit={this.state.unit}
+                        value={this.state.width}
+                        onChange={this.onWidthChanged}
+                        onIncrease={this.onWidthIncrease}
+                        onDecrease={this.onWidthDecrease}
+                    />
 
                 </Section>
 
