@@ -34,85 +34,78 @@
 
 /* STYLES FOR BORDER SELECTOR COMPONENT */
 
-.css-selector {
-	display: inline-block;
+.css-border-selector {
+	display: inline-block;	
+}
 
-	button { 
-		margin: 0;
-		padding: 8px;
+.css-border-selector {
+	&-top {
+		padding: 0px 40px; 
+		margin-bottom: 4px;
+	}
+	&-bottom {
+		padding: 0px 40px;
+		margin-top: 4px;
 	}
 }
 
-.css-selector-top {
-	padding: 0px 38px; 
-	margin-bottom: 4px;
-}
-.css-selector-bottom {
-	padding: 0px 38px;
-	margin-top: 4px;
-}
-
-.css-selector-left-button {
-	margin-right: 4px !important;
-	i {
-		&:before {
-			border-left: 2px solid black;
-		}
+.css-border-selector-button {
+	margin: 0;
+	padding: 8px;
+	width: 36px;
+	height: 36px;
+	&-left {
+		margin-right: 4px;
+	}
+	&-right {
+		margin-left: 4px
 	}
 }
 
-.css-selector-right-button {
-	margin-left: 4px !important;
-	i {
-		&:before {
-			border-right: 2px solid black;
-		}
+.css-border-selector-button-icon {
+	&-top {
+		display: block;
+	    width: 20px;
+	    height: 14px;
+	    border: 0px solid #fff;
+	    border-top: 3px solid;
+	    background-color: rgba(255,255,255,0.3);
+	}
+	&-right {
+		display: block;
+	    width: 14px;
+	    height: 18px;
+	    border: 0px solid #fff;
+	    border-right: 3px solid;
+	    background-color: rgba(255,255,255,0.3);
+	}
+	&-bottom {
+		display: block;
+	    width: 20px;
+	    height: 14px;
+	    border: 0px solid #fff;
+	    border-bottom: 3px solid;
+	    background-color: rgba(255,255,255,0.3);
+	}
+	&-left {
+		display: block;
+	    width: 14px;
+	    height: 18px;
+	    border: 0px solid #fff;
+	    border-left: 3px solid;
+	    background-color: rgba(255,255,255,0.3);
+	}
+	&-center {
+		display: block;
+	    width: 14px;
+	    height: 12px;
+	    border: 3px solid #fff;
+	    background-color: rgba(255,255,255,0.3);
 	}
 }
 
-.css-selector-top-icon {
-	display: block;
-    width: 18px;
-    height: 14px;
-    border: 0px solid #fff;
-    border-top: 3px solid;
-    background-color: rgba(255,255,255,0.3);
-}
 
-.css-selector-right-icon {
-	display: block;
-    width: 14px;
-    height: 18px;
-    border: 0px solid #fff;
-    border-right: 3px solid;
-    background-color: rgba(255,255,255,0.3);
-}
-
-.css-selector-bottom-icon {
-	display: block;
-    width: 18px;
-    height: 14px;
-    border: 0px solid #fff;
-    border-bottom: 3px solid;
-    background-color: rgba(255,255,255,0.3);
-}
-
-.css-selector-left-icon {
-	display: block;
-    width: 14px;
-    height: 18px;
-    border: 0px solid #fff;
-    border-left: 3px solid;
-    background-color: rgba(255,255,255,0.3);
-}
-
-.css-selector-centre-icon {
-	display: block;
-    width: 14px;
-    height: 12px;
-    border: 3px solid #fff;
-    background-color: rgba(255,255,255,0.3);
-}
+/* ----- */
 
 
 /* STYLES FOR BORDER RADIUS SELECTOR */
@@ -153,7 +146,6 @@
 	}
 }
 
-	/* styling for icons */
 .css-border-radius-selector-button-icon {
 	&-top-left {
 		display: block;
@@ -163,6 +155,7 @@
 	    border-left: 3px solid;
 	    background-color: rgba(255,255,255,0.3);
 	    border-top-left-radius: 20px;
+	    border-top: 3px solid;
 	}
 	&-top-right {
 		display: block;
@@ -172,6 +165,7 @@
 	    border-right: 3px solid;
 	    background-color: rgba(255,255,255,0.3);
 	    border-top-right-radius: 20px;
+	    border-top: 3px solid;
 	}
 	&-bottom-right {
 		display: block;
@@ -181,6 +175,7 @@
 	    border-right: 3px solid;
 	    background-color: rgba(255,255,255,0.3);
 	    border-bottom-right-radius: 20px;
+	    border-bottom: 3px solid;
 	}
 	&-bottom-left {
 		display: block;
@@ -190,11 +185,12 @@
 	    border-left: 3px solid;
 	    background-color: rgba(255,255,255,0.3);
 	    border-bottom-left-radius: 20px;
+	    border-bottom: 3px solid;
 	}
 	&-center {
 		display: block;
 	    width: 14px;
-	    height: 18px;
+	    height: 14px;
 	    border: 2px solid #fff;
 	    background-color: rgba(255,255,255,0.3);
 	    border-radius: 4px;

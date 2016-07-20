@@ -7,63 +7,63 @@ var CssBorderSelector = React.createClass({
 	getClassName: function() {
 		if (this.props.top && this.props.right && this.props.bottom && this.props.left) {
 			return {
-				top: 'button css-selector-top-button',
-				right: 'button css-selector-right-button',
-				bottom: 'button css-selector-bottom-button',
-				left: 'button css-selector-left-button',
-				centre: 'button css-selector-centre-button primary'
+				top: 'button css-border-selector-button css-border-selector-button-top',
+				right: 'button css-border-selector-button css-border-selector-button-right',
+				bottom: 'button css-border-selector-button css-border-selector-button-bottom',
+				left: 'button css-border-selector-button css-border-selector-button-left',
+				centre: 'button css-border-selector-button css-border-selector-button-center primary'
 			}
 		} 
 
 		return {
-			top: classnames({'button css-selector-top-button primary': (this.props.top)}, 
-				{'button css-selector-top-button': (!this.props.top)}),
+			top: classnames({'button css-border-selector-button css-border-selector-button-top primary': (this.props.top)}, 
+				{'button css-border-selector-button css-border-selector-button-top': (!this.props.top)}),
 			
-			right: classnames({'button css-selector-right-button primary': (this.props.right)},
-				{'button css-selector-right-button': !this.props.right}),
+			right: classnames({'button css-border-selector-button css-border-selector-button-right primary': (this.props.right)},
+				{'button css-border-selector-button css-border-selector-button-right': !this.props.right}),
 			
-			bottom: classnames({'button css-selector-bottom-button primary': (this.props.bottom)},
-				{'button css-selector-bottom-button': !this.props.bottom}),
+			bottom: classnames({'button css-border-selector-button css-border-selector-button-bottom primary': (this.props.bottom)},
+				{'button css-border-selector-button css-border-selector-button-bottom': !this.props.bottom}),
 			
-			left: classnames({'button css-selector-left-button primary': (this.props.left)},
-				{'button css-selector-left-button': !this.props.left}),
+			left: classnames({'button css-border-selector-button css-border-selector-button-left primary': (this.props.left)},
+				{'button css-border-selector-button css-border-selector-button-left': !this.props.left}),
 			
-			centre: classnames({'button css-selector-centre-button': !this.props.centre}),
+			centre: classnames({'button css-border-selector-button css-border-selector-button-center': !this.props.centre}),
 		}
 	},
 
 	getItems: function() {
 		return (
-			<div className="css-selector">
-				<div className="css-selector-top">	
+			<div className="css-border-selector">
+				<div className="css-border-selector-top">	
 					<button 
 						className={this.getClassName().top}
 						onClick={this.onTopButtonClicked}>
-						<span className="css-selector-top-icon"></span>
+						<span className="css-border-selector-button-icon-top"></span>
 					</button>
 				</div>
-				<div className="css-selector-middle">
+				<div className="css-border-selector-middle">
 					<button 
 						className={this.getClassName().left}
 						onClick={this.onLeftButtonClicked}>
-						<span className="css-selector-left-icon"></span>
+						<span className="css-border-selector-button-icon-left"></span>
 					</button>
 					<button 
 						className={this.getClassName().centre}
 						onClick={this.onCentreButtonClicked}>
-						<span className="css-selector-centre-icon"></span>
+						<span className="css-border-selector-button-icon-center"></span>
 					</button>
 					<button 
 						className={this.getClassName().right}
 						onClick={this.onRightButtonClicked}>
-						<span className="css-selector-right-icon"></span>
+						<span className="css-border-selector-button-icon-right"></span>
 					</button>
 				</div>
-				<div className="css-selector-bottom">
+				<div className="css-border-selector-bottom">
 					<button 
 						className={this.getClassName().bottom}
 						onClick={this.onBottomButtonClicked}>
-						<span className="css-selector-bottom-icon"></span>
+						<span className="css-border-selector-button-icon-bottom"></span>
 					</button>
 				</div>
 			</div>
