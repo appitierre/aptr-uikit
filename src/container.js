@@ -561,7 +561,8 @@ var Container = React.createClass({
                         avatar="http://placehold.it/400x100"
                         onCloseButtonClicked={this.onCloseButtonClicked}
                         icon="alarm"
-                        iconColor="red"/>
+                        iconColor="red"
+                        author="brandon Karunakaran"/>
                 
 
                 </Section>

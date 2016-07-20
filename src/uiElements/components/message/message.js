@@ -53,6 +53,16 @@ var Message = React.createClass({
 		}
  	},
 
+ 	getAuthor: function() {
+ 		if (this.props.author) {
+ 			return (
+ 				<div className="message-item-author">
+ 					{this.props.author}
+ 				</div>
+ 			)
+ 		}
+ 	},
+
 	render: function() {
 		return (
 			<div className="message-item clearfix">
@@ -68,6 +78,7 @@ var Message = React.createClass({
 					<div className="message-item-content-right">
 						{this.getTitle()}
 						{this.getBody()}
+						{this.getAuthor()}
 					</div>
 				</div>
 			</div>
