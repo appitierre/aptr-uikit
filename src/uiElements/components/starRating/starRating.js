@@ -1,26 +1,46 @@
 var React = require('react');
 var FlatButton = require('../buttons/flatButton');
-var StarRatingItem = require('./starRatingItem')
+var StarRatingSelectedItem = require('./starRatingSelectedItem');
+var StarRatingUnselectedItem = require('./starRatingUnselectedItem');
 
 var StarRating = React.createClass({
 
 	getItems: function() {
 	var total = this.props.total;
-		
-		return _.times(total, function(item, index) {
-			return (
-				<StarRatingItem />
-			)
-		}, this)
+	var that = this;
+
+		return _.times(total, function(index) {
+			if (index + 1 <= that.props.value) {	
+				return (
+					<StarRatingSelectedItem 
+						itemNumber={index+1}
+						key={index}
+						onClick={_.bind(function(itemNumber) {
+							that.onButtonClick(itemNumber)
+						}, that)} 
+					/>
+				)
+			} else {
+				return (
+					<StarRatingUnselectedItem 
+						itemNumber={index+1}
+						key={index}
+						onClick={_.bind(function(itemNumber) {
+							that.onButtonClick(itemNumber)
+						}, that)} 
+					/>
+				)
+			}
+		})
 	},
 
-	onClick: function() {
-		console.log('')
+	onButtonClick: function(itemNumber) {		
+		this.props.onChange(itemNumber);
 	},
 
 	render: function() {
 		return ( 
-			<div className="star-rating-item">
+			<div className="star-rating">
 				{this.getItems()}
 			</div>
 		)

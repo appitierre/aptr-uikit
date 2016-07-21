@@ -723,7 +723,7 @@ var Container = React.createClass({
                     title="Star rating"
                     description="">
 
-                    <StarRating total={5} value={this.state.starValue} />
+                    <StarRating total={5} value={this.state.starValue} onChange={this.onStarRatingChanged}/>
 
                 </Section>
 
