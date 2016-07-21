@@ -12,7 +12,8 @@ var StarRatingSelectedItem = React.createClass({
 			<div className="star-rating-item">
 				<FlatButton 
 					icon="star"
-					className="star-rating-item-selected secondary"
+					className="star-rating-item-selected"
+					type="secondary"
 					onClick={this.onButtonClick}/>
 			</div>
 		);
