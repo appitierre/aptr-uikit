@@ -100,7 +100,7 @@ var Button = React.createClass({
             
             event.preventDefault();
             
-            this.props.onClick();
+            this.props.onClick(event);
         } 
     },
 
