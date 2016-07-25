@@ -21,6 +21,7 @@ var CheckboxItem = require('./components/checkboxItem/checkboxItem');
 var Message = require('./components/message/message');
 var CssValue = require('./components/cssValue/cssValue');
 var CssBorderSelector = require('./components/cssBorderSelector/cssBorderSelector');
+var CssPaddingMarginSelector = require('./components/cssPaddingMarginSelector/cssPaddingMarginSelector');
 
 module.exports = {
     Button: Button,
@@ -46,6 +47,7 @@ module.exports = {
     Message: Message,
     CssValue: CssValue,
     CssBorderSelector: CssBorderSelector,
-    CssBorderRadiusSelector: CssBorderRadiusSelector
+    CssBorderRadiusSelector: CssBorderRadiusSelector,
+    CssPaddingMarginSelector: CssPaddingMarginSelector
 };
 

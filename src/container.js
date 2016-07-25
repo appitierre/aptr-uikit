@@ -30,7 +30,8 @@ var ListItems = require('./uiElements/components/list/listItems');
 var Message = require('./uiElements/components/message/message');
 var CssValue = require('./uiElements/components/cssValue/cssValue');
 var CssBorderSelector = require('./uiElements/components/cssBorderSelector/cssBorderSelector');
-var CssBorderRadiusSelector = require('./uiElements/components/cssBorderRadiusSelector/cssBorderRadiusSelector')
+var CssBorderRadiusSelector = require('./uiElements/components/cssBorderRadiusSelector/cssBorderRadiusSelector');
+var CssPaddingMarginSelector = require('./uiElements/components/cssPaddingMarginSelector/cssPaddingMarginSelector');
 
 var _ = require('underscore');
 //Array is just an example of how the Folder component returns the data.
@@ -60,7 +61,15 @@ var Container = React.createClass({
             topLeft: false,
             topRight: false,
             bottomRight: false,
-            bottomLeft: false
+            bottomLeft: false,
+            paddingTop: 0,
+            marginTop: 0,
+            paddingLeft: 0,
+            marginLeft: 0,
+            paddingBottom: 0,
+            marginBottom: 0,
+            paddingLeft: 0,
+            marginLeft: 0,
         }
     },
 
@@ -91,6 +100,48 @@ var Container = React.createClass({
     onWidthDecrease: function(decreaseBy) {
         this.setState({
             width: this.state.width - (1 * decreaseBy)
+        })
+    },
+
+/* increase changes for padding and margins */
+    
+    onMarginTopIncrease: function(increaseAmount) {
+        this.setState({
+            marginTop: this.state.marginTop + (1 * increaseAmount)
+        })
+    },
+
+    onMarginTopDecrease: function(decreaseAmount) {
+        this.setState({
+            marginTop: this.state.marginTop - (1 * decreaseAmount)
+        })
+    },
+
+    onMarginTopChange: function(amount) {
+        this.setState({
+            marginTop: amount
+        })
+    },
+
+    onPaddingTopIncrease: function(increaseAmount) {
+        this.setState({
+            paddingTop: this.state.paddingTop + (1 * increaseAmount)
+        })
+    },
+
+/* ----------------------------------------------------- */
+
+    onPaddingMarginChanged: function(paddingTop, marginTop, paddingRight, marginRight, paddingBottom, marginBottom, paddingLeft, marginLeft) {
+        console.log(arguments);
+        this.setState({
+            paddingTop: paddingTop,
+            marginTop: marginTop,
+            paddingRight: paddingRight,
+            marginRight: marginRight,
+            paddingBottom: paddingBottom,
+            marginBottom: marginBottom,
+            paddingLeft: paddingLeft,
+            marginLeft: marginLeft
         })
     },
 
@@ -396,6 +447,26 @@ var Container = React.createClass({
                         bottomRight={this.state.bottomRight}
                         bottomLeft={this.state.bottomLeft}
                         onChange={this.onRadiusSelectorChanged}
+                    />
+
+                </Section>
+
+                <Section
+                    title="Css Padding/Margin selector">
+
+                    <CssPaddingMarginSelector 
+                        paddingTop={this.state.paddingTop}
+                        marginTop={this.state.marginTop}
+                        paddingLeft={this.state.paddingLeft}
+                        marginLeft={this.state.marginLeft}
+                        paddingBottom={this.state.paddingBottom}
+                        marginBottom={this.state.marginBottom}
+                        paddingLeft={this.state.paddingLeft}
+                        marginLeft={this.state.marginLeft}
+                        onMarginTopIncrease={this.onMarginTopIncrease}
+                        onMarginTopDecrease={this.onMarginTopDecrease}
+                        onMarginTopChange={this.onMarginTopChange}
+                        onPaddingTopIncrease={this.onPaddingTopIncrease}
                     />
 
                 </Section>
