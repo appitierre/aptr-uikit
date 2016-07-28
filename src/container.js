@@ -58,14 +58,18 @@ var Container = React.createClass({
             right: false,
             bottom: false,
             left: false,
+            topValue: 1,
+            rightValue: 2,
+            bottomValue: 3,
+            leftValue: 4,
             topLeft: false,
             topRight: false,
             bottomRight: false,
             bottomLeft: false,
             paddingTop: 0,
             marginTop: 0,
-            paddingLeft: 0,
-            marginLeft: 0,
+            paddingRight: 0,
+            marginRight: 0,
             paddingBottom: 0,
             marginBottom: 0,
             paddingLeft: 0,
@@ -131,17 +135,67 @@ var Container = React.createClass({
 
 /* ----------------------------------------------------- */
 
-    onPaddingMarginChanged: function(paddingTop, marginTop, paddingRight, marginRight, paddingBottom, marginBottom, paddingLeft, marginLeft) {
+    onPaddingMarginChanged: function(top, right, bottom, left) {
         console.log(arguments);
         this.setState({
-            paddingTop: paddingTop,
-            marginTop: marginTop,
-            paddingRight: paddingRight,
-            marginRight: marginRight,
-            paddingBottom: paddingBottom,
-            marginBottom: marginBottom,
-            paddingLeft: paddingLeft,
-            marginLeft: marginLeft
+            top: top,
+            right: right,
+            bottom: bottom,
+            left: left
+        })
+    },
+
+    onPaddingValueChanged: function(value) {
+        var top = this.state.topValue;
+        var right = this.state.rightValue;
+        var bottom = this.state.bottomValue;
+        var left = this.state.leftValue;
+
+        if (this.state.top) {
+            top = value;
+        } 
+
+        if (this.state.right) {
+            right = value;
+        } 
+
+        if (this.state.bottom) {
+            bottom = value;
+        } 
+
+        if (this.state.left) {
+            left = value;
+        }
+
+        this.setState({
+            topValue: top,
+            rightValue: right,
+            bottomValue: bottom,
+            leftValue: left
+        })
+    },
+
+    onTopIncrease: function(value) {
+        this.setState({
+            topValue: value
+        })
+    },
+
+    onLeftIncrease: function(value) {
+        this.setState({
+            leftValue: value
+        })
+    },
+
+    onBottomIncrease: function(value) {
+        this.setState({
+            bottomValue: value
+        })
+    },
+
+    onRightIncrease: function(value) {
+        this.setState({
+            topValue: value
         })
     },
 
@@ -454,19 +508,17 @@ var Container = React.createClass({
                 <Section
                     title="Css Padding/Margin selector">
 
-                    <CssPaddingMarginSelector 
-                        paddingTop={this.state.paddingTop}
-                        marginTop={this.state.marginTop}
-                        paddingLeft={this.state.paddingLeft}
-                        marginLeft={this.state.marginLeft}
-                        paddingBottom={this.state.paddingBottom}
-                        marginBottom={this.state.marginBottom}
-                        paddingLeft={this.state.paddingLeft}
-                        marginLeft={this.state.marginLeft}
-                        onMarginTopIncrease={this.onMarginTopIncrease}
-                        onMarginTopDecrease={this.onMarginTopDecrease}
-                        onMarginTopChange={this.onMarginTopChange}
-                        onPaddingTopIncrease={this.onPaddingTopIncrease}
+                    <CssPaddingMarginSelector
+                        onChange={this.onPaddingMarginChanged}
+                        onValueChange={this.onPaddingValueChanged}
+                        top={this.state.top}
+                        right={this.state.right}
+                        bottom={this.state.bottom}
+                        left={this.state.left}
+                        topValue={this.state.topValue}
+                        rightValue={this.state.rightValue}
+                        bottomValue={this.state.bottomValue}
+                        leftValue={this.state.leftValue}
                     />
 
                 </Section>

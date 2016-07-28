@@ -5,107 +5,126 @@ var CssPaddingMarginSelector = React.createClass({
 
 	getInitialState: function() {
 		return {
-			marginTopCssValueVisible: false
+			topClickedFirst: false,
+			rightClickedFirst: false,
+			bottomClickedFirst: false,
+			leftClickedFirst: false
 		}
 	},
 
 	getClassName: function() {
 		return {
-			paddingTop: "button css-padding-margin-selector-button-padding-top", 
-			marginTop: "button css-padding-margin-selector-button-margin-top",
-			paddingRight: "button css-padding-margin-selector-button-padding-right",
-			marginRight: "button css-padding-margin-selector-button-margin-right",
-			paddingBottom: "button css-padding-margin-selector-button-padding-bottom",
-			marginBottom: "button css-padding-margin-selector-button-margin-bottom",
-			paddingLeft	: "button css-padding-margin-selector-button-padding-left",
-			marginLeft: "button css-padding-margin-selector-button-margin-left"
+			top: "button css-padding-margin-selector-button css-padding-margin-selector-button-padding-top", 
+			right: "button css-padding-margin-selector-button css-padding-margin-selector-button-margin-top",
+			bottom: "button css-padding-margin-selector-button css-padding-margin-selector-button-padding-right",
+			left: "button css-padding-margin-selector-button css-padding-margin-selector-button-margin-right"
 		}
 	},
 
-	onMarginTopIncrease: function() {
-		this.props.onMarginTopIncrease(1)
-	},
+	onTopButtonClicked: function(event) {
+		event.preventDefault();
+		var props = this.props;
 
-	onMarginTopDecrease: function() {
-		this.props.onMarginTopDecrease(1)
-	},
-
-	onMarginTopChange: function() {
-		this.props.onMarginTopChange()
-	},
-
-	onMarginTopValueClicked: function() {
 		this.setState({
-			marginTopCssValueVisible: !this.state.marginTopCssValueVisible
+			topClickedFirst: !this.state.topClickedFirst,
+			rightClickedFirst: false,
+			bottomClickedFirst: false,
+			leftClickedFirst: false
+		});
+
+		this.props.onChange(!props.top, props.right, props.bottom, props.left);
+	},
+
+	onRightButtonClicked: function(event) {
+		event.preventDefault();
+		var props = this.props;
+
+		this.setState({
+			topClickedFirst: false,
+			rightClickedFirst: !this.state.rightClickedFirst,
+			bottomClickedFirst: false,
+			leftClickedFirst: false
+		});
+
+		this.props.onChange(props.top, !props.right, props.bottom, props.left);
+	},
+
+	onBottomButtonClicked: function(event) {
+		event.preventDefault();
+		var props = this.props;
+
+		this.setState({
+			topClickedFirst: false,
+			rightClickedFirst: false,
+			bottomClickedFirst: !this.state.bottomClickedFirst,
+			leftClickedFirst: false
+		});
+
+		this.props.onChange(props.top, props.right, !props.bottom, props.left);
+	},
+
+	onLeftButtonClicked: function(event) {
+		event.preventDefault();
+		var props = this.props;
+
+		this.setState({
+			topClickedFirst: false,
+			rightClickedFirst: false,
+			bottomClickedFirst: false,
+			leftClickedFirst: !this.state.leftClickedFirst
 		})
+
+		this.props.onChange(props.top, props.right, props.bottom, !props.left);
 	},
 
-	getMarginTopCssValue: function() {
-		if (this.state.marginTopCssValueVisible) {
-			return (
-				<CssValue 
-					unit="px"
-					value={this.props.marginTop}
-					onChange={this.props.onMarginTopChange}
-					onIncrease={this.onMarginTopIncrease}
-					onDecrease={this.onMarginTopDecrease}
-				/>
-			)
+	getValue: function() {
+		if (this.state.topClickedFirst) {
+			return this.props.topValue
+		} else if (this.state.rightClickedFirst) {
+			return this.props.rightValue
+		} else if (this.state.bottomClickedFirst) {
+			return this.props.bottomValue
+		} else if (this.state.leftClickedFirst) {
+			return this.props.leftValue
 		} else {
-			return null
+			return 0
 		}
+
+		console.log('first', this.state.topClickedFirst)
 	},
 
-	onPaddingTopIncrease: function() {
-		this.props.onPaddingTopIncrease(1)
+	renderCssValue: function() {
+		return (
+			<CssValue 
+				value={this.getValue()}
+				unit="px"
+				onChange={this.props.onValueChange}
+			/>
+		) 
 	},
-
 
 	getItems: function() {
-	console.log(this.state)
 		return (
-			<div className="css-padding-margin-selector">
-				<div className="css-padding-margin-selector-top">
-					<button className={this.getClassName().marginTop} onClick={this.onMarginTopIncrease}>
-						margin top
-					</button>
-					<div className="css-padding-margin-selector-margin-top-value" onClick={this.onMarginTopValueClicked}>
-						{this.props.marginTop}
-					</div>
-						{this.getMarginTopCssValue()}
-					<button className={this.getClassName().paddingTop} onClick={this.onPaddingTopIncrease}>
-					 	padding top
-					</button>
-					<div className="css-padding-margin-selector-padding-top-value">
-						{this.props.paddingTop}
-					</div>
-				</div>
-					
-				<div className="css-padding-margin-selector-right">
-					<button className={this.getClassName().marginRight}>
-						margin right
-					</button>
-					<button className={this.getClassName().paddingRight}>
-						padding right
-					</button>
-				</div>
+			<div>
+				<div className="css-padding-margin-selector">
+						<button className={this.getClassName().top} onClick={this.onTopButtonClicked}>
+							{this.props.topValue}
+						</button>
+										
+						<button className={this.getClassName().right} onClick={this.onRightButtonClicked}>
+							{this.props.rightValue}
+						</button>
+								
+						<button className={this.getClassName().bottom} onClick={this.onBottomButtonClicked}>
+							{this.props.bottomValue}
+						</button>
 
-				<div className="css-padding-margin-selector-bottom">	
-					<button className={this.getClassName().marginBottom}>
-						marginBottom 
-					</button>
-					<button className={this.getClassName().paddingBottom}>
-						paddingBottom
-					</button>
+						<button className={this.getClassName().left} onClick={this.onLeftButtonClicked}>
+							{this.props.leftValue}
+						</button>
 				</div>
-
-				<div className="css-padding-margin-selector-left">
-					<button className={this.getClassName().marginLeft}>
-						marginLeft
-					</button>
-					<button className={this.getClassName().paddingLeft}>
-						paddingLeft
-					</button>
+				<div>	
+					{this.renderCssValue()}
 				</div>
 			</div>
 		)
