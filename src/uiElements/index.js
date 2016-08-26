@@ -21,6 +21,7 @@ var CheckboxItem = require('./components/checkboxItem/checkboxItem');
 var Message = require('./components/message/message');
 var CssValue = require('./components/cssValue/cssValue');
 var CssBorderSelector = require('./components/cssBorderSelector/cssBorderSelector');
+var CssBorderRadiusSelector = require('./components/cssBorderRadiusSelector/cssBorderRadiusSelector');
 var StarRating = require('./components/starRating/starRating')
 
 module.exports = {
