@@ -16,6 +16,17 @@ var FlatButton = React.createClass({
         }
     },
 
+	propTypes: {
+        icon: React.PropTypes.string,
+        text: React.PropTypes.string,
+        className: React.PropTypes.string,
+        type: React.PropTypes.oneOf(['primary', 'secondary', 'alert']),
+        onClick: React.PropTypes.func.isRequired,
+        disabled: React.PropTypes.bool,
+        toolTip: React.PropTypes.string,
+        toolTipPosition: React.PropTypes.oneOf(['top', 'bottom'])
+    },
+
     componentWillMount: function() {
     	this.getToolTipPositioning();
     },

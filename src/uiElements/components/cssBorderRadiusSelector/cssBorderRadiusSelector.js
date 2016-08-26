@@ -4,6 +4,15 @@ var Button = require('../buttons/button');
 
 var CssBorderRadiusSelector = React.createClass({
 
+	propTypes: {
+		topLeft: React.PropTypes.bool,
+		topRight: React.PropTypes.bool,
+		bottomRight: React.PropTypes.bool,
+		bottomLeft: React.PropTypes.bool,
+		center: React.PropTypes.bool,
+		onChange: React.PropTypes.func.isRequired
+	},
+
 	getClassName: function() {
 		if (this.props.topLeft && this.props.topRight && this.props.bottomRight && this.props.bottomLeft) {
 			return {

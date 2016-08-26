@@ -10,10 +10,15 @@ var SearchBar = React.createClass({
 		}
 	},
 
+	propTypes: {
+		onChange: React.PropTypes.func.isRequired,
+		className: React.PropTypes.string
+	},
+
 	getButton: function() {
 		if (this.state.value.length === 0) {
 			return (
-				<Button icon='magnifier' className='search-bar-button'/>
+				<Button icon='magnifier' className='search-bar-button' onClick={this.onButtonClicked}/>
 			)
 		} else {
 			return (
@@ -28,6 +33,11 @@ var SearchBar = React.createClass({
 
 	onButtonClicked: function(event) {
 		event.preventDefault();
+
+		if(this.state.value.length === 0) {
+			return;
+		}
+		
 		this.setState({
 			value: ''
 		})

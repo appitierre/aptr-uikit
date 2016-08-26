@@ -4,6 +4,15 @@ var Button = require('../buttons/button');
 
 var CssBorderSelector = React.createClass({
 
+	propTypes: {
+		top: React.PropTypes.bool,
+		right: React.PropTypes.bool,
+		bottom: React.PropTypes.bool,
+		left: React.PropTypes.bool,
+		center: React.PropTypes.bool,
+		onChange: React.PropTypes.func.isRequired
+	},
+
 	getClassName: function() {
 		if (this.props.top && this.props.right && this.props.bottom && this.props.left) {
 			return {

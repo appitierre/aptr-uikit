@@ -9,11 +9,12 @@ backgroundColor: string
 
 var ProgressBar = React.createClass({
 
-	componentWillMount: function() {
-		if (_.isUndefined(this.props.value) || !_.isNumber(this.props.value)) {
-			console.warn("You're currently missing progress property");
-		}
+	propTypes: {
+		value: React.PropTypes.number.isRequired,
+		backgroundColor: React.PropTypes.string,
+		className: React.PropTypes.string
 	},
+
 
 	renderClassName: function() {
 		return classNames('progress-bar', this.props.className);

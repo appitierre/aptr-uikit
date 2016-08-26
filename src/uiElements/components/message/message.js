@@ -3,6 +3,17 @@ var FlatButton = require('../buttons/flatButton');
 
 var Message = React.createClass({
 
+	propTypes: {
+		avatar: React.PropTypes.string,
+		title: React.PropTypes.string,
+		body: React.PropTypes.string,
+		icon: React.PropTypes.string,
+		color: React.PropTypes.string,
+		author: React.PropTypes.string,
+		onCloseButtonClicked: React.PropTypes.func.isRequired,
+		onClick: React.PropTypes.func.isRequired
+	},
+
 	getImage: function() {
 		if (this.props.avatar) {
 			return (

@@ -5,6 +5,10 @@ var _ = require('underscore');
 
 var DropDownOptions = React.createClass({
 
+	propTypes: {
+		options: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+		className: React.PropTypes.string
+	},
 
 	getInitialState: function() {
 		return {

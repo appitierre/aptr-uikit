@@ -13,6 +13,16 @@ disabled: Boolean
 
 var RangeSlider = React.createClass({
     
+    propTypes: {
+        value: React.PropTypes.number.isRequired,
+        defaultValue: React.PropTypes.number,
+        min: React.PropTypes.number.isRequired,
+        max: React.PropTypes.number.isRequired,
+        step:React.PropTypes.number,
+        disabled: React.PropTypes.bool,
+        onChange: React.PropTypes.func.isRequired
+    },
+
     render: function () {
         var props = this.props;
         return(

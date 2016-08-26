@@ -4,6 +4,12 @@ var classNames = require('classnames')
 
 var Folder = React.createClass({
 
+    propTypes: {
+        icon: React.PropTypes.string.isRequired,
+        folder: React.PropTypes.object.isRequired,
+        onClick: React.PropTypes.func.isRequired
+    },
+
     getClassName: function() {
         return classNames('folder clearfix', this.props.folder.className);
     },

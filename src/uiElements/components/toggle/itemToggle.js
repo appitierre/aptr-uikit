@@ -3,6 +3,15 @@ var classNames = require('classnames');
 
 var ItemToggle = React.createClass({
 
+	propTypes: {
+		toggleId: React.PropTypes.oneOfType([
+			React.PropTypes.string,
+			React.PropTypes.number,
+		]).isRequired,
+		onChange: React.PropTypes.func.isRequired,
+		className: React.PropTypes.string
+	},
+
 	renderClassName: function() {
 		return classNames('forms-boolean-toggle', this.props.className);
 	},

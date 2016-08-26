@@ -10,6 +10,12 @@ var AccordionItem = React.createClass({
 		}
 	},
 
+	propTypes: {
+		className: React.PropTypes.string,
+		content: React.PropTypes.any.isRequired,
+		itemTitle: React.PropTypes.string
+	},
+
 	renderClassName: function() {
 		return classNames('accordion-item', this.props.className);
 	},

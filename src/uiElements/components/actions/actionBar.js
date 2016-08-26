@@ -3,6 +3,10 @@ var classNames = require('classnames');
 
 var ActionBar = React.createClass({
 
+	propTypes: {
+		className: React.PropTypes.string
+	},
+
 	getClassName: function() {
         return classNames('action-bar', this.props.className);
     },

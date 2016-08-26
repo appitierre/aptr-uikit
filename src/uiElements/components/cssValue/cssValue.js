@@ -9,6 +9,14 @@ var CssValue = React.createClass({
         }
     },
 
+    propTypes: {
+        onIncrease: React.PropTypes.func.isRequired,
+        onDecrease: React.PropTypes.func.isRequired,
+        onChange: React.PropTypes.func.isRequired,
+        unit: React.PropTypes.string.isRequired,
+        value: React.PropTypes.number.isRequired
+    },
+
     onInputKeyDown: function(event) {
         var keyCode = event.keyCode;
         

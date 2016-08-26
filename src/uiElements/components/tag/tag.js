@@ -3,6 +3,13 @@ var classNames = require('classnames');
 
 var Tag = React.createClass({
 
+	propTypes: {
+		tagColor: React.PropTypes.string,
+		className: React.PropTypes.string,
+		hasCloseButton: React.PropTypes.bool,
+		text: React.PropTypes.string
+	},
+
 	getStyle: function() {
 		if (this.props.tagColor) {
 			return ({

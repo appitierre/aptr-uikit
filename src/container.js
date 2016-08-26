@@ -60,7 +60,8 @@ var Container = React.createClass({
             topLeft: false,
             topRight: false,
             bottomRight: false,
-            bottomLeft: false
+            bottomLeft: false,
+            value: 1
         }
     },
 
@@ -142,6 +143,7 @@ var Container = React.createClass({
                     folder={tag}
                     key={index}
                     icon='tag'
+                    onClick={this.onClick}
                 />
             )
         }, this);
@@ -155,7 +157,7 @@ var Container = React.createClass({
     render: function() {
         var actionBar = jsxToString(
             <ActionBar>
-                <Button text="primary" type="primary" icon="star" />
+                <Button text="primary" type="primary" icon="star" onClick={this.onClick}/>
             </ActionBar>
         );
         var accordionItem = jsxToString(
@@ -205,7 +207,7 @@ var Container = React.createClass({
                     }
                 >
                     <ActionBar>
-                        <Button text="primary" type="primary" icon="star" />
+                        <Button text="primary" type="primary" icon="star" onClick={this.onClick}/>
                     </ActionBar>
 
                 </Section>
@@ -320,7 +322,7 @@ var Container = React.createClass({
                             children={ jsxToString(
                                 <CollectionItem 
                                     className="course-collection-item" 
-                                    contentComponent={<CollectionItemContent title='The Title' body='this body this body this body this body'/>} actionsComponent={<CollectionItemAction />} 
+                                    contentComponent={<CollectionItemContent title='The Title' body='this body this body this body this body'/>} actionsComponent={<CollectionItemAction onClick={this.onClick}/>} 
                                 />
                             ) 
                         }>
@@ -330,7 +332,7 @@ var Container = React.createClass({
                 >
                     
 
-                    <CollectionItem className="course-collection-item" contentComponent={<CollectionItemContent title='The Title' body='this body this body this body this body' tag={<Tag text="Chemistry" tagColor="red" hasCloseButton={true}/>}/>} actionsComponent={<CollectionItemAction />} />
+                    <CollectionItem className="course-collection-item" contentComponent={<CollectionItemContent title='The Title' body='this body this body this body this body' tag={<Tag text="Chemistry" tagColor="red" hasCloseButton={true}/>}/>} actionsComponent={<CollectionItemAction onClick={this.onClick}/>} />
 
                 </Section>
 
@@ -577,15 +579,18 @@ var Container = React.createClass({
                                     },
                                     {
                                         type: "secondary",
-                                        icon: "screen"    
+                                        icon: "screen",
+                                        onClick: this.onClick    
                                     },
                                     {
                                         type: "alert",
-                                        icon: "trash"    
+                                        icon: "trash",
+                                        onClick: this.onClick    
                                     },
                                     {
                                         type: "secondary",
-                                        icon: "screen"    
+                                        icon: "screen",
+                                        onClick: this.onClick    
                                     },
                                     {
                                         type: "primary",
@@ -594,7 +599,8 @@ var Container = React.createClass({
                                     },
                                     {
                                         type: "alert",
-                                        icon: "trash"    
+                                        icon: "trash",
+                                        onClick: this.onClick    
                                     }
                                 ]}
                             />,
@@ -671,7 +677,16 @@ var Container = React.createClass({
                     title="Pagination"
                     description="">
 
-                    <Pagination currentPage={1} totalPages={0} buttonType="secondary" className="course" toolTipRightButton="right" toolTipRightButtonPosition="bottom" toolTipLeftButton="left" />
+                    <Pagination 
+                        currentPage={1} 
+                        totalPages={0} 
+                        buttonType="secondary"
+                        onNextPageClicked={() => console.log('next page')}
+                        onPreviousPageClicked={() => console.log('previous page clicked')} 
+                        className="course" 
+                        toolTipRightButton="right" 
+                        toolTipRightButtonPosition="bottom" 
+                        toolTipLeftButton="left" />
                     
                 </Section>
 
@@ -699,6 +714,7 @@ var Container = React.createClass({
                        step={1}
                         min={1}
                         max={100}
+                        value={this.state.value}
                         defaultValue={30}
                     />
                 </Section>
