@@ -23,7 +23,11 @@ var EditorContainer = _react2.default.createClass({
             top: false,
             right: false,
             bottom: false,
-            left: false
+            left: false,
+            topLeft: false,
+            topRight: false,
+            bottomRight: false,
+            bottomLeft: false
         };
     },
 
@@ -65,12 +69,23 @@ var EditorContainer = _react2.default.createClass({
         });
     },
 
+    onRadiusSelectorChanged: function onRadiusSelectorChanged(topLeft, topRight, bottomRight, bottomLeft) {
+        console.log(arguments);
+        this.setState({
+            topLeft: topLeft,
+            topRight: topRight,
+            bottomRight: bottomRight,
+            bottomLeft: bottomLeft
+        });
+    },
+
     render: function render() {
         return _react2.default.createElement(_editor2.default, _extends({}, this.state, {
             onWidthChanged: this.onWidthChanged,
             onWidthIncrease: this.onWidthIncrease,
             onWidthDecrease: this.onWidthDecrease,
-            onSelectorChanged: this.onSelectorChanged
+            onSelectorChanged: this.onSelectorChanged,
+            onRadiusSelectorChanged: this.onRadiusSelectorChanged
         }));
     }
 

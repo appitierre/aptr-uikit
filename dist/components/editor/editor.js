@@ -35,10 +35,15 @@ var Editor = React.createClass({
                 leftIcon: 'star',
                 centreIcon: 'moon'
             }),
-            React.createElement(CssBorderRadiusSelector, null)
+            React.createElement(CssBorderRadiusSelector, {
+                topLeft: this.props.topLeft,
+                topRight: this.props.topRight,
+                bottomRight: this.props.bottomRight,
+                bottomLeft: this.props.bottomLeft,
+                onChange: this.props.onRadiusSelectorChanged
+            })
         );
     }
-
 });
 
 exports.default = Editor;
