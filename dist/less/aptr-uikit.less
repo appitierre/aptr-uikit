@@ -770,50 +770,151 @@ input.forms-boolean-toggle:checked + label:after {
   border-radius: 0px;
 }
 /* STYLES FOR BORDER SELECTOR COMPONENT */
-.css-selector {
+.css-border-selector {
   display: inline-block;
 }
-.css-selector button {
-  margin: 0;
-  padding: 8px;
-}
-.css-selector-top {
+.css-border-selector-top {
   padding: 0px 40px;
   margin-bottom: 4px;
 }
-.css-selector-bottom {
+.css-border-selector-bottom {
   padding: 0px 40px;
   margin-top: 4px;
 }
-.css-selector-left-button {
-  margin-right: 4px !important;
+.css-border-selector-button {
+  margin: 0;
+  padding: 8px;
+  width: 36px;
+  height: 36px;
 }
-.css-selector-left-button i:before {
-  border-left: 2px solid black;
+.css-border-selector-button-left {
+  margin-right: 4px;
 }
-.css-selector-right-button {
-  margin-left: 4px !important;
+.css-border-selector-button-right {
+  margin-left: 4px;
 }
-.css-selector-right-button i:before {
-  border-right: 2px solid black;
-}
-.css-selector-top-icon {
+.css-border-selector-button-icon-top {
   display: block;
-  width: 18px;
+  width: 20px;
   height: 14px;
   border: 0px solid #fff;
   border-top: 3px solid;
   background-color: rgba(255, 255, 255, 0.3);
 }
-.css-selector-top-button i:before {
-  border-top: 2px solid black;
+.css-border-selector-button-icon-right {
+  display: block;
+  width: 14px;
+  height: 18px;
+  border: 0px solid #fff;
+  border-right: 3px solid;
+  background-color: rgba(255, 255, 255, 0.3);
 }
-.css-selector-bottom-button i:before {
-  border-bottom: 2px solid black;
+.css-border-selector-button-icon-bottom {
+  display: block;
+  width: 20px;
+  height: 14px;
+  border: 0px solid #fff;
+  border-bottom: 3px solid;
+  background-color: rgba(255, 255, 255, 0.3);
 }
+.css-border-selector-button-icon-left {
+  display: block;
+  width: 14px;
+  height: 18px;
+  border: 0px solid #fff;
+  border-left: 3px solid;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.css-border-selector-button-icon-center {
+  display: block;
+  width: 14px;
+  height: 12px;
+  border: 3px solid #fff;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+/* ----- */
 /* STYLES FOR BORDER RADIUS SELECTOR */
-.css-border-radius-selector button {
+.css-border-radius-selector {
+  display: inline-block;
+  width: 110px;
+  height: 110px;
+  position: relative;
+}
+.css-border-radius-selector-button {
   margin: 0;
+  position: absolute;
+  width: 36px;
+  height: 36px;
+}
+.css-border-radius-selector-button-top-left {
+  top: 0;
+  left: 0;
+}
+.css-border-radius-selector-button-top-right {
+  top: 0;
+  right: 0;
+}
+.css-border-radius-selector-button-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+.css-border-radius-selector-button-bottom-left {
+  bottom: 0;
+  left: 0;
+}
+.css-border-radius-selector-button-center {
+  top: 50%;
+  left: 50%;
+  margin-left: -18px;
+  margin-top: -18px;
+}
+.css-border-radius-selector-button-icon-top-left {
+  display: block;
+  width: 14px;
+  height: 18px;
+  border: 0px solid #fff;
+  border-left: 3px solid;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-top-left-radius: 20px;
+  border-top: 3px solid;
+}
+.css-border-radius-selector-button-icon-top-right {
+  display: block;
+  width: 14px;
+  height: 18px;
+  border: 0px solid #fff;
+  border-right: 3px solid;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-top-right-radius: 20px;
+  border-top: 3px solid;
+}
+.css-border-radius-selector-button-icon-bottom-right {
+  display: block;
+  width: 14px;
+  height: 18px;
+  border: 0px solid #fff;
+  border-right: 3px solid;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-bottom-right-radius: 20px;
+  border-bottom: 3px solid;
+}
+.css-border-radius-selector-button-icon-bottom-left {
+  display: block;
+  width: 14px;
+  height: 18px;
+  border: 0px solid #fff;
+  border-left: 3px solid;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-bottom-left-radius: 20px;
+  border-bottom: 3px solid;
+}
+.css-border-radius-selector-button-icon-center {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
 }
 .message-item-content {
   position: relative;
@@ -851,6 +952,12 @@ input.forms-boolean-toggle:checked + label:after {
 .message-item-content-left .message-item-image {
   height: 100%;
   width: 100px;
+}
+.star-rating-item {
+  display: inline-block;
+}
+.star-rating-item i {
+  font-size: 24px;
 }
 /*
     CSS just for UI elements
