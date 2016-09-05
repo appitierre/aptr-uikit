@@ -20,6 +20,18 @@ var Button = React.createClass({
         }
     },
 
+    propTypes: {
+        icon: React.PropTypes.string,
+        text: React.PropTypes.string,
+        className: React.PropTypes.string,
+        type: React.PropTypes.string,
+        onClick: React.PropTypes.func.isRequired,
+        iconPosition: React.PropTypes.oneOf(['left', 'right']),
+        disabled: React.PropTypes.bool,
+        toolTip: React.PropTypes.string,
+        toolTipPosition: React.PropTypes.oneOf(['top', 'bottom'])
+    },
+
     componentWillMount: function() {
         this.getToolTipPositioning();
     },

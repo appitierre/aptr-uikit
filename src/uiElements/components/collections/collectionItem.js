@@ -13,6 +13,12 @@ var classNames = require('classnames');
 
 var CollectionItem = React.createClass({
 
+	propTypes: {
+		className: React.PropTypes.string,
+		contentComponent: React.PropTypes.element.isRequired,
+		actionsComponent: React.PropTypes.element
+	},
+
 	getClassName: function() {
 		return classNames('collection-item', this.props.className)
 	},

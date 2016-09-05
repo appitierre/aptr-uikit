@@ -9,6 +9,15 @@ var Checkbox = React.createClass({
 		}
 	},
 
+	propTypes: {
+		id: React.PropTypes.oneOfType([
+			React.PropTypes.string,
+			React.PropTypes.number
+		]).isRequired,
+		onClick: React.PropTypes.func,
+		itemText: React.PropTypes.string
+	},
+
 	onClick: function() {
 		
 		this.setState({
@@ -19,8 +28,6 @@ var Checkbox = React.createClass({
 		if (this.props.onClick) {
 			this.props.onClick();
 		}
-
-		console.log('clicked', this.state._isChecked)
 	},
 
 	render: function() {

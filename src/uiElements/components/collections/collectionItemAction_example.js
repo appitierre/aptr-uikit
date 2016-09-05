@@ -14,9 +14,9 @@ var CollectionItemAction = React.createClass({
 		return (
 			<div>
 				<div className='collection-item-actions-buttons'>
-					<Button icon="trash" text="Primary Button" className="primary"/>
-					<Button icon="trash" text="Alert Button" className="alert"/>
-					<Button icon="star" iconPosition="right" text="secondary" className="secondary" onClick={this.onClick}/>
+					<Button icon="trash" text="Primary Button" className="primary" onClick={this.props.onClick}/>
+					<Button icon="trash" text="Alert Button" className="alert" onClick={this.props.onClick}/>
+					<Button icon="star" iconPosition="right" text="secondary" className="secondary" onClick={this.props.onClick}/>
 				</div>
 			</div>
 		);

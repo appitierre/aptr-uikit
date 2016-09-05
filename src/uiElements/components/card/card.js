@@ -3,6 +3,10 @@ var classNames = require('classnames')
 
 var Card = React.createClass({
 
+	propTypes: {
+		className: React.PropTypes.string
+	},
+
 	getClassName: function() {
 		return classNames('card', this.props.className)
 	},

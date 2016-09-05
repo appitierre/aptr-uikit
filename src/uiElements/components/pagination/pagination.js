@@ -13,6 +13,19 @@ var classNames = require('classnames');
 
 var Pagination = React.createClass({
 
+	propTypes: {
+		buttonType:React.PropTypes.string,
+		onNextPageClicked: React.PropTypes.func.isRequired,
+		onPreviousPageClicked: React.PropTypes.func.isRequired,
+		currentPage: React.PropTypes.number.isRequired,
+		totalPages: React.PropTypes.number.isRequired,
+		className: React.PropTypes.string,
+		toolTipRightButton: React.PropTypes.string,
+		toolTipLeftButton: React.PropTypes.string,
+		toolTipLeftButtonPosition: React.PropTypes.oneOf(['top', 'bottom']),
+		toolTipRightButtonPosition: React.PropTypes.oneOf(['top', 'bottom'])
+	},
+
 	getPageCount: function() {
 		var currentPage = this.props.currentPage;
 		var totalPages = this.props.totalPages;
@@ -21,7 +34,7 @@ var Pagination = React.createClass({
 			currentPage + '/' + totalPages
 		)
 
-	},
+	},	
 
 	getClassName: function() {
 		return classNames('pagination', this.props.className);

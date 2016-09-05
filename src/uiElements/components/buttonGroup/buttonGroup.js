@@ -11,18 +11,12 @@ var ButtonGroup = React.createClass({
 		}
 	},
 
-	componentWillMount: function() {
-		if (!this.props.buttonType) {
-			console.warn("You're currently missing a buttonType prop on a Button Group");
-		}
-
-		if (!this.props.value) {
-			console.warn("You're currently missing a value prop on a Button Group");
-		}
-
-		if (!this.props.onChange) {
-			console.warn("You're currently missing a onChange prop on a Button Group");
-		}
+	propTypes: {
+		buttonType: React.PropTypes.string.isRequired,
+		value: React.PropTypes.string.isRequired,
+		onChange: React.PropTypes.func.isRequired,
+		buttons: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+		shouldUseToggle: React.PropTypes.bool
 	},
 
 	getClassName: function() {

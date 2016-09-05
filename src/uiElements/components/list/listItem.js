@@ -4,6 +4,14 @@ var ListItemWrapper = require('./listItemWrapper');
 
 var ListItem = React.createClass({
 
+	propTypes: {
+		icon: React.PropTypes.string,
+		buttons: React.PropTypes.arrayOf(React.PropTypes.object),
+		itemText: React.PropTypes.string,
+		itemDetail: React.PropTypes.string,
+		component: React.PropTypes.element
+	},
+
 	renderButtons: function() {
 		if (this.props.buttons) {
 			return _.map(this.props.buttons, function(button, key){

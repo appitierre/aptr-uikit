@@ -3,6 +3,12 @@ var classNames = require('classnames')
 
 var Loading = React.createClass({
 
+	propTypes: {
+		className: React.PropTypes.string,
+		hasDataLoaded: React.PropTypes.bool,
+		text: React.PropTypes.string
+	},
+
 	getClassName: function() {
         return classNames('loading', this.props.className);
     },

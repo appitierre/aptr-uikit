@@ -10,6 +10,13 @@ var DropDown = React.createClass({
         }
     },
 
+    propTypes: {
+        icon: React.PropTypes.string,
+        text: React.PropTypes.string,
+        className: React.PropTypes.string,
+        component: React.PropTypes.element.isRequired
+    },
+
     getContent: function() {
 
         if (this.state._isOpen) {
