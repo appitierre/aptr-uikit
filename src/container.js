@@ -30,7 +30,8 @@ var ListItems = require('./uiElements/components/list/listItems');
 var Message = require('./uiElements/components/message/message');
 var CssValue = require('./uiElements/components/cssValue/cssValue');
 var CssBorderSelector = require('./uiElements/components/cssBorderSelector/cssBorderSelector');
-var CssBorderRadiusSelector = require('./uiElements/components/cssBorderRadiusSelector/cssBorderRadiusSelector')
+var CssBorderRadiusSelector = require('./uiElements/components/cssBorderRadiusSelector/cssBorderRadiusSelector');
+var StarRating = require('./uiElements/components/starRating/starRating');
 
 var _ = require('underscore');
 //Array is just an example of how the Folder component returns the data.
@@ -61,8 +62,15 @@ var Container = React.createClass({
             topRight: false,
             bottomRight: false,
             bottomLeft: false,
-            value: 1
+            value: 1,
+            starValue: 5
         }
+    },
+
+    onStarRatingChanged: function(value) {
+        this.setState({
+            starValue: value
+        })
     },
 
     onWidthChanged: function(value) {
@@ -725,6 +733,14 @@ var Container = React.createClass({
 
                     <SearchBar onClick={this.onClick} onChange={this.onChange} />
                     
+                </Section>
+
+                <Section
+                    title="Star rating"
+                    description="">
+
+                    <StarRating total={5} value={this.state.starValue} onChange={this.onStarRatingChanged}/>
+
                 </Section>
 
                 <Section
