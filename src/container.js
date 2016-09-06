@@ -230,6 +230,7 @@ var Container = React.createClass({
                     <Button text="Large Primary Button" className="primary large" onClick={this.onClick}/>
                     <Button icon="arrow-left" onClick={this.onClick} toolTip="oh yes primary"/>
                     <Button icon="star" text="full width button" onClick={this.onClick} className="primary full-width"/>
+                    <Button icon="star" text="small button" onClick={this.onClick} className="secondary small" />
 
                 </Section>
 
