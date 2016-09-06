@@ -21,10 +21,7 @@ var ActionBar = require('./uiElements/components/actions/actionBar');
 var DropDown = require('./uiElements/components/dropDown/dropDown');
 var DropDownItems = require('./uiElements/components/dropDown/dropDownItems_example');
 var ProgressBar = require('./uiElements/components/progressBar/progressBar');
-var ProgressIndicator = require('./uiElements/components/progressIndicator/progressIndicator');
 var ItemToggle = require('./uiElements/components/toggle/itemToggle');
-var AccordionItem = require('./uiElements/components/accordion/accordionItem');
-var CheckboxItem = require('./uiElements/components/checkboxItem/checkboxItem');
 var ListItem = require('./uiElements/components/list/listItem');
 var ListItems = require('./uiElements/components/list/listItems');
 var Message = require('./uiElements/components/message/message');
@@ -166,9 +163,6 @@ var Container = React.createClass({
                 <Button text="primary" type="primary" icon="star" />
             </ActionBar>
         );
-        var accordionItem = jsxToString(
-            <AccordionItem content={ <div>HELLO</div>} itemTitle="accordion 1"/>
-        );
         var button = jsxToString(
             <Button 
                 icon="trash" 
@@ -215,20 +209,6 @@ var Container = React.createClass({
                     <ActionBar>
                         <Button text="primary" type="primary" icon="star" />
                     </ActionBar>
-
-                </Section>
-
-                <Section 
-                    title="Accordion item"
-                    description=""
-                    documentation={
-                        <SyntaxHighlighter language='javascript' style={docco} children={accordionItem}> 
-
-                        </SyntaxHighlighter>
-                    }
-                >
-
-                    <AccordionItem content={ <div>HELLO</div>} itemTitle="accordion 1"/>
 
                 </Section>
 
@@ -309,13 +289,6 @@ var Container = React.createClass({
                         }
                     ]} />
                     
-                </Section>
-
-                <Section
-                    title="Checkbox Item"
-                    description="">
-
-                    <CheckboxItem id="yes" itemText="checkbox component"/>    
                 </Section>
 
                 <Section
@@ -698,14 +671,6 @@ var Container = React.createClass({
                     description="">
 
                     <ProgressBar value={23} />
-                    
-                </Section>
-
-                <Section
-                    title="ProgressIndicator"
-                    description="">
-
-                    <ProgressIndicator />
                     
                 </Section>
                 
