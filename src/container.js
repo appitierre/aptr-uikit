@@ -371,14 +371,24 @@ var Container = React.createClass({
                             style={docco} 
                             children={
                                 jsxToString(
-                                    <Card className="asset review"/>
+                                    <Card className="asset review">
+                                        <Button type="primary" text="for card component" onClick={this.onClick}/>
+                                        <div>
+                                            card component
+                                        </div>
+                                    </Card>
                                 )
                             }
                         />
                     }
                 >
 
-                    <Card className="asset review"/>
+                    <Card className="asset review">
+                        <Button type="primary" text="for card component" onClick={this.onClick}/>
+                        <div>
+                            card component
+                        </div>
+                    </Card>
                     
                 </Section>
 
