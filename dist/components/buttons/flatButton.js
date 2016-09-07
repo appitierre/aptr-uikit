@@ -95,7 +95,7 @@ var FlatButton = React.createClass({
 	render: function render() {
 		return React.createElement(
 			'button',
-			{ onMouseOver: this.onButtonMouseOver, className: this.getButtonClassName(), onClick: this.props.onClick },
+			{ onMouseOver: this.onButtonMouseOver, disabled: this.props.disabled, className: this.getButtonClassName(), onClick: this.props.onClick },
 			this.getTopToolTip(),
 			this.getIcon(),
 			this.getText(),
