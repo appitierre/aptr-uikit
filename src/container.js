@@ -142,6 +142,7 @@ var Container = React.createClass({
 
     getFolders: function() {
         return _.map(Folders, function(tag, index) {
+            
             return (
                 <Folder 
                     folder={tag}
