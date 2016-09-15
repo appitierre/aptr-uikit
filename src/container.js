@@ -680,7 +680,7 @@ var Container = React.createClass({
                     description="">
                     <RangeSlider
                         onChange={(value) => console.log('range slider value:', value)}
-                       step={1}
+                        step={1}
                         min={1}
                         max={100}
                         defaultValue={30}
