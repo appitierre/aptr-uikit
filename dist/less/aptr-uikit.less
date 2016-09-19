@@ -917,6 +917,7 @@ input.forms-boolean-toggle:checked + label:after {
   border-radius: 4px;
 }
 .message-item-content {
+  height: auto;
   position: relative;
   box-shadow: 0px 0px 10px -4px #000;
 }
@@ -930,7 +931,7 @@ input.forms-boolean-toggle:checked + label:after {
   padding: 7px;
 }
 .message-item-content-right {
-  padding: 16px 16px 16px 116px;
+  padding: 8px 8px 8px 98px;
 }
 .message-item-content-right .message-item-title {
   font-size: 15px;
@@ -940,18 +941,22 @@ input.forms-boolean-toggle:checked + label:after {
   font-size: 13px;
 }
 .message-item-content-right .message-item-author {
-  font-size: 13px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 .message-item-content-left {
+  position: absolute;
+  top: 50%;
+  margin-top: -40px;
+  left: 8px;
   float: left;
-  height: 115px;
 }
 .message-item-content-left .message-item-image {
   display: block;
 }
 .message-item-content-left .message-item-image {
-  height: 100%;
-  width: 100px;
+  width: 80px;
 }
 .star-rating-item {
   display: inline-block;
