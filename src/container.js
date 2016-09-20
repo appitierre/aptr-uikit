@@ -224,8 +224,8 @@ var Container = React.createClass({
                     }
                 >
 
-                    <Button icon="trash" text="Primary Button" className="primary" onClick={this.onClick} toolTip="oh yes primary" toolTipPosition="bottom"/>
-                    <Button icon="star" iconPosition="right" text="Secondary Button" className="secondary" onClick={this.onClick}/>
+                    <Button icon="trash" text="Primary Button" className="primary" onClick={this.onClick} toolTip="oh yes primary" toolTipPosition="bottom" />
+                    <Button icon="star" iconPosition="right" text="Secondary Button" className="secondary" onClick={this.onClick} hasActivity={true}/> {/* Using to test hasActivity*/}
                     <Button icon="trash" text="Alert Button" className="alert" onClick={this.onClick}/>
                     <Button disabled={true} className="primary" text="Disabled Button" onClick={this.onClick}/>
                     <Button text="Large Primary Button" className="primary large" onClick={this.onClick}/>

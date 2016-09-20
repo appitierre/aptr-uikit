@@ -95,20 +95,53 @@ var Button = React.createClass({
         }
     },
 
+    getButtonContent: function() {
+        var left = this.getLeftIcon();
+
+        if (this.props.hasActivity === false || !this.props.hasActivity) {
+            return (
+                <button 
+                    onMouseOver={this.onButtonMouseOver} 
+                    disabled={this.getDisabledState()} 
+                    className={this.getButtonClassName()} 
+                    onClick={this.props.onClick}>
+                        
+                        {this.getLeftIcon()}
+                        {this.props.text}
+                        {this.getRightIcon()}
+                </button>
+            )
+        } else {
+            return (
+                <button 
+                    onMouseOver={this.onButtonMouseOver} 
+                    disabled={this.getDisabledState()} 
+                    className={this.getButtonClassName()} 
+                    onClick={this.props.onClick}>
+                        
+                        <div className="button-spinner loading-icon">
+                            <div className="loading-icon-spinner">
+                            </div>
+                        </div>
+                </button> 
+            )
+        }
+    },
+
+    getDisabledState: function() {
+        if (this.props.disabled === true || this.props.hasActivity === true) {
+            return true
+        } else {
+            return false
+        }
+    },
+
     onButtonMouseOver: function() {
         this.getToolTipPositioning();
     },
 
     render: function() {
-        return (
-            <button onMouseOver={this.onButtonMouseOver} disabled={this.props.disabled} className={this.getButtonClassName()} onClick={this.props.onClick}>
-                {this.getToolTip()}
-                {this.getLeftIcon()}
-                {this.props.text}
-                {this.getRightIcon()}
-                {this.getToolTip()}
-            </button>
-        );
+        return this.getButtonContent();
     }
 
 });
