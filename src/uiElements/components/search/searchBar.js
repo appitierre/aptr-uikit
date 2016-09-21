@@ -44,6 +44,8 @@ var SearchBar = React.createClass({
 		var value = event.target.value;
 		this.props.onChange(value);
 
+		console.log("the prop value is:", this.props.value)
+
 		if (!this.props.value) {	
 			this.setState({
 				value: value

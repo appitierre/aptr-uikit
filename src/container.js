@@ -60,7 +60,7 @@ var Container = React.createClass({
             bottomRight: false,
             bottomLeft: false,
             starValue: 5,
-            searchValue: "value"
+            searchValue: ""
         }
     },
 
@@ -69,7 +69,7 @@ var Container = React.createClass({
             searchValue: value
         })
 
-        console.log(arguments)
+        console.log("the argument value is:", arguments)
     },
 
     onStarRatingChanged: function(value) {
