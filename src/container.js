@@ -635,7 +635,7 @@ var Container = React.createClass({
                     title="Loading"
                     description="">
 
-                    <Loading text="Loading" className="login" hasDataLoaded={true}>
+                    <Loading text="Loading" className="login" hasDataLoaded={false} hasDataError={true} errorText="ERROR">
                         <div>
                             DATA HAS LOADED
                         </div>
