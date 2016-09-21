@@ -59,8 +59,17 @@ var Container = React.createClass({
             topRight: false,
             bottomRight: false,
             bottomLeft: false,
-            starValue: 5
+            starValue: 5,
+            searchValue: "value"
         }
+    },
+
+    onValueChanged: function(value) {
+        this.setState({
+            searchValue: value
+        })
+
+        console.log(arguments)
     },
 
     onStarRatingChanged: function(value) {
@@ -692,7 +701,8 @@ var Container = React.createClass({
                     title="Search bar"
                     description="">
 
-                    <SearchBar onClick={this.onClick} onChange={this.onChange} />
+                    <SearchBar onClick={this.onClick} onChange={this.onChange} placeholder="enter value here"/>
+                    <SearchBar onClick={this.onClick} onChange={this.onValueChanged} value={this.state.searchValue} />
                     
                 </Section>
 

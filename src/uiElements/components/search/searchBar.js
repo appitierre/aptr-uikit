@@ -24,6 +24,12 @@ var SearchBar = React.createClass({
 
 	getClassName: function() {
 		return classNames('search-bar', this.props.className);
+	},
+
+	getPlaceholdetText: function() {
+		if (this.props.placeholder) {
+			return this.props.placeholder
+		}
 	},	
 
 	onButtonClicked: function(event) {
@@ -38,18 +44,33 @@ var SearchBar = React.createClass({
 		var value = event.target.value;
 		this.props.onChange(value);
 
-		this.setState({
-			value: value
-		})
+		if (!this.props.value) {	
+			this.setState({
+				value: value
+			})
+		}
 	},
 
+	getComponent: function() {
+		if (this.props.value) {
+			return (
+				<div className={this.getClassName()}>
+					<input className='search-bar-input' value={this.props.value} onChange={this.onChange} placeholder={this.getPlaceholdetText()}/>
+						{this.getButton()}
+				</div>	
+			)
+		} else {
+			return (
+				<div className={this.getClassName()}>
+					<input className='search-bar-input' value={this.state.value} onChange={this.onChange} placeholder={this.getPlaceholdetText()}/>
+					{this.getButton()}
+				</div>
+			)
+		}
+	},
+ 
 	render: function() {
-		return (
-			<div className={this.getClassName()}>
-				<input className='search-bar-input' value={this.state.value} onChange={this.onChange} />
-				{this.getButton()}
-			</div>								
-		);
+		return this.getComponent();
 	}
 });
 
