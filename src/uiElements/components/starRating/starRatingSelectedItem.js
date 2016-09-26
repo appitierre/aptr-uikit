@@ -7,12 +7,20 @@ var StarRatingSelectedItem = React.createClass({
 		this.props.onClick(this.props.itemNumber);
 	},
 
+	onMouseEnter: function() {
+		this.props.onHover(this.props.itemNumber);
+	},
+
+	onMouseLeave: function() {
+		this.props.onHover(null)
+	},
+
 	render: function() {
 		return (
-			<div className="star-rating-item">
+			<div className="star-rating-item" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
 				<FlatButton 
-					icon="star"
-					className="star-rating-item-selected"
+					icon={this.props.icon}
+					className={this.props.className}
 					type="secondary"
 					onClick={this.onButtonClick}/>
 			</div>
