@@ -57,7 +57,6 @@ var StarRating = React.createClass({
 
 	onButtonClick: function(itemNumber) {		
 		this.props.onChange(itemNumber);
-		console.log(this.props.value)
 	},
 
 	render: function() {
