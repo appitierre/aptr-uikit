@@ -664,7 +664,15 @@ var Container = React.createClass({
                     title="Pagination"
                     description="">
 
-                    <Pagination currentPage={1} totalPages={0} buttonType="secondary" className="course" toolTipRightButton="right" toolTipRightButtonPosition="bottom" toolTipLeftButton="left" />
+                    <Pagination 
+                        currentPage={1} 
+                        totalPages={0} 
+                        buttonType="secondary" 
+                        className="course" 
+                        toolTipRightButton="right" 
+                        toolTipRightButtonPosition="bottom" 
+                        toolTipLeftButton="left" 
+                        isSmall={true} />
                     
                 </Section>
 
