@@ -4,28 +4,29 @@ var FlatButton = require('../buttons/flatButton')
 var StarRatingSelectedItem = React.createClass({
 
 	onButtonClick: function() {
-		if (this.props.isDisabled) {
-			return;
-		} else {
-			this.props.onClick(this.props.itemNumber);
-		}
+		
+		this.props.onClick(this.props.itemNumber);
 		
 	},
 
 	onMouseEnter: function() {
+		
 		if (this.props.isDisabled) {
 			return;
-		} else {
-			this.props.onHover(this.props.itemNumber);
 		}
+
+		this.props.onHover(this.props.itemNumber);
+
 	},
 
 	onMouseLeave: function() {
+		
 		if (this.props.isDisabled) {
 			return;
-		} else {
-			this.props.onHover(null)
 		}
+
+		this.props.onHover(null);
+
 	},
 
 	render: function() {
@@ -35,7 +36,8 @@ var StarRatingSelectedItem = React.createClass({
 					icon={this.props.icon}
 					className={this.props.className}
 					type="secondary"
-					onClick={this.onButtonClick}/>
+					onClick={this.onButtonClick}
+					disabled={this.props.isDisabled}/>
 			</div>
 		);
 	}
