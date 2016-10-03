@@ -23,6 +23,7 @@ var CssBorderSelector = require('./components/cssBorderSelector/cssBorderSelecto
 var CssBorderRadiusSelector = require('./components/cssBorderRadiusSelector/cssBorderRadiusSelector');
 var StarRating = require('./components/starRating/starRating');
 var SelectOption = require('./components/select/selectOption');
+var Breadcrumbs = require('./components/breadcrumb/breadcrumbs')
 
 module.exports = {
     Button: Button,
@@ -49,6 +50,7 @@ module.exports = {
     CssBorderSelector: CssBorderSelector,
     CssBorderRadiusSelector: CssBorderRadiusSelector,
     StarRating: StarRating,
-    SelectOption: SelectOption
+    SelectOption: SelectOption,
+    Breadcrumbs: Breadcrumbs
 };
 
