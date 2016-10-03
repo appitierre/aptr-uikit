@@ -26,12 +26,6 @@ var StarRating = React.createClass({
 				icon = "star";	
 			}
 
-			/*if (index + 1 <= that.state.hoveredItemNumber) {
-				className = "star-rating-item-selected hover"
-			} else {
-				className = "star-rating-item-selected"
-			}*/
-
 			return (
 				<StarRatingSelectedItem
 					className={className} 
@@ -43,7 +37,8 @@ var StarRating = React.createClass({
 					icon={icon}
 					onHover={_.bind(function(number) {
 						that.onHover(number)
-					}, that)} 
+					}, that)}
+					isDisabled={that.props.isDisabled} 
 				/>
 			) 
 		})
