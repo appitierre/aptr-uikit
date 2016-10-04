@@ -4,7 +4,7 @@ var SearchBar = require('../search/searchBar');
 var classNames = require('classnames'); 
 var _ = require('underscore');
 
-var DropDownOptions = React.createClass({
+var SelectOption = React.createClass({
 
 
 	getInitialState: function() {
@@ -59,11 +59,16 @@ var DropDownOptions = React.createClass({
  			if (this.state.isDisplayingList) {
 	 			return (
 	 				<div className="search-bar-inner">
-	 					<SearchBar isSmall={true} onChange={this.props.onChange}/>
+	 					<SearchBar isSmall={true} onChange={this.onSearchChanged}/>
 	 				</div> 
 	 			)
 	 		}
  		}
+ 	},
+
+ 	onSearchChanged: function(text) {
+ 		
+ 		this.props.onChange(text);
  	},
 
  	onButtonItemClicked: function(value) {
@@ -74,7 +79,7 @@ var DropDownOptions = React.createClass({
  	},
 
 	onSelectorClicked: function() {
-		 var isDisplayingList = !this.state.isDisplayingList;
+		var isDisplayingList = !this.state.isDisplayingList;
         
         this.setState({
             isDisplayingList: isDisplayingList
@@ -95,4 +100,4 @@ var DropDownOptions = React.createClass({
 
 });
 
-module.exports = DropDownOptions;
+module.exports = SelectOption;
