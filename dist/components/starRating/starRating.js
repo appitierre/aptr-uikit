@@ -4,6 +4,7 @@ var React = require('react');
 var FlatButton = require('../buttons/flatButton');
 var StarRatingSelectedItem = require('./starRatingSelectedItem');
 var StarRatingUnselectedItem = require('./starRatingUnselectedItem');
+var classnames = require('classnames');
 
 var StarRating = React.createClass({
 	displayName: 'StarRating',
@@ -14,6 +15,12 @@ var StarRating = React.createClass({
 			hoveredItemNumber: null
 
 		};
+	},
+
+	getClassName: function getClassName() {
+		return classnames('star-rating', {
+			'is-disabled': this.props.isDisabled
+		});
 	},
 
 	getItems: function getItems() {
@@ -30,23 +37,14 @@ var StarRating = React.createClass({
 				icon = "star";
 			}
 
-			/*if (index + 1 <= that.state.hoveredItemNumber) {
-   	className = "star-rating-item-selected hover"
-   } else {
-   	className = "star-rating-item-selected"
-   }*/
-
 			return React.createElement(StarRatingSelectedItem, {
 				className: className,
 				itemNumber: index + 1,
 				key: index,
-				onClick: _.bind(function (itemNumber) {
-					that.onButtonClick(itemNumber);
-				}, that),
+				onClick: that.onButtonClick,
 				icon: icon,
-				onHover: _.bind(function (number) {
-					that.onHover(number);
-				}, that)
+				onHover: that.onHover,
+				isDisabled: that.props.isDisabled
 			});
 		});
 	},
@@ -64,7 +62,7 @@ var StarRating = React.createClass({
 	render: function render() {
 		return React.createElement(
 			'div',
-			{ className: 'star-rating' },
+			{ className: this.getClassName() },
 			this.getItems()
 		);
 	}

@@ -8,14 +8,25 @@ var StarRatingSelectedItem = React.createClass({
 
 
 	onButtonClick: function onButtonClick() {
+
 		this.props.onClick(this.props.itemNumber);
 	},
 
 	onMouseEnter: function onMouseEnter() {
+
+		if (this.props.isDisabled) {
+			return;
+		}
+
 		this.props.onHover(this.props.itemNumber);
 	},
 
 	onMouseLeave: function onMouseLeave() {
+
+		if (this.props.isDisabled) {
+			return;
+		}
+
 		this.props.onHover(null);
 	},
 
@@ -27,7 +38,8 @@ var StarRatingSelectedItem = React.createClass({
 				icon: this.props.icon,
 				className: this.props.className,
 				type: 'secondary',
-				onClick: this.onButtonClick })
+				onClick: this.onButtonClick,
+				disabled: this.props.isDisabled })
 		);
 	}
 

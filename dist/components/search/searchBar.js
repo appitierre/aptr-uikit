@@ -15,15 +15,29 @@ var SearchBar = React.createClass({
 	},
 
 	getButton: function getButton() {
+		var Height = false;
+
+		if (this.props.isSmall === true) {
+			var Height = true;
+		}
+
 		if (this.state.value.length === 0) {
-			return React.createElement(Button, { icon: 'magnifier', className: 'search-bar-button' });
+			return React.createElement(Button, { icon: 'magnifier', className: 'search-bar-button', isSmall: Height });
 		} else {
-			return React.createElement(Button, { icon: 'cross-circle', className: 'primary search-bar-button', onClick: this.onButtonClicked });
+			return React.createElement(Button, { icon: 'cross-circle', className: 'primary search-bar-button', onClick: this.onButtonClicked, isSmall: Height });
 		}
 	},
 
 	getClassName: function getClassName() {
 		return classNames('search-bar', this.props.className);
+	},
+
+	getInputClassName: function getInputClassName() {
+		if (this.props.isSmall === true) {
+			return classNames('search-bar-input', 'small');
+		} else {
+			return classNames('search-bar-input');
+		}
 	},
 
 	onButtonClicked: function onButtonClicked(event) {
@@ -47,7 +61,7 @@ var SearchBar = React.createClass({
 		return React.createElement(
 			'div',
 			{ className: this.getClassName() },
-			React.createElement('input', { className: 'search-bar-input', value: this.state.value, onChange: this.onChange }),
+			React.createElement('input', { className: this.getInputClassName(), value: this.state.value, onChange: this.onChange }),
 			this.getButton()
 		);
 	}
