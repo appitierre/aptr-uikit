@@ -454,7 +454,8 @@ var Container = React.createClass({
 
                     <SelectOption
                         className="options"
-                        value="Ascending" 
+                        value="Ascending"
+                        onChange={this.onChange} 
                         options={[
                             {
                                 text: 'Ascending',
@@ -477,9 +478,33 @@ var Container = React.createClass({
                             {
                                 text: 'Oldest',
                                 _value: 'Oldest',
-                                index: 3,
+                                index: 4,
                                 onClick: this.onClick
-                            }
+                            },
+                            {
+                                text: 'Seventh',
+                                _value: 'Seventh',
+                                index: 5,
+                                onClick: this.onClick
+                            },
+                            {
+                                text: 'Next',
+                                _value: 'Last',
+                                index: 7,
+                                onClick: this.onClick
+                            },
+                            {
+                                text: 'After',
+                                _value: 'Last',
+                                index: 8,
+                                onClick: this.onClick
+                            },
+                            {
+                                text: 'New',
+                                _value: 'Last',
+                                index: 9,
+                                onClick: this.onClick
+                            },                                                    
                         ]}
                     />
                     
