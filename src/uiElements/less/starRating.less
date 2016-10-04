@@ -7,9 +7,16 @@
 	.star-empty {
 		color: black
 	}
+
+	.is-disabled & button {
+		color:@button-secondary-color;
+		&:hover, &:focus {
+			color:@button-secondary-color;
+		}
+	}
 }
 
-.star-rating-item-selected {
+/*.star-rating-item-selected {
 	color: black;
 	&:hover {
 		color: none;
@@ -17,4 +24,4 @@
 	&.hover{
 		color: #8158cf;
 	}
-}
+}*/
