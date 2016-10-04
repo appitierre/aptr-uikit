@@ -29,6 +29,7 @@ var CssValue = require('./uiElements/components/cssValue/cssValue');
 var CssBorderSelector = require('./uiElements/components/cssBorderSelector/cssBorderSelector');
 var CssBorderRadiusSelector = require('./uiElements/components/cssBorderRadiusSelector/cssBorderRadiusSelector');
 var StarRating = require('./uiElements/components/starRating/starRating');
+var Chip = require('./uiElements/components/chip/chip');
 
 var _ = require('underscore');
 //Array is just an example of how the Folder component returns the data.
@@ -365,6 +366,13 @@ var Container = React.createClass({
                         </div>
                     </Card>
                     
+                </Section>
+
+                <Section
+                    title="Chip"
+                    description=""
+                >
+                    <Chip text="this is text for chip component"/> 
                 </Section>
 
                 <Section
