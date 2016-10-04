@@ -29,6 +29,7 @@ var CssValue = require('./uiElements/components/cssValue/cssValue');
 var CssBorderSelector = require('./uiElements/components/cssBorderSelector/cssBorderSelector');
 var CssBorderRadiusSelector = require('./uiElements/components/cssBorderRadiusSelector/cssBorderRadiusSelector');
 var StarRating = require('./uiElements/components/starRating/starRating');
+var BreadCrumbs = require('./uiElements/components/breadcrumb/breadcrumbs')
 
 var _ = require('underscore');
 //Array is just an example of how the Folder component returns the data.
@@ -232,6 +233,30 @@ var Container = React.createClass({
                     <Button icon="arrow-left" onClick={this.onClick} toolTip="oh yes primary"/>
                     <Button icon="star" text="full width button" onClick={this.onClick} className="primary full-width" isSmall={true}/>
                     <Button icon="star" text="small button" onClick={this.onClick} className="secondary" isSmall={true}/>
+
+                </Section>
+
+                <Section
+                    title="BreadCrumbs"
+                    description="">
+
+                    <BreadCrumbs
+                        breadcrumbs={[
+                            {
+                                text: "home",
+                                path: "www.google.com"
+                                
+                            },
+                            {
+                                text: "intro"
+                                
+                            },
+                            {
+                                text: "final",
+                                
+                            },
+                        ]}
+                    />
 
                 </Section>
 
@@ -692,7 +717,10 @@ var Container = React.createClass({
                     title="Search bar"
                     description="">
 
-                    <SearchBar onClick={this.onClick} onChange={this.onChange} isSmall={true}/>
+                    <SearchBar 
+                        onClick={this.onClick} 
+                        onChange={this.onChange} 
+                        isSmall={true}/>
                     
                 </Section>
 

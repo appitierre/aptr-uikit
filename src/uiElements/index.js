@@ -12,7 +12,7 @@ var RangeSlider = require('./components/rangeSlider/rangeSlider');
 var Pagination = require('./components/pagination/pagination');
 var ButtonGroup = require('./components/buttonGroup/buttonGroup');
 var Folder = require('./components/folder/folder');
-var DropDownOptions = require('./components/dropDown/dropDownOptions');
+var DropDown = require('./components/dropDown/dropDown');
 var ProgressBar = require('./components/progressBar/progressBar');
 var ItemToggle = require('./components/toggle/itemToggle');
 var ListItems = require('./components/list/listItems');
@@ -21,7 +21,9 @@ var Message = require('./components/message/message');
 var CssValue = require('./components/cssValue/cssValue');
 var CssBorderSelector = require('./components/cssBorderSelector/cssBorderSelector');
 var CssBorderRadiusSelector = require('./components/cssBorderRadiusSelector/cssBorderRadiusSelector');
-var StarRating = require('./components/starRating/starRating')
+var StarRating = require('./components/starRating/starRating');
+var SelectOption = require('./components/select/selectOption');
+var Breadcrumbs = require('./components/breadcrumb/breadcrumbs')
 
 module.exports = {
     Button: Button,
@@ -38,7 +40,7 @@ module.exports = {
     Pagination: Pagination,
     ButtonGroup: ButtonGroup,
     Folder: Folder,
-    DropDownOptions: DropDownOptions,
+    DropDown: DropDown,
     ProgressBar: ProgressBar,
     ItemToggle: ItemToggle,
     ListItems: ListItems,
@@ -47,6 +49,8 @@ module.exports = {
     CssValue: CssValue,
     CssBorderSelector: CssBorderSelector,
     CssBorderRadiusSelector: CssBorderRadiusSelector,
-    StarRating: StarRating
+    StarRating: StarRating,
+    SelectOption: SelectOption,
+    Breadcrumbs: Breadcrumbs
 };
 
