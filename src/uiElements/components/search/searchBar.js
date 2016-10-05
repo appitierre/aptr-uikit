@@ -58,10 +58,16 @@ var SearchBar = React.createClass({
 		})
 	},
 
+	renderPlaceHolder: function() {
+		if (this.props.placeholder) {
+			return this.props.placeholder;
+		};
+	},
+
 	render: function() {
 		return (
 			<div className={this.getClassName()}>
-				<input className={this.getInputClassName()} value={this.state.value} onChange={this.onChange} />
+				<input className={this.getInputClassName()} value={this.state.value} onChange={this.onChange} placeholder={this.renderPlaceHolder()}/>
 				{this.getButton()}
 			</div>								
 		);
