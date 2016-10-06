@@ -8,15 +8,9 @@ var SelectOption = React.createClass({
 
 
 	getInitialState: function() {
-		var value = this.props.value;
-
-		if (!this.props.value) {
-			value = this.props.initialText;
-		}
-
 		return {
 			isDisplayingList: false,
-			value: value
+			value: this.props.initialText
 		}
 	},
 	
@@ -95,6 +89,7 @@ var SelectOption = React.createClass({
 	},
 
 	render: function() {
+	console.log(this.state.value);
 		return (
 			<div className={this.renderClassName()}>
 				{this.getSelector()}
