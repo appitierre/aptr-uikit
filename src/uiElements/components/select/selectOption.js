@@ -8,9 +8,15 @@ var SelectOption = React.createClass({
 
 
 	getInitialState: function() {
+		var value = this.props.value;
+
+		if (!this.props.value) {
+			value = this.props.initialText;
+		}
+
 		return {
 			isDisplayingList: false,
-			value: this.props.value
+			value: value
 		}
 	},
 	
@@ -21,7 +27,7 @@ var SelectOption = React.createClass({
 					<div className="select-option-item" 
 						key={item.index} 
 						onClick={_.bind(function() {
-							this.onButtonItemClicked(item._value);
+							this.onButtonItemClicked(item);
 						}, this)}>
 						{item.text}
 					</div>
@@ -68,14 +74,16 @@ var SelectOption = React.createClass({
 
  	onSearchChanged: function(text) {
  		
- 		this.props.onChange(text);
+ 		this.props.onSearchChange(text);
  	},
 
- 	onButtonItemClicked: function(value) {
+ 	onButtonItemClicked: function(item) {
  		this.setState({
  			isDisplayingList: false,
-			value: value
+			value: item.text
 		});
+
+		this.props.onChange(item._value);
  	},
 
 	onSelectorClicked: function() {
