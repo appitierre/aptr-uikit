@@ -36,21 +36,46 @@
 	}
 }
 
-.select-option {
-	&.search {
-		.select-option-item-container {
-			width: 208px;
-    		border-top: none;
-    		height: 205px;
-    		overflow-y: scroll;
+.select-option-search {
+	display: inline-block;
+	position: relative;
+	z-index: 100;
+
+	.select-option-item-container {
+		width: 208px;
+		border-top: none;
+		height: 205px;
+		overflow-y: scroll;
+		border: 1px solid #ddd;
+		position: absolute;
+		background-color: #fff;
+		z-index: 100;
+	}
+	.search-bar-input {
+		width: auto;
+	}
+	.select-option-item {
+	    border-bottom: 1px solid #ddd;
+		padding: 8px;
+		cursor: pointer;
+
+		&:last-child {
+			border-bottom: none;
 		}
-		.search-bar-input {
-			width: auto;
+
+		&:hover {
+			background-color: #f0f0f8;
 		}
 	}
 }
 
-.search-bar-inner {
+.select-option-drop-down {
+	position: absolute;
+}
+
+.select-option-search-bar {
 	padding: 12px;
 	border: 1px solid #ddd;
+	width: 208px;
+	background-color: #fff;
 }

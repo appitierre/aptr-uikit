@@ -15,19 +15,17 @@ var SelectOption = React.createClass({
 	},
 	
 	getItems: function() {
-		if (this.state.isDisplayingList === true) {	
-			return _.map(this.props.options, function(item, key){
-				return (
-					<div className="select-option-item" 
-						key={item.index} 
-						onClick={_.bind(function() {
-							this.onButtonItemClicked(item);
-						}, this)}>
-						{item.text}
-					</div>
-				)
-			}, this)
-		}
+		return _.map(this.props.options, function(item, key){
+			return (	
+				<div className="select-option-item" 
+					key={item.index} 
+					onClick={_.bind(function() {
+						this.onButtonItemClicked(item);
+					}, this)}>
+					{item.text}
+				</div>
+			)
+		}, this)
 	},
 
 	getButtonIcon: function() {
@@ -47,9 +45,19 @@ var SelectOption = React.createClass({
 	},
 
 	renderClassName: function() {
-		return classNames('select-option', this.props.className, {
-			"search": this.props.options.length >= 6
-		});
+		if (this.props.className) {
+			if (this.props.options.length >= 6) {
+				return "select-option-search " + this.props.className
+			} else {
+				return "select-option " + this.props.className
+			}
+		} else {
+			if (this.props.options.length >= 6) {
+				return "select-option-search"
+			} else {
+				return "select-option"
+			}
+		}
  	},
 
  	renderSearchBar: function() {
@@ -58,7 +66,7 @@ var SelectOption = React.createClass({
  		if (length >= 6) {
  			if (this.state.isDisplayingList) {
 	 			return (
-	 				<div className="search-bar-inner">
+	 				<div className="select-option-search-bar">
 	 					<SearchBar isSmall={true} onChange={this.onSearchChanged}/>
 	 				</div> 
 	 			)
@@ -88,15 +96,24 @@ var SelectOption = React.createClass({
         });
 	},
 
+	renderComponent: function() {
+		if (this.state.isDisplayingList === true) {
+			return (
+				<div className="select-option-drop-down">
+					{this.renderSearchBar()}
+					<div className="select-option-item-container">
+						{this.getItems()}
+					</div>
+				</div>
+			)
+		}
+	},
+
 	render: function() {
-	console.log(this.state.value);
 		return (
 			<div className={this.renderClassName()}>
 				{this.getSelector()}
-				{this.renderSearchBar()}
-				<div className="select-option-item-container">	
-					{this.getItems()}				
-				</div>
+				{this.renderComponent()}				
 			</div>
 		);
 	}
