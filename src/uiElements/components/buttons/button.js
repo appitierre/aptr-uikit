@@ -1,6 +1,6 @@
 var React = require('react');
 var classNames = require('classnames');
-
+var VisibilitySensor = require('react-visibility-sensor');
 
 // @props:
 // {
@@ -79,9 +79,11 @@ var Button = React.createClass({
                 'tool-tip-bottom': (this.props.toolTipPosition === 'bottom')
             })
             return (
-                <span style={{marginLeft: this.state.toolTipPosition}} ref="tool-tip" className={className}>
+                <VisibilitySensor onChange={this.onVisibilityChanged}>
+                    <span style={{marginLeft: this.state.toolTipPosition}} ref="tool-tip" className={className}>
                     {this.props.toolTip}
-                </span>
+                    </span>
+                </VisibilitySensor>
             )
         }
     },
@@ -92,6 +94,15 @@ var Button = React.createClass({
             this.setState({
                 toolTipPosition: -Math.floor(width/2) + 'px'
             })
+        }
+    },
+
+    onVisibilityChanged: function(isVisible) {
+    
+        if (!isVisible) {
+            console.log(isVisible);
+        } else {
+            console.log("IS VISIBLE");
         }
     },
 

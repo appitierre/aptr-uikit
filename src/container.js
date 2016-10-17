@@ -182,14 +182,16 @@ var Container = React.createClass({
                 buttons={[
                     {
                         _icon: "menu",
-                        _value: "menu"
+                        _value: "menu",
+                        toolTip: "see menu here" 
                     }, {
                         _icon: "trash",
-                        _value: "trash"
+                        _value: "trash",
+                        toolTip: "Delete item here"
                     }, {
                         _icon: "check",
                         _value: "check",
-                        toolTip: "hey there"
+                        toolTip: "Check item here"
                     }
                 ]} />
         );
@@ -248,14 +250,16 @@ var Container = React.createClass({
                     <ButtonGroup onChange={this.onChange} buttonType="primary" value="menu" className="group-view" buttons={[
                         {
                             _icon: "menu",
-                            _value: "menu"
+                            _value: "menu",
+                            toolTip: "menu"
                         }, {
                             _icon: "trash",
-                            _value: "trash"
+                            _value: "trash",
+                            toolTip: "Delete the item here"
                         }, {
                             _icon: "check",
                             _value: "check",
-                            toolTip: "hey there"
+                            toolTip: "check item here"
                         }
                     ]} />
 
