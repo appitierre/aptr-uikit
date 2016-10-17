@@ -73,8 +73,11 @@ button {
         background-color:@button-hover-color;
         color:@button-text-hover-color;
         outline:none;
+        opacity: 1;
         .tool-tip {
             display: block;
+            visibility: visible;
+            opacity: 1;
         }
     }
     &.primary {
@@ -137,7 +140,9 @@ button {
     }
 
     .tool-tip {
-        display:none;
+        visibility: hidden;
+        opacity: 0;
+        transition:visibility 0s, opacity 0.5s linear;
         white-space: nowrap;
         position: absolute;
         padding: 2px 6px 2px;
