@@ -1,0 +1,28 @@
+@import 'colors';
+
+.collection-items {
+    position:relative;
+    .container-sizing;
+    .padding-all-small;
+    .loading {
+        position:absolute;
+        width:100%;
+        top:0;
+        z-index:10;
+        text-align: center;
+    }
+    .loading-inner {
+        padding:0;
+    }
+}
+
+.collection-item {
+    margin-bottom:16px;
+    border-color: @ui-grey-dark!important;
+    border-radius:3px;
+    overflow: hidden;
+}
+
+.collection-item-actions {
+    background-color:@ui-grey-lightest!important;
+}

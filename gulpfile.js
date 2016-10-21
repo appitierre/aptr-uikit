@@ -48,6 +48,10 @@ gulp.task('default', function(callback) {
         .pipe(copy())
         .pipe(gulp.dest('build/fonts'))
 
+    gulp.src('src/icons/*')
+        .pipe(copy())
+        .pipe(gulp.dest('build/icons'))
+
 });
 
 gulp.task('wepback:build', function(callback) {

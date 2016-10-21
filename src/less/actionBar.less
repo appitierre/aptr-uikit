@@ -1,0 +1,40 @@
+@import 'colors';
+@import 'spacing';
+
+.action-bar {
+    background-color:@ui-grey-light!important;
+    border-bottom-color: @ui-grey-regular!important;
+    height:40px;
+    input {
+        .font-style-small;
+        padding: 4px;
+    }
+}
+
+.action-bar-inner {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding:4px @space-small;
+    .clearfix;
+}
+
+.action-bar-left {
+    float:left;
+    width:33%;
+}
+
+.action-bar-center {
+    float:left;
+    width:34%;
+    text-align:center;
+}
+
+.action-bar-right {
+    float:right;
+    width:33%;
+    text-align:right;
+}
+
+.action-bar-item {
+    display:inline-block;
+}
