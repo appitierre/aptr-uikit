@@ -1,11 +1,11 @@
 @import 'colors';
 
 /*DEFAULT BUTTON COLORS*/
-@button-default-border-color:@ui-grey-dark;
-@button-default-border-hover-color:@ui-grey-dark;
+@button-default-border-color:@ui-grey-regular;
+@button-default-border-hover-color:darken(@ui-grey-regular, 8%);
 
-@button-default-background-color:@ui-grey-dark;
-@button-default-background-hover-color:@ui-grey-dark;
+@button-default-background-color:@ui-grey-regular;
+@button-default-background-hover-color:darken(@ui-grey-regular, 8%);
 
 @button-default-text-color:@content-text;
 @button-default-text-hover-color:@content-text;
@@ -25,7 +25,7 @@
 @button-secondary-border-hover-color:@secondary-color-darker;
 
 @button-secondary-background-color:@ui-primary-text;
-@button-secondary-background-hover-color:#E3F2FD;
+@button-secondary-background-hover-color:#F3E5F5;
 
 @button-secondary-text-color:@secondary-color;
 @button-secondary-text-hover-color:@secondary-color-darker;
@@ -211,7 +211,6 @@ button {
 
 .button-flat {
     position: relative;
-    color: #555;
     &:hover, &:active, &:focus {
         color:darken(#555, 20%);
         .tool-tip {
@@ -227,14 +226,21 @@ button {
     &.warning, &.alert {
         color:@button-warning-background-color;
         &:hover, &:active, &:focus {
-            background-color:@button-warning-background-hover-color;
-            color:@button-warning-text-hover-color;
+            color:@button-warning-background-hover-color;
         }
     }
     &.secondary {
-        color:@button-secondary-background-color;
+        color:@button-secondary-text-color;
         &:hover, &:active, &:focus {
-            color:@button-secondary-background-hover-color;
+            color:@button-secondary-text-hover-color;
+        }
+    }
+
+    &:disabled {
+        cursor:auto;
+        color: #586272;
+        &:hover {
+            color: #586272;
         }
     }
 
@@ -244,14 +250,6 @@ button {
 
     .button-icon-position-right {
         margin-left: 8px;
-    }
-
-    &:disabled {
-        cursor:auto;
-        color: #586272;
-        &:hover {
-            color: #586272;
-        }
     }
 
     .flat-button-text {

@@ -5,11 +5,11 @@ or as specific mixins
 
 /* Colors */
 @primary-color: #448AFF;
-@primary-color-darker: #2979FF;
-@secondary-color: #2962FF;
-@secondary-color-darker: #2962FF;
-@warning-color: #FF5252;
-@warning-color-darker: #FF1744;
+@primary-color-darker: darken(@primary-color, 10%);
+@secondary-color: #9C27B0;
+@secondary-color-darker: darken(@secondary-color, 10%);
+@warning-color: #FF1744;
+@warning-color-darker: darken(#FF1744, 10%);
 .primary-color {background-color: @primary-color;}
 .primary-color-darker {background-color: @primary-color-darker;}
 .secondary-color {background-color: @secondary-color;}
