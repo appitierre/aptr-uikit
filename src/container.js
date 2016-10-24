@@ -29,6 +29,7 @@ var CssValue = require('./uiElements/components/cssValue/cssValue');
 var CssBorderSelector = require('./uiElements/components/cssBorderSelector/cssBorderSelector');
 var CssBorderRadiusSelector = require('./uiElements/components/cssBorderRadiusSelector/cssBorderRadiusSelector');
 var StarRating = require('./uiElements/components/starRating/starRating');
+var CheckListItem = require('./uiElements/components/checkListItem/checkListItem');
 var Chip = require('./uiElements/components/chip/chip');
 
 var _ = require('underscore');
@@ -60,8 +61,19 @@ var Container = React.createClass({
             topRight: false,
             bottomRight: false,
             bottomLeft: false,
-            starValue: 3
+            starValue: 3,
+            isChecked: false
         }
+    },
+
+    onCheck: function(checkValue) {
+        event.preventDefault;
+        
+        this.setState({
+            isChecked: checkValue
+        })
+
+        console.log(arguments)
     },
 
     onStarRatingChanged: function(value) {
@@ -292,6 +304,17 @@ var Container = React.createClass({
                         }
                     ]} />
                     
+                </Section>
+
+                <Section 
+                    title="Check List Item"
+                    description=""
+                >
+
+                <CheckListItem 
+                    isChecked={this.state.isChecked}
+                    onCheck={this.onCheck}/>
+
                 </Section>
 
                 <Section
