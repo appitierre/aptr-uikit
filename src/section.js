@@ -17,8 +17,6 @@ var Section = React.createClass({
                 <div className="col-1-1">
                     <h2>{this.props.title}</h2>
                     <div>{this.props.description}</div>
-                    <div>{this.props.documentation}</div>
-                    <div className="section-props">{this.props.propDescription}</div>
                 </div>
                 <div className="col-1-2">
                     {this.props.children}

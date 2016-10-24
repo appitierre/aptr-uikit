@@ -14,26 +14,26 @@
 	.page-count {
 		height: 34px;
 		float: left;
-    	padding: 5px @space-small 0px;
+    	padding: 0px @space-small;
     	background-color: #fff;
    		border-top: 1px solid @ui-grey-dark;
     	border-bottom: 1px solid @ui-grey-dark;
         .font-style-small;
+    	line-height: 32px;
 	}
 
-	.button {
-        padding:@space-micro @space-x-small;
-	}
-}
+	&.is-small {
+		.pagination {
+			height: 28px;
+		}
+		.page-count {
+			height: 28px;
+	   		line-height: 26px;
+		}
 
-.is-small {
-	.page-count {
-		height: 28px;
-		float: left;
-    	padding: 5px @space-small 0px;
-    	background-color: #fff;
-   		border-top: 1px solid @ui-grey-dark;
-    	border-bottom: 1px solid @ui-grey-dark;
-        .font-style-small;
+		.button {
+			padding:0px @space-x-small;
+			line-height: 28px;
+		}
 	}
 }

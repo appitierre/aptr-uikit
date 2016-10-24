@@ -1,9 +1,7 @@
 var React = require('react');
-var SyntaxHighlighter = require('react-syntax-highlighter').default;
-var jsxToString = require('jsx-to-string'); 
-var docco = require('react-syntax-highlighter/dist/styles').docco;
+var _ = require('lodash');
 var Section = require('./section');
-var Button = require('./uiElements/buttons/components/button');
+/*var Button = require('./uiElements/buttons/components/button');
 var FlatButton = require('./uiElements/buttons/components/flatButton');
 var CollectionItem = require('./uiElements/collections/components/collectionItem');
 var CollectionItemContent = require('./uiElements/collections/examples/collectionItemContent_example'); //Example views for collection item content
@@ -30,9 +28,8 @@ var CssBorderSelector = require('./uiElements/cssBorderSelector/components/cssBo
 var CssBorderRadiusSelector = require('./uiElements/cssBorderRadiusSelector/components/cssBorderRadiusSelector');
 var StarRating = require('./uiElements/starRating/components/starRating');
 var CheckListItem = require('./uiElements/checkListItem/components/checkListItem');
-var Chip = require('./uiElements/chip/components/chip');
+var Chip = require('./uiElements/chip/components/chip');*/
 
-var _ = require('underscore');
 //Array is just an example of how the Folder component returns the data.
 var Folders = [
         {
@@ -314,7 +311,9 @@ var Container = React.createClass({
 
                 <CheckListItem 
                     isChecked={this.state.isChecked}
-                    onCheck={this.onCheck}/>
+                    onCheck={this.onCheck}>
+                    Check List Item
+                </CheckListItem>
 
                 </Section>
 
@@ -436,6 +435,15 @@ var Container = React.createClass({
                         onIncrease={this.onWidthIncrease}
                         onDecrease={this.onWidthDecrease}
                         isSmall={true}
+                    />
+
+                    <CssValue
+                        unit={this.state.unit}
+                        value={this.state.width}
+                        onChange={this.onWidthChanged}
+                        onIncrease={this.onWidthIncrease}
+                        onDecrease={this.onWidthDecrease}
+                        isSmall={false}
                     />
 
                 </Section>
@@ -705,6 +713,16 @@ var Container = React.createClass({
                         toolTipRightButton="right" 
                         toolTipRightButtonPosition="bottom" 
                         toolTipLeftButton="left" 
+                        isSmall={false} />
+
+                    <Pagination 
+                        currentPage={2} 
+                        totalPages={5} 
+                        buttonType="secondary" 
+                        className="course" 
+                        toolTipRightButton="right" 
+                        toolTipRightButtonPosition="bottom" 
+                        toolTipLeftButton="left" 
                         isSmall={true} />
                     
                 </Section>
@@ -737,6 +755,12 @@ var Container = React.createClass({
                         onClick={this.onClick} 
                         onChange={this.onChange} 
                         isSmall={true}
+                        placeholder="place text here"/>
+
+                    <SearchBar 
+                        onClick={this.onClick} 
+                        onChange={this.onChange} 
+                        isSmall={false}
                         placeholder="place text here"/>
                     
                 </Section>
