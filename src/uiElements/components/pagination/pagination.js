@@ -68,6 +68,12 @@ var Pagination = React.createClass({
 	},
 
 	render: function() {
+		var Height = false;
+
+		if (this.props.isSmall === true) {
+			var Height = true;
+		}
+
 		return (
 			<div className={this.getClassName()}>
 				<Button 
@@ -78,10 +84,12 @@ var Pagination = React.createClass({
 					onClick={this.props.onPreviousPageClicked}
 					toolTip={this.renderToolTipLeft()}
 					toolTipPosition={this.renderToolTipLeftPosition()}
-				/>
+					isSmall={Height} />
+
 				<div className="page-count">
 					{this.getPageCount()}
-				</div> 
+				</div>
+				 
 				<Button 
 					className="pagination-next-page"
 					type={this.props.buttonType} 
@@ -89,9 +97,8 @@ var Pagination = React.createClass({
 					disabled={this.isNextDisabled()}
 					onClick={this.props.onNextPageClicked}
 					toolTip={this.renderToolTipRight()}	
-					toolTipPosition={this.renderToolTipRightPosition()}		
-				/>
-
+					toolTipPosition={this.renderToolTipRightPosition()}
+					isSmall={Height} />
 			</div>
 		);
 	}
