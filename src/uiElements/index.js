@@ -24,6 +24,7 @@ var CssBorderRadiusSelector = require('./components/cssBorderRadiusSelector/cssB
 var StarRating = require('./components/starRating/starRating');
 var SelectOption = require('./components/select/selectOption');
 var CheckListItem = require('./components/checkListItem/checkListItem');
+var Chip = require('./components/chip/chip');
 
 module.exports = {
     Button: Button,
@@ -51,6 +52,10 @@ module.exports = {
     CssBorderRadiusSelector: CssBorderRadiusSelector,
     StarRating: StarRating,
     SelectOption: SelectOption,
+<<<<<<< HEAD
     CheckListItem: CheckListItem
+=======
+    Chip: Chip
+>>>>>>> master
 };
 
