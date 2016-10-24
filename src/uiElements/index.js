@@ -52,10 +52,7 @@ module.exports = {
     CssBorderRadiusSelector: CssBorderRadiusSelector,
     StarRating: StarRating,
     SelectOption: SelectOption,
-<<<<<<< HEAD
-    CheckListItem: CheckListItem
-=======
+    CheckListItem: CheckListItem,
     Chip: Chip
->>>>>>> master
 };
 
