@@ -29,6 +29,8 @@ var CssValue = require('./uiElements/components/cssValue/cssValue');
 var CssBorderSelector = require('./uiElements/components/cssBorderSelector/cssBorderSelector');
 var CssBorderRadiusSelector = require('./uiElements/components/cssBorderRadiusSelector/cssBorderRadiusSelector');
 var StarRating = require('./uiElements/components/starRating/starRating');
+var CheckListItem = require('./uiElements/components/checkListItem/checkListItem');
+var Chip = require('./uiElements/components/chip/chip');
 
 var _ = require('underscore');
 //Array is just an example of how the Folder component returns the data.
@@ -59,8 +61,19 @@ var Container = React.createClass({
             topRight: false,
             bottomRight: false,
             bottomLeft: false,
-            starValue: 3
+            starValue: 3,
+            isChecked: false
         }
+    },
+
+    onCheck: function(checkValue) {
+        event.preventDefault;
+        
+        this.setState({
+            isChecked: checkValue
+        })
+
+        console.log(arguments)
     },
 
     onStarRatingChanged: function(value) {
@@ -293,6 +306,17 @@ var Container = React.createClass({
                     
                 </Section>
 
+                <Section 
+                    title="Check List Item"
+                    description=""
+                >
+
+                <CheckListItem 
+                    isChecked={this.state.isChecked}
+                    onCheck={this.onCheck}/>
+
+                </Section>
+
                 <Section
                     title="Collection Item"
                     description="A collection item Simalarly too a list item takes in a range of different elements. A Collection element usually consist of a contnent item and an action item underneath" 
@@ -365,6 +389,13 @@ var Container = React.createClass({
                         </div>
                     </Card>
                     
+                </Section>
+
+                <Section
+                    title="Chip"
+                    description=""
+                >
+                    <Chip text="this is text for chip component"/> 
                 </Section>
 
                 <Section
@@ -664,7 +695,15 @@ var Container = React.createClass({
                     title="Pagination"
                     description="">
 
-                    <Pagination currentPage={1} totalPages={0} buttonType="secondary" className="course" toolTipRightButton="right" toolTipRightButtonPosition="bottom" toolTipLeftButton="left" />
+                    <Pagination 
+                        currentPage={1} 
+                        totalPages={0} 
+                        buttonType="secondary" 
+                        className="course" 
+                        toolTipRightButton="right" 
+                        toolTipRightButtonPosition="bottom" 
+                        toolTipLeftButton="left" 
+                        isSmall={true} />
                     
                 </Section>
 
@@ -695,7 +734,8 @@ var Container = React.createClass({
                     <SearchBar 
                         onClick={this.onClick} 
                         onChange={this.onChange} 
-                        isSmall={false}/>
+                        isSmall={false}
+                        placeholder="place text here"/>
                     
                 </Section>
 
