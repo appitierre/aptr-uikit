@@ -40,6 +40,39 @@
 	}
 }
 
+.is-small {
+	&.css-value {
+		border: 1px solid @ui-grey-dark;
+		border-radius: 2px;
+	    display: inline-block;
+	    background-color: @ui-grey-lightest;
+	    height:30px;
+	    .font-style-regular-light;
+	}
+
+	.css-value-input {
+		float: left;
+		.padding-all-x-small;
+		margin: 0;
+		width: 116px;
+		height:28px;
+		border: none;
+		background-color: @ui-grey-lightest;
+		.font-style-regular-light;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.css-value-unit {
+		float: left;
+		padding: 0 @space-x-small;
+		height: 28px;
+		line-height: 28px;
+	}
+}
+
 /* STYLES FOR BORDER SELECTOR COMPONENT */
 
 .css-border-selector {

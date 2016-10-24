@@ -191,7 +191,6 @@ var Container = React.createClass({
                 onChange={this.onChange} 
                 buttonType="primary" 
                 value="menu" 
-                className="group-view" 
                 buttons={[
                     {
                         _icon: "menu",
@@ -258,7 +257,7 @@ var Container = React.createClass({
                     }
                 >
 
-                    <ButtonGroup onChange={this.onChange} buttonType="primary" value="menu" className="group-view" buttons={[
+                    <ButtonGroup onChange={this.onChange} isSmall={true} buttonType="primary" value="menu" buttons={[
                         {
                             _icon: "menu",
                             _value: "menu"
@@ -273,7 +272,8 @@ var Container = React.createClass({
                     ]} />
 
                     <ButtonGroup 
-                        onChange={this.onChange} 
+                        onChange={this.onChange}
+                        isSmall={true}
                         buttonType="primary" 
                         value="menu" 
                         shouldUseToggle={false}
@@ -287,7 +287,8 @@ var Container = React.createClass({
                         }
                     ]} />
 
-                    <ButtonGroup 
+                    <ButtonGroup
+                        isSmall={true} 
                         onChange={this.onChange} 
                         buttonType="primary" 
                         value="menu" 
@@ -434,6 +435,7 @@ var Container = React.createClass({
                         onChange={this.onWidthChanged}
                         onIncrease={this.onWidthIncrease}
                         onDecrease={this.onWidthDecrease}
+                        isSmall={true}
                     />
 
                 </Section>
@@ -696,8 +698,8 @@ var Container = React.createClass({
                     description="">
 
                     <Pagination 
-                        currentPage={1} 
-                        totalPages={0} 
+                        currentPage={2} 
+                        totalPages={5} 
                         buttonType="secondary" 
                         className="course" 
                         toolTipRightButton="right" 
@@ -734,7 +736,7 @@ var Container = React.createClass({
                     <SearchBar 
                         onClick={this.onClick} 
                         onChange={this.onChange} 
-                        isSmall={false}
+                        isSmall={true}
                         placeholder="place text here"/>
                     
                 </Section>

@@ -26,6 +26,10 @@ var ButtonGroup = React.createClass({
 	},
 
 	getClassName: function() {
+		if (this.props.isSmall) {
+			return ClassNames('button-group-toggle', this.props.className, 'is-small')
+		}
+
 		return ClassNames('button-group-toggle', this.props.className);
 	},
 
@@ -37,6 +41,8 @@ var ButtonGroup = React.createClass({
 				className = this.props.buttonType;
 			}
 
+			console.log(this.props.isSmall);
+
 			return (
 				<Button 
 					onClick={_.bind(function() {
@@ -47,6 +53,7 @@ var ButtonGroup = React.createClass({
 					icon={item._icon}
 					toolTip={item.toolTip}
 					toolTipPosition={item.toolTipPosition}
+					isSmall={this.props.isSmall}
 				/>
 			)		
 		}, this)
@@ -71,6 +78,7 @@ var ButtonGroup = React.createClass({
 				icon={item._icon}
 				toolTip={item.toolTip}
 				toolTipPosition={item.toolTipPosition}
+				isSmall={this.props.isSmall}
 			/> 
 		)
 	},

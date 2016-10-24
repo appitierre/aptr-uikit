@@ -24,7 +24,11 @@ var Pagination = React.createClass({
 	},
 
 	getClassName: function() {
-		return classNames('pagination', this.props.className);
+		if (this.props.isSmall) {
+			return classNames('pagination', this.props.className, 'is-small');
+		} else {
+			return classNames('pagination', this.props.className);
+		}
 	},
 
 	renderToolTipLeft: function() {

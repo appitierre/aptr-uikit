@@ -12,7 +12,7 @@
    		border-bottom-left-radius: 0px;
 	}
 	.page-count {
-		height: 30px;
+		height: 34px;
 		float: left;
     	padding: 5px @space-small 0px;
     	background-color: #fff;
@@ -22,7 +22,18 @@
 	}
 
 	.button {
-		height: 30px;
         padding:@space-micro @space-x-small;
+	}
+}
+
+.is-small {
+	.page-count {
+		height: 28px;
+		float: left;
+    	padding: 5px @space-small 0px;
+    	background-color: #fff;
+   		border-top: 1px solid @ui-grey-dark;
+    	border-bottom: 1px solid @ui-grey-dark;
+        .font-style-small;
 	}
 }

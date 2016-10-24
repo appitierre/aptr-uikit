@@ -7,10 +7,9 @@
 	padding: 2px 36px 2px 4px;
     font-size: 13px;
     width: 140px;
-    height: 32px;
+    height: 36px;
 	border:1px solid @ui-grey-dark;
 	border-radius:2px;
-	margin-bottom:3px;
 	transition:color 0.3s, background-color 0.3s;
 	font-size:13px;
 	background-color: #fff;
@@ -20,11 +19,6 @@
 		background-color:@ui-grey-lightest;
 		outline:none;
 	}
-
-	&.small {
-		height: 23px;
-		width: 140px;
-	}
 }
 
 .search-bar-button {
@@ -32,16 +26,12 @@
 	top: 1px;
 	right: 1px;
 	padding: 4px 10px;
-	height: 30px;
 	margin:0;
 	border-radius:0px;
-	&.small {
-		height: 23px;
-		margin: 0;
-		top: 1px;
+}
 
-		.icon {
-			font-size: 16px;
-		}
+.is-small {
+	.search-bar-input {
+		height: 30px;
 	}
 }

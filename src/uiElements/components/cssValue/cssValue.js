@@ -1,4 +1,5 @@
 var React = require('react');
+var classNames = require('classnames');
 var Button = require('../buttons/button');
 
 var CssValue = React.createClass({
@@ -7,6 +8,14 @@ var CssValue = React.createClass({
         return {
             isShiftKeyDown: false
         }
+    },
+
+    getClassName: function() {
+        if (this.props.isSmall) {
+            return classNames('css-value clearfix', this.props.className, 'is-small');
+        } else {
+            return classNames('css-value clearfix', this.props.className);
+        };
     },
 
     onInputKeyDown: function(event) {
@@ -65,7 +74,7 @@ var CssValue = React.createClass({
 
     render: function() {
         return (
-            <div className="css-value clearfix">
+            <div className={this.getClassName()}>
                 <input 
                     className="css-value-input" 
                     value={this.props.value} 
@@ -79,12 +88,14 @@ var CssValue = React.createClass({
                     <Button
                         onClick={this.onIncrease}
                         icon="chevron-up"
-                        type="primary"   
+                        type="primary"
+                        isSmall={this.props.isSmall}   
                     />
                     <Button
                         onClick={this.onDecrease}
                         icon="chevron-down"
                         type="primary"
+                        isSmall={this.props.isSmall}
                     />
                 </div>
             </div>

@@ -28,7 +28,7 @@ var Button = React.createClass({
     //in will be added on too the end.
     getButtonClassName: function() {
         if (this.props.isSmall) {
-            return classNames('button', this.props.type, "small", this.props.className);
+            return classNames('button', this.props.type, this.props.className, 'is-small');
         } else {
             return classNames('button', this.props.type, this.props.className);
         };

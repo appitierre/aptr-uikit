@@ -30,16 +30,13 @@ var SearchBar = React.createClass({
 	},
 
 	getClassName: function() {
-		return classNames('search-bar', this.props.className);
-	},
-
-	getInputClassName: function() {
-		if (this.props.isSmall === true) {
-			return classNames('search-bar-input', 'small')
-		} else {
-			return classNames('search-bar-input')
+		if (this.props.isSmall) {
+			return classNames('search-bar', this.props.className, 'is-small');
 		}
-	},	
+		else { 
+			return classNames('search-bar', this.props.className);
+		}
+	},
 
 	onButtonClicked: function(event) {
 		event.preventDefault();
@@ -67,7 +64,7 @@ var SearchBar = React.createClass({
 	render: function() {
 		return (
 			<div className={this.getClassName()}>
-				<input className={this.getInputClassName()} value={this.state.value} onChange={this.onChange} placeholder={this.renderPlaceHolder()}/>
+				<input className='search-bar-input' value={this.state.value} onChange={this.onChange} placeholder={this.renderPlaceHolder()}/>
 				{this.getButton()}
 			</div>								
 		);
