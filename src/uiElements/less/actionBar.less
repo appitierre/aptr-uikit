@@ -1,14 +1,37 @@
 .action-bar {
-	border-bottom: 1px solid #e0e0e8;
-    background-color: #f0f0f8;
-
+    background-color:@ui-grey-light;
+	border-bottom: 1px solid @ui-grey-regular;
+    .clearfix;
     .button {
-    	padding: 4px 10px;
     	margin-top: 0px;
     	margin-bottom: 0px; 
     }
 }
 
 .action-bar-inner {
-	padding: 4px 20px;
+    max-width: 1024px;
+    margin: 0 auto;
+	padding: @space-micro @space-small;
+    .clearfix;
+}
+
+.action-bar-left {
+    float:left;
+    width:33%;
+}
+
+.action-bar-center {
+    float:left;
+    width:34%;
+    text-align:center;
+}
+
+.action-bar-right {
+    float:right;
+    width:33%;
+    text-align:right;
+}
+
+.action-bar-item {
+    display:inline-block;
 }

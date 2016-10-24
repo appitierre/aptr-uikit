@@ -10,10 +10,10 @@
 	}
 
 	.select-option-item-container {
-		border: 1px solid #ddd;
+		border: 1px solid @ui-grey-dark;
 		width: 140px;
 		position: absolute;
-		background-color: #fff;
+        .content-background;
 		z-index: 100;
 
 		&:empty {
@@ -21,7 +21,7 @@
 		}
     	
     	.select-option-item {
-    		border-bottom: 1px solid #ddd;
+    		border-bottom: 1px solid @ui-grey-dark;
     		padding: 8px;
     		cursor: pointer;
 
@@ -30,7 +30,7 @@
     		}
 
     		&:hover {
-    			background-color: #f0f0f8;
+    			background-color: @ui-grey-lightest;
     		}
     	}
 	}

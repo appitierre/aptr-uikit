@@ -1,27 +1,54 @@
 .collection-items {
-    padding: 16px;
-}
-
-.collection-item {
-    background-color: #fff;
-	border: 1px solid #e0e0e8;
-}
-
-.collection-item-content {
-	padding: 16px;
-}
-
-.collection-item-actions {
-	background-color: #F0F0F8;
-    padding: 0 5px 0 10px;
-
-    button {
-        margin-left: 4px;
-        padding: 4px 10px;
+    position:relative;
+    .container-sizing;
+    .padding-all-small;
+    .loading {
+        position:absolute;
+        width:100%;
+        top:0;
+        z-index:10;
+        text-align: center;
+    }
+    .loading-inner {
+        padding:0;
     }
 }
 
-.collection-item-actions-buttons {
+.collection-item {
+    margin-bottom:@space-small;
+    background-color: @content-background;
+	border: 1px solid @ui-grey-dark;
+    border-radius:3px;
+    overflow: hidden;
+}
+
+.collection-item-content {
+	.padding-all-small;
+}
+
+.collection-item-content-title {
+    .font-style-regular;
+    .font-color-dark;
+}
+
+.collection-item-content-body {
+    .font-style-small-light;
+    .font-color-light;
+}
+
+.collection-item-actions {
+    padding: 0 @space-x-small;
+    text-align: right;
+    background-color: @ui-grey-lightest;
+
+    button {
+        margin-left: @space-micro;
+        padding: @space-micro @space-x-small;
+        font-size:12px;
+    }
+}
+
+/*.collection-item-actions-buttons {
 	text-align: right;
 	padding: 0px 5px 0 20px;
 
@@ -29,4 +56,4 @@
     	margin-left: 4px;
     	padding: 4px 10px;
     }
-}
+}*/

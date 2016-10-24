@@ -3,10 +3,10 @@
         .list-item {
             transition: opacity 0.3s;
             &:nth-child(even) {
-                background-color: #ebecee;
+                background-color: @ui-grey-lightest;
             }
             &:nth-child(odd) {
-                background-color: #d6d7d8;
+                background-color: @ui-grey-light;
             }
         }
     }
@@ -16,11 +16,11 @@
     margin:0;
     padding:0;
     list-style: none;
-    background-color:#fff;
-    border:1px solid #ccc;
+    .content-background;
+    border:1px solid @ui-grey-dark;
     border-top:none;
     &:first-child {
-        border-top:1px solid #ccc;
+        border-top:1px solid @ui-grey-dark;
     }
 }
 
@@ -30,22 +30,13 @@
     text-align: left;
     transition: background-color 0.3s;
     &:hover {
-        background-color:#f0f0f8;
+        background-color: @ui-grey-regular;
     }
 }
 
 .list-item-inner {
     position:relative;
-    padding:8px;
-}
-
-.list-item-wrapper {
-    /*background: none;
-    padding: 6px 3px;
-    border-radius: 0px;
-    font-size: 13px;
-    text-decoration: none;
-    display: inline-block;*/
+    .padding-all-x-small;
 }
 
 .list-item-icon {
@@ -59,30 +50,28 @@
 }
 
 .list-item-content {
-    width:80%;
+    width:70%;
     float:left;
     &-inner {
         padding-left: 32px;
     }
     .list-item-text {
-    	font-size: 16px;
-        font-weight: 600;
-        line-height: 120%;
+    	.font-style-small;
     }
     .list-item-detail {
-        display: block;
-        font-size: 12px;
-        color: #929292;
+        .font-style-small-light;
+        .font-color-light;
     }
 }
 
 .list-item-buttons {
     text-align: right;
-    width:20%;
+    width:30%;
+    padding-right:@space-x-small;
     float:left;
 
     button {
-        margin-left: 8px;
+        margin-left: @space-x-small;
     }
 }
 

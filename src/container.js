@@ -695,7 +695,7 @@ var Container = React.createClass({
                     <SearchBar 
                         onClick={this.onClick} 
                         onChange={this.onChange} 
-                        isSmall={true}/>
+                        isSmall={false}/>
                     
                 </Section>
 
