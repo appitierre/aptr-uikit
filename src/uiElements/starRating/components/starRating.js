@@ -1,5 +1,5 @@
 var React = require('react');
-var FlatButton = require('../../buttons/components/flatbutton');
+var FlatButton = require('../../buttons/components/flatButton');
 var StarRatingSelectedItem = require('./starRatingSelectedItem');
 var StarRatingUnselectedItem = require('./starRatingUnselectedItem');
 var classnames = require('classnames');
@@ -30,7 +30,8 @@ var StarRating = React.createClass({
 			var className = ""
 
 			if (index + 1 <= value) {
-				icon = "star";	
+				icon = "star";
+				console.log("OVER INDEX")	
 			}
 
 			return (

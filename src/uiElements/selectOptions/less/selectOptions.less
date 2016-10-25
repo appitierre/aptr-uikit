@@ -1,26 +1,25 @@
-.select-option {
+.select-options {
 	display: inline-block;
 	position: relative;
 	z-index: 100;
 
-	.select-option-selector {	
-		.button {
-			margin: 0px;
-		}
+	.button {
+		margin: 0;
 	}
 
-	.select-option-item-container {
+	.select-options-list {
 		border: 1px solid @ui-grey-dark;
 		width: 140px;
 		position: absolute;
         .content-background;
 		z-index: 100;
+		.font-style-small;
 
 		&:empty {
 			border: none;
 		}
     	
-    	.select-option-item {
+    	.select-options-item {
     		border-bottom: 1px solid @ui-grey-dark;
     		padding: 8px;
     		cursor: pointer;

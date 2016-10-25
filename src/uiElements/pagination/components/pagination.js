@@ -25,9 +25,9 @@ var Pagination = React.createClass({
 
 	getClassName: function() {
 		if (this.props.isSmall) {
-			return classNames('pagination', this.props.className, 'is-small');
+			return classNames('pagination', 'clearfix', this.props.className, 'is-small');
 		} else {
-			return classNames('pagination', this.props.className);
+			return classNames('pagination', 'clearfix', this.props.className);
 		}
 	},
 

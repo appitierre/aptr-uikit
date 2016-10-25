@@ -30,6 +30,7 @@ var StarRatingSelectedItem = React.createClass({
 	},
 
 	render: function() {
+	console.log("ICON:", this.props.icon)
 		return (
 			<div className="star-rating-item" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
 				<FlatButton 

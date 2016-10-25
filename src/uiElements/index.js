@@ -22,7 +22,7 @@ var CssValue = require('./cssValue/components/cssValue');
 var CssBorderSelector = require('./cssBorderSelector/components/cssBorderSelector');
 var CssBorderRadiusSelector = require('./cssBorderRadiusSelector/components/cssBorderRadiusSelector');
 var StarRating = require('./starRating/components/starRating');
-var SelectOption = require('./select/components/selectOption');
+var SelectOptions = require('./selectOptions/components/selectOptions');
 var CheckListItem = require('./checkListItem/components/checkListItem');
 var Chip = require('./chip/components/chip');
 
