@@ -31,7 +31,6 @@ var StarRating = React.createClass({
 
 			if (index + 1 <= value) {
 				icon = "star";
-				console.log("OVER INDEX")	
 			}
 
 			return (
