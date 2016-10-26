@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react');
-var FlatButton = require('../../buttons/components/flatbutton');
+var FlatButton = require('../../buttons/components/flatButton');
 var StarRatingSelectedItem = require('./starRatingSelectedItem');
 var StarRatingUnselectedItem = require('./starRatingUnselectedItem');
 var classnames = require('classnames');

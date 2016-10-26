@@ -2,9 +2,6 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var classnames = require('classnames');
 var registerType = require('../helpers').registerType;
-/*var MediumEditor = require('medium-editor');*/
-
-console.log(MediumEditor);
 
 var FormFieldTextArea = React.createClass({
 
