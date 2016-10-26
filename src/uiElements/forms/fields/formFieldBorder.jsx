@@ -1,10 +1,7 @@
 var React = require('react');
 var registerType = require('../helpers').registerType;
 var SketchPicker = require('react-color').SketchPicker;
-var UIKIT = require('aptr-uikit');
-var CssValue = UIKIT.CssValue;
-var Button = require('aptr-uikit').Button;
-var FlatButton = require('aptr-uikit').FlatButton;
+import {CssValue, Button, FlatButton} from 'uiElements';
 var FormFieldSelectOption = require('./formFieldSelectOption.jsx');
 
 var options = [{

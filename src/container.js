@@ -13,6 +13,7 @@ var CssBorderSelectorExamples = require('./uiElements/cssBorderSelector/examples
 var CssValueExamples = require('./uiElements/cssValue/examples');
 var DropDownExamples = require('./uiElements/dropDown/examples');
 var FolderExamples = require('./uiElements/folder/examples');
+var FormsExamples = require('./uiElements/forms/examples');
 var ListItemsExamples = require('./uiElements/list/examples');
 var LoadingExamples = require('./uiElements/loading/examples');
 var MessageExamples = require('./uiElements/message/examples');
@@ -38,8 +39,8 @@ var Container = React.createClass({
         return (
             <div>
                 <ActionBarExamples/>
-                <ButtonGroupExamples/> 
                 <ButtonExamples/>
+                <ButtonGroupExamples/> 
                 <CardExamples/>
                 <CheckListItemExamples/>
                 <ChipExamples/>
@@ -49,6 +50,7 @@ var Container = React.createClass({
                 <CssValueExamples/>
                 <DropDownExamples/>
                 <FolderExamples/>
+                <FormsExamples/>
                 <ListItemsExamples/>
                 <LoadingExamples/>
                 <MessageExamples/>

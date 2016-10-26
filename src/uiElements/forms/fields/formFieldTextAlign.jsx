@@ -1,7 +1,6 @@
 var React = require('react');
 var registerType = require('../helpers').registerType;
-var UIKIT = require('aptr-uikit');
-var ButtonGroup = UIKIT.ButtonGroup;
+import {ButtonGroup} from 'uiElements';
 
 var FormFieldTextAlign = React.createClass({
 

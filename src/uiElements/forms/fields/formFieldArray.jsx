@@ -2,8 +2,7 @@ var React = require('react');
 var registerType = require('../helpers').registerType;
 var Form = require('../components/form.jsx');
 var FormSortable = require('../components/formSortable.jsx');
-var UIKIT = require('aptr-uikit');
-var Button = UIKIT.Button;
+var Button = require('uiElements/buttons/components/button');
 
 var FormFieldArray = React.createClass({
 

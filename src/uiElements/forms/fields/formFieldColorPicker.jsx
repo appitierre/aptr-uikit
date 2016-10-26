@@ -1,8 +1,7 @@
 var React = require('react');
 var registerType = require('../helpers').registerType;
 var SketchPicker = require('react-color').SketchPicker;
-var Button = require('aptr-uikit').Button;
-var FlatButton = require('aptr-uikit').FlatButton;
+import {Button, FlatButton} from 'uiElements';
 
 var FormFieldColorPicker = React.createClass({
 

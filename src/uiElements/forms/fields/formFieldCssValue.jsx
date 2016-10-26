@@ -1,9 +1,6 @@
 var React = require('react');
 var registerType = require('../helpers').registerType;
-var UIKIT = require('aptr-uikit');
-var CssValue = UIKIT.CssValue;
-var Button = UIKIT.Button;
-var SelectOption = UIKIT.SelectOption;
+import {CssValue, Button, SelectOption} from 'uiElements';
 
 var FormFieldCssValue = React.createClass({
 

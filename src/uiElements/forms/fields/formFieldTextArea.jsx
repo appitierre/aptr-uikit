@@ -2,6 +2,9 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var classnames = require('classnames');
 var registerType = require('../helpers').registerType;
+/*var MediumEditor = require('medium-editor');*/
+
+console.log(MediumEditor);
 
 var FormFieldTextArea = React.createClass({
 
@@ -24,6 +27,7 @@ var FormFieldTextArea = React.createClass({
             anchorInputPlaceholder: 'Type a link',
             targetBlank: true,
             placeholder:false,
+            showWhenToolbarIsVisible: true,
             toolbar: {
                 relativeContainer: toolBar,
                 buttons: [
@@ -106,7 +110,7 @@ var FormFieldTextArea = React.createClass({
                 updateOnEmptySelection: true
             },
             imageDragging: false,
-            anchor: {
+            anchorPreview: {
                 customClassOption: null,
                 customClassOptionText: 'Button',
                 linkValidation: true,

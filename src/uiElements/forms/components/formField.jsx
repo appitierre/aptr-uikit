@@ -2,6 +2,7 @@ var React = require('react');
 var Helpers = require('../helpers');
 var getType = Helpers.getType; 
 var getValidator = Helpers.getValidator;
+var FormFieldCondition = require('../fields/formFieldCondition');
 
 var FormField = React.createClass({
 
@@ -54,7 +55,16 @@ var FormField = React.createClass({
             _isSaving: true
         });
 
-        return this.props.onUpdate(updateObject, hasError, this.props.fieldKey).then(() => {
+        return this.props
+        .onUpdate(updateObject, hasError, this.props.fieldKey)
+        .then(() => {
+            if (this.isMounted()) {
+                this.setState({
+                    _isSaving: false
+                });
+            }
+        })
+        .catch(() => {
             if (this.isMounted()) {
                 this.setState({
                     _isSaving: false
@@ -101,6 +111,7 @@ var FormField = React.createClass({
                 {this.renderConditon()}
                 {this.renderFieldComponent()}
             </div>
+        );
     }
 
 });

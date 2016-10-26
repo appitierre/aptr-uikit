@@ -3,6 +3,10 @@ var Forms = {};
 Forms.Form = require('./components/form.jsx');
 Forms.FormField = require('./components/formField.jsx');
 Forms.FormSortable = require('./components/formSortable.jsx');
+Forms.Helpers = require('./helpers');
+
+MediumEditor.extensions.anchor.prototype.formSaveLabel = '<i class="icon icon-check"></i>';
+MediumEditor.extensions.anchor.prototype.formCloseLabel = '<i class="icon icon-cross"></i>';
 
 // Fields
 require('./fields/formFieldArray.jsx');
