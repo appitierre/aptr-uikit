@@ -54,7 +54,31 @@ var ButtonExamples = React.createClass({
 					type="primary full-width"
 					key={6}
 				/>
-			</div>
+			</div>,
+			<Button
+				type="secondary"
+				text="Small Secondary"
+				onClick={this.onClick}
+				icon="register"
+				key={5}
+				isSmall={true}
+			/>,
+			<Button
+				type="alert"
+				text="Small Alert"
+				onClick={this.onClick}
+				icon="trash"
+				key={5}
+				isSmall={true}
+			/>,
+			<Button
+				type="primary"
+				text="Small primary"
+				onClick={this.onClick}
+				icon="key"
+				key={5}
+				isSmall={true}
+			/>,
 		]
 	},
 

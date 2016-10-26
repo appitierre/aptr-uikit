@@ -70,8 +70,14 @@ var SelectOptions = React.createClass({
                 );
             });
 
+            var className = "select-options-list";
+
+            if (this.props.iconPosition === "right") {
+            	className = "select-options-list is-right-direction"
+            }; 
+
             return (
-                <div className="select-options-list">
+                <div className={className}>
                     {options}
                 </div>
             );
@@ -86,7 +92,7 @@ var SelectOptions = React.createClass({
 					text={this.getDropDownText()} 
 					onClick={this.onDropDownClicked} 
 					icon={this.getButtonIcon()} 
-					iconPosition={this.props.iconPosition || 'right'}
+					iconPosition={this.props.iconPosition || 'left'}
 				/>
 				{this.renderOptions()}			
 			</div>

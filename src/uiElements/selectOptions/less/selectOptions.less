@@ -18,10 +18,14 @@
 		&:empty {
 			border: none;
 		}
+
+		&.is-right-direction {
+			right: 0;
+		}
     	
     	.select-options-item {
     		border-bottom: 1px solid @ui-grey-dark;
-    		padding: 8px;
+    		.padding-all-x-small;
     		cursor: pointer;
 
     		&:last-child {
@@ -33,4 +37,11 @@
     		}
     	}
 	}
+
+	&.is-right-direction {
+		.select-options-list {
+			right: 0;
+		}
+	}
+
 }
