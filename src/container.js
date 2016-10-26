@@ -1,8 +1,8 @@
 var React = require('react');
 var _ = require('lodash');
 
-var ButtonExamples = require('./uiElements/buttons/examples');
 var ActionBarExamples = require('./uiElements/actionBar/examples');
+var ButtonExamples = require('./uiElements/buttons/examples');
 var ButtonGroupExamples = require('./uiElements/buttonGroup/examples');
 var CardExamples = require('./uiElements/card/examples');
 var CheckListItemExamples = require('./uiElements/checkListItem/examples');
@@ -23,7 +23,7 @@ var SearchBarExamples = require('./uiElements/search/examples');
 var SelectOptionsExamples = require('./uiElements/selectOptions/examples');
 var StarRatingExamples = require('./uiElements/starRating/examples');
 var TagExamples = require('./uiElements/tag/examples');
-var ToggleExamples = require('./uiElements/toggle/examples'); 
+var ToggleExamples = require('./uiElements/toggle/examples');
 
 var Container = React.createClass({ 
 /* THE FUNCTIONS BELOW ARE MADE UP OF FAKE DATA TO SHOW THE WORKING FUNCTIONALLITY OF THE COMPONENTS */
@@ -35,7 +35,7 @@ var Container = React.createClass({
     //This renders all the components and allows you too pass in all the neccasary props.
     render: function() {
 
-        return (         
+        return (
             <div>
                 <ActionBarExamples/>
                 <ButtonGroupExamples/> 

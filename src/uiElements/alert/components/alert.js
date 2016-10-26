@@ -4,7 +4,7 @@ var classNames = require('classnames');
 var Alert = React.createClass({
 
 	getClassName: function() {
-		return classNames('alert' + ' ' + this.props.className + ' ' + this.props.type);
+		return classNames('alert', this.props.className, this.props.type);
 	},
 
 	getIconClassName: function() {
