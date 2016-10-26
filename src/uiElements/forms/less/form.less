@@ -1,0 +1,80 @@
+.form {
+    .form {
+        background-color:transparent;
+    }
+}
+
+.form-title {
+    .font-style-title-3;
+}
+
+.form-field {
+    border-radius: 3px;
+    padding-bottom:24px;
+    padding-top:24px;
+    input, textarea {
+        box-sizing: border-box;
+        max-width: 440px;
+        width:100%;
+        padding: 4px 8px;
+        background-color: #ffffff;
+        border-radius: 2px;
+        border: none;
+        border-bottom: 2px solid @ui-grey-dark;
+        transition: border-color 0.3s;
+        .font-style-regular;
+        &:focus {
+            outline:none;
+            border-color:#3bafda;
+        }
+    }
+    textarea {
+        min-height:140px;
+    }
+}
+
+.form-field-label {
+    display:block;
+    margin-bottom:2px;
+    .font-style-small;
+}
+
+.form-field-help {
+    margin-bottom:8px;
+    .font-style-small;
+    .font-color-light;
+}
+
+.form-field-error {
+    position:absolute;
+    margin-top:8px;
+    .font-style-micro;
+    color:#ff5567;
+}
+
+.form-field-fieldset {
+    .padding-all-regular;
+    background-color:#fff;
+    margin:16px 0px;
+    border-radius:4px;
+}
+
+.form-field-fieldset-label {
+    .font-style-large;
+}
+
+.form-field-array {
+    .form-field-array-items {
+        float:left;
+        width:50%;
+        box-sizing: border-box;
+        .padding-all-regular;
+    }
+    .form-field-array-item-form {
+        float:left;
+        width:50%;
+        box-sizing: border-box;
+        border-left:1px solid @ui-grey-dark;
+        .padding-all-regular;
+    }
+}

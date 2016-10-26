@@ -1,7 +1,6 @@
 'use strict';
 
 var React = require('react');
-var _ = require('underscore');
 var classNames = require('classnames');
 
 var Folder = React.createClass({

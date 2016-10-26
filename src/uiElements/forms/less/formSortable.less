@@ -1,0 +1,42 @@
+.form-sortable {
+    padding:0;
+    margin:0;
+    position:relative;
+}
+
+.form-sortable-item {
+    margin:0;
+    margin-bottom: 12px;
+    border-radius: 3px;
+    background-color:#fff;
+    list-style: none;
+    box-shadow: 1px 1px 6px -2px #454545;
+    &.is-selected {
+        background-color: #3bafda;
+        .form-sortable-item-text,
+        .form-sortable-item-handle {
+            color:#fff;
+        }
+    }
+}
+
+.form-sortable-item-inner {
+    position:relative;
+    padding-left:32px;
+}
+
+.form-sortable-item-text {
+    padding:16px;
+    cursor:pointer;
+}
+
+.form-sortable-item-handle {
+    position: absolute;
+    top: 18px;
+    left:16px;
+    cursor: pointer;
+}
+
+.form-sortable-helper {
+    z-index:999999;
+}

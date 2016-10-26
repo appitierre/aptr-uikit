@@ -27,7 +27,6 @@ var DropDownItems = React.createClass({
 	},
 
 	render: function render() {
-		console.log(this.props);
 		return React.createElement(
 			'div',
 			null,

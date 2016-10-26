@@ -3,7 +3,7 @@
 var React = require('react');
 var Button = require('../../buttons/components/button');
 var ClassNames = require('classnames');
-var _ = require('underscore');
+var _ = require('lodash');
 
 var ButtonGroup = React.createClass({
 	displayName: 'ButtonGroup',
@@ -38,27 +38,27 @@ var ButtonGroup = React.createClass({
 	},
 
 	getButtons: function getButtons() {
+		var _this = this;
+
 		return _.map(this.props.buttons, function (item, index) {
 			var className = '';
 			// Adds buttonType class to selected button item
-			if (item._value === this.state._value) {
-				className = this.props.buttonType;
+			if (item._value === _this.state._value) {
+				className = _this.props.buttonType;
 			}
-
-			console.log(this.props.isSmall);
 
 			return React.createElement(Button, {
 				onClick: _.bind(function () {
 					this.onButtonItemClicked(item._value);
-				}, this),
+				}, _this),
 				key: index,
 				className: className,
 				icon: item._icon,
 				toolTip: item.toolTip,
 				toolTipPosition: item.toolTipPosition,
-				isSmall: this.props.isSmall
+				isSmall: _this.props.isSmall
 			});
-		}, this);
+		});
 	},
 
 	getButtonToggle: function getButtonToggle() {
@@ -72,7 +72,7 @@ var ButtonGroup = React.createClass({
 
 		return React.createElement(Button, {
 			onClick: _.bind(function () {
-				var nextItem = _.findWhere(this.props.buttons, { _value: item._value });
+				var nextItem = _.find(this.props.buttons, { _value: item._value });
 				this.onButtonItemClicked(nextItem._value);
 			}, this),
 			className: className,
