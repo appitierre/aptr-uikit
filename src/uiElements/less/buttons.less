@@ -73,10 +73,8 @@ button {
         background-color:@button-hover-color;
         color:@button-text-hover-color;
         outline:none;
-        .tool-tip {
-            display: block;
-        }
     }
+
     &.primary {
         background-color:@button-primary-color;
         color:@button-primary-text-color;
@@ -135,48 +133,6 @@ button {
             background-color:darken(@button-color, 20%);
         }
     }
-
-    .tool-tip {
-        display:none;
-        white-space: nowrap;
-        position: absolute;
-        padding: 2px 6px 2px;
-        z-index: 1000;
-        
-        border-radius: 2px;
-        background-color: #454545;
-        left: 50%;
-        color: #fff;
-        &:after {
-            position: absolute;
-            margin-left: -6px;
-            left: 50%;
-            content: '';
-            width: 0;
-            height: 0;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-        }
-    }
-
-    .tool-tip-bottom {
-        top: 100%;
-        margin-top: 6px;
-        &:after {
-            top: -5px;
-            border-bottom: 6px solid #454545;
-        }
-    }
-
-    .tool-tip-top {
-        bottom: 100%;
-        margin-bottom:6px;
-        &:after {
-            bottom: -5px;
-            border-top: 6px solid #454545;
-        }
-    }
-    
 }
 
 .button-flat {
@@ -184,9 +140,6 @@ button {
     color: #555;
     &:hover, &:active, &:focus {
         color:darken(#555, 20%);
-        .tool-tip {
-            display: block;
-        }
     }
     &.primary {
         color:@button-primary-color;
@@ -234,17 +187,31 @@ button {
         position: relative;
         top: -2px;
     }
+}
+
+.tool-tip-button {
+
+    &:hover, &:active, &:focus {
+        .tool-tip {
+            visibility: visible;
+            pointer-events: auto;
+            opacity: 1;
+            transition: all 150ms ease-in 1000ms
+        }
+    }
 
     .tool-tip {
-        display:none;
+        visibility:hidden;
+        opacity: 0;
+        pointer-events: none;
         white-space: nowrap;
         position: absolute;
         padding: 2px 6px 2px;
         z-index: 1000;
-        
         border-radius: 2px;
         background-color: #454545;
         left: 50%;
+        transform: translateX(-50%);
         color: #fff;
         &:after {
             position: absolute;
@@ -262,7 +229,7 @@ button {
         top: 100%;
         margin-top: 6px;
         &:after {
-            top: -6px;
+            top: -5px;
             border-bottom: 6px solid #454545;
         }
     }
@@ -271,8 +238,27 @@ button {
         bottom: 100%;
         margin-bottom:6px;
         &:after {
-            bottom: -6px;
+            bottom: -5px;
             border-top: 6px solid #454545;
+        }
+    }
+
+    .tool-tip-right {
+        transform: translateX(0);
+        margin-right: 6px;
+        &:after {
+            left: 0;
+            margin-left: 0;
+        }
+    }
+
+    .tool-tip-left {
+        transform: translateX(-100%);
+        margin-left: 6px;
+        &:after {
+            right: 0;
+            left: auto;
+            margin-left: 0;
         }
     }
 }

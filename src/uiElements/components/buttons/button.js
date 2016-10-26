@@ -1,5 +1,6 @@
 var React = require('react');
 var classNames = require('classnames');
+var ToolTip = require('./toolTip');
 
 
 // @props:
@@ -14,24 +15,13 @@ var classNames = require('classnames');
 
 var Button = React.createClass({
 
-    getInitialState: function() {
-        return {
-            toolTipPosition: 0
-        }
-    },
-
-    componentWillMount: function() {
-        this.getToolTipPositioning();
-    },
-
     //The button component has a set className of button and what ever className has been passed
     //in will be added on too the end.
     getButtonClassName: function() {
-        if (this.props.isSmall) {
-            return classNames('button', this.props.type, "small", this.props.className);
-        } else {
-            return classNames('button', this.props.type, this.props.className);
-        };
+        return classNames('button', this.props.type, this.props.className, {
+            "small" : this.props.isSmall,
+            "tool-tip-button": this.props.toolTip
+        });
     },
 
     getIconPositionClassName: function(position) {
@@ -72,41 +62,26 @@ var Button = React.createClass({
         }
     },
 
-    getToolTip: function() {
-        if (this.props.toolTip) {
-            var className = classNames('tool-tip', {
-                'tool-tip-top': (this.props.toolTipPosition === 'top' || !this.props.toolTipPosition),
-                'tool-tip-bottom': (this.props.toolTipPosition === 'bottom')
-            })
+    renderButton: function(button) {
+        if(this.props.toolTip) {
             return (
-                <span style={{marginLeft: this.state.toolTipPosition}} ref="tool-tip" className={className}>
-                    {this.props.toolTip}
-                </span>
+                <ToolTip toolTip={this.props.toolTip} toolTipPosition={this.props.toolTipPosition}>
+                    {button}
+                </ToolTip>
             )
         }
-    },
-
-    getToolTipPositioning: function() {
-         if (this.refs['tool-tip']) {
-            var width = this.refs['tool-tip'].offsetWidth;
-            this.setState({
-                toolTipPosition: -Math.floor(width/2) + 'px'
-            })
-        }
-    },
-
-    onButtonMouseOver: function() {
-        this.getToolTipPositioning();
+        return button;
     },
 
     render: function() {
-        return (
-            <button onMouseOver={this.onButtonMouseOver} disabled={this.props.disabled} className={this.getButtonClassName()} onClick={this.props.onClick}>
-                {this.getToolTip()}
+        return this.renderButton(
+            <button 
+                disabled={this.props.disabled} 
+                className={this.getButtonClassName()} 
+                onClick={this.props.onClick}>
                 {this.getLeftIcon()}
                 {this.props.text}
                 {this.getRightIcon()}
-                {this.getToolTip()}
             </button>
         );
     }
