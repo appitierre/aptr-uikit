@@ -11,6 +11,7 @@ var CollectionItemExamples = require('./uiElements/collections/examples');
 var CssBorderRadiusSelectorExamples = require('./uiElements/cssBorderRadiusSelector/examples');
 var CssBorderSelectorExamples = require('./uiElements/cssBorderSelector/examples');
 var CssValueExamples = require('./uiElements/cssValue/examples');
+var ChartExamples = require('./uiElements/charts/examples');
 var DropDownExamples = require('./uiElements/dropDown/examples');
 var FolderExamples = require('./uiElements/folder/examples');
 var ListItemsExamples = require('./uiElements/list/examples');
@@ -41,6 +42,7 @@ var Container = React.createClass({
                 <ButtonGroupExamples/> 
                 <ButtonExamples/>
                 <CardExamples/>
+                <ChartExamples/>
                 <CheckListItemExamples/>
                 <ChipExamples/>
                 <CollectionItemExamples/>
