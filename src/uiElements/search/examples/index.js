@@ -9,6 +9,11 @@ var SearchBarExamples = React.createClass({
 			<SearchBar 
 				onClick={this.onClick} 
     			onChange={this.onChange}
+			/>,
+			<SearchBar 
+				onClick={this.onClick} 
+    			onChange={this.onChange}
+    			isSmall={true}
 			/>
 		]
 	},

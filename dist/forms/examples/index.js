@@ -22,7 +22,7 @@ var schema = {
         "validators": ["required"]
     },
     body: {
-        "type": "TextArea:Draft",
+        "type": "TextArea",
         "label": "Course Body",
         "help": "",
         "conditions": [],

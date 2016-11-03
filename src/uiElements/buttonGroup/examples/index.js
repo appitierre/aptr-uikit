@@ -23,6 +23,25 @@ var ButtonGroupExamples = React.createClass({
          				"_value": "check"
          			} 
     			]}
+			/>,
+			<ButtonGroup
+				buttonType="secondary"
+				value="menu"
+				onChange={this.onChange}
+				isSmall={true}
+				buttons={
+					[{
+						"_icon": "menu", 
+						"_value": "menu"}, 
+					{
+						"_icon": "trash", 
+						"_value": "trash"
+					}, 
+         			{
+         				"_icon": "check", 
+         				"_value": "check"
+         			} 
+    			]}
 			/>
 		]
 	},

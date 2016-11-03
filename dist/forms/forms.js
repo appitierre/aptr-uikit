@@ -25,7 +25,6 @@ require('./fields/formFieldSelect.jsx');
 require('./fields/formFieldSpacing.jsx');
 require('./fields/formFieldText.jsx');
 require('./fields/formFieldTextArea.jsx');
-require('./fields/formFieldTextAreaDraft.jsx');
 require('./fields/formFieldTextAreaPlain.jsx');
 require('./fields/formFieldTextAlign.jsx');
 

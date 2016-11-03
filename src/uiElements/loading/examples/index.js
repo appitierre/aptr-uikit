@@ -7,12 +7,17 @@ var LoadingExamples = React.createClass({
 	getComponents: function() {
 		return [
 			<Loading 
-				hasDataLoading={false}>
+				hasDataLoaded={false}>
+				<div>
+					DATA HAS LOADED
+				</div>
+			</Loading>,
+			<Loading 
+				hasDataLoaded={true}>
 				<div>
 					DATA HAS LOADED
 				</div>
 			</Loading>
-
 		]
 	},
 
@@ -22,7 +27,7 @@ var LoadingExamples = React.createClass({
 				<Section
 					title="Loading"
 					components={this.getComponents()}
-					shouldDisplayAsBlock={true}
+					shouldDisplayAsBlock={false}
 				/>
 			</div>
 		);

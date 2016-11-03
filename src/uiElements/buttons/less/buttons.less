@@ -95,6 +95,7 @@ button {
     &.full-width {
         width: 100%;
     }
+    
     /*&:hover, &:active, &:focus {
         background-color:@button-hover-color;
         color:@button-text-hover-color;
@@ -296,6 +297,65 @@ button {
         }
     }
 }
+
+.button-options {
+
+    .button {
+        margin: 0;
+    }
+    
+    .button-options-button {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    
+    .button-options-selector {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-left: 1px @ui-grey-dark solid;
+
+        &:hover, &:active, &:focus {
+            border-left: 1px @ui-grey-dark solid;
+        }
+    }
+
+    .button-options-list {
+        border: 1px solid @ui-grey-dark;
+        width: 190px;
+        position: absolute;
+        .content-background;
+        z-index: 100;
+        .font-style-small;
+
+        &:empty {
+            border: none;
+        }
+    }
+
+    .button-options-list-item {
+        border-bottom: 1px solid @ui-grey-dark;
+        .padding-all-x-small;
+        cursor: pointer;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:hover {
+            background-color: @ui-grey-lightest;
+        }
+
+        &-title {
+            .font-style-small;
+            margin-bottom: @space-micro;
+        }
+
+        &-body {
+            .font-style-small-light;
+        }
+    }
+}
+
 
 
 
