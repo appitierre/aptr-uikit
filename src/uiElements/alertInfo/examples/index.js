@@ -8,29 +8,23 @@ var AlertInfoExamples = React.createClass({
 		return [
 			<AlertInfo 
 				type="warning"
-				icon="star"
-				text="This is the warning Alert Info component"
+				icon="cloud-crossed"
+				text="Your changes have not been saved"
 			/>,
 			<AlertInfo 
 				type="info"
-				icon="star"
-				text="This is the info Alert Info component"
+				icon="cloud-sync"
+				text="Saving your changes"
 			/>,
 			<AlertInfo 
 				type="success"
-				icon="star"
-				text="This is the success Alert Info component"
-			/>,
-			<AlertInfo 
-				type="danger"
-				icon="star"
-				text="This is the danger Alert Info component"
+				icon="cloud-check"
+				text="All changes have been saved"
 			/>
 		]
 	},
 
 	render: function() {
-	console.log("alert info rendering");
 		return (
 			<div>
 				<Section
