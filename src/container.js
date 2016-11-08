@@ -2,6 +2,7 @@ var React = require('react');
 var _ = require('lodash');
 
 var ActionBarExamples = require('./uiElements/actionBar/examples');
+var AlertInfo = require('./uiElements/alertInfo/examples');
 var ButtonExamples = require('./uiElements/buttons/examples');
 var ButtonGroupExamples = require('./uiElements/buttonGroup/examples');
 var CardExamples = require('./uiElements/card/examples');
@@ -21,8 +22,10 @@ var PaginationExamples = require('./uiElements/pagination/examples');
 var ProgressBarExamples = require('./uiElements/progressBar/examples');
 var RangeSliderExamples = require('./uiElements/rangeSlider/examples');
 var SearchBarExamples = require('./uiElements/search/examples');
+var SearchFilterExamples = require('./uiElements/searchFilter/examples');
 var SelectOptionsExamples = require('./uiElements/selectOptions/examples');
 var StarRatingExamples = require('./uiElements/starRating/examples');
+var TabsExamples = require('./uiElements/tabs/examples');
 var TagExamples = require('./uiElements/tag/examples');
 var ToggleExamples = require('./uiElements/toggle/examples');
 
@@ -39,6 +42,7 @@ var Container = React.createClass({
         return (
             <div>
                 <ActionBarExamples/>
+                <AlertInfo/>
                 <ButtonExamples/>
                 <ButtonGroupExamples/> 
                 <CardExamples/>
@@ -58,8 +62,10 @@ var Container = React.createClass({
                 <ProgressBarExamples/>
                 <RangeSliderExamples/>
                 <SearchBarExamples/>
+                <SearchFilterExamples/>
                 <SelectOptionsExamples/>
-                <StarRatingExamples/> 
+                <StarRatingExamples/>
+                <TabsExamples/> 
                 <TagExamples/>
                 <ToggleExamples/>
             </div> 
