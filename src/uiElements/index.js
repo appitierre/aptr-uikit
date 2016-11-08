@@ -50,6 +50,8 @@ module.exports = {
     FormField: FormField,
     FormSortable: FormSortable,
     registerType: FormHelpers.registerType,
+    registerValidator: FormHelpers.registerValidator,
+    registerCondition: FormHelpers.registerCondition,
     ItemToggle: ItemToggle,
     ListItem: ListItem,
     ListItems: ListItems,
