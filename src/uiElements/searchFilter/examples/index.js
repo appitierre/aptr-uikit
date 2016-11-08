@@ -16,7 +16,7 @@ var SearchFilterExamples = React.createClass({
 				placeholder="enter text here" 
 				onChange={this.onChange}
 				value={this.state.value}
-				shouldFocusInput={true}
+				shouldFocusInput={false}
 				onFilterChanged={this.onFilterChanged}
 				filters={[
 					{

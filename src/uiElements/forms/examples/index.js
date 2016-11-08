@@ -23,10 +23,30 @@ var schema = {
         "help": "",
         "conditions": [],
         "validators": []
+    },
+    _items: {
+        "type": "Array",
+        "label": "Items",
+        "help": "",
+        "itemType": "Object",
+        "conditions": [],
+        "validators": [],
+        "addButtonText": "Add New Item",
+        "deleteButtonText": "Delete Item",
+        "itemTextAttribute": "title",
+        "defaultPrefix": "Item",
+        "subSchema": {
+            "title": {
+                "type": "Text",
+                "label": "Item Title"
+            },
+            "body": {
+                "type": "TextArea",
+                "label": "Item Body"
+            }
+        }
     }
 }
-
-console.log(Helpers);
 
 Helpers.registerCondition('shouldDisplayTitle', function(props, next) {
     if (!props.model._shouldDisplayTitle) {
@@ -44,7 +64,8 @@ var FormsExamples = React.createClass({
         return {
             _shouldDisplayTitle: true,
             title: 'My First Title',
-            body: 'Some body text...edit me'
+            body: 'Some body text...edit me',
+            _items: []
         }
     },
 
@@ -67,6 +88,9 @@ var FormsExamples = React.createClass({
 
     onUpdate: function(attributes, hasError, fieldKey) {
 
+        if (fieldKey === '_items') {
+            console.log(attributes);
+        }
 
         return new Promise((resolve, reject) => {
             if (hasError) {

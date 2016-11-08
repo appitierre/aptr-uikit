@@ -76,7 +76,7 @@ var FormFieldArray = React.createClass({
         return (
             <div>
                 <Form 
-                    key={selectedItemModel._id}
+                    key={this.state.selectedItemIndex}
                     model={selectedItemModel}
                     schema={this.props.subSchema}
                     onUpdate={this.onOptionItemUpdated}
