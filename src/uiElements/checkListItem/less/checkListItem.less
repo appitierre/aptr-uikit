@@ -3,8 +3,8 @@
     margin:0;
     padding:0;
     list-style: none;
-    background-color:#fff;
-    border:1px solid #ccc;
+    background-color:@content-background;
+    border:1px solid @ui-grey-regular;
     border-top:none;
     position: relative;
 
@@ -13,7 +13,7 @@
     }
 
     &:first-child {
-        border-top:1px solid #ccc;
+        border-top:1px solid @ui-grey-regular;
     }
 
     .check-list-item-input, .check-list-item-content {
@@ -38,7 +38,7 @@
 
     .check-list-item-content {
         width: 100%;
-        padding: 12px 40px;
+        padding: @space-small 40px;
         .font-style-small;
     }
 
