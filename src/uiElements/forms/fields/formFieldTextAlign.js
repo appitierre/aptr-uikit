@@ -1,6 +1,6 @@
 var React = require('react');
 var registerType = require('../helpers').registerType;
-import {ButtonGroup} from 'uiElements';
+var ButtonGroup = require('../../buttonGroup/components/buttonGroup');
 
 var FormFieldTextAlign = React.createClass({
 

@@ -1,8 +1,10 @@
 var React = require('react');
 var registerType = require('../helpers').registerType;
 var SketchPicker = require('react-color').SketchPicker;
-import {CssValue, Button, FlatButton} from 'uiElements';
-var FormFieldSelectOption = require('./formFieldSelectOption.jsx');
+var CssValue = require('../../cssValue/components/cssValue');
+var Button = require('../../buttons/components/button');
+var FlatButton = require('../../buttons/components/flatButton');
+var FormFieldSelectOption = require('./formFieldSelectOption.js');
 
 var options = [{
     "value": "none",

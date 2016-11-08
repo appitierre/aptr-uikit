@@ -2,7 +2,7 @@
 
 var React = require('react');
 var registerType = require('../helpers').registerType;
-var FormFieldSelectOption = require('./formFieldSelectOption.jsx');
+var FormFieldSelectOption = require('./formFieldSelectOption.js');
 
 var FormFieldSelect = React.createClass({
     displayName: 'FormFieldSelect',

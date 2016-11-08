@@ -13,7 +13,7 @@ var MessageExamples = React.createClass({
 			title: 'User mcUser',
 			body: 'User recieved a message from the message/notification ui element',
 			onClick: this.onClick,
-			avatar: 'http://placehold.it/400x100',
+			avatar: 'http://placehold.it/400x400',
 			onCloseButtonClicked: this.onCloseButtonClicked,
 			icon: 'alarm',
 			iconColor: 'red',

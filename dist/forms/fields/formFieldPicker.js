@@ -2,7 +2,7 @@
 
 var React = require('react');
 var registerType = require('../helpers').registerType;
-var FormFieldPickerItem = require('./formFieldPickerItem.jsx');
+var FormFieldPickerItem = require('./formFieldPickerItem.js');
 
 var FormFieldPicker = React.createClass({
     displayName: 'FormFieldPicker',

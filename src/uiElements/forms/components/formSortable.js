@@ -3,7 +3,7 @@ var Sortable = require('react-sortable-hoc');
 var SortableContainer = Sortable.SortableContainer;
 var SortableElement = Sortable.SortableElement;
 var arrayMove = Sortable.arrayMove;
-var FormSortableContainer = SortableContainer(require('./formSortableContainer.jsx'));
+var FormSortableContainer = SortableContainer(require('./formSortableContainer.js'));
 
 var FormSortable = React.createClass({
 

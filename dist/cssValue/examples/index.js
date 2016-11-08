@@ -22,6 +22,13 @@ var CssValueExamples = React.createClass({
 			onChange: this.onWidthChanged,
 			onIncrease: this.onWidthIncrease,
 			onDecrease: this.onWidthDecrease
+		}), React.createElement(CssValue, {
+			unit: this.state.unit,
+			value: this.state.width,
+			isSmall: true,
+			onChange: this.onWidthChanged,
+			onIncrease: this.onWidthIncrease,
+			onDecrease: this.onWidthDecrease
 		})];
 	},
 

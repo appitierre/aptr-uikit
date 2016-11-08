@@ -4,6 +4,7 @@ var React = require('react');
 var Section = require('section');
 var Button = require('../components/button');
 var FlatButton = require('../components/flatButton');
+var ButtonOptions = require('../components/buttonOptions');
 
 var ButtonExamples = React.createClass({
 	displayName: 'ButtonExamples',
@@ -74,6 +75,25 @@ var ButtonExamples = React.createClass({
 			icon: 'key',
 			key: 5,
 			isSmall: true
+		}), React.createElement(ButtonOptions, {
+			text: 'Button Options',
+			type: 'primary',
+			onChange: this.onChange,
+			onClick: this.onClick,
+			isSmall: false,
+			options: [{
+				title: "Option 1",
+				value: "Option 1",
+				body: "Vivamus in nunc. bibendum nunc, non.. turpis"
+			}, {
+				title: "Option 2",
+				value: "Option 2",
+				body: "Mauris elementum bibendum nunc, non posuere turpis venenatis eget."
+			}, {
+				title: "Option 3",
+				value: "Option 3",
+				body: "Suspendisse fermentum facilisis turpis, ut porttitor lacus mollis quis."
+			}]
 		})];
 	},
 
@@ -109,6 +129,10 @@ var ButtonExamples = React.createClass({
 
 	onClick: function onClick() {
 		console.log('A Button has been clicked');
+	},
+
+	onChange: function onChange(value) {
+		console.log("this option has been changed to:", value);
 	},
 
 	render: function render() {

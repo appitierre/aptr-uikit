@@ -1,7 +1,7 @@
 var React = require('react');
 var Sortable = require('react-sortable-hoc');
 var SortableHandle = Sortable.SortableHandle;
-var FormSortableItemHandle = SortableHandle(require('./formSortableItemHandle.jsx'));
+var FormSortableItemHandle = SortableHandle(require('./formSortableItemHandle.js'));
 var classnames = require('classnames');
 
 var FormSortableItem = React.createClass({

@@ -1,5 +1,5 @@
 var React = require('react');
-var FormField = require('./formField.jsx');
+var FormField = require('./formField.js');
 
 var Form = React.createClass({
 

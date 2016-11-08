@@ -1,8 +1,8 @@
 var React = require('react');
 var registerType = require('../helpers').registerType;
-var Form = require('../components/form.jsx');
-var FormSortable = require('../components/formSortable.jsx');
-var Button = require('uiElements/buttons/components/button');
+var Form = require('../components/form.js');
+var FormSortable = require('../components/formSortable.js');
+var Button = require('../../buttons/components/button');
 
 var FormFieldArray = React.createClass({
 

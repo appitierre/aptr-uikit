@@ -1,30 +1,30 @@
 var Forms = {};
 
-Forms.Form = require('./components/form.jsx');
-Forms.FormField = require('./components/formField.jsx');
-Forms.FormSortable = require('./components/formSortable.jsx');
+Forms.Form = require('./components/form.js');
+Forms.FormField = require('./components/formField.js');
+Forms.FormSortable = require('./components/formSortable.js');
 Forms.Helpers = require('./helpers');
 
 MediumEditor.extensions.anchor.prototype.formSaveLabel = '<i class="icon icon-check"></i>';
 MediumEditor.extensions.anchor.prototype.formCloseLabel = '<i class="icon icon-cross"></i>';
 
 // Fields
-require('./fields/formFieldArray.jsx');
-require('./fields/formFieldBoolean.jsx');
-require('./fields/formFieldBorder.jsx');
-require('./fields/formFieldButton.jsx');
-require('./fields/formFieldColorPicker.jsx');
-require('./fields/formFieldCssValue.jsx');
-require('./fields/formFieldNumber.jsx');
-require('./fields/formFieldObject.jsx');
-require('./fields/formFieldPassword.jsx');
-require('./fields/formFieldPicker.jsx');
-require('./fields/formFieldSelect.jsx');
-require('./fields/formFieldSpacing.jsx');
-require('./fields/formFieldText.jsx');
-require('./fields/formFieldTextArea.jsx');
-require('./fields/formFieldTextAreaPlain.jsx');
-require('./fields/formFieldTextAlign.jsx');
+require('./fields/formFieldArray.js');
+require('./fields/formFieldBoolean.js');
+require('./fields/formFieldBorder.js');
+require('./fields/formFieldButton.js');
+require('./fields/formFieldColorPicker.js');
+require('./fields/formFieldCssValue.js');
+require('./fields/formFieldNumber.js');
+require('./fields/formFieldObject.js');
+require('./fields/formFieldPassword.js');
+require('./fields/formFieldPicker.js');
+require('./fields/formFieldSelect.js');
+require('./fields/formFieldSpacing.js');
+require('./fields/formFieldText.js');
+require('./fields/formFieldTextArea.js');
+require('./fields/formFieldTextAreaPlain.js');
+require('./fields/formFieldTextAlign.js');
 
 // Validators
 require('./validators/required');

@@ -12,6 +12,10 @@ var SearchBarExamples = React.createClass({
 		return [React.createElement(SearchBar, {
 			onClick: this.onClick,
 			onChange: this.onChange
+		}), React.createElement(SearchBar, {
+			onClick: this.onClick,
+			onChange: this.onChange,
+			isSmall: true
 		})];
 	},
 

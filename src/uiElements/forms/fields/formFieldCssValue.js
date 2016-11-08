@@ -1,6 +1,8 @@
 var React = require('react');
 var registerType = require('../helpers').registerType;
-import {CssValue, Button, SelectOption} from 'uiElements';
+var Button = require('../../buttons/components/button');
+var Button = require('../../selectOptions/components/selectOptions');
+var CssValue = require('../../cssValue/components/cssValue');
 
 var FormFieldCssValue = React.createClass({
 

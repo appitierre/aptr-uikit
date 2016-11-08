@@ -2,7 +2,7 @@
 
 var React = require('react');
 var registerType = require('../helpers').registerType;
-var Form = require('../components/form.jsx');
+var Form = require('../components/form.js');
 
 var FormFieldObject = React.createClass({
     displayName: 'FormFieldObject',

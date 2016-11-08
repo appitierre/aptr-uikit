@@ -18,9 +18,27 @@ var SelectOptionExamples = React.createClass({
 		return [React.createElement(SelectOptions, {
 			className: 'options',
 			type: 'primary',
-
 			value: this.state.value,
-			initialText: 'Select',
+			initialText: 'Select options left',
+			onChange: this.onSelectOptionChanged,
+			options: [{
+				text: 'Ascending',
+				_value: 'ascending'
+			}, {
+				text: 'Descending',
+				_value: 'descending'
+			}, {
+				text: 'Recent',
+				_value: 'recent'
+			}, {
+				text: 'Oldest',
+				_value: 'oldest'
+			}]
+		}), React.createElement(SelectOptions, {
+			className: 'options',
+			type: 'secondary',
+			iconPosition: 'right',
+			initialText: 'Select Option Right',
 			onChange: this.onSelectOptionChanged,
 			options: [{
 				text: 'Ascending',

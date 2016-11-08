@@ -1,6 +1,6 @@
 var React = require('react');
 var registerType = require('../helpers').registerType;
-var FormFieldSpacingItem = require('./formFieldSpacingItem.jsx');
+var FormFieldSpacingItem = require('./formFieldSpacingItem.js');
 
 var Mapping = {
     top: 'Top',

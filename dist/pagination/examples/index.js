@@ -14,6 +14,12 @@ var PaginationExamples = React.createClass({
 			totalPages: 5,
 			buttonType: 'secondary',
 			className: 'course'
+		}), React.createElement(Pagination, {
+			currentPage: 3,
+			totalPages: 9,
+			buttonType: 'primary',
+			className: 'course',
+			isSmall: true
 		})];
 	},
 

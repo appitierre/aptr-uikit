@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from 'uiElements';
+var Button = require('../../buttons/components/button');
 import {registerType} from '../helpers';
 
 var FormFieldButton = React.createClass({

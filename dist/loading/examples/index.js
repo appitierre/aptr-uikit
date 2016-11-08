@@ -12,7 +12,16 @@ var LoadingExamples = React.createClass({
 		return [React.createElement(
 			Loading,
 			{
-				hasDataLoading: false },
+				hasDataLoaded: false },
+			React.createElement(
+				'div',
+				null,
+				'DATA HAS LOADED'
+			)
+		), React.createElement(
+			Loading,
+			{
+				hasDataLoaded: true },
 			React.createElement(
 				'div',
 				null,
@@ -28,7 +37,7 @@ var LoadingExamples = React.createClass({
 			React.createElement(Section, {
 				title: 'Loading',
 				components: this.getComponents(),
-				shouldDisplayAsBlock: true
+				shouldDisplayAsBlock: false
 			})
 		);
 	}

@@ -1,5 +1,5 @@
 var React = require('react');
-import {CssValue} from 'uiElements';
+var CssValue = require('../../cssValue/components/cssValue');
 
 var FormFieldSpacingItem = React.createClass({
 
