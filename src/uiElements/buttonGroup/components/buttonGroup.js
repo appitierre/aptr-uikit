@@ -60,11 +60,11 @@ var ButtonGroup = React.createClass({
 	getButtonToggle: function() {
 		var className = this.props.buttonType;
 		// Adds buttonType class to selected button item
-		var item = _.find(this.props.buttons, function(button) {
+		var item = _.find(this.props.buttons, (button) => {
 			if (button._value != this.state._value) {
 				return button;
 			}
-		}, this);
+		});
 
 		return (
 			<Button 
