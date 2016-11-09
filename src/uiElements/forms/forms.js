@@ -5,9 +5,9 @@ Forms.FormField = require('./components/formField.js');
 Forms.FormSortable = require('./components/formSortable.js');
 Forms.Helpers = require('./helpers');
 
-if (MediumEditor) {
-    MediumEditor.extensions.anchor.prototype.formSaveLabel = '<i class="icon icon-check"></i>';
-    MediumEditor.extensions.anchor.prototype.formCloseLabel = '<i class="icon icon-cross"></i>';
+if (window.MediumEditor) {
+    window.MediumEditor.extensions.anchor.prototype.formSaveLabel = '<i class="icon icon-check"></i>';
+    window.MediumEditor.extensions.anchor.prototype.formCloseLabel = '<i class="icon icon-cross"></i>';
 }
 
 // Fields
