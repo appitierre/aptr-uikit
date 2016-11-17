@@ -24,6 +24,7 @@ var AccordionExamples = React.createClass({
 			<Accordion
 				onChange={this.onChange}
 				icon="plus"
+				iconSelected="minus"
 				items={this.state._items}
 				className=""
 			/>

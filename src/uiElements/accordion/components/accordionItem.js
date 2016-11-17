@@ -5,12 +5,17 @@ var AccordionItem = React.createClass({
 
 
 	getTitle: function() {
-	 
+		var icon = this.props.icon;
+
+		if (this.props.item._isSelected) {
+			icon = this.props.iconSelected;
+		};
+
 		return (
 			<Button 
 				className="accordion-item-title"
 				text={this.props.item.title}
-				icon={this.props.icon}
+				icon={icon}
 				onClick={this.onClick}
 				type="primary full-width"
 			/>
@@ -20,8 +25,10 @@ var AccordionItem = React.createClass({
 	getBody: function() {
 		if (this.props.item._isSelected === true) {
 			return (
-				<div className="accordion-body">
-					{this.props.item.body}
+				<div className="accordion-item-body">
+					<div className="accordion-item-body-inner">
+						{this.props.item.body}
+					</div>
 				</div>
 			);
 		}
@@ -32,6 +39,7 @@ var AccordionItem = React.createClass({
 	},
 
 	render: function() {
+	console.log(this.props.iconSelected)
 		return (
 			<div className="accordion-item">
 				{this.getTitle()}
