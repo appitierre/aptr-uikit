@@ -4,39 +4,33 @@ var Accordion = require('../components/accordion');
 
 var AccordionExamples = React.createClass({
 
-	getInitialState: function() {
-		return {
-			currentlySelectedItem: null
-		}
-	},
-
 	getComponents: function() {
 		return [
 			<Accordion
-				currentlySelectedItem={this.state.currentlySelectedItem}
 				onChange={this.onChange}
+				icon="plus"
 				items={[
 					{
 						title: "Accordion Title 1",
-						body: "Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source",
-						icon: "plus",
-						iconSelected: "minus"
+						_isVisited: false,
+						_isSelected: false,
+						body: "Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source"
 					},
 					{
 						title: "Accordion Title 2",
-						body: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-						icon: "plus",
-						iconSelected: "minus"
+						_isVisited: false,
+						_isSelected: false,
+						body: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
 					} 
 				]}
 			/>
 		]
 	},
 
-	onChange: function(id) {
-		this.setState({
-			currentlySelectedItem: id 
-		});
+	onChange: function(item) {
+		console.log(item);
+
+		
 	},
 
 	render: function() {

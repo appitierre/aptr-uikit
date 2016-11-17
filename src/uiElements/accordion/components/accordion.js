@@ -7,13 +7,10 @@ var Accordion = React.createClass({
 		return _.map(this.props.items, (item, index) => {
 			return (
 				<AccordionItem 
-					title={item.title}
-					body={item.body}
-					icon={item.icon}
-					iconSelected={item.iconSelected}
+					item={item}
 					id={index}
+					icon={this.props.icon}
 					onChange={this.props.onChange}
-					currentlySelectedItem={this.props.currentlySelectedItem}
 				/>
 			);
 		});
