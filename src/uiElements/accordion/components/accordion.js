@@ -18,7 +18,7 @@ var Accordion = React.createClass({
 
 	render: function() {
 		return (
-			<div className="accordion-widget component-widget">
+			<div className="accordion">
 				{this.getComponents()}
 			</div>
 		);
