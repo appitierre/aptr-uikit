@@ -70,7 +70,7 @@ Helpers.testConditions = function(conditions, data, callback) {
 }
 
 /*This conditions runner works similar to async.detect*/
- function evaluateConditions(conditions, iterator, callback) {
+function evaluateConditions(conditions, iterator, callback) {
 
     if(!Array.isArray(conditions)) {
         return callback(null);
