@@ -10,14 +10,14 @@
 
 .form-field {
     border-radius: 3px;
-    padding-bottom:24px;
-    padding-top:24px;
+    padding-bottom:@space-regular;
+    padding-top:@space-regular;
     input, textarea, .form-field-text-area {
         box-sizing: border-box;
         max-width: 440px;
         width:100%;
-        padding: 4px 8px;
-        background-color: #ffffff;
+        padding: @space-micro @space-x-small;
+        background-color: @content-background;
         border-radius: 2px;
         border: none;
         border-bottom: 2px solid @ui-grey-dark;
@@ -25,7 +25,7 @@
         .font-style-regular;
         &:focus {
             outline:none;
-            border-color:#3bafda;
+            border-color:@primary-color;
         }
     }
     textarea, .form-field-text-area {
@@ -40,21 +40,21 @@
 }
 
 .form-field-help {
-    margin-bottom:8px;
+    margin-bottom:@space-x-small;
     .font-style-small;
     .font-color-light;
 }
 
 .form-field-error {
     position:absolute;
-    margin-top:8px;
+    margin-top:@space-x-small;
     .font-style-micro;
-    color:#ff5567;
+    color:@warning-color;
 }
 
 .form-field-fieldset {
     .padding-all-regular;
-    background-color:#fff;
+    background-color:@content-background;
     margin:@space-small 0px;
     border-radius:4px;
 }
