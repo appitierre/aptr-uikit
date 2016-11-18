@@ -1,10 +1,8 @@
 'use strict';
 
-var _uiElements = require('uiElements');
-
 var React = require('react');
 var registerType = require('../helpers').registerType;
-
+var ButtonGroup = require('../../buttonGroup/components/buttonGroup');
 
 var FormFieldTextAlign = React.createClass({
     displayName: 'FormFieldTextAlign',
@@ -60,7 +58,7 @@ var FormFieldTextAlign = React.createClass({
                 { className: 'form-field-help' },
                 this.props.help
             ),
-            React.createElement(_uiElements.ButtonGroup, {
+            React.createElement(ButtonGroup, {
                 onChange: this.onChange,
                 buttonType: 'primary',
                 value: this.state.value,

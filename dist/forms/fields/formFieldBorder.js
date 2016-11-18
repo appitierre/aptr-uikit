@@ -1,12 +1,12 @@
 'use strict';
 
-var _uiElements = require('uiElements');
-
 var React = require('react');
 var registerType = require('../helpers').registerType;
 var SketchPicker = require('react-color').SketchPicker;
-
-var FormFieldSelectOption = require('./formFieldSelectOption.jsx');
+var CssValue = require('../../cssValue/components/cssValue');
+var Button = require('../../buttons/components/button');
+var FlatButton = require('../../buttons/components/flatButton');
+var FormFieldSelectOption = require('./formFieldSelectOption.js');
 
 var options = [{
     "value": "none",
@@ -182,8 +182,8 @@ var FormFieldBorder = React.createClass({
                 React.createElement(
                     'div',
                     { className: 'form-color-picker-popup-buttons' },
-                    React.createElement(_uiElements.Button, { text: 'Save', type: 'primary', onClick: this.onSaveColorClicked }),
-                    React.createElement(_uiElements.Button, { text: 'Close', type: 'primary', onClick: this.onCloseColorClicked })
+                    React.createElement(Button, { text: 'Save', type: 'primary', onClick: this.onSaveColorClicked }),
+                    React.createElement(Button, { text: 'Close', type: 'primary', onClick: this.onCloseColorClicked })
                 )
             );
         } else {
@@ -206,7 +206,7 @@ var FormFieldBorder = React.createClass({
                 { className: 'form-field-help' },
                 this.props.help
             ),
-            React.createElement(_uiElements.CssValue, {
+            React.createElement(CssValue, {
                 unit: "px",
                 onChange: this.onWidthChange,
                 value: this.state.width,

@@ -1,11 +1,10 @@
 'use strict';
 
-var _uiElements = require('uiElements');
-
 var React = require('react');
 var registerType = require('../helpers').registerType;
 var SketchPicker = require('react-color').SketchPicker;
-
+var Button = require('../../buttons/components/button');
+var FlatButton = require('../../buttons/components/flatButton');
 
 var FormFieldColorPicker = React.createClass({
     displayName: 'FormFieldColorPicker',
@@ -70,8 +69,8 @@ var FormFieldColorPicker = React.createClass({
                 React.createElement(
                     'div',
                     { className: 'form-color-picker-popup-buttons' },
-                    React.createElement(_uiElements.Button, { text: 'Save', type: 'primary', onClick: this.onSaveClicked }),
-                    React.createElement(_uiElements.Button, { text: 'Close', type: 'primary', onClick: this.onCloseClicked })
+                    React.createElement(Button, { text: 'Save', type: 'primary', onClick: this.onSaveClicked }),
+                    React.createElement(Button, { text: 'Close', type: 'primary', onClick: this.onCloseClicked })
                 )
             );
         } else {

@@ -8,11 +8,12 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _uiElements = require('uiElements');
-
 var _helpers = require('../helpers');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Button = require('../../buttons/components/button');
+
 
 var FormFieldButton = _react2.default.createClass({
     displayName: 'FormFieldButton',
@@ -41,7 +42,7 @@ var FormFieldButton = _react2.default.createClass({
                 { className: 'form-field-help' },
                 this.props.help
             ),
-            _react2.default.createElement(_uiElements.Button, {
+            _react2.default.createElement(Button, {
                 onClick: this.onButtonClicked,
                 icon: this.props.buttonIcon,
                 type: this.props.buttonType,

@@ -15,6 +15,10 @@ var DropDown = require('./dropDown/components/dropDown');
 var FlatButton = require('./buttons/components/flatButton');
 var Folder = require('./folder/components/folder');
 var Forms = require('./forms/forms');
+var Form = require('./forms/components/form');
+var FormField = require('./forms/components/formField');
+var FormSortable = require('./forms/components/formSortable');
+var FormHelpers = require('./forms/helpers');
 var ItemToggle = require('./toggle/components/itemToggle');
 var ListItem = require('./list/components/listItem');
 var ListItems = require('./list/components/listItems');
@@ -44,6 +48,12 @@ module.exports = {
     FlatButton: FlatButton,
     Folder: Folder,
     Forms: Forms,
+    Form: Form,
+    FormField: FormField,
+    FormSortable: FormSortable,
+    registerType: FormHelpers.registerType,
+    registerValidator: FormHelpers.registerValidator,
+    registerCondition: FormHelpers.registerCondition,
     ItemToggle: ItemToggle,
     ListItem: ListItem,
     ListItems: ListItems,

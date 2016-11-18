@@ -1,9 +1,7 @@
 'use strict';
 
-var _uiElements = require('uiElements');
-
 var React = require('react');
-
+var CssValue = require('../../cssValue/components/cssValue');
 
 var FormFieldSpacingItem = React.createClass({
     displayName: 'FormFieldSpacingItem',
@@ -55,7 +53,7 @@ var FormFieldSpacingItem = React.createClass({
                 { className: 'form-field-label' },
                 this.props.label
             ),
-            React.createElement(_uiElements.CssValue, {
+            React.createElement(CssValue, {
                 unit: 'px',
                 value: this.state.value,
                 onChange: this.onChange,

@@ -1,10 +1,10 @@
 'use strict';
 
-var _uiElements = require('uiElements');
-
 var React = require('react');
 var registerType = require('../helpers').registerType;
-
+var Button = require('../../buttons/components/button');
+var Button = require('../../selectOptions/components/selectOptions');
+var CssValue = require('../../cssValue/components/cssValue');
 
 var FormFieldCssValue = React.createClass({
     displayName: 'FormFieldCssValue',
@@ -109,7 +109,7 @@ var FormFieldCssValue = React.createClass({
 
         if (shouldUseCssValue) {
 
-            return React.createElement(_uiElements.CssValue, {
+            return React.createElement(CssValue, {
                 unit: this.state.unit,
                 value: this.state.value,
                 onChange: this.onChange,
