@@ -54,6 +54,7 @@ module.exports = {
     registerType: FormHelpers.registerType,
     registerValidator: FormHelpers.registerValidator,
     registerCondition: FormHelpers.registerCondition,
+    testConditions: FormHelpers.testConditions,
     ItemToggle: ItemToggle,
     ListItem: ListItem,
     ListItems: ListItems,

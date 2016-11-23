@@ -32,7 +32,6 @@ Helpers.getCondition = function (condition) {
 };
 
 Helpers.testConditions = function (conditions, data, callback) {
-    var _this = this;
 
     evaluateConditions(conditions, function (conditionItem, next) {
 
@@ -53,7 +52,7 @@ Helpers.testConditions = function (conditions, data, callback) {
         }
 
         //Get the registered condition that matches the type
-        var condition = _this.getCondition(type);
+        var condition = Helpers.getCondition(type);
 
         //If a condition of that type is not registered, then just call next and give a warning
         if (!condition) {
