@@ -1,3 +1,4 @@
+var Accodion = require('./accordion/components/accordion');
 var ActionBar = require('./actionBar/components/actionBar');
 var Alert = require('./alert/components/alert');
 var Button = require('./buttons/components/button');
@@ -31,6 +32,7 @@ var StarRating = require('./starRating/components/starRating');
 var Tag = require('./tag/components/tag');
 
 module.exports = {
+    Accodion: Accodion,
     ActionBar: ActionBar,
     Alert: Alert,
     Button: Button,
