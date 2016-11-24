@@ -99,9 +99,18 @@ var Button = React.createClass({
         this.getToolTipPositioning();
     },
 
+    onButtonClick: function(event) {
+        if (this.props.onClick) { 
+            
+            event.preventDefault();
+            
+            this.props.onClick(event);
+        } 
+    },
+
     render: function() {
         return (
-            <button onMouseOver={this.onButtonMouseOver} disabled={this.props.disabled} className={this.getButtonClassName()} onClick={this.props.onClick}>
+            <button onMouseOver={this.onButtonMouseOver} disabled={this.props.disabled} className={this.getButtonClassName()} onClick={this.onButtonClick}>
                 {this.getToolTip()}
                 {this.getLeftIcon()}
                 {this.props.text}
