@@ -19,7 +19,8 @@ var ListItemsExamples = require('./uiElements/list/examples');
 var LoadingExamples = require('./uiElements/loading/examples');
 var MessageExamples = require('./uiElements/message/examples');
 var PaginationExamples = require('./uiElements/pagination/examples');
-var ProgressBarExamples = require('./uiElements/progressBar/examples');
+var ProgressBarExamples = require('./uiElements/radioList/examples');
+var RadioListExamples = require('./uiElements/progressBar/examples')
 var RangeSliderExamples = require('./uiElements/rangeSlider/examples');
 var SearchBarExamples = require('./uiElements/search/examples');
 var SearchFilterExamples = require('./uiElements/searchFilter/examples');
@@ -60,6 +61,7 @@ var Container = React.createClass({
                 <MessageExamples/>
                 <PaginationExamples/>
                 <ProgressBarExamples/>
+                <RadioListExamples/>
                 <RangeSliderExamples/>
                 <SearchBarExamples/>
                 <SearchFilterExamples/>
