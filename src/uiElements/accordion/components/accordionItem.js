@@ -39,7 +39,6 @@ var AccordionItem = React.createClass({
 	},
 
 	render: function() {
-	console.log(this.props.iconSelected)
 		return (
 			<div className="accordion-item">
 				{this.getTitle()}
