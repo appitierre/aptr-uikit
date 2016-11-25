@@ -10,10 +10,12 @@ var RadioListItem = React.createClass({
 	getItem: function() {
 		var className = "";
 		var stateClassName = "";
+		var labelClassName = ""
 
 		if (this.props.type === "radio" || !this.props.type) {
 			className = "radio-list-item";
 			stateClassName = "radio-list-item-state";
+			labelClassName = "radio-list-item-label";
 		} else {
 			className = "checkbox-item";
 			stateClassName = "checkbox-item-state";
@@ -29,12 +31,11 @@ var RadioListItem = React.createClass({
 					onChange={this.onChange}
 					className="item-input"
 				/>
-				<label htmlFor={this.props.item.id} >
+				<label htmlFor={this.props.item.id} className={labelClassName}>
 						<div className={stateClassName}>
 						</div>
 						{this.props.item.text}
 				</label>
-				
 			</div>
 		)
 	},
