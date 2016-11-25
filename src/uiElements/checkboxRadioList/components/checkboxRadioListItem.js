@@ -11,7 +11,7 @@ var CheckboxRadioListItem = React.createClass({
 				{"checkbox-radio-list-item checkbox": this.props.type === "checkbox"}),
 			stateClassName: classnames({"checkbox-radio-list-item-state radio": this.props.type === "radio"},
 				{"checkbox-radio-list-item-state checkbox": this.props.type === "checkbox"}),
-			labelClassName: classnames({"checkbox-radio-list-item radio": this.props.type === "radio"},
+			labelClassName: classnames({"checkbox-radio-list-item-label radio": this.props.type === "radio"},
 				{"checkbox-radio-list-item-label checkbox": this.props.type === "checkbox"})
 		}
 	},	

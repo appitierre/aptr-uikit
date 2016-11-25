@@ -26,7 +26,7 @@ var CheckboxRadioListExamples = React.createClass({
 			<CheckboxRadioList 
 				items={this.state._items}
 				onChange={this.onChange}
-				type="checkbox"
+				type="radio"
 			/>
 		]
 	},
