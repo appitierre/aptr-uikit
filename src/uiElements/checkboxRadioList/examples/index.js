@@ -16,6 +16,16 @@ var CheckboxRadioListExamples = React.createClass({
 					_isSelected: false,
 					text: "Item 2",
 					id: 2
+				},
+				{
+					_isSelected: false,
+					text: "Item 3",
+					id: 3
+				},
+				{
+					_isSelected: false,
+					text: "Item 4",
+					id: 4
 				}
 			]
 		}
