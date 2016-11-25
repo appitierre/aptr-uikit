@@ -18,7 +18,7 @@ var CheckboxRadioList = React.createClass({
 
 	render: function() {
 		return (
-			<div className="radio-list">
+			<div className="checkbox-radio-list">
 				{this.getItems()}
 			</div>
 		);
