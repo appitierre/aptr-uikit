@@ -1,7 +1,7 @@
 var React = require('react');
 var Button = require('../../buttons/components/button');
 
-var RadioListItem = React.createClass({
+var CheckboxRadioListItem = React.createClass({
 
 	onChange: function() {
 		this.props.onChange(this.props.item);
@@ -41,10 +41,9 @@ var RadioListItem = React.createClass({
 	},
 
 	render: function() {
-	console.log(this.props.item.id, this.props.item._isSelected)
 		return this.getItem();
 	}
 
 });
 
-module.exports = RadioListItem;
+module.exports = CheckboxRadioListItem;

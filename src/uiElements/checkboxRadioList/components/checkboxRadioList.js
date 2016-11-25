@@ -1,12 +1,12 @@
 var React = require('react');
-var RadioListItem = require('./radioListItem');
+var CheckboxRadioListItem = require('./checkboxRadioListItem');
 
-var RadioList = React.createClass({
+var CheckboxRadioList = React.createClass({
 
 	getItems: function() {
 		return _.map(this.props.items, (item, index) => {
 			return (
-				<RadioListItem
+				<CheckboxRadioListItem
 					type={this.props.type}
 					item={item}
 					key={index}
@@ -26,4 +26,4 @@ var RadioList = React.createClass({
 
 });
 
-module.exports = RadioList;
+module.exports = CheckboxRadioList;

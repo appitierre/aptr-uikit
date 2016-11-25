@@ -1,8 +1,8 @@
 var React = require('react');
 var Section = require('section');
-var RadioList = require('../components/radioList');
+var CheckboxRadioList = require('../components/checkboxRadioList');
 
-var RadioListExamples = React.createClass({
+var CheckboxRadioListExamples = React.createClass({
 
 	getInitialState: function() {
 		return {
@@ -23,7 +23,7 @@ var RadioListExamples = React.createClass({
 
 	getComponents: function() {
 		return [
-			<RadioList 
+			<CheckboxRadioList 
 				items={this.state._items}
 				onChange={this.onChange}
 				type="radio"
@@ -46,7 +46,7 @@ var RadioListExamples = React.createClass({
 		return (
 			<div>
 				<Section
-					title="Radio List"
+					title="Checkbox / Radio"
 					components={this.getComponents()}
 					shouldDisplayAsBlock={true}
 				/>
@@ -56,4 +56,4 @@ var RadioListExamples = React.createClass({
 
 });
 
-module.exports = RadioListExamples;
+module.exports = CheckboxRadioListExamples;

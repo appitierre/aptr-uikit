@@ -6,6 +6,7 @@ var AlertInfo = require('./uiElements/alertInfo/examples');
 var ButtonExamples = require('./uiElements/buttons/examples');
 var ButtonGroupExamples = require('./uiElements/buttonGroup/examples');
 var CardExamples = require('./uiElements/card/examples');
+var CheckboxRadioListExamples = require('./uiElements/checkboxRadioList/examples');
 var CheckListItemExamples = require('./uiElements/checkListItem/examples');
 var ChipExamples = require('./uiElements/chip/examples');
 var CollectionItemExamples = require('./uiElements/collections/examples');
@@ -19,8 +20,7 @@ var ListItemsExamples = require('./uiElements/list/examples');
 var LoadingExamples = require('./uiElements/loading/examples');
 var MessageExamples = require('./uiElements/message/examples');
 var PaginationExamples = require('./uiElements/pagination/examples');
-var ProgressBarExamples = require('./uiElements/radioList/examples');
-var RadioListExamples = require('./uiElements/progressBar/examples')
+var ProgressBarExamples = require('./uiElements/progressBar/examples');
 var RangeSliderExamples = require('./uiElements/rangeSlider/examples');
 var SearchBarExamples = require('./uiElements/search/examples');
 var SearchFilterExamples = require('./uiElements/searchFilter/examples');
@@ -47,6 +47,7 @@ var Container = React.createClass({
                 <ButtonExamples/>
                 <ButtonGroupExamples/> 
                 <CardExamples/>
+                <CheckboxRadioListExamples/>
                 <CheckListItemExamples/>
                 <ChipExamples/>
                 <CollectionItemExamples/>
@@ -61,7 +62,6 @@ var Container = React.createClass({
                 <MessageExamples/>
                 <PaginationExamples/>
                 <ProgressBarExamples/>
-                <RadioListExamples/>
                 <RangeSliderExamples/>
                 <SearchBarExamples/>
                 <SearchFilterExamples/>
