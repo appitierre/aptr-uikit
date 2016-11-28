@@ -18,6 +18,7 @@ var FormsExamples = require('./uiElements/forms/examples');
 var ListItemsExamples = require('./uiElements/list/examples');
 var LoadingExamples = require('./uiElements/loading/examples');
 var MessageExamples = require('./uiElements/message/examples');
+var NarrativeExamples = require('./uiElements/narrative/examples');
 var PaginationExamples = require('./uiElements/pagination/examples');
 var ProgressBarExamples = require('./uiElements/progressBar/examples');
 var RangeSliderExamples = require('./uiElements/rangeSlider/examples');
@@ -58,6 +59,7 @@ var Container = React.createClass({
                 <ListItemsExamples/>
                 <LoadingExamples/>
                 <MessageExamples/>
+                <NarrativeExamples/>
                 <PaginationExamples/>
                 <ProgressBarExamples/>
                 <RangeSliderExamples/>
