@@ -1,5 +1,6 @@
 .narrative-slider {
-	width: 1050px;
+	position:relative;
+	transition: margin-left 0.3s;
 }
 
 .narrative-slider-item {
@@ -18,6 +19,7 @@
 		position: absolute;
 		top: 50%;
 		margin-top: -18px;
+		z-index:10;
 	}
 
 	&-left {
@@ -25,6 +27,7 @@
 		position: absolute;
 		top: 50%;
 		margin-top: -18px;
+		z-index:10;
 	}
 }
 
@@ -37,12 +40,12 @@
     height: 7.67px;
     display: inline-block;
     background-color: #fff;
-    border: 1px solid #9978d8;
+    border: 1px solid #888;
     border-radius: 50%;
     margin: 1px;
     transition: background-color .25s ease-in,color .25s ease-in,border-color .25s ease-in;
 
     &.selected {
-    	background-color: #8158cf;
+    	background-color: #448AFF;
     }
 }

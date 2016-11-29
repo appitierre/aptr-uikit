@@ -15,29 +15,29 @@ var NarrativeExamples = React.createClass({
 			<Narrative
 				onChange={this.onChange}
 				stage={this.state.stage}
-				_items={[
+				items={[
 					{
 						title: "Narrative Item title 1",
-						body: "Narrative Item body 1",
+						body: "All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.",
 						itemIndex: 0,
 						_graphic: {
-							src: "http://placehold.it/1024x300"
+							src: "http://placekitten.com/g/1024/300"
 						}
 					},
 					{
 						title: "Narrative Item title 2",
-						body: "Narrative Item body 2",
+						body: "All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.",
 						itemIndex: 1,
 						_graphic: {
-							src: "http://placehold.it/1024x300"
+							src: "http://placekitten.com/g/1024/300"
 						}
 					},
 					{
 						title: "Narrative Item title 3",
-						body: "Narrative Item body 3",
-						itemIndex: 1,
+						body: "All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.",
+						itemIndex: 2,
 						_graphic: {
-							src: "http://placehold.it/1024x300"
+							src: "http://placekitten.com/g/1024/300"
 						}
 					}
 				]}

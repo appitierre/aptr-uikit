@@ -1,72 +1,64 @@
 var React = require('react');
 var Button = require('../../buttons/components/button');
-var NarrativeItem = require('./narrativeItem');
+var NarrativeGallery = require('./narrativeGallery');
+var NarrativeIndicators = require('./narrativeIndicators');
+var NarrativeContent = require('./narrativeContent');
 
 var Narrative = React.createClass({
 
 	getInitialState: function() {
 		return {
-			width: null
+			narrativeWidth: 0,
+			sliderWidth: 0
 		}
 	},
 
 	componentDidMount: function() {
-
-		var width = this.refs['narrative'].clientWidth;
-		var total = (width * this.props._items.length);
+		var narrativeWidth = this.refs['narrative'].clientWidth;
+		var sliderWidth = narrativeWidth * this.props.items.length
 
 		this.setState({
-			width: this.refs['narrative'].clientWidth,
-			sliderWidth: (width * this.props._items.length)
-		});
-
-	},
-
-	renderLeftControl: function() {
-
-		if (this.props.stage > 0) {
-			return (
-				<Button 
-					type="secondary"
-					icon="arrow-left"
-					onClick={this.onLeftControlClicked}
-					className="narrative-slider-controls-left"
-				/> 
-			);
-		} 
-
-	},
-
-	renderRightControl: function() {
-
-		if (this.props.stage !== (this.props._items.length - 1)) {
-			return (
-				<Button 
-					type="secondary"
-					icon="arrow-right"
-					onClick={this.onRightControlClicked}
-					className="narrative-slider-controls-right"
-				/>
-			)
-		}
-	},
-
-	renderItems: function() {
-		
-		return _.map(this.props._items, (item, index) => {
-			var length = this.props._items.length;
-			
-			return (
-				<NarrativeItem
-					length={length}
-					key={index} 
-					item={item}
-					stage={this.props.stage}
-					width={this.state.width}
-				/>
-			)
+			narrativeWidth: narrativeWidth,
+			sliderWidth: sliderWidth
 		});
 	},
+
+	renderNarrativeGallery: function() {
+
+		return (
+			<NarrativeGallery 
+				narrativeWidth={this.state.narrativeWidth}
+				sliderWidth={this.state.sliderWidth}
+				{...this.props}
+				onRightControlClicked={this.onRightControlClicked}
+				onLeftControlClicked={this.onLeftControlClicked}
+			/>
+		);
+	},
+
+	renderNarrativeIndicators: function() {
+
+		return (
+			<NarrativeIndicators 
+				stage={this.props.stage}
+				length={this.props.items.length}
+			/>
+		)
+	},
+
+	renderNarrativeContent: function() {
+
+		return _.map(this.props.items, (item, index) => {
+			if (index === this.props.stage) {
+				return (
+					<NarrativeContent
+						item={item}
+						key={index}
+					/>
+				)
+			}
+		})
+	},	
 
 	onRightControlClicked: function() {
 		this.props.onChange(this.props.stage + 1);
@@ -77,15 +69,12 @@ var Narrative = React.createClass({
 	},
 
 	render: function() {
-	var minusInt = this.state.width * -1; 
 		return (
 			<div className="narrative" ref="narrative">
-				{this.renderLeftControl()}
-				<div className="narrative-slider" style={{width: this.state.sliderWidth + 'px', marginLeft: this.props.stage * minusInt}}>
-					{this.renderItems()}
-				</div>
-				{this.renderRightControl()}
-			</div>
+				{this.renderNarrativeGallery()}
+				{this.renderNarrativeIndicators()}
+				{this.renderNarrativeContent()}
+			</div> 
 		);
 	}
 
