@@ -22,6 +22,7 @@ var ListItem = require('./list/components/listItem');
 var ListItems = require('./list/components/listItems');
 var Loading = require('./loading/components/loading');
 var Message = require('./message/components/message');
+var Narrative = require('./narrative/components/narrative');
 var Pagination = require('./pagination/components/pagination');
 var ProgressBar = require('./progressBar/components/progressBar');
 var RangeSlider = require('./rangeSlider/components/rangeSlider');
@@ -58,6 +59,7 @@ module.exports = {
     ListItems: ListItems,
     Loading: Loading,
     Message: Message,
+    Narrative: Narrative,
     Pagination: Pagination,
     ProgressBar: ProgressBar,
     RangeSlider: RangeSlider,
