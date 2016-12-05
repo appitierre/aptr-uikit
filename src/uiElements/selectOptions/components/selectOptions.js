@@ -23,9 +23,9 @@ var SelectOptions = React.createClass({
 
 	getButtonIcon: function() {
 		if (this.state.isOpen === false) {
-			return 'chevron-down'
-		} else {
 			return 'chevron-up'
+		} else {
+			return 'chevron-down'
 		}
 	},
 
