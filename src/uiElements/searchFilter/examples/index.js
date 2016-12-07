@@ -6,7 +6,8 @@ var SearchFilterExamples = React.createClass({
 
 	getInitialState: function() {
 		return {
-			searchValue: ""
+			searchValue: "",
+			filter: ""
 		}
 	},
 
@@ -15,6 +16,7 @@ var SearchFilterExamples = React.createClass({
 			<SearchFilter
 				placeholder="enter text here" 
 				onChange={this.onChange}
+				filter={this.state.filter}
 				value={this.state.value}
 				shouldFocusInput={false}
 				onFilterChanged={this.onFilterChanged}
@@ -43,7 +45,9 @@ var SearchFilterExamples = React.createClass({
 	},
 
 	onFilterChanged: function(value) {
-		console.log(value);
+		this.setState({
+			filter: value
+		})
 	},
 
 	render: function() {

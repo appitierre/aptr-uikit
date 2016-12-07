@@ -17,13 +17,13 @@ var TabsExamples = React.createClass({
 					{
 						icon: "pencil4",
 						label: "Item one",
-						component: <div>Hello</div>,
+						component: <img src="http://lorempixel.com/output/animals-q-c-600-480-4.jpg"/>,
 						value: "Item one"
 					},
 					{
 						icon: "pencil4",
 						label: "Item two",
-						component: <div>Hi</div>,
+						component: <img src="http://lorempixel.com/output/animals-q-c-600-480-6.jpg"/>,
 						value: "Item two"
 					}
 
