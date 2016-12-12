@@ -14,9 +14,12 @@ var StarRating = React.createClass({
 	},
 
 	getClassName: function() {
-		return classnames('star-rating', {
-			'is-disabled': this.props.isDisabled
-		})
+
+		if (this.props.isDisabled) {
+			return classnames('star-rating', this.props.className, 'is-disabled');
+		} else {
+			return classnames('star-rating', this.props.className);
+		}
 	},
 
 	getItems: function() {
@@ -27,15 +30,16 @@ var StarRating = React.createClass({
 		return _.times(total, function(index) {
 			
 			var icon = "star-empty";	
-			var className = ""
+			var type = ""
 
 			if (index + 1 <= value) {
 				icon = "star";
+				type = "primary"
 			}
 
 			return (
 				<StarRatingSelectedItem
-					className={className} 
+					type={type} 
 					itemNumber={index+1}
 					key={index}
 					onClick={that.onButtonClick}
