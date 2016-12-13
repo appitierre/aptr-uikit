@@ -14,7 +14,17 @@ var CheckboxRadioListItem = React.createClass({
 			labelClassName: classnames({"checkbox-radio-list-item-label radio": this.props.type === "radio"},
 				{"checkbox-radio-list-item-label checkbox": this.props.type === "checkbox"})
 		}
-	},	
+	},
+
+/*	getItemIcon: function() {
+		var icon = "icon icon-";
+
+		if (this.props.item._isSelected) {
+			return icon += this.props.isSelectedIcon
+		} else {
+			return icon += this.props.notSelectedIcon
+		}
+	},*/
 
 	getItem: function() {
 

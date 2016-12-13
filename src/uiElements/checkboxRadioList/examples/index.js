@@ -37,6 +37,8 @@ var CheckboxRadioListExamples = React.createClass({
 				items={this.state._items}
 				onChange={this.onChange}
 				type="radio"
+				isSelectedIcon="star"
+				notSelectedIcon="trash"
 			/>
 		]
 	},

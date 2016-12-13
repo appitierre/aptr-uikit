@@ -10,6 +10,8 @@ var CheckboxRadioList = React.createClass({
 					type={this.props.type}
 					item={item}
 					key={index}
+					isSelectedIcon={this.props.isSelectedIcon}
+					notSelectedIcon={this.props.notSelectedIcon}
 					onChange={this.props.onChange}
 				/>
 			); 
