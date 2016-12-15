@@ -41,6 +41,7 @@ var SelectOptionExamples = React.createClass({
 				className="options"
 				type="secondary"
 				iconPosition="right"
+				value={this.state.value}
 			    initialText="Select Option Right"
 			    onChange={this.onSelectOptionChanged}
 			    options={[
