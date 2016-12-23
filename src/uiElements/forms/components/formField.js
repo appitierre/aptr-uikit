@@ -1,4 +1,5 @@
 var React = require('react');
+var _ = require('lodash');
 var Helpers = require('../helpers');
 var getType = Helpers.getType; 
 var getValidator = Helpers.getValidator;

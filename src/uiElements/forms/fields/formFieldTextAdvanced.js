@@ -1,4 +1,5 @@
 var React = require('react');
+var _ = require('lodash');
 var ReactDOM = require('react-dom');
 var registerType = require('../helpers').registerType;
 

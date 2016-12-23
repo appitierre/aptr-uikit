@@ -1,5 +1,7 @@
 var React = require('react');
+var _ = require('lodash');
 var registerType = require('../helpers').registerType;
+
 
 var FormFieldBoolean = React.createClass({
 

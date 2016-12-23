@@ -1,4 +1,5 @@
 var React = require('react');
+var _ = require('lodash');
 var registerType = require('../helpers').registerType;
 
 var FormFieldTextAreaPlain = React.createClass({
@@ -21,7 +22,7 @@ var FormFieldTextAreaPlain = React.createClass({
 
     },
 
-    updateField: _.throttle(function() {
+    updateField: _.debounce(function() {
         this.props.updateField(this.state.value);
     }, 1200, {leading: false}),
 
