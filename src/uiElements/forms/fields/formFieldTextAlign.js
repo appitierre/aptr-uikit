@@ -35,12 +35,7 @@ var FormFieldTextAlign = React.createClass({
             this.props.updateField(this.state.value);
         });
 
-
     },
-
-    updateField: _.debounce(function(value) {
-        this.props.updateField(value);
-    }, 1200, {leading: false}),
 
     render: function() {
         
