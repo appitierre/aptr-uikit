@@ -1,4 +1,5 @@
 var React = require('react');
+var _ = require('lodash');
 var registerType = require('../helpers').registerType;
 
 var FormFieldPassword = React.createClass({
@@ -20,7 +21,7 @@ var FormFieldPassword = React.createClass({
 
     },
 
-    updateField: _.throttle(function() {
+    updateField: _.debounce(function() {
         this.props.updateField(this.state.value);
     }, 1200, {leading: false}),
 

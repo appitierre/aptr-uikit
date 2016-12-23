@@ -1,4 +1,5 @@
 import React from 'react';
+var _ = require('lodash');
 var Button = require('../../buttons/components/button');
 import {registerType} from '../helpers';
 

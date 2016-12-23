@@ -1,4 +1,5 @@
 var React = require('react');
+var _ = require('lodash');
 var registerType = require('../helpers').registerType;
 var SketchPicker = require('react-color').SketchPicker;
 var CssValue = require('../../cssValue/components/cssValue');
