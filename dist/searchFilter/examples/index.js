@@ -10,7 +10,8 @@ var SearchFilterExamples = React.createClass({
 
 	getInitialState: function getInitialState() {
 		return {
-			searchValue: ""
+			searchValue: "",
+			filter: ""
 		};
 	},
 
@@ -18,6 +19,7 @@ var SearchFilterExamples = React.createClass({
 		return [React.createElement(SearchFilter, {
 			placeholder: 'enter text here',
 			onChange: this.onChange,
+			filter: this.state.filter,
 			value: this.state.value,
 			shouldFocusInput: false,
 			onFilterChanged: this.onFilterChanged,
@@ -41,7 +43,9 @@ var SearchFilterExamples = React.createClass({
 	},
 
 	onFilterChanged: function onFilterChanged(value) {
-		console.log(value);
+		this.setState({
+			filter: value
+		});
 	},
 
 	render: function render() {

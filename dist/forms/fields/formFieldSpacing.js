@@ -3,6 +3,7 @@
 var React = require('react');
 var registerType = require('../helpers').registerType;
 var FormFieldSpacingItem = require('./formFieldSpacingItem.js');
+var _ = require('lodash');
 
 var Mapping = {
     top: 'Top',

@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var _ = require('lodash');
 var registerType = require('../helpers').registerType;
 var Form = require('../components/form.js');
 

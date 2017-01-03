@@ -8,7 +8,7 @@ var classNames = require('classnames');
 // @PROPS:
 // ClassName: String,
 // Icon: String,
-// onClick: Function,
+// onClick: Function, 
 
 var FlatButton = React.createClass({
 	displayName: 'FlatButton',

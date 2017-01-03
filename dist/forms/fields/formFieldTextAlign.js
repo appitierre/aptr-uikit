@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var _ = require('lodash');
 var registerType = require('../helpers').registerType;
 var ButtonGroup = require('../../buttonGroup/components/buttonGroup');
 
@@ -38,10 +39,6 @@ var FormFieldTextAlign = React.createClass({
             this.props.updateField(this.state.value);
         });
     },
-
-    updateField: _.throttle(function () {
-        this.props.updateField(this.state.value);
-    }, 1200, { leading: false }),
 
     render: function render() {
 

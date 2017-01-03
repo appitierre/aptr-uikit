@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var _ = require('lodash');
 var ReactDOM = require('react-dom');
 var registerType = require('../helpers').registerType;
 
@@ -98,7 +99,7 @@ var FormFieldTextAdvanced = React.createClass({
         this.updateField(value);
     },
 
-    updateField: _.throttle(function (value) {
+    updateField: _.debounce(function (value) {
         this.props.updateField(value);
     }, 1200, { leading: false }),
 

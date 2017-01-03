@@ -19,20 +19,12 @@ var TabsExamples = React.createClass({
 			items: [{
 				icon: "pencil4",
 				label: "Item one",
-				component: React.createElement(
-					'div',
-					null,
-					'Hello'
-				),
+				component: React.createElement('img', { src: 'http://lorempixel.com/output/animals-q-c-600-480-4.jpg' }),
 				value: "Item one"
 			}, {
 				icon: "pencil4",
 				label: "Item two",
-				component: React.createElement(
-					'div',
-					null,
-					'Hi'
-				),
+				component: React.createElement('img', { src: 'http://lorempixel.com/output/animals-q-c-600-480-6.jpg' }),
 				value: "Item two"
 			}],
 			value: this.state.tabsValue,
