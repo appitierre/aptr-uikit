@@ -29,6 +29,7 @@ var SearchBar = require('./search/components/searchBar');
 var SelectOptions = require('./selectOptions/components/selectOptions');
 var StarRating = require('./starRating/components/starRating');
 var Tag = require('./tag/components/tag');
+var TileItem = require('./tileItem/components/tileItem');
 
 module.exports = {
     ActionBar: ActionBar,
@@ -64,6 +65,7 @@ module.exports = {
     SearchBar: SearchBar,
     SelectOptions: SelectOptions,
     StarRating: StarRating,
-    Tag: Tag
+    Tag: Tag,
+    TileItem: TileItem
 };
 

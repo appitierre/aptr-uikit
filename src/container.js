@@ -28,6 +28,7 @@ var StarRatingExamples = require('./uiElements/starRating/examples');
 var TabsExamples = require('./uiElements/tabs/examples');
 var TagExamples = require('./uiElements/tag/examples');
 var ToggleExamples = require('./uiElements/toggle/examples');
+var TileItemExamples = require('./uiElements/tileItem/examples');
 
 var Container = React.createClass({ 
 /* THE FUNCTIONS BELOW ARE MADE UP OF FAKE DATA TO SHOW THE WORKING FUNCTIONALLITY OF THE COMPONENTS */
@@ -67,6 +68,7 @@ var Container = React.createClass({
                 <StarRatingExamples/>
                 <TabsExamples/> 
                 <TagExamples/>
+                <TileItemExamples/>
                 <ToggleExamples/>
             </div> 
         );
