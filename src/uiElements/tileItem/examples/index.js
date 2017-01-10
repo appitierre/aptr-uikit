@@ -54,7 +54,7 @@ var TileItemExamples = React.createClass({
 		return (
 			<div>
 				<Section
-					title="Tile Item"
+					title="Tile Items"
 					components={this.getComponents()}
 					shouldDisplayAsBlock={false}
 				/>
