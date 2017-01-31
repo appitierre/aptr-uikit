@@ -6,7 +6,7 @@ var FormFieldPickerItem = require('./formFieldPickerItem.js');
 var FormFieldPicker = React.createClass({
 
     renderItems: function() {
-        return _.map(this.props.items, function(item) {
+        return _.map(this.props.items, (item) => {
             return (
                 <FormFieldPickerItem
                     key={item.value}
