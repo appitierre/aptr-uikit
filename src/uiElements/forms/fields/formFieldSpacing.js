@@ -63,7 +63,7 @@ var FormFieldSpacing = React.createClass({
     },
 
     renderItems: function() {
-        return _.map(Mapping, function(itemText, itemKey) {
+        return _.map(Mapping, (itemText, itemKey) => {
             return (
                 <FormFieldSpacingItem
                     key={itemKey}
@@ -73,7 +73,7 @@ var FormFieldSpacing = React.createClass({
                     onChange={this.onChange}
                 />
             );
-        }, this)
+        })
     },
 
     render: function() {

@@ -11,14 +11,14 @@ var FormFieldSelect = React.createClass({
     },
 
     renderOptions: function() {
-        return _.map(this.props.options, function(option) {
+        return _.map(this.props.options, (option) => {
             return (
                 <FormFieldSelectOption
                     key={option.value}
                     option={option}
                 />
             );
-        }, this);
+        });
     },
 
     render: function() {

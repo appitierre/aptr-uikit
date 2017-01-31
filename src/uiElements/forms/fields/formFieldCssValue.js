@@ -26,19 +26,19 @@ var FormFieldCssValue = React.createClass({
 
     getInitialUnit: function() {
         var unit = '';
-        _.each(this.props.units, function(unitOption) {
+        _.each(this.props.units, (unitOption) => {
             
             if (this.props.value.indexOf(unitOption.value) > -1) {
                 unit = unitOption.value;
             }
 
-        }, this);
+        });
 
         return unit;
     },
 
     shouldUseCssValue: function() {
-        var currentUnitOption = _.findWhere(this.props.units, {value: this.state.unit});
+        var currentUnitOption = _.find(this.props.units, {value: this.state.unit});
         return currentUnitOption.shouldUseCssValue;
     },
 
@@ -93,7 +93,7 @@ var FormFieldCssValue = React.createClass({
     }, 1200, {leading: false}),
 
     renderSelectOptions: function() {
-        return _.map(this.props.units, function(unit) {
+        return _.map(this.props.units, (unit) => {
             return (
                 <option 
                     value={unit.value}
@@ -101,7 +101,7 @@ var FormFieldCssValue = React.createClass({
                     {unit.value}
                 </option>
             );
-        }, this);
+        });
     },
 
     renderCssValue: function() {

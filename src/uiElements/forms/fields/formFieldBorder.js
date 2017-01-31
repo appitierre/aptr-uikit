@@ -162,14 +162,14 @@ var FormFieldBorder = React.createClass({
     }, 1200, {leading: false}),
 
     renderOptions: function() {
-        return _.map(options, function(option) {
+        return _.map(options, (option) => {
             return (
                 <FormFieldSelectOption
                     key={option.value}
                     option={option}
                 />
             );
-        }, this);
+        });
     },
 
     renderColorPopup: function() {

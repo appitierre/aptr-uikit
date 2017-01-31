@@ -14,7 +14,7 @@ var FormFieldPicker = React.createClass({
                     onItemSelected={this.updateField}
                 />
             );
-        }, this)
+        })
     },
 
     updateField: function(value) {
