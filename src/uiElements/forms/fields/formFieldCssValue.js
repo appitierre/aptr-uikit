@@ -70,7 +70,7 @@ var FormFieldCssValue = React.createClass({
 
     onUnitChange: function(event) {
         var value = event.target.value;
-        var currentUnitOption = _.findWhere(this.props.units, {value: value});
+        var currentUnitOption = _.find(this.props.units, {value: value});
 
         if (currentUnitOption.shouldUseCssValue) {
             value = 0;
