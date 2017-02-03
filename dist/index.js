@@ -1,5 +1,6 @@
 'use strict';
 
+var Accodion = require('./accordion/components/accordion');
 var ActionBar = require('./actionBar/components/actionBar');
 var Alert = require('./alert/components/alert');
 var Button = require('./buttons/components/button');
@@ -24,6 +25,7 @@ var ListItem = require('./list/components/listItem');
 var ListItems = require('./list/components/listItems');
 var Loading = require('./loading/components/loading');
 var Message = require('./message/components/message');
+var Narrative = require('./narrative/components/narrative');
 var Pagination = require('./pagination/components/pagination');
 var ProgressBar = require('./progressBar/components/progressBar');
 var RangeSlider = require('./rangeSlider/components/rangeSlider');
@@ -31,8 +33,10 @@ var SearchBar = require('./search/components/searchBar');
 var SelectOptions = require('./selectOptions/components/selectOptions');
 var StarRating = require('./starRating/components/starRating');
 var Tag = require('./tag/components/tag');
+var TileItem = require('./tileItem/components/tileItem');
 
 module.exports = {
+    Accodion: Accodion,
     ActionBar: ActionBar,
     Alert: Alert,
     Button: Button,
@@ -60,11 +64,13 @@ module.exports = {
     ListItems: ListItems,
     Loading: Loading,
     Message: Message,
+    Narrative: Narrative,
     Pagination: Pagination,
     ProgressBar: ProgressBar,
     RangeSlider: RangeSlider,
     SearchBar: SearchBar,
     SelectOptions: SelectOptions,
     StarRating: StarRating,
-    Tag: Tag
+    Tag: Tag,
+    TileItem: TileItem
 };
