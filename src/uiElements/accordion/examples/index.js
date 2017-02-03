@@ -8,10 +8,12 @@ var AccordionExamples = React.createClass({
 		return {
 			_items: [
 				{
+					_id: 0,
 					title: "Accordion Title 1",
 					body: "Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source"
 				},
 				{
+					_id: 1,
 					title: "Accordion Title 2",
 					body: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
 				} 

@@ -19,6 +19,7 @@ var Accordion = React.createClass({
 					icon={this.props.icon}
 					iconSelected={iconSelected}
 					onChange={this.props.onChange}
+					key={item._id}
 				/>
 			);
 		});
