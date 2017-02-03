@@ -1,0 +1,39 @@
+.pagination {
+	.pagination-previous-page {
+		float: left;
+		margin:0;
+    	border-top-right-radius: 0px;
+   		border-bottom-right-radius: 0px;
+	}
+	.pagination-next-page {
+		float: left;
+		margin:0;
+    	border-top-left-radius: 0px;
+   		border-bottom-left-radius: 0px;
+	}
+	.page-count {
+		height: 34px;
+		float: left;
+    	padding: 0px @space-small;
+    	background-color: #fff;
+   		border-top: 1px solid @ui-grey-dark;
+    	border-bottom: 1px solid @ui-grey-dark;
+        .font-style-small;
+    	line-height: 32px;
+	}
+
+	&.is-small {
+		.pagination {
+			height: 28px;
+		}
+		.page-count {
+			height: 28px;
+	   		line-height: 26px;
+		}
+
+		.button {
+			padding:0px @space-x-small;
+			line-height: 28px;
+		}
+	}
+}

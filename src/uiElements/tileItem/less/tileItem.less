@@ -1,0 +1,51 @@
+.tile-item-image {
+	position: relative;
+	border: 3px solid #454545;
+}
+
+.tile-item-image-button {
+	position: absolute;
+    margin: 0;
+    top: 50%;
+    margin-top: -17px;
+    right: 125px;
+    margin-right: -17px;
+    border-radius: 50%;
+}
+
+.tile-item-actions {
+	position: relative;
+	margin-top: @space-small;
+}
+
+.tile-item-actions-title {
+	display: inline-block;
+	.font-style-regular;
+	width: 165px;
+    height: 40px;
+    text-overflow: ellipsis;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+	&:hover {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+}
+
+.tile-item-actions-like {
+	position: absolute;
+    right: 40px;
+	display: inline-block;
+
+	.flat-button-text {
+		.font-style-x-small;
+	}
+}
+
+.tile-item-actions-bookmark {
+	position: absolute;
+	right: 0;
+	display: inline-block;
+}
+

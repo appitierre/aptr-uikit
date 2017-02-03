@@ -1,0 +1,45 @@
+.check-list-item {
+
+    margin:0;
+    padding:0;
+    list-style: none;
+    background-color:@content-background;
+    border:1px solid @ui-grey-regular;
+    border-top:none;
+    position: relative;
+
+    &.isChecked {
+        background-color: #F9F9F9;
+    }
+
+    &:first-child {
+        border-top:1px solid @ui-grey-regular;
+    }
+
+    .check-list-item-input, .check-list-item-content {
+        display: inline-block;
+    }
+
+    .check-list-item-input {
+        position: absolute;
+        top: 0;
+        left: 0; 
+        right: 0;
+        bottom: 0;
+        width: 40px;
+
+        input {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .check-list-item-content {
+        width: 100%;
+        padding: @space-small 40px;
+        .font-style-small;
+    }
+
+}

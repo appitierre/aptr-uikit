@@ -1,0 +1,59 @@
+/*==========
+Variables can be used directly
+or as specific mixins
+===========*/
+
+/* Colors */
+@primary-color: #448AFF;
+@primary-color-darker: darken(@primary-color, 10%);
+@secondary-color: #9C27B0;
+@secondary-color-darker: darken(@secondary-color, 10%);
+@tertiary-color: #FFAB40;
+@tertiary-color-darker: darken(@tertiary-color, 10%);
+@warning-color: #FF1744;
+@warning-color-darker: darken(#FF1744, 10%);
+.primary-color {background-color: @primary-color;}
+.primary-color-darker {background-color: @primary-color-darker;}
+.secondary-color {background-color: @secondary-color;}
+.secondary-color-darker {background-color: @secondary-color-darker;}
+.warning-color {background-color: @warning-color;}
+.warning-color-darker {background-color: @warning-color-darker;}
+
+/* UI Background - top nav */
+@ui-primary-background: #34495E;
+@ui-secondary-background: #2C3E50;
+.ui-primary-background {background-color: @ui-primary-background;}
+.ui-secondary-background {background-color: @ui-secondary-background;}
+
+/* UI text */
+@ui-primary-text: #FFFFFF;
+@ui-secondary-text: darken(@ui-primary-text, 10%);
+.ui-primary-text {color: @ui-primary-text;}
+.ui-secondary-text {color: @ui-secondary-text;}
+
+/* UI greys */
+@ui-grey-lightest: #F9F9F9; 
+@ui-grey-light: #F0F0F0;
+@ui-grey-regular: #EBEBEB;
+@ui-grey-dark: #CBCBCB;
+@ui-grey-darkest: #909090;
+.ui-grey-lightest {color: @ui-grey-lightest;}
+.ui-grey-light {color: @ui-grey-light;}
+.ui-grey-regular {color: @ui-grey-regular;}
+.ui-grey-dark {color: @ui-grey-dark;}
+.ui-grey-darkest {color: @ui-grey-darkest;}
+
+/* UI Complete/incomplete */
+@ui-complete: #48cfad;
+@ui-incomplete: #ed5565;
+
+/* Content Text */
+@content-text: #454545;
+@content-background: #ffffff;
+.content-text {color:@content-text;}
+.content-background {background-color:@content-background;}
+
+/* Success & Warning */
+@success:#48cfad;
+@warning:#ed5565;
+

@@ -1,48 +1,70 @@
 'use strict';
 
-var _module$exports;
+var ActionBar = require('./actionBar/components/actionBar');
+var Alert = require('./alert/components/alert');
+var Button = require('./buttons/components/button');
+var ButtonGroup = require('./buttonGroup/components/buttonGroup');
+var Card = require('./card/components/card');
+var CheckListItem = require('./checkListItem/components/checkListItem');
+var Chip = require('./chip/components/chip');
+var CollectionItem = require('./collections/components/collectionItem');
+var CssBorderRadiusSelector = require('./cssBorderRadiusSelector/components/cssBorderRadiusSelector');
+var CssBorderSelector = require('./cssBorderSelector/components/cssBorderSelector');
+var CssValue = require('./cssValue/components/cssValue');
+var DropDown = require('./dropDown/components/dropDown');
+var FlatButton = require('./buttons/components/flatButton');
+var Folder = require('./folder/components/folder');
+var Forms = require('./forms/forms');
+var Form = require('./forms/components/form');
+var FormField = require('./forms/components/formField');
+var FormSortable = require('./forms/components/formSortable');
+var FormHelpers = require('./forms/helpers');
+var ItemToggle = require('./toggle/components/itemToggle');
+var ListItem = require('./list/components/listItem');
+var ListItems = require('./list/components/listItems');
+var Loading = require('./loading/components/loading');
+var Message = require('./message/components/message');
+var Pagination = require('./pagination/components/pagination');
+var ProgressBar = require('./progressBar/components/progressBar');
+var RangeSlider = require('./rangeSlider/components/rangeSlider');
+var SearchBar = require('./search/components/searchBar');
+var SelectOptions = require('./selectOptions/components/selectOptions');
+var StarRating = require('./starRating/components/starRating');
+var Tag = require('./tag/components/tag');
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var Button = require('./components/buttons/button');
-var FlatButton = require('./components/buttons/flatButton');
-var CollectionItem = require('./components/collection/collectionItem');
-var DropDown = require('./components/dropDown/dropDown');
-var ActionBar = require('./components/actions/actionBar');
-var SearchBar = require('./components/search/searchBar');
-var Loading = require('./components/loading/loading');
-var Card = require('./components/card/card');
-var Alert = require('./components/alert/alert');
-var Tag = require('./components/tag/tag');
-var RangeSlider = require('./components/rangeSlider/rangeSlider');
-var Pagination = require('./components/pagination/pagination');
-var ButtonGroup = require('./components/buttonGroup/buttonGroup');
-var Folder = require('./components/folder/folder');
-var DropDown = require('./components/dropDown/dropDown');
-var ProgressBar = require('./components/progressBar/progressBar');
-var ItemToggle = require('./components/toggle/itemToggle');
-var ListItems = require('./components/list/listItems');
-var ListItem = require('./components/list/listItem');
-var Message = require('./components/message/message');
-var CssValue = require('./components/cssValue/cssValue');
-var CssBorderSelector = require('./components/cssBorderSelector/cssBorderSelector');
-var CssBorderRadiusSelector = require('./components/cssBorderRadiusSelector/cssBorderRadiusSelector');
-var StarRating = require('./components/starRating/starRating');
-var SelectOption = require('./components/select/selectOption');
-
-module.exports = (_module$exports = {
-    Button: Button,
-    FlatButton: FlatButton,
-    CollectionItem: CollectionItem,
-    DropDown: DropDown,
+module.exports = {
     ActionBar: ActionBar,
-    SearchBar: SearchBar,
-    Loading: Loading,
-    Card: Card,
     Alert: Alert,
-    Tag: Tag,
-    RangeSlider: RangeSlider,
-    Pagination: Pagination,
+    Button: Button,
     ButtonGroup: ButtonGroup,
-    Folder: Folder
-}, _defineProperty(_module$exports, 'DropDown', DropDown), _defineProperty(_module$exports, 'ProgressBar', ProgressBar), _defineProperty(_module$exports, 'ItemToggle', ItemToggle), _defineProperty(_module$exports, 'ListItems', ListItems), _defineProperty(_module$exports, 'ListItem', ListItem), _defineProperty(_module$exports, 'Message', Message), _defineProperty(_module$exports, 'CssValue', CssValue), _defineProperty(_module$exports, 'CssBorderSelector', CssBorderSelector), _defineProperty(_module$exports, 'CssBorderRadiusSelector', CssBorderRadiusSelector), _defineProperty(_module$exports, 'StarRating', StarRating), _defineProperty(_module$exports, 'SelectOption', SelectOption), _module$exports);
+    Card: Card,
+    Chip: Chip,
+    CheckListItem: CheckListItem,
+    CollectionItem: CollectionItem,
+    CssBorderRadiusSelector: CssBorderRadiusSelector,
+    CssBorderSelector: CssBorderSelector,
+    CssValue: CssValue,
+    DropDown: DropDown,
+    FlatButton: FlatButton,
+    Folder: Folder,
+    Forms: Forms,
+    Form: Form,
+    FormField: FormField,
+    FormSortable: FormSortable,
+    registerType: FormHelpers.registerType,
+    registerValidator: FormHelpers.registerValidator,
+    registerCondition: FormHelpers.registerCondition,
+    testConditions: FormHelpers.testConditions,
+    ItemToggle: ItemToggle,
+    ListItem: ListItem,
+    ListItems: ListItems,
+    Loading: Loading,
+    Message: Message,
+    Pagination: Pagination,
+    ProgressBar: ProgressBar,
+    RangeSlider: RangeSlider,
+    SearchBar: SearchBar,
+    SelectOptions: SelectOptions,
+    StarRating: StarRating,
+    Tag: Tag
+};

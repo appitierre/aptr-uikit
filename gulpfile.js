@@ -44,9 +44,17 @@ gulp.task('default', function(callback) {
         .pipe(copy())
         .pipe(gulp.dest('build'))
 
+    gulp.src('src/libraries/*')
+        .pipe(copy())
+        .pipe(gulp.dest('build/libraries'))
+
     gulp.src('src/fonts/*')
         .pipe(copy())
         .pipe(gulp.dest('build/fonts'))
+
+    gulp.src('src/icons/*')
+        .pipe(copy())
+        .pipe(gulp.dest('build/icons'))
 
 });
 

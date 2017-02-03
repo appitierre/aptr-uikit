@@ -1,0 +1,46 @@
+.select-options {
+	display: inline-block;
+	position: relative;
+
+	.button {
+		margin: 0;
+	}
+
+	.select-options-list {
+		border: 1px solid @ui-grey-dark;
+		width: 140px;
+		position: absolute;
+        .content-background;
+		z-index: 100;
+		.font-style-small;
+
+		&:empty {
+			border: none;
+		}
+
+		&.is-right-direction {
+			right: 0;
+		}
+    	
+    	.select-options-item {
+    		border-bottom: 1px solid @ui-grey-dark;
+    		.padding-all-x-small;
+    		cursor: pointer;
+
+    		&:last-child {
+    			border-bottom: none;
+    		}
+
+    		&:hover {
+    			background-color: @ui-grey-lightest;
+    		}
+    	}
+	}
+
+	&.is-right-direction {
+		.select-options-list {
+			right: 0;
+		}
+	}
+
+}

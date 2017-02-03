@@ -1,0 +1,42 @@
+.form-field-color-picker {
+    position:relative;
+}
+
+.form-field-color-picker-button {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    padding: 5px;
+    border: 1px solid @ui-grey-light;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+    &:hover {
+        background-color:@ui-grey-regular;
+    }
+}
+
+.form-field-color-picker-button-color {
+    width: @space-regular;
+    height: @space-regular;
+    margin-right: @space-x-small;
+    border:1px solid @ui-grey-dark;
+}
+
+.form-field-color-picker-popup {
+    position:absolute;
+    z-index:10;
+    background-color:#fff;
+    box-shadow:0 0 0 1px rgba(0,0,0,.15), 0 8px 16px rgba(0,0,0,.15);
+    > div {
+        box-shadow: none!important;
+        -webkit-box-shadow: none!important;
+    }
+}
+
+.form-field-color-picker-popup-buttons {
+    padding: 0px @space-x-small;
+    text-align:right;
+    button {
+        margin: @space-x-small 0px @space-x-small @space-x-small;
+    }
+}

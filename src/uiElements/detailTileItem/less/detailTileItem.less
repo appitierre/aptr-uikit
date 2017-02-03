@@ -1,0 +1,59 @@
+.detail-tile-item-image {
+	position: relative;
+	float: left;
+	border: 3px solid #454545;
+	max-width: 60%;
+}
+
+.detail-tile-item-image-button {
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    right: 50%;
+    margin-right: -17px;
+    border-radius: 50%;
+}
+
+.detail-tile-item-details {
+	display: inline-block;
+	width: 40%;
+	padding: 4px 0px 0px 24px;
+
+	.detail-tile-item-content-title {
+		.font-style-regular;
+	}
+
+	.detail-tile-item-content-description {
+		.font-style-small-light;
+		padding: 16px 0px 8px 0px;
+	}
+}
+
+.detail-tile-item-actions {
+    padding: 8px 0px;    
+}
+
+.detail-tile-item-actions-like {
+	display: inline-block;
+	padding: 0px 8px 0px 0px;
+
+	.flat-button-text {
+		.font-style-x-small;
+	}
+}
+
+.detail-tile-item-actions-bookmark {
+	display: inline-block;
+}
+
+@media (max-width: 580px) {
+	.detail-tile-item-image {
+		max-width: 100%;
+	}
+
+	.detail-tile-item-details {
+		width: 100%;
+		padding: 8px 0px 0px 0px;
+	}
+}

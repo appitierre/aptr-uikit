@@ -1,0 +1,38 @@
+.search-filter {
+    margin-top:4px;
+    height:32px;
+    .search-filter-input {
+        border:none;
+        height:32px;
+        width:80%;
+        background-color:@ui-grey-light;
+        padding:@space-small;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        .font-style-small;
+        &:focus {
+            outline:none;
+        }
+    }
+    .search-filter-options {
+        display:inline-block;
+        width:20%;
+        float:left;
+        .button {
+            margin:0;
+            height:32px;
+            width:100%;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            background-color:transparent;
+            border:1px solid @ui-grey-regular;
+            .font-color-light;
+            &:hover {
+                background-color:@ui-grey-lightest;
+            }
+            i {
+                display:none;
+            }
+        }
+    }
+}
