@@ -1,6 +1,7 @@
 var React = require('react');
 var _ = require('lodash');
 
+var AccordionExamples = require('./uiElements/accordion/examples')
 var ActionBarExamples = require('./uiElements/actionBar/examples');
 var AlertInfo = require('./uiElements/alertInfo/examples');
 var ButtonExamples = require('./uiElements/buttons/examples');
@@ -43,6 +44,7 @@ var Container = React.createClass({
 
         return (
             <div>
+                <AccordionExamples/>
                 <ActionBarExamples/>
                 <AlertInfo/>
                 <ButtonExamples/>
