@@ -5,12 +5,6 @@ var _ = require('lodash');
 
 var ButtonGroup = React.createClass({
 
-	getInitialState: function() {
-		return {
-			_value: this.props.value
-		}
-	},
-
 	componentWillMount: function() {
 		if (!this.props.buttonType) {
 			console.warn("You're currently missing a buttonType prop on a Button Group");
@@ -37,7 +31,7 @@ var ButtonGroup = React.createClass({
 		return _.map(this.props.buttons, (item, index) => {
 			var className = '';
 			// Adds buttonType class to selected button item
-			if (item._value === this.state._value) {
+			if (item._value === this.props.value) {
 				className = this.props.buttonType;
 			}
 
@@ -61,17 +55,14 @@ var ButtonGroup = React.createClass({
 		var className = this.props.buttonType;
 		// Adds buttonType class to selected button item
 		var item = _.find(this.props.buttons, (button) => {
-			if (button._value != this.state._value) {
+			if (button._value === this.props.value) {
 				return button;
 			}
 		});
 
 		return (
 			<Button 
-				onClick={_.bind(function() {
-					var nextItem = _.find(this.props.buttons, {_value: item._value});
-					this.onButtonItemClicked(nextItem._value);
-				}, this)} 
+				onClick={this.onButtonToggleClicked} 
 				className={className} 
 				icon={item._icon}
 				toolTip={item.toolTip}
@@ -82,6 +73,7 @@ var ButtonGroup = React.createClass({
 	},
 
 	getButtonItems: function() {
+		
 		if (this.props.buttons.length === 2 && this.props.shouldUseToggle) {
 			return this.getButtonToggle();
 		} else {
@@ -90,13 +82,19 @@ var ButtonGroup = React.createClass({
 	},
 
 	onButtonItemClicked: function(value) {
-		
-		this.setState({
-			_value: value
-		});
 
 		this.props.onChange(value); 
+	},
 
+	onButtonToggleClicked: function() {
+		
+		var nextItem = _.find(this.props.buttons, (nextButton) => {
+			if (nextButton._value != this.props.value) {
+				return nextButton;
+			}
+		});
+
+		this.props.onChange(nextItem);
 	},
 
 	render: function() {
