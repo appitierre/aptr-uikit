@@ -1,32 +1,31 @@
 var React = require('react');
 var Button = require('../buttons/button');
+var SearchBar = require('../search/searchBar');
 var classNames = require('classnames'); 
 var _ = require('underscore');
 
-var DropDownOptions = React.createClass({
+var SelectOption = React.createClass({
 
 
 	getInitialState: function() {
 		return {
 			isDisplayingList: false,
-			value: this.props.value
+			value: this.props.initialText
 		}
 	},
 	
 	getItems: function() {
-		if (this.state.isDisplayingList === true) {	
-			return _.map(this.props.options, function(item, key){
-				return (
-					<div className="select-option-item" 
-						key={item.index} 
-						onClick={_.bind(function() {
-							this.onButtonItemClicked(item._value);
-						}, this)}>
-						{item.text}
-					</div>
-				)
-			}, this)
-		}
+		return _.map(this.props.options, function(item, key){
+			return (	
+				<div className="select-option-item" 
+					key={item.index} 
+					onClick={_.bind(function() {
+						this.onButtonItemClicked(item);
+					}, this)}>
+					{item.text}
+				</div>
+			)
+		}, this)
 	},
 
 	getButtonIcon: function() {
@@ -46,35 +45,79 @@ var DropDownOptions = React.createClass({
 	},
 
 	renderClassName: function() {
-		return classNames('select-option', this.props.className);
+		if (this.props.className) {
+			if (this.props.options.length >= 6) {
+				return "select-option-search " + this.props.className
+			} else {
+				return "select-option " + this.props.className
+			}
+		} else {
+			if (this.props.options.length >= 6) {
+				return "select-option-search"
+			} else {
+				return "select-option"
+			}
+		}
  	},
 
- 	onButtonItemClicked: function(value) {
+ 	renderSearchBar: function() {
+ 		var length = this.props.options.length;
+
+ 		if (length >= 6) {
+ 			if (this.state.isDisplayingList) {
+	 			return (
+	 				<div className="select-option-search-bar">
+	 					<SearchBar isSmall={true} onChange={this.onSearchChanged}/>
+	 				</div> 
+	 			)
+	 		}
+ 		}
+ 	},
+
+ 	onSearchChanged: function(text) {
+ 		
+ 		this.props.onSearchChange(text);
+ 	},
+
+ 	onButtonItemClicked: function(item) {
  		this.setState({
  			isDisplayingList: false,
-			value: value
+			value: item.text
 		});
+
+		this.props.onChange(item._value);
  	},
 
 	onSelectorClicked: function() {
-		 var isDisplayingList = !this.state.isDisplayingList;
+		var isDisplayingList = !this.state.isDisplayingList;
         
         this.setState({
             isDisplayingList: isDisplayingList
         });
 	},
 
+	renderComponent: function() {
+		if (this.state.isDisplayingList === true) {
+			return (
+				<div className="select-option-drop-down">
+					{this.renderSearchBar()}
+					<div className="select-option-item-container">
+						{this.getItems()}
+					</div>
+				</div>
+			)
+		}
+	},
+
 	render: function() {
 		return (
 			<div className={this.renderClassName()}>
 				{this.getSelector()}
-				<div className="select-option-item-container">	
-					{this.getItems()}				
-				</div>
+				{this.renderComponent()}				
 			</div>
 		);
 	}
 
 });
 
-module.exports = DropDownOptions;
+module.exports = SelectOption;
