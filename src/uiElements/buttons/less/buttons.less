@@ -96,14 +96,6 @@ button {
         width: 100%;
     }
     
-    /*&:hover, &:active, &:focus {
-        background-color:@button-hover-color;
-        color:@button-text-hover-color;
-        outline:none;
-        .tool-tip {
-            display: block;
-        }
-    }*/
     &.primary {
         background-color:@button-primary-background-color;
         color:@button-primary-text-color;
@@ -164,47 +156,6 @@ button {
     .button-icon-position-right {
         margin-left: 6px;
     }
-
-    .tool-tip {
-        display:none;
-        white-space: nowrap;
-        position: absolute;
-        padding: 2px 6px 2px;
-        z-index: 1000;
-        
-        border-radius: 2px;
-        background-color: #454545;
-        left: 50%;
-        color: #fff;
-        &:after {
-            position: absolute;
-            margin-left: -6px;
-            left: 50%;
-            content: '';
-            width: 0;
-            height: 0;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-        }
-    }
-
-    .tool-tip-bottom {
-        top: 100%;
-        margin-top: 6px;
-        &:after {
-            top: -5px;
-            border-bottom: 6px solid #454545;
-        }
-    }
-
-    .tool-tip-top {
-        bottom: 100%;
-        margin-bottom:6px;
-        &:after {
-            bottom: -5px;
-            border-top: 6px solid #454545;
-        }
-    }
     
 }
 
@@ -256,46 +207,6 @@ button {
         top: -2px;
     }
 
-    .tool-tip {
-        display:none;
-        white-space: nowrap;
-        position: absolute;
-        padding: 2px 6px 2px;
-        z-index: 1000;
-        
-        border-radius: 2px;
-        background-color: #454545;
-        left: 50%;
-        color: #fff;
-        &:after {
-            position: absolute;
-            margin-left: -6px;
-            left: 50%;
-            content: '';
-            width: 0;
-            height: 0;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-        }
-    }
-
-    .tool-tip-bottom {
-        top: 100%;
-        margin-top: 6px;
-        &:after {
-            top: -6px;
-            border-bottom: 6px solid #454545;
-        }
-    }
-
-    .tool-tip-top {
-        bottom: 100%;
-        margin-bottom:6px;
-        &:after {
-            bottom: -6px;
-            border-top: 6px solid #454545;
-        }
-    }
 }
 
 .button-options {
