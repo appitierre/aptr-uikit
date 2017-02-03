@@ -71,8 +71,5 @@ module.exports = {
     StarRating: StarRating,
     Tag: Tag,
     TileItem: TileItem
-    SelectOption: SelectOption,
-    CheckListItem: CheckListItem,
-    Chip: Chip
 };
 

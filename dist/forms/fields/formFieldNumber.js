@@ -15,9 +15,6 @@ var FormFieldNumber = React.createClass({
     },
 
     onChange: function onChange(event) {
-        var value = parseInt(event.target.value);
-
-        var that = this;
 
         this.setState({
             value: value
@@ -27,7 +24,13 @@ var FormFieldNumber = React.createClass({
     },
 
     updateField: _.debounce(function () {
-        this.props.updateField(this.state.value);
+
+        var value = parseInt(this.state.value);
+
+        if (isNaN(value)) {
+            value = 0;
+        }
+        this.props.updateField(value);
     }, 1200, { leading: false }),
 
     render: function render() {

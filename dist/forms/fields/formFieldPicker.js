@@ -10,13 +10,15 @@ var FormFieldPicker = React.createClass({
 
 
     renderItems: function renderItems() {
+        var _this = this;
+
         return _.map(this.props.items, function (item) {
             return React.createElement(FormFieldPickerItem, {
                 key: item.value,
                 item: item,
-                onItemSelected: this.updateField
+                onItemSelected: _this.updateField
             });
-        }, this);
+        });
     },
 
     updateField: function updateField(value) {

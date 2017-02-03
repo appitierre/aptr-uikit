@@ -32,5 +32,6 @@ require('./fields/formFieldTextAlign.js');
 
 // Validators
 require('./validators/required');
+require('./validators/number');
 
 module.exports = Forms;

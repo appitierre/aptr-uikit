@@ -20,7 +20,7 @@ var FormFieldSelect = React.createClass({
                 key: option.value,
                 option: option
             });
-        }, this);
+        });
     },
 
     render: function render() {

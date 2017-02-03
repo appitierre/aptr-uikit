@@ -28,19 +28,21 @@ var FormFieldCssValue = React.createClass({
     },
 
     getInitialUnit: function getInitialUnit() {
+        var _this = this;
+
         var unit = '';
         _.each(this.props.units, function (unitOption) {
 
-            if (this.props.value.indexOf(unitOption.value) > -1) {
+            if (_this.props.value.indexOf(unitOption.value) > -1) {
                 unit = unitOption.value;
             }
-        }, this);
+        });
 
         return unit;
     },
 
     shouldUseCssValue: function shouldUseCssValue() {
-        var currentUnitOption = _.findWhere(this.props.units, { value: this.state.unit });
+        var currentUnitOption = _.find(this.props.units, { value: this.state.unit });
         return currentUnitOption.shouldUseCssValue;
     },
 
@@ -71,7 +73,7 @@ var FormFieldCssValue = React.createClass({
 
     onUnitChange: function onUnitChange(event) {
         var value = event.target.value;
-        var currentUnitOption = _.findWhere(this.props.units, { value: value });
+        var currentUnitOption = _.find(this.props.units, { value: value });
 
         if (currentUnitOption.shouldUseCssValue) {
             value = 0;
@@ -102,7 +104,7 @@ var FormFieldCssValue = React.createClass({
                     key: unit.value },
                 unit.value
             );
-        }, this);
+        });
     },
 
     renderCssValue: function renderCssValue() {

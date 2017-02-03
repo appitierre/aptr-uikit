@@ -167,7 +167,7 @@ var FormFieldBorder = React.createClass({
                 key: option.value,
                 option: option
             });
-        }, this);
+        });
     },
 
     renderColorPopup: function renderColorPopup() {

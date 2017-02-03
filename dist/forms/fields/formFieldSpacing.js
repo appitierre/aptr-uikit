@@ -65,15 +65,17 @@ var FormFieldSpacing = React.createClass({
     },
 
     renderItems: function renderItems() {
+        var _this = this;
+
         return _.map(Mapping, function (itemText, itemKey) {
             return React.createElement(FormFieldSpacingItem, {
                 key: itemKey,
                 position: itemKey,
                 label: itemText,
-                value: this.state[itemKey],
-                onChange: this.onChange
+                value: _this.state[itemKey],
+                onChange: _this.onChange
             });
-        }, this);
+        });
     },
 
     render: function render() {
