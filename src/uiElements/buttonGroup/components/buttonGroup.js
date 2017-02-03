@@ -55,7 +55,7 @@ var ButtonGroup = React.createClass({
 		var className = this.props.buttonType;
 		// Adds buttonType class to selected button item
 		var item = _.find(this.props.buttons, (button) => {
-			if (button._value != this.props.value) {
+			if (button._value === this.props.value) {
 				return button;
 			}
 		});
