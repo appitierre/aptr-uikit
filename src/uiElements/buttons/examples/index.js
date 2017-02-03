@@ -13,6 +13,8 @@ var ButtonExamples = React.createClass({
 				type="primary"
 				icon="key"
 				key={0}
+				toolTip="primary"
+				toolTipPosition="bottom"
 			/>,
 			<Button
 				text="Secondary Button"
@@ -20,6 +22,8 @@ var ButtonExamples = React.createClass({
 				onClick={this.onClick}
 				icon="star"
 				key={1}
+				toolTip="Secondary Tooltip"
+				toolTipPosition="top"
 			/>,
 			<Button
 				text="Alert Button"
