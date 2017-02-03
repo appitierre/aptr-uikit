@@ -6,7 +6,8 @@ var StarRatingExamples = React.createClass({
 
 	getInitialState: function() {
 		return {
-			value: 0
+			value: 0,
+			isDisabled: false
 		}
 	},
 
@@ -16,6 +17,8 @@ var StarRatingExamples = React.createClass({
 				total={5} 
 			    value={this.state.value} 
 			    onChange={this.onStarRatingChanged}
+			    className="starss"
+			    isDisabled={this.state.isDisabled}
 			/>
 		]
 	},
@@ -23,7 +26,7 @@ var StarRatingExamples = React.createClass({
 	onStarRatingChanged: function(value) {
 		this.setState({
 			value: value
-		})
+		});
 
 		console.log("the star value is:", value)
 	},
