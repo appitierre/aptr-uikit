@@ -65,7 +65,7 @@ var Button = React.createClass({
     renderButton: function(button) {
         if(this.props.toolTip) {
             return (
-                <ToolTip toolTip={this.props.toolTip} toolTipPosition={this.props.toolTipPosition}>
+                <ToolTip toolTip={this.props.toolTip} toolTipPosition={this.props.toolTipPosition || 'top'}>
                     {button}
                 </ToolTip>
             )
