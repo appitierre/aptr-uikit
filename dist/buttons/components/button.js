@@ -72,7 +72,7 @@ var Button = React.createClass({
         if (this.props.toolTip) {
             return React.createElement(
                 ToolTip,
-                { toolTip: this.props.toolTip, toolTipPosition: this.props.toolTipPosition },
+                { toolTip: this.props.toolTip, toolTipPosition: this.props.toolTipPosition || 'top' },
                 button
             );
         }
