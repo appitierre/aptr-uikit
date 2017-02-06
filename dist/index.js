@@ -5,6 +5,7 @@ var ActionBar = require('./actionBar/components/actionBar');
 var Alert = require('./alert/components/alert');
 var Button = require('./buttons/components/button');
 var ButtonGroup = require('./buttonGroup/components/buttonGroup');
+var ButtonOptions = require('./buttons/components/buttonOptions');
 var Card = require('./card/components/card');
 var CheckListItem = require('./checkListItem/components/checkListItem');
 var Chip = require('./chip/components/chip');
@@ -41,6 +42,7 @@ module.exports = {
     Alert: Alert,
     Button: Button,
     ButtonGroup: ButtonGroup,
+    ButtonOptions: ButtonOptions,
     Card: Card,
     Chip: Chip,
     CheckListItem: CheckListItem,

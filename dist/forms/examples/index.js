@@ -28,6 +28,10 @@ var schema = {
         "conditions": [],
         "validators": []
     },
+    _score: {
+        "type": "Number",
+        "label": "Score"
+    },
     _items: {
         "type": "Array",
         "label": "Items",
