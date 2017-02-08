@@ -10,6 +10,12 @@ var ToolTip = React.createClass({
         toolTip: React.PropTypes.string.isRequired
     },
 
+    getDefaultProps: function() {
+        return {
+            toolTipPosition: 'top'
+        }
+    },
+
     getInitialState: function() {
         return {
             toolTipPosition: null
