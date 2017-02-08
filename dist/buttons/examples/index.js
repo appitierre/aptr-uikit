@@ -17,7 +17,7 @@ var ButtonExamples = React.createClass({
 			icon: 'key',
 			key: 0,
 			toolTip: 'primary',
-			toolTipPosition: 'bottom'
+			toolTipPosition: 'top'
 		}), React.createElement(Button, {
 			text: 'Secondary Button',
 			type: 'secondary',
@@ -25,7 +25,7 @@ var ButtonExamples = React.createClass({
 			icon: 'star',
 			key: 1,
 			toolTip: 'Secondary Tooltip',
-			toolTipPosition: 'top'
+			toolTipPosition: 'bottom'
 		}), React.createElement(Button, {
 			text: 'Alert Button',
 			type: 'alert',
