@@ -5,6 +5,7 @@ var Button = require('./buttons/components/button');
 var ButtonGroup = require('./buttonGroup/components/buttonGroup');
 var ButtonOptions= require('./buttons/components/buttonOptions');
 var Card = require('./card/components/card');
+var Carousel = require('./carousel/components/carousel');
 var CheckListItem = require('./checkListItem/components/checkListItem');
 var Chip = require('./chip/components/chip');
 var CollectionItem = require('./collections/components/collectionItem');
@@ -42,6 +43,7 @@ module.exports = {
     ButtonGroup: ButtonGroup,
     ButtonOptions: ButtonOptions,
     Card: Card,
+    Carousel: Carousel,
     Chip: Chip,
     CheckListItem: CheckListItem,
     CollectionItem: CollectionItem,
