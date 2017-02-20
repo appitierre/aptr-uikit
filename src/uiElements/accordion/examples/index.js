@@ -16,6 +16,11 @@ var AccordionExamples = React.createClass({
 					_id: 1,
 					title: "Accordion Title 2",
 					body: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+				},
+				{
+					_id: 2,
+					title: "Accordion Title 3",
+					body: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
 				} 
 			]
 		}
