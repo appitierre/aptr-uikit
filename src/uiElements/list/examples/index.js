@@ -14,13 +14,23 @@ var ListItemsExamples = React.createClass({
 						itemText="this is the text for the list item"
 						itemDetail="the item detail"
 						key={0}
-						buttons={
-							[{
+						buttons={[
+							{
 								type: "primary",
 								icon: "pencil4",
 								onClick: this.onClick
-							}]
-						}
+							},
+							{
+								type: "alert",
+								icon: "trash",
+								onClick: this.onClick
+							},
+							{
+								type: "secondary",
+								icon: "file",
+								onClick: this.onClick
+							},
+						]}
 					/>,
 					<ListItem
 						key={1}
