@@ -156,10 +156,10 @@ var FormFieldBorder = React.createClass({
         })
     },
 
-    updateField: _.throttle(function() {
+    updateField: _.debounce(function() {
         var value = this.convertObjectToValue();
         this.props.updateField(value);
-    }, 1200, {leading: false}),
+    }, 600, {leading: false}),
 
     renderOptions: function() {
         return _.map(options, (option) => {
