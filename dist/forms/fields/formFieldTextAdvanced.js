@@ -101,7 +101,7 @@ var FormFieldTextAdvanced = React.createClass({
 
     updateField: _.debounce(function (value) {
         this.props.updateField(value);
-    }, 1200, { leading: false }),
+    }, 600, { leading: false }),
 
     // Render
     // ======

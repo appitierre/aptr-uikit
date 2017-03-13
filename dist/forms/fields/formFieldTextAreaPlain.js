@@ -27,7 +27,7 @@ var FormFieldTextAreaPlain = React.createClass({
 
     updateField: _.debounce(function () {
         this.props.updateField(this.state.value);
-    }, 1200, { leading: false }),
+    }, 600, { leading: false }),
 
     render: function render() {
 

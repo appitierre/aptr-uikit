@@ -20,6 +20,14 @@ var ListItemsExamples = React.createClass({
 					type: "primary",
 					icon: "pencil4",
 					onClick: this.onClick
+				}, {
+					type: "alert",
+					icon: "trash",
+					onClick: this.onClick
+				}, {
+					type: "secondary",
+					icon: "file",
+					onClick: this.onClick
 				}]
 			}), React.createElement(ListItem, {
 				key: 1,

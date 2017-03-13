@@ -31,7 +31,7 @@ var FormFieldNumber = React.createClass({
             value = 0;
         }
         this.props.updateField(value);
-    }, 1200, { leading: false }),
+    }, 600, { leading: false }),
 
     render: function render() {
 
