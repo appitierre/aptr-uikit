@@ -84,13 +84,13 @@ var FormFieldCssValue = React.createClass({
         })
     },
 
-    updateField: _.throttle(function() {
+    updateField: _.debounce(function() {
         var value = this.state.value + this.state.unit;
         if (this.state.value === this.state.unit) {
             value = this.state.value;
         }
         this.props.updateField(value);
-    }, 1200, {leading: false}),
+    }, 600, {leading: false}),
 
     renderSelectOptions: function() {
         return _.map(this.props.units, (unit) => {
