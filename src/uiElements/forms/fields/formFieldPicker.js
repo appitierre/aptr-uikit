@@ -25,7 +25,7 @@ var FormFieldPicker = React.createClass({
         
         return (
 
-            <div className="form-field">
+            <div className="form-field clearfix">
 
                 <div className="form-field-label">
                     {this.props.label}
