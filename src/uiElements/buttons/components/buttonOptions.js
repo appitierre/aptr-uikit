@@ -21,7 +21,7 @@ var ButtonOptions = React.createClass({
 			<Button
 				className="button-options-button" 
 				type={this.props.type}
-				onClick={this.onClick}
+				onClick={this.props.onClick}
 				text={this.props.text}
 				isSmall={this.props.isSmall} 
 			/>
