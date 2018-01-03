@@ -21,7 +21,12 @@ var FormField = React.createClass({
     },
 
     componentDidMount: function componentDidMount() {
+        this._isMounted = true;
         this.testConditions(this.props);
+    },
+
+    componentWillUnmount: function componentWillUnmount() {
+        this._isMounted = false;
     },
 
     componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
@@ -32,7 +37,7 @@ var FormField = React.createClass({
         var _this = this;
 
         Helpers.testConditions(props.conditions, props, function (condition) {
-            if (!_this.isMounted()) {
+            if (!_this._isMounted) {
                 return;
             }
             _this.setState({ _condition: condition });
@@ -67,13 +72,13 @@ var FormField = React.createClass({
         });
 
         return this.props.onUpdate(updateObject, hasError, this.props.fieldKey).then(function () {
-            if (_this3.isMounted()) {
+            if (_this3._isMounted) {
                 _this3.setState({
                     _isSaving: false
                 });
             }
         }).catch(function () {
-            if (_this3.isMounted()) {
+            if (_this3._isMounted) {
                 _this3.setState({
                     _isSaving: false
                 });

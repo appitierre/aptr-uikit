@@ -9,7 +9,7 @@ var ToolTip = require('./toolTip');
 // @PROPS:
 // ClassName: String,
 // Icon: String,
-// onClick: Function,
+// onClick: Function, 
 
 var FlatButton = React.createClass({
 	displayName: 'FlatButton',
