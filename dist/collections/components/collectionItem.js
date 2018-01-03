@@ -8,7 +8,8 @@ var classNames = require('classnames');
 // 	contentComponent: Component (collectionItemContent_example.jsx), required
 // 	actionsComponent: Component (collectionItemAction_example.jsx)
 
-// For a collection item it is important you have a content component.
+// For a collection item it is important you have a content component. 
+
 
 var CollectionItem = React.createClass({
 	displayName: 'CollectionItem',

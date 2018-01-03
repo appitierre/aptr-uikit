@@ -10,7 +10,7 @@ var ToolTip = require('./toolTip');
 //     text: String
 //     className: String - primary, secondary and alert
 //     onClick: Function, Required
-//     iconPosition: String
+//     iconPosition: String 
 //     disabled: Boolean
 //}
 
@@ -57,7 +57,7 @@ var Button = React.createClass({
     },
 
     //IconPosition should only be string with right or left, without it the position of the icon
-    //will default to left.
+    //will default to left. 
     getRightIcon: function getRightIcon() {
         if (this.props.icon && this.props.iconPosition === 'right') {
             return React.createElement(
