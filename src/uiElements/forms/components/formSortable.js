@@ -20,8 +20,9 @@ var FormSortable = React.createClass({
     },
 
     onSortEnd: function(data) {
+        var items = arrayMove(this.state.items, data.oldIndex, data.newIndex);
         this.setState({
-            items: arrayMove(this.state.items, data.oldIndex, data.newIndex)
+            items: _.map(items, (item, index) => _.assign({}, item, { itemIndex: index }))
         }, function() {
             this.props.onSort(this.state.items, data);
         })
