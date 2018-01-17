@@ -1,0 +1,76 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.2.1/libexec/bin/yarn.js install
+
+PATH: 
+  /Users/BrandonKarunakaran/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.2.1
+
+Node version: 
+  6.11.2
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "aptr-uikit",
+    "version": "1.0.7",
+    "main": "dist/index.js",
+    "author": {
+      "name": "Appitierre"
+    },
+    "description": "Appitierres React powered uikit",
+    "scripts": {
+      "build": "babel src/uiElements --out-dir dist && gulp less:dist",
+      "dev": "gulp",
+      "server": "gulp server",
+      "start": "npm run dev && npm run server",
+      "prepublish": "npm run build"
+    },
+    "dependencies": {
+      "babel-core": "^6.2.1",
+      "babel-loader": "^6.2.0",
+      "babel-preset-es2015": "^6.1.18",
+      "babel-preset-react": "^6.1.18",
+      "classnames": "^2.2.5",
+      "gulp": "^3.8.11",
+      "gulp-contrib-copy": "^0.1.2",
+      "gulp-cssmin": "^0.1.7",
+      "gulp-less": "^3.0.3",
+      "gulp-rename": "^1.2.2",
+      "gulp-sourcemaps": "^1.5.2",
+      "gulp-util": "^3.0.4",
+      "gulp-webserver": "^0.9.1",
+      "jsx-loader": "^0.13.2",
+      "lodash": "^4.12.0",
+      "react": "^15.4.0",
+      "react-color": "^2.5.0",
+      "react-dom": "^15.4.0",
+      "react-onclickoutside": "^5.7.1",
+      "react-slider": "^0.7.0",
+      "react-sortable-hoc": "^0.2.0",
+      "serve-static": "^1.9.3",
+      "webpack": "^1.9.8"
+    },
+    "devDependencies": {
+      "babel-preset-stage-1": "^6.5.0"
+    },
+    "readme": "# aptr-uikit\n\n## Introduction\n\nAppitierre's UI kit, built using React, consists of a range of different components to help make developing powerful apps easier than ever. \n\n## Getting Started\nAssuming you have Node JS installed run the following commands to save UI kit to your system.\n\n```javascript\n$ npm install aptr-uikit --save\n```\n\n## For Developers\nCompiles your files and starts a local server.  \n```\n$ npm start\n```\n##Documentation\nCompile and read documentation locally inside ```docs/```\n```\n$ gulp docs\n```",
+    "readmeFilename": "README.md",
+    "gitHead": "bec62e303e0f132db612fcee721c4a7a987c235f",
+    "_id": "aptr-uikit@0.0.8",
+    "_shasum": "87a79a13d63f37e1819e4558b2172502c92755db",
+    "_from": "aptr-uikit@*"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: EACCES: permission denied, unlink '/Users/BrandonKarunakaran/Documents/GitHub/uiElements/node_modules/recharts/node_modules/react-container-dimensions/node_modules/invariant/node_modules/.bin/loose-envify'
+      at Error (native)
