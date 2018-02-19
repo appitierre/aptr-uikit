@@ -1,6 +1,6 @@
 var Accodion = require('./accordion/components/accordion');
 var ActionBar = require('./actionBar/components/actionBar');
-var Alert = require('./alert/components/alert');
+var AlertInfo = require('./alertInfo/components/alertInfo');
 var Button = require('./buttons/components/button');
 var ButtonGroup = require('./buttonGroup/components/buttonGroup');
 var ButtonOptions= require('./buttons/components/buttonOptions');
@@ -37,7 +37,7 @@ var TileItem = require('./tileItem/components/tileItem');
 module.exports = {
     Accodion: Accodion,
     ActionBar: ActionBar,
-    Alert: Alert,
+    AlertInfo: AlertInfo,
     Button: Button,
     ButtonGroup: ButtonGroup,
     ButtonOptions: ButtonOptions,
