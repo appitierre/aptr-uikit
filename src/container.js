@@ -7,6 +7,7 @@ var AlertInfo = require('./uiElements/alertInfo/examples');
 var ButtonExamples = require('./uiElements/buttons/examples');
 var ButtonGroupExamples = require('./uiElements/buttonGroup/examples');
 var CardExamples = require('./uiElements/card/examples');
+var CarouselExamples = require('./uiElements/carousel/examples');
 var CheckListItemExamples = require('./uiElements/checkListItem/examples');
 var ChipExamples = require('./uiElements/chip/examples');
 var CollectionItemExamples = require('./uiElements/collections/examples');
@@ -51,6 +52,7 @@ var Container = React.createClass({
                 <ButtonExamples/>
                 <ButtonGroupExamples/> 
                 <CardExamples/>
+                <CarouselExamples/>
                 <CheckListItemExamples/>
                 <ChipExamples/>
                 <CollectionItemExamples/>

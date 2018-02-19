@@ -1,0 +1,67 @@
+.carousel {
+    margin-bottom: @space-regular;
+}
+
+.carousel-title {
+    margin-bottom: @space-x-small;
+    .font-style-large;
+}
+
+.carousel-scroll-container {
+    overflow-x:scroll;
+    padding-bottom:@space-x-small;
+}
+
+.carousel-item {
+    background-color: #fff;
+    width:230px;
+    // Hard coded margin-right here to match this up with the carousel JS spacing
+    margin-right: 16px;
+    float:left;
+    box-shadow:0px 0px 10px -5px #000;
+}
+
+.carousel-item-graphic {
+    height:140px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.carousel-item-title {
+    .font-style-small;
+    .font-color-primary;
+    text-align:left;
+    height:40px;
+}
+
+.carousel-item-content {
+    .padding-all-small;
+    padding-bottom:@space-x-small;
+}
+
+.carousel-item-actions {
+    text-align: right;
+}
+
+.carousel-item-actions-button {
+    .font-style-micro;
+    margin-left:@space-small;
+    margin-top: @space-small;
+    i {
+        .font-style-small;
+    }
+}
+
+.carousel-view-more-button {
+    width:230px;
+    // Hard coded margin-right here to match this up with the carousel JS spacing
+    margin-right: 16px;
+    float:left;
+    text-align: center;
+    .padding-all-small;
+    i {
+        display:block;
+        margin-bottom:@space-x-small;
+    }
+}
