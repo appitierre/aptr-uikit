@@ -21,10 +21,26 @@ var FlatButton = React.createClass({
 
 	//Similar to the button className function, this takes in an icon prop. Make sure that the icon you pass in is
     //part of the linear icon pack.
-	getIcon: function() {
-		return (
-			<i className={' icon icon-' + this.props.icon} style={this.getStyle()}></i>
-		)
+	getLeftIcon: function() {
+		var iconPosition = this.props.iconPosition;
+
+		if (this.props.icon) {
+			if (iconPosition === "left" || !iconPosition) {
+				return (
+					<i className={' icon icon-' + this.props.icon} style={this.getStyle(iconPosition)}></i>
+				)
+			}
+		}
+	},
+
+	getRightIcon: function() {
+		var iconPosition = this.props.iconPosition;
+
+		if (this.props.icon && iconPosition === "right") {
+			return (
+				<i className={' icon icon-' + this.props.icon} style={this.getStyle(iconPosition)}></i>
+			);
+		}
 	},
 
 	getText: function() {
@@ -37,11 +53,17 @@ var FlatButton = React.createClass({
 		}
 	},
 
-	getStyle: function() {
+	getStyle: function(iconPosition) {
 		if (this.props.text && this.props.icon) {
-			return ({
-				marginRight: 5
-			})
+			if (iconPosition === "right") {
+				return ({
+					marginLeft: 5
+				})
+			} else {
+				return ({
+					marginRight: 5
+				});
+			}
 		}
 	},
 
@@ -60,8 +82,9 @@ var FlatButton = React.createClass({
 	render: function() {
 		return this.renderButton(
 			<button disabled={this.props.disabled} className={this.getButtonClassName()} onClick={this.props.onClick}>
-				{this.getIcon()}
-				{this.getText()}				
+				{this.getLeftIcon()}
+				{this.getText()}
+				{this.getRightIcon()}			
 			</button>
 		);
 	}

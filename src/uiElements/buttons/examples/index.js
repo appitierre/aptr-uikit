@@ -132,17 +132,20 @@ var ButtonExamples = React.createClass({
 				text="Secondary flat" 
 				icon="star"
 				type="secondary"
+				iconPosition="right"
 				onClick={this.onClick}
 			/>,
 			<FlatButton
 				text="Primary flat" 
 				icon="star"
 				type="primary"
+				iconPosition="left"
 				onClick={this.onClick}
 			/>,
 			<FlatButton
 				text="Plain flat" 
 				icon="star"
+				iconPosition="right"
 				onClick={this.onClick}
 			/>,
 		]
