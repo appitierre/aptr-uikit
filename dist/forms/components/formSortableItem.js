@@ -21,7 +21,7 @@ var FormSortableItem = React.createClass({
             if (this.props.item[this.props.itemTextAttribute]) {
                 return this.props.item[this.props.itemTextAttribute];
             } else {
-                return this.props.defaultPrefix + " " + (this.props.index + 1);
+                return this.props.defaultPrefix + " " + (this.props.sortIndex + 1);
             }
         } else {
             console.warn("Sortable items need a itemTextAttribute to display text. This is the attribute you would like the item to use to display the text.");
@@ -30,7 +30,7 @@ var FormSortableItem = React.createClass({
 
     onClick: function onClick(event) {
         event.preventDefault();
-        this.props.onClick(this.props.index);
+        this.props.onClick(this.props.sortIndex);
     },
 
     render: function render() {
