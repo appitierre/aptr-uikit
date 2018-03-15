@@ -34,7 +34,7 @@
     "react-dom": "^15.4.0",
     "react-onclickoutside": "^5.7.1",
     "react-slider": "^0.7.0",
-    "react-sortable-hoc": "^0.2.0",
+    "react-sortable-hoc": "^0.6.8",
     "serve-static": "^1.9.3",
     "webpack": "^1.9.8"
   },
