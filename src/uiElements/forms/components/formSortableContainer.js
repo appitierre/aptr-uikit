@@ -16,7 +16,8 @@ var FormSortableContainer = React.createClass({
             return (
                 <FormSortableItem 
                     key={'item-' + index} 
-                    index={index} 
+                    index={index}
+                    sortIndex={index} 
                     item={item}
                     itemTextAttribute={this.props.itemTextAttribute}
                     defaultPrefix={this.props.defaultPrefix}
