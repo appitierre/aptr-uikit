@@ -23,7 +23,7 @@ var FormFieldObject = React.createClass({
     onUpdateField: function onUpdateField(attributes, hasError, fieldKey) {
         var value = this.props.value || {};
         var newValue = _.extend(value, attributes);
-        return this.props.updateField(newValue);
+        return this.props.updateField(newValue, hasError);
     },
 
     render: function render() {

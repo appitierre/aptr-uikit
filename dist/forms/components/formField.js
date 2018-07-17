@@ -59,10 +59,10 @@ var FormField = React.createClass({
         return error;
     },
 
-    onUpdate: function onUpdate(value) {
+    onUpdate: function onUpdate(value, fieldError) {
         var _this3 = this;
 
-        var hasError = this.validateValue(value);
+        var hasError = fieldError || this.validateValue(value);
 
         var updateObject = {};
         updateObject[this.props.fieldKey] = value;
