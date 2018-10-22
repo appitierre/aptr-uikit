@@ -1,5 +1,7 @@
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var React = require('react');
 var classNames = require('classnames');
 var ToolTip = require('./toolTip');
@@ -58,11 +60,16 @@ var FlatButton = React.createClass({
 		return button;
 	},
 
+	getButtonProps: function getButtonProps() {
+		return _.omit(this.props, ['type', 'text', 'icon', 'toolTip', 'toolTipPosition']);
+	},
+
 	//Renders the entire flat button.
 	render: function render() {
+		var props = this.getButtonProps();
 		return this.renderButton(React.createElement(
 			'button',
-			{ disabled: this.props.disabled, className: this.getButtonClassName(), onClick: this.props.onClick },
+			_extends({}, props, { className: this.getButtonClassName() }),
 			this.getIcon(),
 			this.getText()
 		));
