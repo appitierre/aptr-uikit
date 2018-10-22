@@ -56,10 +56,15 @@ var FlatButton = React.createClass({
 		return button
 	},
 
+	getButtonProps: function() {
+        return _.omit(this.props, ['type', 'text', 'icon', 'toolTip', 'toolTipPosition']);
+    },
+
 	//Renders the entire flat button.
 	render: function() {
+		var props = this.getButtonProps();
 		return this.renderButton(
-			<button disabled={this.props.disabled} className={this.getButtonClassName()} onClick={this.props.onClick}>
+			<button {...props} className={this.getButtonClassName()}>
 				{this.getIcon()}
 				{this.getText()}				
 			</button>

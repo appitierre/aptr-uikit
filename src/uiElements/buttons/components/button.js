@@ -73,12 +73,16 @@ var Button = React.createClass({
         return button;
     },
 
+    getButtonProps: function() {
+        return _.omit(this.props, ['type', 'text', 'icon', 'iconPosition', 'toolTip', 'toolTipPosition', 'isSmall']);
+    },
+
     render: function() {
+        var props = this.getButtonProps();
         return this.renderButton(
             <button 
-                disabled={this.props.disabled} 
-                className={this.getButtonClassName()} 
-                onClick={this.props.onClick}>
+                {...props}
+                className={this.getButtonClassName()} >
                 {this.getLeftIcon()}
                 {this.props.text}
                 {this.getRightIcon()}
