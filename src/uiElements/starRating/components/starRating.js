@@ -26,25 +26,29 @@ var StarRating = React.createClass({
 		var total = this.props.total;
 		var that = this;
 		var value = (this.state.hoveredItemNumber || this.props.value);
+		var labels = this.props.labels || [];
 
-		return _.times(total, function(index) {
+		return _.times(total, (index) => {
 			
 			var icon = "star-empty";	
-			var type = ""
+			var isActive = false;
+			var itemNumber = index + 1;
 
 			if (index + 1 <= value) {
 				icon = "star";
-				type = "primary"
+				isActive = true;
 			}
 
 			return (
 				<StarRatingSelectedItem
-					type={type} 
-					itemNumber={index+1}
+					itemNumber={itemNumber}
 					key={index}
-					onClick={that.onButtonClick}
+					label={labels[index] || `Star ${itemNumber}`}
 					icon={icon}
 					onHover={that.onHover}
+					onClick={that.onButtonClick}
+					isSelected={this.props.value === itemNumber}
+					isActive={isActive}
 					isDisabled={that.props.isDisabled} 
 				/>
 			) 

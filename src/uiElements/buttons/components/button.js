@@ -74,7 +74,7 @@ var Button = React.createClass({
     },
 
     getButtonProps: function() {
-        return _.omit(this.props, ['type', 'text', 'icon', 'iconPosition', 'toolTip', 'toolTipPosition', 'isSmall']);
+        return _.omit(this.props, ['type', 'text', 'icon', 'iconPosition', 'toolTip', 'toolTipPosition', 'isSmall', 'isLarge']);
     },
 
     render: function() {

@@ -5,6 +5,29 @@
 		font-size: 24px;
 	}
 
+	.star-rating-label-text, input {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+
+	&.is-active:not(.is-disabled) {
+		i {
+			color: @primary-color;
+		}
+	}
+
+	&.is-disabled {
+		label {
+			cursor: default;
+		}
+	}
+
 }
 
 /*.star-rating-item-selected {
