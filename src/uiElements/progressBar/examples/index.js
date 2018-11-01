@@ -6,7 +6,7 @@ var ProgressBarExamples = React.createClass({
 
 	getInitialState: function() {
 		return {
-			progressValue: 23 
+			progressValue: 50 
 		}
 	},
 
@@ -14,6 +14,9 @@ var ProgressBarExamples = React.createClass({
 		return [
 			<ProgressBar 
 				value={this.state.progressValue}
+				ariaValueNow="3"
+				ariaValueMin="0"
+				ariaValueMax="6"
 			/>
 		]
 	},

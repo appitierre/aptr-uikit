@@ -15,6 +15,12 @@ var ProgressBar = React.createClass({
 		}
 	},
 
+	getDefaultProps: function() {
+		return {
+			tabIndex: null
+		};
+	},
+
 	renderClassName: function() {
 		return classNames('progress-bar', this.props.className);
 	},
@@ -38,9 +44,16 @@ var ProgressBar = React.createClass({
 
 	render: function() {
 		return (
-			<div className={this.renderClassName()}>
-				<div className='progress-bar-inner' style={this.getStyle()}>
-				</div>
+			<div
+				tabIndex={this.props.tabIndex} 
+				className={this.renderClassName()}
+				role="progressbar" 
+				aria-valuenow={this.props.ariaValueNow}
+				aria-valuemin={this.props.ariaValueMin} 
+				aria-valuemax={this.props.ariaValueMax}>
+				<div 
+					className='progress-bar-inner' 
+					style={this.getStyle()} />
 			</div>
 		);
 	}
