@@ -6,6 +6,9 @@ var classNames = require('classnames');
 var Loading = React.createClass({
 	displayName: 'Loading',
 
+	getAccessibilityTags: function getAccessibilityTags() {
+		return {"role": "alert"}
+	},
 
 	getClassName: function getClassName() {
 		return classNames('loading', this.props.className);
@@ -17,7 +20,7 @@ var Loading = React.createClass({
 		} else {
 			return React.createElement(
 				'div',
-				{ className: this.getClassName() },
+				_.merge({className: this.getClassName()}, this.getAccessibilityTags()),
 				React.createElement(
 					'div',
 					{ className: 'loading-inner' },

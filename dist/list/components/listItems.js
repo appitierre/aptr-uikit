@@ -6,6 +6,9 @@ var classNames = require('classnames');
 var ListItems = React.createClass({
 	displayName: 'ListItems',
 
+	getAccessibilityTags: function getAccessibilityTags() {
+		return {role: 'list'}
+	},
 
 	getClassName: function getClassName() {
 		return classNames('list-items', this.shouldShowAlternativeColors(), this.props.className);
@@ -20,7 +23,7 @@ var ListItems = React.createClass({
 	render: function render() {
 		return React.createElement(
 			'ul',
-			{ className: this.getClassName() },
+			_.merge({ className: this.getClassName()}, this.getAccessibilityTags()),
 			this.props.items
 		);
 	}

@@ -85,6 +85,10 @@ var ButtonGroup = React.createClass({
 		}
 	},
 
+	getAccessibilityTags: function getAccessibilityTags() {
+        return {tabIndex: 0, role: 'button', name: this.props.text};
+    },
+
 	onButtonItemClicked: function onButtonItemClicked(value) {
 
 		this.props.onChange(value);

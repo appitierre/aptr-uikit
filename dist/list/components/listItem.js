@@ -5,10 +5,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 var React = require('react');
 var FlatButton = require('../../buttons/components/flatButton');
 var ListItemWrapper = require('./listItemWrapper');
+var classNames = require('classnames');
 
 var ListItem = React.createClass({
 	displayName: 'ListItem',
 
+	getAccessibilityTags: function getAccessibilityTags() {
+        return {role: 'listitem'};
+    },
 
 	renderButtons: function renderButtons() {
 		if (this.props.buttons) {
@@ -37,10 +41,11 @@ var ListItem = React.createClass({
 	},
 
 	renderItems: function renderItems() {
+		var className = classNames('list-item', this.props.className ? this.props.className :'');
 		if (!this.props.component) {
 			return React.createElement(
 				'li',
-				{ className: 'list-item' },
+				_extends({}, this.getAccessibilityTags(), className={className}),
 				React.createElement(
 					ListItemWrapper,
 					this.props,
@@ -73,7 +78,7 @@ var ListItem = React.createClass({
 		} else {
 			return React.createElement(
 				'li',
-				{ className: 'list-item' },
+				_extends({}, this.getAccessibilityTags(), className={className}),
 				React.createElement(
 					ListItemWrapper,
 					this.props,

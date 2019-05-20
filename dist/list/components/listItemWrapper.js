@@ -5,12 +5,15 @@ var React = require('react');
 var ListItemWrapper = React.createClass({
 	displayName: "ListItemWrapper",
 
+	getAccessibilityTags: function getAccessibilityTags() {
+		return {'tabIndex' : 0}
+	},
 
 	renderWrapper: function renderWrapper() {
 		if (this.props.onClick && !this.props.buttons) {
 			return React.createElement(
-				"button",
-				{ className: "list-item-clickable", onClick: this.props.onClick },
+				"a",
+				_.merge({ className: "list-item-clickable", onClick: this.props.onClick}, this.getAccessibilityTags()),
 				React.createElement(
 					"div",
 					{ className: "list-item-inner clearfix" },
@@ -20,7 +23,7 @@ var ListItemWrapper = React.createClass({
 		} else {
 			return React.createElement(
 				"div",
-				{ className: "list-item-inner clearfix" },
+				_.merge({ className: "list-item-inner clearfix" }, this.getAccessibilityTags()),
 				this.props.children
 			);
 		}

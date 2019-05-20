@@ -43,7 +43,7 @@ var ProgressBar = React.createClass({
 	render: function render() {
 		return React.createElement(
 			'div',
-			{ className: this.renderClassName() },
+			{ className: this.renderClassName(), 'aria-label': this.getProgress() + 'complete' },
 			React.createElement('div', { className: 'progress-bar-inner', style: this.getStyle() })
 		);
 	}

@@ -22,9 +22,9 @@ var SearchBar = React.createClass({
 		}
 
 		if (this.state.value.length === 0) {
-			return React.createElement(Button, { icon: 'magnifier', className: 'search-bar-button', isSmall: Height });
+			return React.createElement(Button, { icon: 'magnifier', className: 'search-bar-button', isSmall: Height, 'aria-label': 'Search' });
 		} else {
-			return React.createElement(Button, { icon: 'cross-circle', className: 'primary search-bar-button', onClick: this.onButtonClicked, isSmall: Height });
+			return React.createElement(Button, { icon: 'cross-circle', className: 'primary search-bar-button', onClick: this.onButtonClicked, isSmall: Height, 'aria-label': 'Cancel search' });
 		}
 	},
 
@@ -61,9 +61,9 @@ var SearchBar = React.createClass({
 
 	render: function render() {
 		return React.createElement(
-			'div',
-			{ className: this.getClassName() },
-			React.createElement('input', { className: 'search-bar-input', value: this.state.value, onChange: this.onChange, placeholder: this.renderPlaceHolder() }),
+			'form',
+			{ className: this.getClassName(), 'role': 'search' },
+			React.createElement('input', { className: 'search-bar-input', value: this.state.value, onChange: this.onChange, placeholder: this.renderPlaceHolder(), 'aria-label': 'Search input field' }),
 			this.getButton()
 		);
 	}

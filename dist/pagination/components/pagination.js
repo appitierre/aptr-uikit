@@ -83,6 +83,7 @@ var Pagination = React.createClass({
 			'div',
 			{ className: this.getClassName() },
 			React.createElement(Button, {
+				'aria-label': 'pagination previous page',
 				className: 'pagination-previous-page',
 				type: this.props.buttonType,
 				icon: 'arrow-left',
@@ -93,10 +94,11 @@ var Pagination = React.createClass({
 				isSmall: Height }),
 			React.createElement(
 				'div',
-				{ className: 'page-count' },
+				{ className: 'page-count', 'aria-label': `Page ${this.props.currentPage} out of ${this.props.totalPages}`, tabIndex: 0 },
 				this.getPageCount()
 			),
 			React.createElement(Button, {
+				'aria-label': 'pagination next page',
 				className: 'pagination-next-page',
 				type: this.props.buttonType,
 				icon: 'arrow-right',

@@ -31,7 +31,7 @@ var CollectionItem = React.createClass({
 	render: function render() {
 		return React.createElement(
 			'div',
-			{ className: this.getClassName() },
+			{ className: this.getClassName(), tabIndex: 0 },
 			React.createElement(
 				'div',
 				{ className: 'collection-item-content' },
