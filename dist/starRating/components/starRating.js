@@ -41,6 +41,26 @@ var StarRating = React.createClass({
 				type = "primary";
 			}
 
+			var input = React.createElement('input', {
+				type: "radio", 
+				value: index + 1,
+				name: "rating", 
+				id:`rate${index + 1}`})
+
+			var labelIcon = React.createElement('i', {className: ' icon icon-' + icon + ' ' + type});
+
+			var label = React.createElement('label', {
+				className: "star-rating-label",
+				htmlFor: `rate${index+1}`,
+				value: index + 1,
+				onClick: () => {that.onButtonClick(index + 1)},
+				onMouseEnter: () => {that.onHover(index + 1)},
+				onMouseLeave: () => {that.onHover(null)},
+				disabled: that.props.isDisabled
+			}, labelIcon)
+
+			return [input, label];
+
 			return React.createElement(StarRatingSelectedItem, {
 				type: type,
 				itemNumber: index + 1,
@@ -49,24 +69,31 @@ var StarRating = React.createClass({
 				icon: icon,
 				onHover: that.onHover,
 				isDisabled: that.props.isDisabled
-			});
+			}),
+			React.createElement(StarRatingSelectedItem);
 		});
 	},
 
 	onHover: function onHover(number) {
+		if (this.props.isDisabled) {
+			return
+		}
 		this.setState({
 			hoveredItemNumber: number
 		});
 	},
 
 	onButtonClick: function onButtonClick(itemNumber) {
+		if (this.props.isDisabled) {
+			return
+		}
 		this.props.onChange(itemNumber);
 	},
 
 	render: function render() {
 		return React.createElement(
-			'div',
-			{ className: this.getClassName() },
+			'form',
+			{ className: this.getClassName(), tabIndex: 0, 'aria-label': `Average Star Rating ${this.props.value} out of ${this.props.total}` },
 			this.getItems()
 		);
 	}

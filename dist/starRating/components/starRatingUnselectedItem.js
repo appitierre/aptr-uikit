@@ -14,8 +14,9 @@ var StarRatingUnselectedItem = React.createClass({
 	render: function render() {
 		return React.createElement(
 			'div',
-			{ className: 'star-rating-item' },
+			{ className: 'star-rating-item'},
 			React.createElement(FlatButton, {
+				name: 'Unselected star',
 				icon: 'star-empty',
 				className: 'star-rating-item-unselected',
 				onClick: this.onButtonClick })

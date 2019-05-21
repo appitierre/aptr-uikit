@@ -1,11 +1,35 @@
-.star-rating-item {
+.star-rating {
 	display: inline-block;
 
 	i {
 		font-size: 24px;
 	}
 
+	input {
+		opacity: 0;
+		position: absolute;
+		margin-right: -100%;
+	}
+
 }
+
+.star-rating-label {
+
+    position: relative;
+	color:@button-primary-background-color;
+		&:hover, &:active, &:focus {
+			color:@button-primary-background-hover-color;
+		}
+
+    &:disabled {
+        cursor:auto;
+        color: #586272;
+        &:hover {
+            color: #586272;
+        }
+	}
+}
+
 
 /*.star-rating-item-selected {
 	color: black;
