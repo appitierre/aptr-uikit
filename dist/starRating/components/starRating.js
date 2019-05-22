@@ -45,33 +45,31 @@ var StarRating = React.createClass({
 				type: "radio", 
 				value: index + 1,
 				name: "rating", 
+				disabled: that.props.isDisabled,
+				onClick: () => {that.onHover(index + 1)},
+				onKeyUp: (event) => {that.handleRadioButtonKeyPress(event, index + 1)},
 				id:`rate${index + 1}`})
 
 			var labelIcon = React.createElement('i', {className: ' icon icon-' + icon + ' ' + type});
 
 			var label = React.createElement('label', {
-				className: "star-rating-label",
+				className: `star-rating-label ${that.props.isDisabled ? 'is-disabled' : ''}`,
 				htmlFor: `rate${index+1}`,
 				value: index + 1,
 				onClick: () => {that.onButtonClick(index + 1)},
 				onMouseEnter: () => {that.onHover(index + 1)},
-				onMouseLeave: () => {that.onHover(null)},
-				disabled: that.props.isDisabled
+				onMouseLeave: () => {that.onHover(null)}
 			}, labelIcon)
 
 			return [input, label];
-
-			return React.createElement(StarRatingSelectedItem, {
-				type: type,
-				itemNumber: index + 1,
-				key: index,
-				onClick: that.onButtonClick,
-				icon: icon,
-				onHover: that.onHover,
-				isDisabled: that.props.isDisabled
-			}),
-			React.createElement(StarRatingSelectedItem);
 		});
+	},
+
+	handleRadioButtonKeyPress: function handleRadioButtonKeyPress(e, number) {
+		if (e.keyCode == 32 || e.keyCode == 13) {
+			this.onButtonClick(number);
+		}
+		return;
 	},
 
 	onHover: function onHover(number) {

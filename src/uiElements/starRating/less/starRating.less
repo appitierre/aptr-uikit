@@ -9,6 +9,10 @@
 		opacity: 0;
 		position: absolute;
 		margin-right: -100%;
+
+		&:hover ~ label, &:focus ~ label, &:active ~ label {
+			color:@button-primary-background-hover-color;
+		}
 	}
 
 }
@@ -21,7 +25,7 @@
 			color:@button-primary-background-hover-color;
 		}
 
-    &:disabled {
+    &.is-disabled {
         cursor:auto;
         color: #586272;
         &:hover {
