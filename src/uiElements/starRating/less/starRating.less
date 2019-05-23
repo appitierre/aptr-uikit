@@ -10,9 +10,17 @@
 		position: absolute;
 		margin-right: -100%;
 
+		&:disabled {
+			&:hover ~ label, &:focus ~ label, &:active ~ label {
+				color: #586272;
+			}
+		}
+		
 		&:hover ~ label, &:focus ~ label, &:active ~ label {
 			color:@button-primary-background-hover-color;
 		}
+
+
 	}
 
 }
