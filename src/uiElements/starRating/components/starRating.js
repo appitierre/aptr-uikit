@@ -8,8 +8,7 @@ var StarRating = React.createClass({
 
 	getInitialState: function() {
 		return {
-			hoveredItemNumber: null,
-
+			hoveredItemNumber: null
 		}
 	},
 
@@ -26,46 +25,78 @@ var StarRating = React.createClass({
 		var total = this.props.total;
 		var that = this;
 		var value = (this.state.hoveredItemNumber || this.props.value);
-
+		
 		return _.times(total, function(index) {
 			
 			var icon = "star-empty";	
 			var type = ""
-
+			var autoFocus = false;
+			
 			if (index + 1 <= value) {
 				icon = "star";
 				type = "primary"
 			}
 
-			return (
-				<StarRatingSelectedItem
-					type={type} 
-					itemNumber={index+1}
-					key={index}
-					onClick={that.onButtonClick}
-					icon={icon}
-					onHover={that.onHover}
-					isDisabled={that.props.isDisabled} 
-				/>
-			) 
+			if (index === 0 ){
+				autoFocus = true;
+			}
+
+			var input = <input
+							type="radio"
+							value={index+1}
+							name="rating"
+							autoFocus={autoFocus}
+							disabled={that.props.isDisabled}
+							onClick={() => {that.onHover(index+1)}}
+							onKeyDown={(event) => {that.handleRadioButtonKeyPress(event, index+1)}}
+							id={`rate${index+1}`}
+						/>
+			
+			var labelIcon = <i className={`icon icon-${icon} ${type}`}/>
+
+			var label = <label
+							className={`star-rating-label ${that.props.isDisabled ? 'is-disabled' : ''}`}
+							htmlFor={`rate${index+1}`}
+							value={index+1}
+							onClick={() => {that.onButtonClick(index+1)}}
+							onMouseEnter={() => {that.onHover(index+1)}}
+							onMouseLeave={() => {that.onHover(null)}}
+						>
+							{labelIcon}	
+						</label>
+			
+			return [input, label];
 		})
 	},
 
+	handleRadioButtonKeyPress: function(e, number) {
+		if (e.keyCode == 32 || e.keyCode == 13) {
+			this.onButtonClick(number);
+		}
+		return;
+	},
+
 	onHover: function(number) {
+		if (this.props.isDisabled) {
+			return
+		}
 		this.setState({
 			hoveredItemNumber: number
 		})
 	},
 
-	onButtonClick: function(itemNumber) {		
+	onButtonClick: function(itemNumber) {	
+		if (this.props.isDisabled) {
+			return
+		}	
 		this.props.onChange(itemNumber);
 	},
 
 	render: function() {
 		return ( 
-			<div className={this.getClassName()}>
+			<form className={this.getClassName()} tab-index='0' aria-label={`Average Star Rating ${this.props.value} out of ${this.props.total}`} aria-label="polite">
 				{this.getItems()}
-			</div>
+			</form>
 		)
 	}
 

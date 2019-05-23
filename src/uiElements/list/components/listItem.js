@@ -1,8 +1,13 @@
 var React = require('react');
 var FlatButton = require('../../buttons/components/flatButton');
 var ListItemWrapper = require('./listItemWrapper');
+var classNames = require('classnames');
 
 var ListItem = React.createClass({
+
+	getAccessibilityTags: function() {
+        return {role: 'listitem'};
+    },
 
 	renderButtons: function() {
 		if (this.props.buttons) {
@@ -34,9 +39,10 @@ var ListItem = React.createClass({
 	},
 
 	renderItems: function() {
+		var className = classNames('list-item', this.props.className ? this.props.className :'');
 		if (!this.props.component) {
 			return (
-				<li className="list-item">
+				<li className={className} {...this.getAccessibilityTags()}>
 					<ListItemWrapper {...this.props}>
 						<div className="list-item-icon">
 							{this.renderIcon()}
@@ -57,7 +63,7 @@ var ListItem = React.createClass({
 			)
 		} else {
 			return (
-				<li className="list-item">
+				<li className={className} {...this.getAccessibilityTags()}>
 					<ListItemWrapper {...this.props}>
 						{this.props.component}
 					</ListItemWrapper>

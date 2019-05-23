@@ -38,7 +38,7 @@ var ProgressBar = React.createClass({
 
 	render: function() {
 		return (
-			<div className={this.renderClassName()}>
+			<div className={this.renderClassName()} aria-label={`${this.getProgress()} complete`}>
 				<div className='progress-bar-inner' style={this.getStyle()}>
 				</div>
 			</div>

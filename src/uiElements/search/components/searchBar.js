@@ -20,11 +20,11 @@ var SearchBar = React.createClass({
 
 		if (this.state.value.length === 0) {
 			return (
-				<Button icon='magnifier' className='search-bar-button' isSmall={Height}/>
+				<Button icon='magnifier' className='search-bar-button' isSmall={Height} aria-label="Search"/>
 			)
 		} else {
 			return (
-				<Button icon='cross-circle' className='primary search-bar-button' onClick={this.onButtonClicked} isSmall={Height}/>
+				<Button icon='cross-circle' className='primary search-bar-button' onClick={this.onButtonClicked} isSmall={Height} aria-label="Close search"/>
 			)
 		}
 	},
@@ -63,10 +63,10 @@ var SearchBar = React.createClass({
 
 	render: function() {
 		return (
-			<div className={this.getClassName()}>
-				<input className='search-bar-input' value={this.state.value} onChange={this.onChange} placeholder={this.renderPlaceHolder()}/>
+			<form className={this.getClassName()} role="search">
+				<input className='search-bar-input' value={this.state.value} onChange={this.onChange} placeholder={this.renderPlaceHolder()} aria-label="Search input field"/>
 				{this.getButton()}
-			</div>								
+			</form>								
 		);
 	}
 });

@@ -81,6 +81,7 @@ var Pagination = React.createClass({
 		return (
 			<div className={this.getClassName()}>
 				<Button 
+					aria-label="pagination previous page"
 					className="pagination-previous-page" 
 					type={this.props.buttonType}
 					icon="arrow-left" 
@@ -90,11 +91,12 @@ var Pagination = React.createClass({
 					toolTipPosition={this.renderToolTipLeftPosition()}
 					isSmall={Height} />
 
-				<div className="page-count">
+				<div className="page-count" aria-label={`Page ${this.props.currentPage} out of ${this.props.totalPages}`} tabIndex='0' >
 					{this.getPageCount()}
 				</div>
 				 
 				<Button 
+					aria-label="pagination next page"
 					className="pagination-next-page"
 					type={this.props.buttonType} 
 					icon='arrow-right' 
