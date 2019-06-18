@@ -2,14 +2,10 @@ var React = require('react');
 
 var ListItemWrapper = React.createClass({
 
-	getAccessibilityTags: function() {
-		return {'tabIndex' : 0}
-	},
-
 	renderWrapper: function() {
 		if (this.props.onClick && !this.props.buttons) {
 			return (
-				<a className="list-item-clickable" onClick={this.props.onClick} {...this.getAccessibilityTags()}>
+				<a className="list-item-clickable" onClick={this.props.onClick}>
 					<div className="list-item-inner clearfix">
 					{this.props.children}
 					</div>
@@ -17,7 +13,7 @@ var ListItemWrapper = React.createClass({
 			)
 		} else {
 			return (
-				<div className="list-item-inner clearfix" {...this.getAccessibilityTags()}>
+				<div className="list-item-inner clearfix">
 					{this.props.children}
 				</div>
 			)

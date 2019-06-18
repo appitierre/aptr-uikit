@@ -94,7 +94,7 @@ var StarRating = React.createClass({
 
 	render: function() {
 		return ( 
-			<form className={this.getClassName()} tab-index='0' aria-label={`Average Star Rating ${this.props.value} out of ${this.props.total}`} aria-label="polite">
+			<form className={this.getClassName()} aria-label={`Average star rating ${this.props.value} out of ${this.props.total}`}>
 				{this.getItems()}
 			</form>
 		)

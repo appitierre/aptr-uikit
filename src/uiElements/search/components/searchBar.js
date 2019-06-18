@@ -24,7 +24,13 @@ var SearchBar = React.createClass({
 			)
 		} else {
 			return (
-				<Button icon='cross-circle' className='primary search-bar-button' onClick={this.onButtonClicked} isSmall={Height} aria-label="Close search"/>
+				<Button 
+					icon='cross-circle' 
+					className='primary search-bar-button' 
+					onClick={this.onButtonClicked} 
+					isSmall={Height} 
+					aria-label="Cancel search"
+				/>
 			)
 		}
 	},
