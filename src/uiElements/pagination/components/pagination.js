@@ -18,7 +18,7 @@ var Pagination = React.createClass({
 		var totalPages = this.props.totalPages;
 
 		return (
-			<p aria-hidden="true">currentPage + '/' + totalPages</p>
+			<p aria-hidden="true">{currentPage + '/' + totalPages}</p>
 		)
 
 	},
