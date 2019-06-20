@@ -47,9 +47,9 @@ var FlatButton = React.createClass({
 
 	getAccessibilityTags: function() {
 		var ariaLabel = this.props.text;
-		if (!this.props.text || this.props.ariaLabel || this.props['aria-label']) {
-			if (this.props.ariaLabel || this.props['aria-label']) {
-				var ariaLabel = this.props.ariaLabel;
+		if (!this.props.text || this.props['aria-label']) {
+			if (this.props['aria-label']) {
+				var ariaLabel = this.props['aria-label'];
 			} else {
 				var ariaLabel = this.props.toolTip ? this.props.toolTip : this.props.icon.replace(/[0-9]/g, '');
 			}
