@@ -44,7 +44,8 @@ var Button = React.createClass({
             var menuTags = this.getMenuAccessibilityTags();
         }
         var ariaLabel = this.props['aria-label'] ? this.props['aria-label'] : this.props.text;
-        return _.merge({tabIndex: 0, role: 'button', 'aria-label': ariaLabel}, menuTags);
+        var role = this.props.role ? this.props.role : 'button';
+        return _.merge({tabIndex: 0, role: role, 'aria-label': ariaLabel}, menuTags);
     },
 
     getMenuAccessibilityTags: function() {
