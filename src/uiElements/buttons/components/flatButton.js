@@ -45,6 +45,18 @@ var FlatButton = React.createClass({
 		}
 	},
 
+	getAccessibilityTags: function() {
+		var ariaLabel = this.props.text;
+		if (!this.props.text || this.props['aria-label']) {
+			if (this.props['aria-label']) {
+				var ariaLabel = this.props['aria-label'];
+			} else {
+				var ariaLabel = this.props.toolTip ? this.props.toolTip : this.props.icon.replace(/[0-9]/g, '');
+			}
+		}
+        return {tabIndex: 0, role: 'button', 'aria-label': ariaLabel};
+    },
+
 	renderButton: function(button) {
 		if(this.props.toolTip) {
 			return (
@@ -62,7 +74,7 @@ var FlatButton = React.createClass({
 
 	//Renders the entire flat button.
 	render: function() {
-		var props = this.getButtonProps();
+        var props = _.merge(this.getButtonProps(), this.getAccessibilityTags());
 		return this.renderButton(
 			<button {...props} className={this.getButtonClassName()}>
 				{this.getIcon()}

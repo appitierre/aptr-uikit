@@ -1,11 +1,48 @@
-.star-rating-item {
+.star-rating {
 	display: inline-block;
 
 	i {
 		font-size: 24px;
 	}
 
+	input {
+		opacity: 0;
+		position: absolute;
+		margin-right: -100%;
+
+		&:disabled {
+			&:hover ~ label, &:focus ~ label, &:active ~ label {
+				color: #586272;
+			}
+		}
+
+		&:hover ~ label, &:focus ~ label, &:active ~ label {
+			color:@button-primary-background-hover-color;
+		}
+
+
+	}
+
 }
+
+.star-rating-label {
+
+    position: relative;
+	color:@button-primary-background-color;
+		&:hover, &:active, &:focus {
+			color:@button-primary-background-hover-color;
+		}
+
+    &.is-disabled {
+        cursor:auto;
+        color: #586272;
+        &:hover {
+            color: #586272;
+        }
+	}
+}
+
+
 
 /*.star-rating-item-selected {
 	color: black;

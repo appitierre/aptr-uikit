@@ -3,6 +3,11 @@ var classNames = require('classnames')
 
 var Loading = React.createClass({
 
+	getAccessibilityTags: function() {
+		return {"role": "alert"}
+	},
+
+
 	getClassName: function() {
         return classNames('loading', this.props.className);
     },
@@ -12,7 +17,7 @@ var Loading = React.createClass({
     		return this.props.children 		
     	} else {
     		return (
-				<div className={this.getClassName()}>
+				<div className={this.getClassName()} {...this.getAccessibilityTags()}>
 					<div className="loading-inner">
 						<div className="loading-icon">
 							<div className="loading-icon-spinner">

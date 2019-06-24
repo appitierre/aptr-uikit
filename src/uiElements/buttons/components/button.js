@@ -8,6 +8,7 @@ var ToolTip = require('./toolTip');
 //     icon: String
 //     text: String
 //     className: String - primary, secondary and alert
+//     buttonType: String
 //     onClick: Function, Required
 //     iconPosition: String 
 //     disabled: Boolean
@@ -35,6 +36,21 @@ var Button = React.createClass({
             'icon', 
             'icon-' + this.props.icon
         );
+    },
+
+    getAccessibilityTags: function() {
+        var menuTags = '';
+        if (this.props.buttonType == "menu") {
+            var menuTags = this.getMenuAccessibilityTags();
+        }
+        var ariaLabel = this.props['aria-label'] ? this.props['aria-label'] : this.props.text;
+        var role = this.props.role ? this.props.role : 'button';
+        return _.merge({tabIndex: 0, role: role, 'aria-label': ariaLabel}, menuTags);
+    },
+
+    getMenuAccessibilityTags: function() {
+        var ariaExpanded = this.props.isMenuOpen ? true : false;
+        return {'aria-haspopup': 'menu', 'aria-expanded': ariaExpanded, 'aria-controls': this.props.id};        
     },
 
     getLeftIcon: function() {
@@ -74,11 +90,11 @@ var Button = React.createClass({
     },
 
     getButtonProps: function() {
-        return _.omit(this.props, ['type', 'text', 'icon', 'iconPosition', 'toolTip', 'toolTipPosition', 'isSmall']);
+        return _.omit(this.props, ['type', 'text', 'icon', 'iconPosition', 'toolTip', 'toolTipPosition', 'isSmall', 'buttonType']);
     },
 
     render: function() {
-        var props = this.getButtonProps();
+        var props = _.merge(this.getButtonProps(), this.getAccessibilityTags());
         return this.renderButton(
             <button 
                 {...props}
