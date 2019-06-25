@@ -5,7 +5,12 @@ var ListItemWrapper = React.createClass({
 	renderWrapper: function() {
 		if (this.props.onClick && !this.props.buttons) {
 			return (
-				<a className="list-item-clickable" onClick={this.props.onClick}>
+				<a 
+					className="list-item-clickable" 
+					onClick={this.props.onClick} 
+					aria-label={this.props['aria-label']} 
+					tabIndex="0"
+				>
 					<div className="list-item-inner clearfix">
 					{this.props.children}
 					</div>
