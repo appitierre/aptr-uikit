@@ -29,12 +29,12 @@ var CollectionItem = React.createClass({
 
 	render: function() {
 		return (
-			<div className={this.getClassName()}>
+			<li className={this.getClassName()}>
 				<div className='collection-item-content'>
 					{this.props.contentComponent}
 				</div>
 				{this.getActions()}
-			</div>
+			</li>
 		);
 	}
 
