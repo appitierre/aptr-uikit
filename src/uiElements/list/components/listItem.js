@@ -6,7 +6,7 @@ var classNames = require('classnames');
 var ListItem = React.createClass({
 
 	getAccessibilityTags: function() {
-        return {role: 'listitem'};
+        return {role: 'listitem', 'aria-label': this.props.ariaLabel};
     },
 
 	renderButtons: function() {
