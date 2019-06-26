@@ -4,7 +4,7 @@ var classNames = require('classnames')
 var Loading = React.createClass({
 
 	getAccessibilityTags: function() {
-		return {"aria-live": "assertive"}
+		return {"aria-live": "polite"}
 	},
 
 	getClassName: function() {
