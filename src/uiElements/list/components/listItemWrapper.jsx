@@ -10,6 +10,12 @@ var ListItemWrapper = React.createClass({
 					onClick={this.props.onClick} 
 					aria-label={this.props['aria-label']} 
 					tabIndex="0"
+					href={this.props.href || null}
+					onKeyPress={(event) => {						
+						if (event.keyCode === 0) {
+							return this.props.onClick(event);
+						}
+					}}
 				>
 					<div className="list-item-inner clearfix">
 					{this.props.children}
