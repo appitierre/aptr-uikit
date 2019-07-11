@@ -47,6 +47,7 @@ var StarRating = React.createClass({
 				name="rating"
 				autoFocus={autoFocus}
 				disabled={that.props.isDisabled}
+				aria-hidden={that.props.isDisabled}
 				onClick={() => {that.onHover(index + 1)}}
 				onKeyDown={(event) => {that.handleRadioButtonKeyPress(event, index + 1)}}
 				id={`rate${index + 1}`}
@@ -58,6 +59,7 @@ var StarRating = React.createClass({
 				className={`star-rating-label ${that.props.isDisabled ? 'is-disabled' : ''}`}
 				htmlFor={`rate${index + 1}`}
 				value={index + 1}
+				aria-hidden={that.props.isDisabled}
 				onClick={() => {that.onButtonClick(index + 1)}}
 				onMouseEnter={() => {that.onHover(index + 1)}}
 				onMouseLeave={() => {that.onHover(null)}}
