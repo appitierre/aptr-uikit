@@ -54,7 +54,7 @@ var FlatButton = React.createClass({
 				var ariaLabel = this.props.toolTip ? this.props.toolTip : this.props.icon.replace(/[0-9]/g, '');
 			}
 		}
-        return {tabIndex: 0, role: 'button', 'aria-label': ariaLabel};
+        return {tabIndex: this.props.tabIndex || '0', role: 'button', 'aria-label': ariaLabel};
     },
 
 	renderButton: function(button) {
