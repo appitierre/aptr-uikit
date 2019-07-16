@@ -32,13 +32,13 @@ var FormFieldText = React.createClass({
 
             <div className="form-field">
 
-                <div className="form-field-label">
+                <label className="form-field-label">
                     {this.props.label}
-                </div>
+                </label>
 
-                <div className="form-field-help">
+                <p className="form-field-help">
                     {this.props.help}
-                </div>
+                </p>
 
                 <input 
                     id={this.props.fieldKey}
@@ -50,9 +50,9 @@ var FormFieldText = React.createClass({
                     onFocus={this.props.onFocus}
                 />
 
-                <div className="form-field-error">
+                <p className="form-field-error">
                     {this.props.error}
-                </div>
+                </p>
 
             </div>
 
